@@ -1,0 +1,9 @@
+:host, *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.color {
+  height: 40px;
+  width: 40px;
+  border-radius: 2px;
+}

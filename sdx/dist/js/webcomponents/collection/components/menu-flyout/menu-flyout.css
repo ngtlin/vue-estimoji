@@ -1,0 +1,8 @@
+:host, *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:host {
+  position: relative;
+  display: inline-block;
+}

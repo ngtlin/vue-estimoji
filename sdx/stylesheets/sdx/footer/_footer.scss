@@ -1,0 +1,739 @@
+//
+// Footer
+// --------------------------------------------------
+
+/*doc
+---
+title: Footer
+name: 02-components-070-footer
+category: Components - Footer
+---
+
+<style>
+  .cortana-content-wrapper .footer .container {
+    width: auto;
+  }
+</style>
+
+<p>Footers are positioned at the bottom of a page or app and feature links to the primary areas of the product. Footers usually include legal information, as well as links to the relevant social media platforms.
+</p>
+
+<div class="row">
+  <div class="col-xs-12 col-lg-12">
+    <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/footer/Light_1440_Menu.png" alt="Example of a light footer">
+    <span class="fig-caption">Footer light</span>
+  </div>
+</div>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Variations</h2>
+
+  <h3>Full footer</h3>
+
+  <p>Full footer is recommended for medium and large sites or products where there are many links. There are two colour options for the footer. The dark version is the recommended option as it creates a clear end point to pages as contrast to our predominantly light look. The footer colour choice should be used consistently and should never change within that site or product.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/footer/Group-16@2x-1.jpg" alt="Example of a dark footer">
+        <span class="fig-caption">Dark footer</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/footer/Group-21@2x.jpg" alt="Example of a light footer">
+        <span class="fig-caption">Light footer</span>
+    </div>
+  </div>
+
+  <h3>Compact footer</h3>
+
+  <p>This compact footer is to be used for small products that contain less links.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/footer/Group-22@2x.png" alt="Example of a dark compact footer">
+        <span class="fig-caption">Dark compact footer</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/footer/Group-23@2x-1.png" alt="Example of a light compact footer">
+      <span class="fig-caption">Light compact footer</span>
+    </div>
+  </div>
+
+  <h2>Rules</h2>
+
+  <ul class="list single-line">
+    <li>
+    Footer text links use monochrome interactive states, differing from conventional text link and navigation link styles.
+    </li>
+    <li>
+    Text links are grouped into categories, with the category at the top of each column.
+    </li>
+    <li>
+    Links are always left-aligned for better readability.
+    </li>
+    </ul>
+    <p><b>Please note:</b> Footers do not replace main or side navigation.
+</p>
+
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/footer/Group-25@2x-1.jpg" alt="Text links within the footer">
+        <span class="fig-caption">Text links within the footer</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/footer/Group-26@2x-1.jpg" alt="Text links divided in groups">
+      <span class="fig-caption">Grouped text links</span>
+    </div>
+  </div>
+
+
+  <h3>Typography</h3>
+
+  <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/footer/Group-9-Copy-2@2x.png" alt="Typography for a dark footer">
+        <span class="fig-caption">Typography full footer dark variant</span>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/footer/Group-13@2x.png" alt="Typography for a light footer">
+        <span class="fig-caption">Typography full footer light variant</span>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/footer/Group-14@2x.png" alt="Typography for a dark compact footer">
+        <span class="fig-caption">Typography compact footer dark variant</span>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/footer/Group-15@2x-1.png" alt="Typography for a light compact footer">
+        <span class="fig-caption">Typography compact footer light variant</span>
+      </div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+<h2>Colour options</h2>
+
+ <p>Full footer is recommended for medium and large sites or products where there are many links. There are two colour options for the footer. The dark version is the recommended option as it creates a clear end point to pages as contrast to our predominantly light look. The footer colour choice should be used consistently and should never change within that site or product.</p>
+
+<h2>Footer Compact</h2>
+
+<style>
+  .cortana-content-wrapper .footer--compact {
+    padding: 0 30px;
+  }
+</style>
+
+<p>Use this footer if there isn't a need for lots of links. A responsive test page for the compact footer is available at <a href="/samples/footer-compact.html">samples/footer-compact</a>.</p>
+
+```htmlmixed_accessible
+<footer class="footer footer--compact">
+    <div class="container">
+        <a href="javascript:void(0);" class="logo" tabindex="-1">
+            <span class="logo-lifeform" aria-label="Swisscom Logo"></span>
+        </a>
+        <ul class="nav-items">
+            <li class="nav-item">
+                <a href="javascript:void(0);" class="nav-link">
+                    Contact
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:void(0);" class="nav-link">
+                    Terms of use
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:void(0);" class="nav-link">
+                    Feedback
+                </a>
+            </li>
+        </ul>
+    </div>
+</footer>
+```
+
+<h3>Dark Version</h3>
+
+```htmlmixed_accessible
+<footer class="footer footer--compact footer--dark">
+    <div class="container">
+        <a href="javascript:void(0);" class="logo" tabindex="-1">
+            <span class="logo-lifeform" aria-label="Swisscom Logo"></span>
+        </a>
+        <ul class="nav-items">
+            <li class="nav-item">
+                <a href="javascript:void(0);" class="nav-link">
+                    Contact
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:void(0);" class="nav-link">
+                    Terms of use
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:void(0);" class="nav-link">
+                    Feedback
+                </a>
+            </li>
+        </ul>
+    </div>
+</footer>
+```
+
+<h3>Light Version</h3>
+
+```htmlmixed_accessible
+<footer class="footer footer--compact footer--light">
+    <div class="container">
+        <a href="javascript:void(0);" class="logo" tabindex="-1">
+            <span class="logo-lifeform" aria-label="Swisscom Logo"></span>
+        </a>
+        <ul class="nav-items">
+            <li class="nav-item">
+                <a href="javascript:void(0);" class="nav-link">
+                    Contact
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:void(0);" class="nav-link">
+                    Terms of use
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:void(0);" class="nav-link">
+                    Feedback
+                </a>
+            </li>
+        </ul>
+    </div>
+</footer>
+```
+
+<h2>Footer Full</h2>
+
+<p>Use this footer for sites that have a large site maps and require more room for links. A responsive test page for the compact footer is available at <a href="/samples/footer-full.html">samples/footer-full</a>.</p>
+
+<h3>Dark Version</h3>
+<iframe src="/samples/iframe-footer-full-dark.html" height="550"></iframe>
+<hr aria-hidden="true">
+
+<h3>Light Version</h3>
+<iframe src="/samples/iframe-footer-full-light.html" height="550" ></iframe>
+*/
+
+
+// --------------------------------------------------
+
+
+.footer {
+
+  // Reset global styles
+  // -------------------------
+
+  a,
+  button {
+    margin: 0;
+    padding: 0;
+  }
+
+  // Generic Footer Styles
+  // -------------------------
+
+  z-index: $zindex-footer;
+  overflow: hidden;
+  text-align: left;
+
+  .logo {
+    border: 0;
+  }
+
+  // generic
+  // -------------------------
+
+  @include make-nav-section-columns(nav-section);
+
+  .nav-section {
+    .nav-col {
+      display: table;
+
+      width: 100%;
+
+      overflow: hidden; // Edge and IE11 hack
+      -webkit-transform: scale(1); // Safari hack
+
+      page-break-inside: avoid;
+      break-inside: avoid;
+
+      @include bp-desktop {
+        break-after: column;
+      }
+    }
+  }
+
+  .nav-items {
+    @include clearfix;
+  }
+
+  // Footer Swisscom Logo
+  // -------------------------
+
+  .logo {
+    display: flex;
+    width: 100%;
+
+    margin-top: 31px;
+    text-align: center;
+
+    justify-content: center;
+
+    @include bp-tablet {
+      width: auto;
+
+      margin-top: 22px;
+      margin-left: -18px;
+
+      float: left;
+      text-align: left;
+    }
+
+    .logo-lifeform {
+      @include logo-lifeform;
+
+      display: inline-block;
+
+      position: relative;
+      left: 0;
+      top: 0;
+    }
+  }
+
+
+  //footer-compact
+
+  &--compact {
+    @include bp-tablet {
+      height: $footer-compact-height;
+    }
+
+    .nav-link {
+      @include typo-footer;
+    }
+
+    .nav-items {
+      margin-top: 26px;
+      margin-bottom: 49px;
+
+      text-align: center;
+
+      @include bp-tablet {
+        float: right;
+
+        margin-top: 29px;
+        margin-bottom: 0;
+
+        text-align: inherit;
+      }
+
+      .nav-item {
+        margin-bottom: 22px;
+        margin-right: 0;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        @include bp-tablet {
+          float: left;
+          margin-bottom: 0;
+          margin-right: 22px;
+        }
+      }
+    }
+  }
+
+
+ // Footer-full
+
+ &--full {
+  .nav-section {
+
+    // #59 fixes an issue where the footer ist not correctly
+    // displayed on large screens in safari
+    min-height: 100%;
+  }
+
+  .nav-title {
+    @include typo-footer;
+
+    border: 0;
+  }
+
+  .nav-link {
+    @include typo-footer-small;
+  }
+
+  .nav-icon {
+    display: flex;
+    border: 0;
+    background: 0;
+  }
+
+  .nav-items {
+    text-align: center;
+
+    @include bp-tablet {
+      text-align: inherit;
+    }
+
+    &--divider {
+      .nav-item {
+        margin: 0;
+
+        &:not(:first-child)::before {
+          content: '|';
+          position: relative;
+          top: -1px;
+
+          margin: 0;
+
+          padding-left: 11px;
+          padding-right: 11px;
+
+          font-size: 16px;
+
+          color: $color-footer-dark-link;
+        }
+      }
+    }
+  }
+
+  @include bp-tablet-max {
+    .nav-section {
+      column-count: 1;
+    }
+  }
+
+  // Footer Top
+  // -------------------------
+
+  .footer__top {
+    padding: 35px 0 72px;
+
+    .nav-col {
+      > .container {
+        @include make-container-fluid(xs);
+        @include make-container-fluid(sm);
+
+        @include make-container-fixed(md);
+
+        @include bp-desktop {
+          padding: 0;
+          margin: 0;
+
+          width: auto;
+        }
+      }
+    }
+
+    .nav-items {
+      margin-top: 8px;
+
+      .nav-item {
+        margin-bottom: 8px;
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+
+    @include bp-tablet-max {
+      padding: 0;
+
+      > .container {
+        padding: 0;
+        margin: 0;
+
+        width: auto;
+      }
+
+      .nav-col {
+        padding: 22px 0 24px;
+
+        border-bottom: 1px solid $color-footer-dark-divider;
+
+        &:last-of-type {
+          border-bottom: 0;
+        }
+      }
+
+      .nav-items {
+        text-align: inherit;
+      }
+    }
+  }
+
+  // Footer Bottom
+  // -------------------------
+
+  .footer__bottom {
+    height: 100%;
+    padding: 27px 0 25px;
+
+    @include bp-tablet {
+      height: 128px;
+      padding: 25px 0;
+    }
+
+    .row {
+      margin-bottom: 0;
+
+      @include bp-tablet {
+        margin-bottom: 13px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .nav-items {
+      display: inline-block;
+
+      &--divider {
+        .nav-item {
+          margin: 0;
+        }
+      }
+    }
+
+    .nav-item {
+      float: left;
+      margin-right: 22px;
+
+      text-align: center;
+
+      &:last-child {
+        margin: 0;
+      }
+
+      @include bp-tablet {
+        text-align: left;
+      }
+    }
+
+    .footer--left,
+    .footer--right {
+      float: none;
+      margin-top: 0;
+
+      text-align: center;
+    }
+
+    .footer--social-icons {
+      text-align: center;
+
+      margin-bottom: 12px;
+
+      @include bp-tablet {
+        margin-bottom: 0;
+      }
+
+      .nav-item {
+        margin-right: 24px;
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+
+    .footer--nav {
+      margin-bottom: 9px;
+
+      @include bp-tablet {
+        margin-bottom: 0;
+      }
+    }
+
+    .footer--copyright {
+      @include typo-footer-small;
+
+      text-align: center;
+
+      @include bp-tablet {
+        @include typo-footer-tiny;
+      }
+    }
+
+    @include bp-tablet {
+      .footer--left {
+        float: left;
+      }
+
+      .footer--right {
+        float: right;
+      }
+
+      .footer--nav {
+        margin-top: 6px;
+      }
+    }
+  }
+
+  // Color options
+  // -------------------------
+
+  &,
+  &.footer--dark {
+    .nav-title {
+      //color: rgba($color-footer-dark-link, .4);
+      color: $color-footer-dark-link;
+    }
+
+    .footer__top {
+      background: $color-footer-dark-bg;
+
+      .nav-col {
+        border-bottom-color: $color-footer-dark-divider;
+      }
+
+      @include accordion-arrow-normal($color-footer-dark-link, $color-footer-dark-link--active);
+    }
+
+    .footer__bottom {
+      background: $color-footer-dark-bg-second;
+    }
+  }
+
+  &.footer--light {
+    .nav-title {
+      //color: rgba($color-footer-light-link, .4);
+      color: $color-footer-light-link;
+    }
+
+    .nav-items--divider {
+      .nav-item {
+        &::before {
+          color: $color-footer-light-link;
+        }
+      }
+    }
+
+    .footer__top {
+      background: $color-footer-light-bg;
+
+      .nav-col {
+        border-bottom-color: $color-footer-light-divider;
+      }
+
+      .nav-link {
+        color: $color-footer-light-link-top;
+      }
+
+      @include accordion-arrow-normal($color-footer-light-link, $color-footer-light-link--active);
+    }
+
+    .footer__bottom {
+      background: $color-footer-light-bg-second;
+
+      .footer--copyright {
+        color: $color-footer-light-link-bottom;
+      }
+    }
+  }
+}
+
+
+  // Color options
+  // -------------------------
+
+  &,
+  &.footer--dark {
+    color: $color-footer-dark-link;
+
+    background: $color-footer-dark-bg;
+
+    a,
+    button {
+      &.nav-title,
+      &.nav-link {
+        color: $color-footer-dark-link;
+        border-bottom-color: transparent;
+
+        &:hover,
+        &:focus {
+          border-bottom-color: $color-footer-dark-link;
+          color: $color-footer-dark-link;
+        }
+      }
+    }
+
+    svg .icon {
+      fill: $color-footer-dark-link;
+    }
+  }
+
+  &.footer--light {
+    color: $color-footer-light-link;
+
+    background: $color-footer-light-bg;
+
+    a,
+    button {
+      &.nav-title,
+      &.nav-link {
+        color: $color-footer-light-link;
+        border-bottom-color: transparent;
+
+        &:hover,
+        &:focus {
+          border-bottom-color: $color-footer-light-link;
+          color: $color-footer-light-link;
+        }
+      }
+    }
+
+    svg .icon {
+      fill: $color-footer-light-link;
+    }
+  }
+
+  // Footer Position
+  // -------------------------
+
+  &--left {
+    float: left;
+  }
+
+  &--right {
+    float: right;
+  }
+
+  // Footer Font Override
+  // -------------------------
+
+  .text-sm {
+    @include typo-footer-tiny;
+  }
+}

@@ -1,0 +1,171 @@
+//
+// Tab Navigation
+// --------------------------------------------------
+
+/*doc
+---
+title: Navigation (tab mobile)
+name: 02-components-120-tab-navigation-01-overview
+category: Components - Navigation (tab mobile)
+---
+
+<style>
+  .exampleOutput {
+    background-color: #474747;
+  }
+
+  .cortana-content-wrapper .nav-tabs {
+    width: 250px;
+    position: initial;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+
+<p>For mobile devices the navigation is also available as a Mobile Tab-Navigation. It is available with or without captions.</p>
+
+<p><b>NOTE:</b> This component is only available on the <code>phone</code> breakpoint and is not intended to be used on tablets and desktop breakpoints.</p>
+
+<p>A sample is available at <a href="/samples/navigation-tabs.html" target="_blank">samples/navigation-tabs</a>.</p>
+
+```htmlmixed_accessible
+<nav class="nav-tabs">
+  <ul class="nav-items">
+    <li class="nav-item">
+      <a class="nav-link" aria-label="Home" href="javascript:void(0);">
+        <span class="nav-link__wrapper">
+          <i class="icon icon-044-home" aria-hidden="true"></i>
+        </span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" aria-label="Profile" href="javascript:void(0);">
+        <span class="nav-link__wrapper">
+          <i class="icon icon-001-account" aria-hidden="true"></i>
+        </span>
+      </a>
+    </li>
+    <li class="nav-item nav-item--active">
+      <a class="nav-link" aria-label="Upload" href="javascript:void(0);">
+        <span class="nav-link__wrapper">
+          <i class="icon icon-088-upload-cloud" aria-hidden="true"></i>
+        </span>
+      </a>
+    </li>
+  </ul>
+</nav>
+```
+
+```htmlmixed_accessible
+<nav class="nav-tabs">
+  <ul class="nav-items">
+    <li class="nav-item">
+      <a class="nav-link" aria-label="Home" href="javascript:void(0);">
+        <span class="nav-link__wrapper">
+          <i class="icon icon-044-home" aria-hidden="true"></i>
+          <span class="button__label">Home</span>
+        </span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" aria-label="Profile" href="javascript:void(0);">
+        <span class="nav-link__wrapper">
+          <i class="icon icon-001-account" aria-hidden="true"></i>
+          <span class="button__label">Profile</span>
+        </span>
+      </a>
+    </li>
+    <li class="nav-item nav-item--active">
+      <a class="nav-link" aria-label="Upload" href="javascript:void(0);">
+        <span class="nav-link__wrapper">
+          <i class="icon icon-088-upload-cloud" aria-hidden="true"></i>
+          <span class="button__label">Upload</span>
+        </span>
+      </a>
+    </li>
+  </ul>
+</nav>
+```
+*/
+
+
+.nav-tabs {
+
+  // Import Reset
+  // -------------------------
+
+  @import "reset";
+
+  // -------------------------
+
+  background: $color-white;
+  border-top: 1px solid $color-aluminum-tint-2;
+
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 65px;
+
+  // Item Styles
+  // -------------------------
+
+  .nav-items {
+    display: flex;
+    flex: 0 1 auto;
+
+    height: 100%;
+  }
+
+  .nav-item {
+     width: 100%;
+     height: 100%;
+
+     .nav-link {
+       width: 100%;
+       height: 100%;
+
+       color: $color-navy;
+
+       &:focus {
+         color: $color-int-blue;
+       }
+     }
+
+     .nav-link__wrapper {
+       display: flex;
+       flex-direction: column;
+
+       width: 100%;
+       height: 100%;
+
+       align-items: center;
+       justify-content: center;
+     }
+
+     .icon {
+       font-size: 30px;
+       text-align: center;
+     }
+
+     .button__label {
+       @include font-semi-light;
+       @include text-truncate;
+
+       // Set the max width of the text
+       width: 64px;
+
+       font-size: 12px;
+       line-height: 1;
+       text-align: center;
+
+       // Fixes clipping of large characters
+       padding-bottom: 1px;
+     }
+
+     &--active {
+       .nav-link {
+         color: $color-int-blue;
+       }
+     }
+   }
+}

@@ -1,0 +1,708 @@
+//
+// Search
+// --------------------------------------------------
+
+/*doc
+---
+title: Search
+name: 02-components-150-search
+category: Components - Search
+---
+
+<style>
+  .cortana-content-wrapper .search .container {
+    width: auto;
+  }
+</style>
+
+<p>Search enables users to locate information without the need to use the conventional navigation. Users are presented with ‘live search’ results as a drop down, or are taken through to a page of their specific search results.</p>
+
+<style>
+  .search {
+   z-index: 49999;
+  }
+</style>
+
+<div class="padding-bottom-2">
+  <div class="search search__input is-open">
+    <div class="container">
+      <div class="search__input-wrapper">
+        <form class="search__box" novalidate>
+          <label for="site-search" class="sr-only">Suchen</label>
+          <input class="search__field" type="search" id="site-search" name="q" role="search" required autocomplete="off" placeholder="Suchen nach..."/>
+          <button class="search__icon-clear" type="reset" aria-label="Eingabe löschen">
+            <i class="icon icon-202-clear-circle" aria-hidden="true"></i>
+          </button>
+          <label for="site-search-submit" class="sr-only">Senden</label>
+          <input class="sr-only" type="submit" id="site-search-submit" tabindex="-1"/>
+        </form>
+        <button class="search__icon-close" aria-label="Suche schliessen">
+          <i class="icon icon-022-close" aria-hidden="true"></i>
+        </button>
+       </div>
+    </div>
+  </div>
+</div>
+
+<p>You can have a look at the search component on a responsive test page for the Navigation at <a href="/samples/navigation.html" target="_blank">samples/navigation</a>.</p>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Variations</h2>
+
+  <h3>Auto-suggestion</h3>
+
+  <p> While typing, auto-suggestion shows the results in real time. An optional promotional bar can appear under the results.
+  <br>Auto-suggestion should be implimented wherever technically possible.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/search/Group-7@2x-2.jpg" alt="States of input field">
+      <span class="fig-caption">States of input field</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/search/Group-9@2x-2.jpg" alt="Auto-suggestion results">
+      <span class="fig-caption">Auto-suggestion results</span>
+    </div>
+  </div>
+
+  <h3>Classic search with a Search Engine Result Page (SERP)</h3>
+
+  <p>Classic search exists as a fall back option for when it's not possible to generate live search results inside a product or service. Classic search input follows the same styling as auto-suggestion input states. When active, the input field overlays the navigation header. <Br>Classic SERP include filtering options, heroed ‘top results’, and listed link results with surfaced text content from the page.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/search/Group-11@2x-2.jpg" alt="Classic search inputs">
+      <span class="fig-caption">Classic search inputs</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/search/Group-27@2x.jpg" alt="Classic search result page">
+      <span class="fig-caption">Classic search result page</span>
+    </div>
+  </div>
+
+  <h3>Sticky search</h3>
+
+  <p>The sticky search keeps the search bar and filters column fixed in the viewport, letting users edit searchs quickly and filter their results.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/search/Group-28@2x.jpg" alt="Example sticky search default">
+      <span class="fig-caption">Sticky search default</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/search/Group-29@2x.jpg" alt="Example sticky search">
+      <span class="fig-caption">Sticky search</span>
+    </div>
+  </div>
+
+  <h3>Mobile filter</h3>
+
+  <p>To preserve screen real estate, the filter panel is reduced to a drop down menu on mobile screen sizes. When opened, the mobile filter follows the same styling as standard dropdown menus.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/search/Group-30@2x.jpg" alt="Example closed mobile filter">
+      <span class="fig-caption">Closed mobile filter</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/search/Group-31@2x.jpg" alt="Example expanded mobile filter">
+      <span class="fig-caption">Expanded mobile filter</span>
+    </div>
+  </div>
+
+  <h2>Rules</h2>
+
+  <h3>10 results per page</h3>
+
+  <p>Live search should show a maximum of 10 results per page. If there are additional results, a ‘show all’ link should be used to take the user to a classic search results page.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/search/Group-32@2x.jpg" alt="Example eLive results dropdown with ‘view all’ link">
+      <span class="fig-caption">Live results dropdown with ‘view all’ link</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+    </div>
+  </div>
+
+  <h3>Responsive layout structure</h3>
+
+  <p>At 1024px wide, the right hand column content moves to the left column, beneath the filters. This left column also extents to occupy four columns, with the results column increasing to eight columns.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/search/Group-33@2x.jpg" alt="Example 1024px search results view">
+      <span class="fig-caption">1024px search results view</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+    </div>
+  </div>
+
+  <h3>Typography</h3>
+
+  <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/search/Group-34@2x.jpg" alt=Typography for search">
+        <span class="fig-caption">Typography</span>
+      </div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+<style>
+  .exampleOutput .search__input {
+    display: block;
+    position: relative;
+
+    padding: 0 12px;
+    z-index: 1;
+  }
+</style>
+
+<h3>Desktop Search</h3>
+
+```htmlmixed_accessible
+<div class="search search__input is-open">
+  <div class="container">
+    <div class="search__input-wrapper">
+      <form class="search__box" novalidate>
+        <label for="site-search" class="sr-only">Suchen</label>
+        <input class="search__field" type="search" id="site-search" name="q"  role="search" required autocomplete="off" placeholder="Suchen nach..."/>
+        <button class="search__icon-clear" type="reset" aria-label="Eingabe löschen">
+          <i class="icon icon-202-clear-circle" aria-hidden="true"></i>
+        </button>
+        <label for="site-search-submit" class="sr-only">Senden</label>
+        <input class="sr-only" type="submit" id="site-search-submit" tabindex="-1"/>
+      </form>
+      <button class="search__icon-close" aria-label="Suche schliessen">
+        <i class="icon icon-022-close" aria-hidden="true"></i>
+      </button>
+     </div>
+  </div>
+</div>
+```
+
+<h3>Mobile Search</h3>
+
+```htmlmixed_accessible
+<div class="search search__input is-open">
+  <div class="container">
+    <div class="search__input-wrapper">
+      <form class="search__box" novalidate>
+        <label for="site-search" class="sr-only">Suchen</label>
+        <input class="search__field" type="search" id="site-search" name="q"  role="search" required autocomplete="off" placeholder="Suchen nach..."/>
+        <button class="search__icon-clear" type="reset" aria-label="Eingabe löschen">
+          <i class="icon icon-202-clear-circle" aria-hidden="true"></i>
+        </button>
+        <button class="search__icon-search" type="submit" aria-label="Eingabe senden">
+          <i class="icon icon-077-search" aria-hidden="true"></i>
+        </button>
+      </form>
+     </div>
+  </div>
+</div>
+```
+
+<h3>Inline Search</h3>
+
+```htmlmixed_webcomponent_sdx-search_accessible
+<sdx-search
+  placeholder="Search..."
+  sr-hint="Type your search term"
+  sr-hint-for-button="Search"
+  change-callback="console.log('Keyword: ' + arguments[0])"
+  search-submit-callback="console.log('Submit: ' + arguments[0])"
+/>
+```
+
+<h2>Colour options</h2>
+
+<h3>Light Color</h3>
+
+```htmlmixed_accessible
+<div class="search search__input search--light is-open">
+  <div class="container">
+    <div class="search__input-wrapper">
+      <form class="search__box" novalidate>
+        <label for="site-search" class="sr-only">Suchen</label>
+        <input class="search__field" type="search" id="site-search" name="q"  role="search" required autocomplete="off" placeholder="Suchen nach..."/>
+        <label for="site-search-submit" class="sr-only">Senden</label>
+        <input class="sr-only" type="submit" id="site-search-submit" tabindex="-1"/>
+        <button class="search__icon-clear" type="reset" aria-label="Eingabe löschen">
+          <i class="icon icon-202-clear-circle" aria-hidden="true"></i>
+        </button>
+      </form>
+      <button class="search__icon-close" aria-label="Suche schliessen">
+        <i class="icon icon-022-close" aria-hidden="true"></i>
+      </button>
+     </div>
+  </div>
+</div>
+```
+
+<h2>Search Live</h2>
+
+<style>
+  .exampleOutput .container {
+    width: auto;
+  }
+
+  .exampleOutput .search--desktop, .exampleOutput .search--mobile {
+    display: block;
+    position: static;
+  }
+
+  .exampleOutput .search__live > * {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+</style>
+
+<h3>Desktop Search</h3>
+
+```htmlmixed_accessible
+<div class="search search--desktop">
+  <div class="search__input is-open">
+    <div class="container">
+      <div class="search__input-wrapper">
+        <form class="search__box" novalidate>
+          <label for="site-search" class="sr-only">Suchen</label>
+          <input class="search__field" type="search" id="site-search" name="q"  role="search" required autocomplete="off" placeholder="Suchen nach..."/>
+          <label for="site-search-submit" class="sr-only">Senden</label>
+          <input class="sr-only" type="submit" id="site-search-submit" tabindex="-1"/>
+          <button class="search__icon-clear" type="reset" aria-label="Eingabe löschen">
+            <i class="icon icon-202-clear-circle" aria-hidden="true"></i>
+          </button>
+        </form>
+        <button class="search__icon-close" aria-label="Suche schliessen">
+          <i class="icon icon-022-close" aria-hidden="true"></i>
+        </button>
+       </div>
+    </div>
+  </div>
+
+  <div class="search__live is-open">
+    <div class="live-suggestions js-suggestions is-open">
+      <div class="container">
+        <ul>
+          <li><strong>iPho</strong>ne 7 Plus</li>
+          <li><strong>iPho</strong>ne 6s</li>
+          <li><strong>iPho</strong>ne 5s</li>
+          <li><strong>iPho</strong>ne 6s Plus</li>
+          <li><strong>iPho</strong>ne SE 64GB</li>
+        </ul>
+      </div>
+    </div>
+    <div class="live-footer js-footer is-open">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs">
+            <a class="live-title" href="javascript:void(0);">Neu</a>
+          </div>
+        </div>
+        <div class="row offer">
+          <div class="col-xs">
+            <a class="live-link" href="javascript:void(0);">
+              <div class="offer__image">
+                <img src="/$WEBROOT-THEME-BUILD$/img/samples/angebote-vivo-m.png">
+              </div>
+              <div class="offer__content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+              </div>
+            </a>
+          </div>
+          <div class="col-xs">
+            <a class="live-link" href="javascript:void(0);">
+              <div class="offer__image">
+                <img src="/$WEBROOT-THEME-BUILD$/img/samples/iphone_7_plus_black.png">
+              </div>
+              <div class="offer__content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+              </div>
+            </a>
+          </div>
+          <div class="col-xs hidden-md-down">
+            <a class="live-link" href="javascript:void(0);">
+              <div class="offer__image">
+                <img src="/$WEBROOT-THEME-BUILD$/img/samples/iphone_7_plus_black.png">
+              </div>
+              <div class="offer__content">
+                Lorem ipsum sit amet, consectetur elit, sed eiusmod.
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+<h3>Mobile Search</h3>
+
+```htmlmixed_accessible
+<div class="search search--mobile">
+  <div class="search__input is-open">
+    <div class="container">
+      <div class="search__input-wrapper">
+        <form class="search__box" novalidate>
+          <label for="site-search" class="sr-only">Suchen</label>
+          <input class="search__field" type="search" id="site-search" name="q"  role="search" required autocomplete="off" placeholder="Suchen nach..."/>
+          <button class="search__icon-clear" type="reset" aria-label="Eingabe löschen">
+            <i class="icon icon-202-clear-circle" aria-hidden="true"></i>
+          </button>
+          <button class="search__icon-search" type="submit" aria-label="Eingabe senden">
+            <i class="icon icon-077-search" aria-hidden="true"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="search__live is-open">
+    <div class="live-suggestions js-suggestions is-open">
+      <div class="container">
+        <ul>
+          <li><strong>iPho</strong>ne 7 Plus</li>
+          <li><strong>iPho</strong>ne 6s</li>
+          <li><strong>iPho</strong>ne 5s</li>
+          <li><strong>iPho</strong>ne 6s Plus</li>
+          <li><strong>iPho</strong>ne SE 64GB</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
+
+
+// --------------------------------------------------
+
+
+.search {
+
+  z-index: $zindex-navigation + 500;
+
+  // Desktop Option
+  // --------------------------------------------------
+
+  &.search--mobile {
+    display: block;
+
+    @include bp-tablet {
+      display: none;
+    }
+  }
+
+  &.search--desktop {
+    display: none;
+
+    position: absolute;
+    left: 0;
+    width: 100%;
+
+    @include bp-tablet {
+      display: block;
+    }
+  }
+
+  // Imports
+  // -------------------------
+
+  // Search Input
+  // -------------------------
+
+
+  &__input {
+
+    // Search input styles
+    // -------------------------
+
+    display: block;
+    overflow: hidden;
+
+    position: relative;
+
+    width: 100%;
+
+    background: $color-search-light-bg;
+    color: $color-search-inactive-text;
+
+    transition:
+      background 200ms $standard-easing,
+      color 200ms $standard-easing;
+
+    .search__input-wrapper {
+      display: flex;
+      position: relative;
+
+      justify-content: space-between;
+      align-items: center;
+
+      width: 100%;
+      height: $search-height;
+    }
+
+    .search__box {
+      display: flex;
+      width: 100%;
+    }
+
+    .search__field {
+      @include typo-search;
+
+      // fixes edge line height bug
+      @supports(-ms-ime-align: auto) {
+        line-height: 0;
+      }
+
+      display: block;
+
+      width: 100%;
+
+      vertical-align: middle;
+
+      transform: translateX(0);
+      transition: transform 200ms $standard-easing;
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &::placeholder {
+        color: $color-search-inactive-text;
+        opacity: 1;
+      }
+    }
+
+    .search__field:invalid {
+      transform: translateX(-#{$search-clear-size + $search-box-margin});
+
+      ~ .search__icon-clear {
+        visibility: hidden;
+        opacity: 0;
+        transform: scale(0);
+      }
+    }
+
+    .search__icon {
+      &-clear {
+        margin-right: $search-box-margin;
+
+        z-index: 10;
+        order: -1;
+
+        font-size: $search-clear-size;
+
+        visibility: visible;
+        opacity: 1;
+        transform: scale(1);
+
+        transition:
+          visibility 200ms $standard-easing,
+          opacity 200ms $standard-easing,
+          transform 200ms $standard-easing;
+      }
+
+      &-close,
+      &-search {
+        margin-left: $search-box-margin;
+
+        font-size: $search-icon-size;
+      }
+    }
+
+    // Color options
+    // --------------------------------------------------
+
+    @mixin search-light {
+      background: $color-search-light-bg;
+      color: $color-search-light-text;
+
+      .search__field {
+        &,
+        &::placeholder {
+          color: $color-search-light-text;
+          opacity: 1;
+        }
+
+        &:focus {
+          &::placeholder {
+            color: $color-search-light-text;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    @mixin search-dark {
+      background: $color-search-dark-bg;
+      color: $color-search-dark-text;
+
+      .search__field {
+        &,
+        &::placeholder {
+          color: $color-search-dark-text;
+          opacity: 1;
+        }
+
+        &:focus {
+          &::placeholder {
+            color: $color-search-dark-text;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &,
+    &.search--light {
+      &.is-active {
+        @include search-light;
+      }
+
+      @include bp-tablet {
+        @include search-light;
+      }
+    }
+
+    &.search--dark {
+      &.is-active {
+        @include search-dark;
+      }
+
+      @include bp-tablet {
+        @include search-dark;
+      }
+    }
+  }
+
+  // Desktop Option
+  // --------------------------------------------------
+
+  &--desktop {
+    .search__input {
+
+      @include bp-tablet {
+        max-height: 0;
+
+        transition:
+          max-height 200ms $standard-easing,
+          background 200ms $standard-easing,
+          color 200ms $standard-easing;
+
+        &.is-open {
+          max-height: $search-height;
+        }
+      }
+    }
+  }
+
+
+  // Search Input
+// --------------------------------------------------
+
+
+&__live {
+
+  // Search live styles
+  // -------------------------
+  display: none;
+  height: 0;
+  width: 100%;
+
+  overflow: hidden;
+  border-bottom: 1px solid $color-nav-footer-bg;
+
+  &.is-open {
+    display: block;
+    height: auto;
+  }
+
+  .live-suggestions {
+    display: none;
+    height: 0;
+
+    background: $color-search-live-bg;
+    color: $color-search-live-text;
+
+    &.is-open {
+      display: block;
+      height: auto;
+    }
+
+    strong {
+      @include font-semi-light;
+      color: $color-search-live-text-match;
+    }
+
+    li {
+      padding: 15px 0 16px;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $color-aluminum-tint-2;
+      }
+    }
+  }
+
+  .live-footer {
+    display: none;
+    height: 0;
+    background: $color-nav-footer-bg;
+
+    &.is-open {
+      display: block;
+      height: auto;
+    }
+
+    .container {
+      padding-top: 21px;
+      padding-bottom: 24px;
+    }
+
+    a,
+    button {
+      &.live-icon,
+      &.live-title,
+      &.live-link {
+        color: $color-nav-link;
+
+        &:focus,
+        &:hover {
+          color: $color-nav-link--active;
+        }
+      }
+    }
+
+    .offer {
+      margin-top: 10px;
+
+      .offer__image {
+        float: left;
+        margin-right: 18px;
+
+        img {
+          max-width: 64px;
+          max-height: 64px;
+        }
+      }
+
+      .offer__content {
+        @include text-small;
+
+        display: table;
+        word-wrap: normal;
+      }
+    }
+  }
+}
+
+
+}

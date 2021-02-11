@@ -1,0 +1,21 @@
+:host, *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:host > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+:host > div .count {
+  margin-right: 24px;
+}
+@media (max-width: 1279px) {
+  :host > div {
+    flex-flow: column;
+  }
+  :host > div .count {
+    margin-bottom: 8px;
+    margin-right: 0;
+  }
+}

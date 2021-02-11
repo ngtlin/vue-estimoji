@@ -1,0 +1,529 @@
+@charset "UTF-8";
+:host, *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/*doc
+---
+title: Typography
+name: 01-foundation-05-typography-01-typography
+category: Foundation - Typography
+---
+
+<p>Our brand font Thesis has an appealing modern appearance and excellent readability. The independent Swisscom typography is an important design element of the brand identity.</p>
+<p>The following instructions shows which font size, leading and weight that can be used. By limiting the number of styles the products remain clean and simple.</p>
+
+<h1>H1: Discover your personal universe</h1>
+<h2>H2: Discover your personal universe</h2>
+<h3>H3: Discover your personal universe</h3>
+<h4>H4: Discover your personal universe</h4>
+<h5>H5: Discover your personal universe</h5>
+<h6>H6: Discover your personal universe</h6>
+
+<hr/>
+
+<h1>H1: Discover your personal universe</h1>
+<p>Immerse yourself in new genres. Crime stories, SciFi or romance? Films, series, documentaries or eSports? Swisscom TV gives you everything your heart desires on screen. Total convenience: it's easy to set up access to your favourite genres on the home screen.</p>
+
+<h2>H2: Discover your personal universe</h2>
+<p>Immerse yourself in new genres. Crime stories, SciFi or romance? Films, series, documentaries or eSports? Swisscom TV gives you everything your heart desires on screen. Total convenience: it's easy to set up access to your favourite genres on the home screen.</p>
+
+<h3>H3: Discover your personal universe</h3>
+<p>Immerse yourself in new genres. Crime stories, SciFi or romance? Films, series, documentaries or eSports? Swisscom TV gives you everything your heart desires on screen. Total convenience: it's easy to set up access to your favourite genres on the home screen.</p>
+
+<h4>H4: Discover your personal universe</h4>
+<p>Immerse yourself in new genres. Crime stories, SciFi or romance? Films, series, documentaries or eSports? Swisscom TV gives you everything your heart desires on screen. Total convenience: it's easy to set up access to your favourite genres on the home screen.</p>
+
+<h5>H5: Discover your personal universe</h5>
+<p>Immerse yourself in new genres. Crime stories, SciFi or romance? Films, series, documentaries or eSports? Swisscom TV gives you everything your heart desires on screen. Total convenience: it's easy to set up access to your favourite genres on the home screen.</p>
+
+<h6>H6: Discover your personal universe</h6>
+<p>Immerse yourself in new genres. Crime stories, SciFi or romance? Films, series, documentaries or eSports? Swisscom TV gives you everything your heart desires on screen. Total convenience: it's easy to set up access to your favourite genres on the home screen.</p>
+
+<h2>Font Weights</h2>
+
+ <div class="row content-design">
+      <div class="col-xs-12 col-lg-12">
+        <img class="img-responsive img-container-border" src="/theme-build-v2.11.2/img/design/typo/type-font-weight@2x.png">
+        <span class="fig-caption">Font weight characteristics</span>
+      </div>
+  </div>
+
+```section_design
+```
+<div class="content-design">
+  <h2>Rules</h2>
+
+  <h3>Typefaces</h3>
+
+  <p>When designing for SDX, there are two typefaces to choose from – <strong>TheSans</strong> and <strong>TheSerif</strong> – each available in semi-light and semi-bold.</p>
+
+  <p>The Sans is our primary typeface and is used across all applications. The Serif is Swisscom’s voice and is <strong>only used for quotations</strong>.</p>
+
+  <div class="row">
+      <div class="col-xs-12 col-lg-6">
+        <img class="img-responsive img-responsive-border" src="/theme-build-v2.11.2/img/design/typo/type-the-sans@2x.png">
+        <span class="fig-caption">The Sans</span>
+      </div>
+      <div class="col-xs-12 col-lg-6">
+        <img class="img-responsive img-responsive-border" src="/theme-build-v2.11.2/img/design/typo/type-the-serif@2x.png">
+        <span class="fig-caption">The Serif</span>
+      </div>
+  </div>
+
+  <h3>Using colour and typography</h3>
+
+  <p>When using colour backgrounds, only white must be used as font colour. <br/>
+  The colour matrix demonstrates the accessibility of typefaces across the entire colour palette, at all specified sizes.</p>
+
+  <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/typo/type-and-color-accessibility@2x.png" alt="Example colour and typography">
+        <span class="fig-caption">Colour and typography</span>
+      </div>
+  </div>
+
+  <h3>Type hierarchy and colour</h3>
+
+  <p>When creating layouts using typography, only the following colours should be used to give content hierarchy. All other colours should never be used for typography.</p>
+
+  <div class="row margin-h-4 margin-bottom-4">
+      <div class="col-lg-12">
+          <div class="row margin-bottom-4">
+            <div class="col-xs-6 col-md-3">
+              <div class="sg-color">
+                <div class="sg-color-preview bg-gray"></div>
+                <div class="text-align-left margin-top-1">
+                  Primary text<br/>
+                  <span class="gray-tint-4">
+                      Swisscom dark grey <br/>
+                      #333333 <br/>
+                      51, 51, 51
+                    </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-6 col-md-3">
+              <div class="sg-color">
+                <div class="sg-color-preview bg-navy"></div>
+                <div class="text-align-left margin-top-1">
+                  Primary text<br/>
+                  <span class="gray-tint-4">
+                      Swisscom navy<br/>
+                      #001155 <br/>
+                      0, 17, 85
+                    </span>
+                </div>
+              </div>
+             </div>
+             <div class="col-xs-6 col-md-3">
+              <div class="sg-color">
+                <div class="sg-color-preview bg-gray-tint-4"></div>
+                <div class="text-align-left margin-top-1">
+                  Secondary text<br/>
+                  <span class="gray-tint-4">
+                      Swisscom mid gray<br/>
+                      #666666 <br/>
+                      102, 102, 102
+                    </span>
+                </div>
+              </div>
+             </div>
+            <div class="col-xs-6 col-md-3">
+              <div class="sg-color">
+                <div class="sg-color-preview bg-blue"></div>
+                <div class="text-align-left margin-top-1">
+                  Text link<br/>
+                  <span class="gray-tint-4">
+                      Interaction blue<br/>
+                      #086ADB <br/>
+                      8, 106, 219
+                    </span>
+                </div>
+              </div>
+             </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12">
+      <img class="img-responsive img-container-border" src="/theme-build-v2.11.2/img/design/typo/type-font-example@2x.png" alt="Type format example">
+      <span class="fig-caption">Type format example</span>
+    </div>
+  </div>
+
+  <h3>Types sizes for body text</h3>
+
+  <p>The default body font size is 18px. Depending on the application you can choose a font-size of 16px. The following classes are defined for this purpose <code>text-standard</code> and <code>text-small</code>.</p>
+
+  <div class="row margin-bottom-4">
+    <div class="col-xs-12 col-lg-6">
+      <h4>Standard body text</h4>
+      <p class="text-standard text-align-justify">Immerse yourself in new genres. Crime stories, SciFi or romance? Films, series, documentaries or eSports? Swisscom TV gives you everything your heart desires on screen. Total convenience: it's easy to set up access to your favourite genres on the home screen.</p>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <h4>Smaller body text</h4>
+      <p class="text-small text-align-justify">Immerse yourself in new genres. Crime stories, SciFi or romance? Films, series, documentaries or eSports? Swisscom TV gives you everything your heart desires on screen. Total convenience: it's easy to set up access to your favourite genres on the home screen.</p>
+    </div>
+  </div>
+
+  <h3>Letter-spacing</h3>
+
+  <p>We achieve a compact type face by reducing letter spacing. With larger font sizes, a smaller letter is crucial for readability. The letter spacing is usually increased for very small font sizes.</p>
+
+  <div class="row">
+      <div class="col-xs-12 col-lg-6">
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/typo/type-letter-spacing-large@2x.png">
+        <span class="fig-caption">Letter-spacing larger font size</span>
+      </div>
+        <div class="col-xs-12 col-lg-6">
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/typo/type-letter-spacing-small@2x.png">
+        <span class="fig-caption">Letter-spacing smaller font size</span>
+      </div>
+  </div>
+
+</div>
+
+
+```section_develop
+```
+<p>The SDX Library includes the two standard fonts <b>TheSans</b> and <b>TheSerif</b>. It uses its responsiveness to automatically adjust the font-size and properties depending on a series of media queries.</p>
+
+<h3>Body font size</h3>
+
+<p>The default font size is 18px. This font size will automatically be applied for the text. However, in certain cases where you want to change the default size, the class <code>text-small</code> should be added to the HTML elements directly.</p>
+
+```htmlmixed
+<p class="text-standard">My body text size</p>
+<p class="text-small">My body text size</p>
+```
+
+<h2>Smaller text</h2>
+
+<p>For smaller text for example asterisk notes add <code>text-smaller</code></p>
+
+```htmlmixed
+<p class="text-smaller">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+```
+
+<p>The SDX Library includes the two standard fonts <b>TheSans</b> and <b>TheSerif</b>. It uses it's responsiveness to automatically adjust the font-size and properties depending on a series of media queries.</p>
+
+<h3>Font Type Sans</h3>
+
+<p>The default style uses the <b>TheSans</b> font and will automatically be applied to the text. However, in certain cases where <b>TheSans</b> must be explicitly applied then the <code>font--sans</code> class should be added to the HTML elements directly.</p>
+
+```htmlmixed
+<h4 class="font font--sans">Headline 4: Swisscom intends to continue reducing roaming prices</h4>
+<p class="font font--sans">Swisscom intends to continue reducing roaming prices</p>
+```
+<h3>Font Type Serif</h3>
+
+<p>This font <code>font--serif</code> is only used for quotes.</p>
+
+```htmlmixed
+<p class="font font--serif"><q>We have to keep customer promises</q> <br> <span class="text-small font font--sans">(Quote by Urs Schaeppi)</span></p>
+```
+
+<h3>Font Weight</h3>
+
+<p>To change the font weight form the default weight <b>Light</b> to a different weight add the classes <code>font--light</code>, <code>font--semi-light</code> or <code>font--semi-bold</code> to the element.</p>
+
+```htmlmixed
+<p class="font font--light">Swisscom intends to continue reducing roaming prices</p>
+<p class="font font--semi-light">Swisscom intends to continue reducing roaming prices</p>
+<p class="font font--semi-bold">Swisscom intends to continue reducing roaming prices</p>
+```
+
+<h2>Headings</h2>
+
+<p>All HTML headings, from <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>, should be used to structure the page semantically correct. Make sure to use just a single one <code>&lt;h1 class="text-h1"&gt;</code> on the entire page and do not skip a heading only for design matters. Instead, use classes like <code>class="text-h1"</code> to make your heading look the way you want it.</p>
+
+```htmlmixed
+<h1 class="text-h1">I’m a H1</h1>
+<h2 class="text-h2">I’m a H2</h2>
+<h3 class="text-h3">I’m a H3</h3>
+<!-- ...etc. -->
+
+<h4 class="text-h1">I’m semantically a H4 but I look like a H1</h4>
+<h5 class="text-h2">I’m semantically a H5 but I look like a H2</h5>
+<h6 class="text-h3">I’m semantically a H6 but I look like a H3</h6>
+<!-- ...etc. -->
+```
+
+<h2>Display Headings</h2>
+
+<p>Traditional heading elements are designed to work best in the meat of your page content. When you need a heading to stand out, consider using a display heading, a larger slightly more opinionated heading style.<br/>
+To add a display heading add one of the following classes <code>text-d1</code>, <code>text-d2</code> or <code>text-d3</code> to the element.</p>
+
+```htmlmixed
+<h1 class="text-d1">Display 1: Swisscom intends to continue reducing roaming prices</h1>
+<h1 class="text-d2">Display 2: Swisscom intends to continue reducing roaming prices</h1>
+<h1 class="text-d3">Display 3: Swisscom intends to continue reducing roaming prices</h1>
+```
+
+*/
+.text-body-1,
+.text-standard {
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-size: 18px;
+}
+
+.text-body-2,
+.text-small {
+  line-height: 24px;
+  letter-spacing: 0;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "TheSans", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+h1, .text-h1,
+h2, .text-h2 {
+  margin-bottom: 32px;
+}
+
+h3, .text-h3,
+h4, .text-h4 {
+  margin-bottom: 24px;
+}
+
+h5, .text-h5,
+h6, .text-h6 {
+  margin-bottom: 8px;
+}
+
+p {
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 32px;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+
+h1, .text-h1 {
+  line-height: 48px;
+  letter-spacing: -1.2px;
+  font-size: 40px;
+  font-weight: 300;
+}
+
+h2, .text-h2 {
+  line-height: 40px;
+  letter-spacing: -1px;
+  font-size: 32px;
+  font-weight: 300;
+}
+
+h3, .text-h3 {
+  line-height: 32px;
+  letter-spacing: -0.75px;
+  font-size: 28px;
+  font-weight: 300;
+}
+h3.text-compact, .text-h3.text-compact {
+  line-height: 31px;
+}
+
+h4, .text-h4 {
+  line-height: 32px;
+  letter-spacing: -0.35px;
+  font-size: 24px;
+  font-weight: 300;
+}
+h4.text-compact, .text-h4.text-compact {
+  line-height: 27px;
+}
+
+h5, .text-h5 {
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+h6, .text-h6 {
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.d1, .text-d1 {
+  line-height: 48px;
+  letter-spacing: -1.2px;
+  font-size: 40px;
+  font-weight: 300;
+}
+@media (min-width: 1024px) {
+  .d1, .text-d1 {
+    line-height: 80px;
+    letter-spacing: -1.75px;
+    font-size: 70px;
+  }
+}
+
+.d2, .text-d2 {
+  line-height: 40px;
+  letter-spacing: -1px;
+  font-size: 32px;
+  font-weight: 300;
+}
+@media (min-width: 1024px) {
+  .d2, .text-d2 {
+    line-height: 64px;
+    letter-spacing: -1.35px;
+    font-size: 54px;
+  }
+}
+
+.d3, .text-d3 {
+  line-height: 32px;
+  letter-spacing: -0.75px;
+  font-size: 28px;
+  font-weight: 300;
+}
+@media (min-width: 1024px) {
+  .d3, .text-d3 {
+    line-height: 56px;
+    letter-spacing: -1.2px;
+    font-size: 48px;
+  }
+}
+
+.text-b1 {
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.text-b2 {
+  line-height: 24px;
+  letter-spacing: 0;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.text-sm,
+.text-smaller {
+  line-height: 24px;
+  letter-spacing: 0.1px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.text-compact {
+  line-height: 21px;
+}
+
+address {
+  font-style: normal;
+}
+
+strong {
+  font-weight: 600;
+}
+
+em {
+  font-style: italic;
+}
+
+.font {
+  font-family: "TheSans", sans-serif;
+}
+.font--sans {
+  font-family: "TheSans", sans-serif;
+}
+.font--serif {
+  font-family: "TheSerif", serif;
+}
+.font--light {
+  font-weight: 300;
+}
+.font--semi-light {
+  font-weight: 400;
+}
+.font--semi-bold {
+  font-weight: 600;
+}
+
+/*doc
+---
+title: Screen Readers
+name: 04-developers-25-screenreaders
+category: Developers - Screen Reader utils
+---
+
+<p>Hide an element to all devices except screen readers with <code>.sr-only</code>.
+Combine <code>.sr-only</code> with <code>.sr-only-focusable</code> to show the element again when it’s focused (e.g. by a keyboard-only user).</p>
+
+```htmlmixed_no_preview
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+```
+
+<p>Can also be used as a mixin.</p>
+
+```css_no_preview
+// Usage as a mixin
+.skip-navigation {
+  @include sr-only;
+  @include sr-only-focusable;
+}
+```
+
+*/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+
+.period {
+  font-size: 50%;
+  letter-spacing: 0;
+}
+
+.integer .period {
+  font-size: 26%;
+  position: absolute;
+  margin-left: -2em;
+  margin-top: -0.8em;
+}
+.integer.text-d1 .period, .integer.text-d2 .period, .integer.text-d3 .period {
+  margin-top: 0.55em;
+}
+
+.text-d1, .text-d2, .text-d3 {
+  line-height: 1;
+}

@@ -1,0 +1,397 @@
+//
+// Side Navigation
+// --------------------------------------------------
+
+/*doc
+---
+title: Navigation (side)
+name: 02-components-115-side-navigation-01-overview
+category: Components - Navigation (side)
+---
+
+<p>For products and services with an extensive navigation depth, a combination of a primary and side navigation can be used. Im addition to the primary or main navigation the burger menu can contain either specific links for this product or may group a third level navigation.</p>
+
+<div class="exampleOutput margin-bottom-4 padding-top-0">
+  <style type="text/css">
+    .exampleOutput {
+    overflow: hidden;
+    border-bottom: solid 1px #d8d8d8;
+    }
+    .exampleOutput .nav-side, .nav-side--left {
+    position: absolute;
+    }
+    .exampleOutput .main-wrapper {
+        min-height: 0;
+    }
+
+    .nav-top .container {
+         width: auto;
+    }
+
+    .nav-top {
+        z-index: 49999;
+    }
+  </style>
+
+  <div class="main-wrapper">
+      <nav class="nav-side nav-side--left" role="navigation" data-init="auto">
+        <ul class="nav-items nav-items--border">
+          <li class="nav-item js-nav-item"><a class="nav-link" aria-label="Home" href="javascript:void(0);"><i class="icon icon-044-home" aria-hidden="true"></i><span class="text-underline">Home</span></a></li>
+          <li class="nav-item js-nav-item"><a class="nav-link" aria-label="Photos" href="javascript:void(0);"><i class="icon icon-154-photo" aria-hidden="true"></i><span class="text-underline">Photos</span></a></li>
+          <li class="nav-item js-nav-item"><a class="nav-link" aria-label="Music" href="javascript:void(0);"><i class="icon icon-148-music" aria-hidden="true"></i><span class="text-underline">Music</span></a></li>
+          <li class="nav-item js-nav-item"><a class="nav-link" aria-label="Setting" href="javascript:void(0);"><i class="icon icon-078-settings" aria-hidden="true"></i><span class="text-underline">Setting</span></a></li>
+        </ul>
+      </nav>
+      <div class="site-wrapper js-site-wrapper">
+        <nav class="nav-top" role="navigation">
+          <div class="container">
+            <div class="nav__wrapper">
+              <div class="nav__menu nav__menu--icon nav__menu--left">
+                <ul class="nav-items">
+                  <li class="nav-item"><a class="nav-icon nav-hamburger js-hamburger" href="javascript:void(0);" aria-label="Menu"><span></span><span></span><span></span></a></li>
+                </ul>
+              </div>
+              <div class="nav__menu nav__menu--center">
+                <div class="nav__menu-wrapper">
+                  <div class="nav-toggle hidden-tablet-up" data-init="auto" data-toggle="collapse" data-target="#nav-top-collapse"><a class="nav-link" href="javascript:void(0);">
+                      <div class="nav-title">Level 1 - 1</div>
+                      <div class="arrow-icon"></div></a></div>
+                      <div class="nav-collapse" id="nav-top-collapse">
+                        <ul class="nav-items">
+                        </ul>
+                      </div>
+                  </div>
+               </div>
+                <div class="nav__menu nav__menu--icon nav__menu--right">
+                  <ul class="nav-items">
+                    <li class="nav-item hidden-phone-down"><a class="nav-icon" href="javascript:void(0);" aria-label="Download"><i class="icon icon-024-download-cloud" aria-hidden="true"></i></a></li>
+                    <li class="nav-item hidden-phone-down"><a class="nav-icon" href="javascript:void(0);" aria-label="Account"><i class="icon icon-001-account" aria-hidden="true"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+         </nav>
+         <div class="page">
+           <p class="padding-top-4">Lorem ipsum dolor sit amet, assum solet diceret mea id. Delectus legendos vulputate te eos, ius prima meliore ea, cum purto argumentum id. Eos porro tempor consectetuer ex, per option tacimates moderatius ea. Sed insolens eloquentiam ei, ad eirmod detracto definitiones eam. Ea has admodum electram, his ei iusto labores facilis. At liber efficiantur est, in velit aeterno constituto ius. Tempor aliquid ne ius.</p>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Variations</h2>
+
+  <h3>Alignment options</h3>
+
+  <p>Swisscom logo should be presented within the side navigation.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/sidenavigation/Group-11@2x-4.jpg" alt="Example for side navigation closed">
+      <span class="fig-caption">Closed side navigation within the burger icon</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/sidenavigation/Group-12@2x-1.jpg" alt="Example for side navigation open.">
+      <span class="fig-caption">Open side navigation which includes the Swisscom logo</span>
+    </div>
+  </div>
+
+
+  <h3>Mobile side navigation</h3>
+
+  <p>Smaller products that don’t feature or require the use of a mega drop down (MDD) should follow the side navigation styling, and not the responsive state of the navigation shown in the mega dropdown guidance.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/sidenavigation/Group-17@2x.jpg" alt="Example side navigation (320px).">
+      <span class="fig-caption">Side navigation (320px)</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/sidenavigation/Group-18@2x.jpg" alt="Example for scaling behaviour (320px).">
+      <span class="fig-caption">Side navigation using scaling behaviour</span>
+    </div>
+  </div>
+
+  <p>On mobile, links are positioned in the verticle centre of the menu, with the Swisscom logo anchored to the bottom, and account information and avatars anchored to the top.</p>
+
+  <p>On native applications, a scaling version of the side navigation which features a more dynamic behaviour can be used. Technical limitations mean that web based services should avoid using the scaling option.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/sidenavigation/Group-21@2x.jpg" alt="Example side navigation (320px).">
+      <span class="fig-caption">Side navigation (320px)</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/sidenavigation/Group-22@2x.jpg" alt="Example side navigation using scaling behaviour.">
+      <span class="fig-caption">Side navigation using scaling behaviour</span>
+    </div>
+  </div>
+
+  <h2>Rules</h2>
+
+
+  <h3>Without icons</h3>
+
+  <p>Icons can be used to help further inform the users of the functionality or theme of a page that links lead to, but they’re not mandatory.
+  <br>
+  Icons should be applied consistantly within the navigation, either being applied to all links, or none.</p>
+
+  <div class="row margin-top-4">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/sidenavigation/Group-24@2x.jpg" alt="Example side navigation without icons.">
+      <span class="fig-caption">Side navigation without icons</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+    </div>
+  </div>
+
+  <h3>Typography</h3>
+
+   <p>Dividing lines are used to help seperate items, and icons can be used to support link titles and make functionality clearer to the user.</p>
+
+  <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/sidenavigation/Group-25@2x.jpg" alt="Typography for side navigation.">
+        <span class="fig-caption">Typography</span>
+      </div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+<p>For products and services with an extensive navigation depth, a combination of a primary and side navigation can be used. Im addition to the primary or main navigation the burger menu can contain either specific links for this product or may group a third level navigation.</p>
+
+<h2>Alignment options</h2>
+
+<p>Side navigation is available in both left and right hand versions. When using the left side navigation option, the Swisscom logo should be present within the side navigation.</p>
+
+<h4>Left hand side navigation</h4>
+
+<p>A sample is available at <a href="/samples/navigation-side-left.html" target="_blank">samples/navigation-side-left</a>.</p>
+
+<h4>Right hand side navigation</h4>
+
+<p>A sample is available at <a href="/samples/navigation-side-right.html" target="_blank">samples/navigation-side-right</a>.</p>
+*/
+
+.nav-side {
+
+  // Import Reset / Generic
+  // -------------------------
+
+  @import "reset";
+  @import "generic";
+
+  // -------------------------
+
+  display: flex;
+  flex-direction: column;
+
+  position: fixed;
+  top: 0;
+  width: $navigation-side-width;
+  height: 100%;
+
+  background: $color-horizon;
+
+  overflow-y: auto;
+
+  z-index: $zindex-navigation + 500;
+
+  ~ .site-wrapper {
+    transition: left 0.3s cubic-bezier(0.550, 0.085, 0.320, 1);
+  }
+
+  // Menu Position
+  // -------------------------
+
+  &,
+  &--left {
+    left: -$navigation-side-width;
+    transition: left 0.3s cubic-bezier(0.550, 0.085, 0.320, 1);
+
+    &.is-open {
+      left: 0;
+    }
+
+    // Set Sitewrapper
+    // -------------------------
+
+    ~ .site-wrapper {
+      position: relative;
+      left: 0;
+
+      &.is-open {
+        left: $navigation-side-width;
+      }
+    }
+  }
+
+  &--right {
+    left: auto;
+    right: -$navigation-side-width;
+    transition: right 0.3s cubic-bezier(0.550, 0.085, 0.320, 1);
+
+    &.is-open {
+      left: auto;
+      right: 0;
+    }
+
+    // Set Sitewrapper
+    // -------------------------
+
+    ~ .site-wrapper.is-open {
+      left: -$navigation-side-width;
+    }
+  }
+
+  // Swisscom Logo
+  // -------------------------
+
+  .logo {
+    display: block;
+
+    margin: 0 30px 30px;
+  }
+
+  // Item Styles
+  // -------------------------
+
+  .nav-items {
+    flex: 1 1 auto;
+
+    margin: 30px 36px;
+
+    // Item Border Styles
+    // -------------------------
+
+    &--border {
+      .nav-item {
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-aluminum;
+        }
+      }
+    }
+  }
+
+  .nav-item {
+    width: 100%;
+
+    .nav-link {
+      display: flex;
+
+      padding: 10px 0 9px;
+
+      color: $color-navy;
+
+      align-items: center;
+
+      .text-underline {
+        position: relative;
+        pointer-events: none;
+
+        &::before {
+          position: absolute;
+          top: 24px;
+
+          width: 100%;
+          height: 1px;
+
+          pointer-events: none;
+
+          background-color: $color-nav-link;
+
+          transform: scaleX(0);
+          transition: all 200ms $standard-easing;
+
+          content: '';
+        }
+      }
+
+      &.is-active,
+      &--active {
+        .text-underline {
+          &::before {
+            transform: scaleX(1);
+          }
+        }
+      }
+
+      &:hover {
+        color: $color-nav-link--active;
+
+        .text-underline {
+          &::before {
+            background-color: $color-nav-link--active;
+          }
+        }
+      }
+    }
+
+    .icon {
+      margin-right: 16px;
+
+      font-size: 30px;
+      text-align: center;
+    }
+
+    &--active {
+      .nav-link {
+        color: $color-int-blue;
+      }
+    }
+  }
+
+  // Mobile Styles
+  // --------------------------------------------------
+
+  @include bp-phone-max {
+
+    width: $navigation-side-mobile-width;
+
+    // Menu Position
+    // -------------------------
+
+    &,
+    &--left {
+      // Set Sitewrapper
+      // -------------------------
+
+      ~ .site-wrapper.is-open {
+        left: $navigation-side-mobile-width;
+      }
+    }
+
+    &--right {
+      left: auto;
+      right: -$navigation-side-mobile-width;
+
+      // Set Sitewrapper
+      // -------------------------
+
+      ~ .site-wrapper.is-open {
+        left: -$navigation-side-mobile-width;
+      }
+    }
+
+    // Swisscom Logo
+    // -------------------------
+
+    .logo {
+      margin: 0 14px 14px;
+    }
+
+    // Item Styles
+    // -------------------------
+
+    .nav-items {
+      margin: 30px 20px;
+    }
+  }
+}

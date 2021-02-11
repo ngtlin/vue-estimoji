@@ -1,0 +1,1 @@
+function n(){return window.innerWidth>=1024}export{n as i}

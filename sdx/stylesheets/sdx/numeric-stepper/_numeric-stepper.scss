@@ -1,0 +1,52 @@
+//
+// Numeric Stepper
+// --------------------------------------------------
+
+/*doc
+---
+title: Numeric Stepper
+name: 02-components-133-numeric-stepper
+category: Components - Numeric Stepper
+---
+
+<p>Input stepper are two-segment UI controls used to incrementally increase or decrease a numeric value. <br>
+  The "+" and "-" are visualizing the buttons, the input field is an additional input method. They reduce input effort for fields with values that deviate little from the default by allowing users to increase or decrease the number in a single button press.
+</p>
+
+<div>
+  <sdx-numeric-stepper label="Quantity"></sdx-numeric-stepper>
+</div>
+
+```section_design
+```
+
+
+  <h2>Rules</h2>
+
+  <p>The numeric stepper has a fixed width of 144px in all desktop, tablet and mobile views.</p>
+
+<p>
+  <ul class="list">
+    <li class="single-line">Use steppers for numerical fields with a clear most frequently selected value (e.g. numbers of smartphones on a product detail page or in the cart.</li>
+    <li class="single-line">The default number is the „1“ and not the „0“ as the main use case is buying at least one of our products (deleting a product e.g. in the cart should happen via an explicit choice of the delete icon by the user).</li>
+    <li class="single-line">Avoid this GUI control for values with large variability.</li>
+  </ul>
+</p>
+
+
+```section_develop
+```
+
+```htmlmixed_webcomponent_sdx-numeric-stepper_accessible
+<sdx-numeric-stepper
+  label="Quantity (max. 10)"
+  sr-hint="Number of products"
+  max="10"
+  change-callback="console.log('Value:', arguments[0])"
+>
+</sdx-numeric-stepper>
+```
+*/
+
+
+// --------------------------------------------------

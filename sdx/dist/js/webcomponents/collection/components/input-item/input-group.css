@@ -1,0 +1,36 @@
+:host, *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+  cursor: text;
+  color: #666;
+  font-size: 16px;
+}
+
+.component .inline {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: stretch;
+  margin-right: -27px;
+  margin-bottom: -27px;
+}
+.component .inline ::slotted(sdx-input-item) {
+  margin-right: 27px;
+  margin-bottom: 27px;
+}
+.component .inline.input-container {
+  margin-right: -16px;
+  margin-bottom: -16px;
+}
+.component .inline.input-container ::slotted(sdx-input-item) {
+  width: auto;
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+.component .inline.input-container ::slotted(sdx-input-item:not(:last-of-type)) {
+  margin-right: 16px;
+}

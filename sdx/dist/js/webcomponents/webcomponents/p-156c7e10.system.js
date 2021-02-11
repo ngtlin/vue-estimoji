@@ -1,0 +1,1 @@
+System.register([],(function(n){"use strict";return{execute:function(){n("i",e);var t={xs:0,sm:480,md:768,lg:1024,xl:1280,ul:1440};function e(){return window.innerWidth>=t.lg}}}}));

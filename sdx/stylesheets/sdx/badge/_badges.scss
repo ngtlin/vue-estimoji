@@ -1,0 +1,690 @@
+//
+// Badges
+// --------------------------------------------------
+
+/*doc
+---
+title: Badges
+name: 02-components-010-badges-01-badges
+category: Components - Badges
+---
+
+<p>Badges are small and subtle notification indicators used to provide users with additional information without disrupting their experience.</p>
+<p>They can be used to indicate unread emails, changes to settings, and prompting actions such as refreshing as a page. They should always feature one of the three interaction colours, helping to clarify importance of the notification/alert.</p>
+
+<style type="text/css">
+.exampleOutput .avatar {
+    border-radius: 50%;
+    border: 2px solid #ff8b2e;
+}
+.exampleOutput .avatar>img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+</style>
+
+<div class="row">
+  <div class="col-xs col-md-12 margin-bottom-3">
+    <div class="badge badge--message">
+      <div class="badge__content">
+        <span class="badge__text">5 new messages</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-bottom-3">
+  <div class="col-xs col-md-4">
+    <div class="badge badge--icon">
+      <i class="icon icon--s3 icon-001-account" aria-hidden="true"></i>
+      <span class="badge__content">8</span>
+      <span class="sr-only">new informations</span>
+    </div>
+  </div>
+  <div class="col-xs col-md-4">
+    <div class="badge badge--icon">
+      <i class="icon icon--s3 icon-001-account" aria-hidden="true"></i>
+      <span class="badge__content">654</span>
+      <span class="sr-only">new informations</span>
+    </div>
+  </div>
+  <div class="col-xs col-md-4">
+    <div class="badge badge--icon">
+      <i class="icon icon--s3 icon-079-shopping-trolley" aria-hidden="true"></i>
+      <span class="badge__content badge__content--icon">
+        <i class="icon icon-check" aria-hidden="true"></i>
+        <span class="sr-only">Product added</span>
+      </span>
+
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs col-md-4">
+    <div class="badge badge--avatar">
+      <div class="avatar">
+          <img src="/$WEBROOT-THEME-BUILD$/img/design/badges/221aa66daee90256353badc33955228b.jpeg" alt="Image description">
+      </div>
+      <span class="badge__content">8</span>
+      <span class="sr-only">new informations</span>
+    </div>
+  </div>
+  <div class="col-xs col-md-4">
+    <div class="badge badge--avatar">
+      <div class="avatar">
+        <img src="/$WEBROOT-THEME-BUILD$/img/design/badges//221aa66daee90256353badc33955228b.jpeg" alt="Image description">
+      </div>
+      <span class="badge__content">654</span>
+      <span class="sr-only">new informations</span>
+    </div>
+  </div>
+  <div class="col-xs col-md-4">
+    <div class="badge badge--avatar">
+      <div class="avatar">
+        <img src="/$WEBROOT-THEME-BUILD$/img/design/badges/221aa66daee90256353badc33955228b.jpeg" alt="Image description">
+      </div>
+      <span class="badge__content badge__content--icon">
+        <i class="icon icon-heart" aria-hidden="true"></i>
+        <span class="sr-only">like</span>
+      </span>
+    </div>
+  </div>
+</div>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Variations</h2>
+
+  <h3>Icon and counter badges</h3>
+
+  <p>Icon and counter badges are used for notifications that reference functionality, such as an unread mail or new product in the user’s basket. These are related to a user’s actions.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/badges/Group-21@2x-9.png" alt="Example of color-coded notification badges">
+       </div>
+        <span class="fig-caption">Color-coded icon notifications (top) and their respective hover states (bottom)</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/badges/Group-23@2x-10.png" alt="Shopping basket example of color-coded notification badges">
+       </div>
+       <span class="fig-caption">Color-coded icon notifications (top) and their respective hover states (bottom)</span>
+    </div>
+  </div>
+
+  <h3>Avatar badges</h3>
+
+  <p>Avatar badges relate to the user’s account.. This could be the user receiving a ‘like’ for a comment, or to signify an account authorisation. They’re used in conjunction with message notifications.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/badges/Group-26@2x-8.png" alt="Avatar example of color-coded notification badges">
+       </div>
+       <span class="fig-caption">Color-coded icon notifications (top) and their respective hover states (bottom)</span>
+    </div>
+  </div>
+
+  <h3>Message badge</h3>
+
+  <p>Message notifications are often used in conjunction with avatar badges, and appear for a short time in the browser. They can simultaneously trigger an avatar badge notification.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/badges/Group-27@2x-6.png" alt="Example of color-coded notification badges with text">
+      </div>
+      <span class="fig-caption">Color-coded message badges (top) and their respective hover states (bottom)</span>
+    </div>
+  </div>
+
+  <h2>Rules</h2>
+
+<p>Please do not misuse message badges as ribbons.</p>
+
+  <h3>Positioning</h3>
+
+  <p>Message badges are are positioned halfway over the top navigation and horizontally centered. Icon badges are always positioned on the right axis of the icon.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+    <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/badges/Group-17-Copy@2x-1.png" alt="Positioning specifications">
+        </div>
+        <span class="fig-caption">Positioning</span>
+    </div>
+
+    <div class="col-xs-12 col-lg-6">
+    <div class="img-container">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/badges/Line-Copy-14-Line-Copy-14-Mask@2x.png" alt="Alignment specifications">
+    </div>
+      <span class="fig-caption">Icon alignment is always positioned on the right axis of the icon</span>
+    </div>
+  </div>
+
+  <h3>Typography</h3>
+
+  <div class="row">
+      <div class="col-xs-12 col-lg-12">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/badges/Group-5-Copy-3@2x.png" alt="Typography specifications">
+      </div>
+        <span class="fig-caption">Typography</span>
+      </div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+<style>
+  .avatar {
+    border-radius: 50%;
+    border: 2px solid #ff8b2e;
+  }
+
+  .avatar>img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+  }
+</style>
+
+<h2>Badge types</h2>
+<p>There are five types of badges.</p>
+
+```htmlmixed_accessible
+<div class="row">
+  <div class="col-xs col-md-12 margin-bottom-3">
+    <div class="badge badge--message">
+      <div class="badge__content">
+        <span class="badge__text">5 new messages</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs col-md-4">
+    <div class="badge badge--icon">
+      <i class="icon icon--s3 icon-001-account" aria-hidden="true"></i>
+      <span class="sr-only">account</span>
+      <span class="badge__content">8</span>
+      <span class="sr-only">new informations</span>
+    </div>
+  </div>
+  <div class="col-xs col-md-4">
+    <div class="badge badge--icon">
+      <i class="icon icon--s3 icon-001-account" aria-hidden="true"></i>
+      <span class="sr-only">account</span>
+      <span class="badge__content">654</span>
+      <span class="sr-only">new informations</span>
+    </div>
+  </div>
+  <div class="col-xs col-md-4">
+    <div class="badge badge--icon">
+      <i class="icon icon--s3 icon-079-shopping-trolley" aria-hidden="true"></i>
+      <span class="sr-only">shopping-trolley</span>
+      <span class="badge__content badge__content--icon">
+        <i class="icon icon-check" aria-hidden="true"></i>
+        <span class="sr-only">Product added</span>
+      </span>
+    </div>
+  </div>
+</div>
+
+<div class="row margin-top-4">
+  <div class="col-xs col-md-4">
+    <div class="badge badge--avatar">
+      <div class="avatar">
+        <img src="/$WEBROOT-THEME-BUILD$/img/design/badges/221aa66daee90256353badc33955228b.jpeg" alt="Image description">
+      </div>
+      <span class="badge__content">8</span>
+      <span class="sr-only">new informations</span>
+    </div>
+  </div>
+  <div class="col-xs col-md-4">
+    <div class="badge badge--avatar">
+      <div class="avatar">
+        <img src="/$WEBROOT-THEME-BUILD$/img/design/badges/221aa66daee90256353badc33955228b.jpeg" alt="Image description">
+      </div>
+      <span class="badge__content">654</span>
+      <span class="sr-only">new informations</span>
+    </div>
+  </div>
+  <div class="col-xs col-md-4">
+    <div class="badge badge--avatar">
+      <div class="avatar">
+        <img src="/$WEBROOT-THEME-BUILD$/img/design/badges/221aa66daee90256353badc33955228b.jpeg" alt="Image description">
+      </div>
+      <span class="badge__content badge__content--icon">
+        <i class="icon icon-heart" aria-hidden="true"></i>
+        <span class="sr-only">like</span>
+      </span>
+    </div>
+  </div>
+</div>
+```
+
+<h2>Badge colours</h2>
+
+<h3>General Notifications</h3>
+
+```htmlmixed_accessible
+<div class="row">
+  <div class="col-xs col-md-4">
+    <div class="badge badge--message">
+      <div class="badge__content">
+        <span class="badge__text">5 new messages</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs col-md-4">
+    <div class="badge badge--icon">
+      <i class="icon icon--s3 icon-001-account" aria-hidden="true"></i>
+      <span class="sr-only">account</span>
+      <span class="badge__content">2</span>
+      <span class="sr-only">new informations</span>
+    </div>
+  </div>
+  <div class="col-xs col-md-4">
+    <div class="badge badge--avatar">
+      <div class="avatar">
+        <img src="/$WEBROOT-THEME-BUILD$/img/design/badges/221aa66daee90256353badc33955228b.jpeg" alt="Image description">
+      </div>
+      <span class="badge__content badge__content--icon">
+        <i class="icon icon-heart" aria-hidden="true"></i>
+        <span class="sr-only">like</span>
+      </span>
+    </div>
+  </div>
+</div>
+```
+
+<h3>Confirmations</h3>
+
+```htmlmixed_accessible
+<div class="row">
+  <div class="col-xs col-md-4">
+    <div class="badge badge--message badge--confirmation">
+      <div class="badge__content">
+        <span class="badge__text">5 new messages</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs col-md-4">
+    <div class="badge badge--icon badge--confirmation">
+      <i class="icon icon--s3 icon-001-account" aria-hidden="true"></i>
+      <span class="sr-only">account</span>
+      <span class="badge__content">2</span>
+      <span class="sr-only">new informations</span>
+    </div>
+  </div>
+  <div class="col-xs col-md-4">
+    <div class="badge badge--avatar badge--confirmation">
+      <div class="avatar">
+        <img src="/$WEBROOT-THEME-BUILD$/img/design/badges/221aa66daee90256353badc33955228b.jpeg" alt="Image description">
+      </div>
+      <span class="badge__content badge__content--icon">
+        <i class="icon icon-check" aria-hidden="true"></i>
+        <span class="sr-only">ok</span>
+      </span>
+    </div>
+  </div>
+</div>
+```
+
+<h3>Alerts and notifications</h3>
+
+```htmlmixed
+<div class="row">
+  <div class="col-xs col-md-4">
+    <div class="badge badge--message badge--notification">
+      <div class="badge__content">
+        <span class="badge__text">5 new messages</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs col-md-4">
+    <div class="badge badge--icon badge--notification">
+      <i class="icon icon--s3 icon-001-account" aria-hidden="true"></i>
+      <span class="sr-only">account</span>
+      <span class="badge__content">2</span>
+      <span class="sr-only">new informations</span>
+    </div>
+  </div>
+  <div class="col-xs col-md-4">
+    <div class="badge badge--avatar badge--notification">
+      <div class="avatar">
+        <img src="/$WEBROOT-THEME-BUILD$/img/design/badges/221aa66daee90256353badc33955228b.jpeg" alt="Image description">
+      </div>
+      <span class="badge__content badge__content--icon">
+        <i class="icon icon-alert" aria-hidden="true"></i>
+        <span class="sr-only">caution</span>
+      </span>
+    </div>
+  </div>
+</div>
+```
+<script>
+  // Performs the badge content animation when clicking on the badge, this is for
+  // demonstration purposes only
+
+  var badges = document.querySelectorAll(".badge")
+  for (var i = 0; i < badges.length; i++) {
+    badges[i].addEventListener("click", function() {
+      var badge = this.querySelector(".badge__content")
+      badge.style.display = "none";
+      setTimeout(function(){  badge.style.display = ""; }, 200);
+    });
+  }
+</script>
+*/
+
+
+// --------------------------------------------------
+
+
+.badge {
+  display: inline-block;
+  position: relative;
+
+  // Base Styles
+  // -------------------------
+
+  &__content {
+    @include font-sans;
+    @include font-plain;
+
+    display: inline-block;
+
+    position: relative;
+
+    transition: all 200ms $standard-easing;
+
+    border-radius: 24px;
+    background: $color-int-blue;
+    cursor: pointer;
+
+    height: 24px;
+
+    text-align: center;
+    line-height: 1;
+
+    color: $color-white;
+
+    font-size: 16px;
+    transform-origin: 50% 50%;
+
+    user-select: none;
+
+    backface-visibility: hidden;
+
+    &:hover {
+      background: $color-int-blue--active;
+    }
+  }
+
+  // Massage Styles
+  // -------------------------
+
+  &--message {
+    display: flex;
+
+    justify-content: center;
+
+    .badge__content {
+      animation: badge-message 600ms linear both;
+
+      padding: 0;
+      max-width: $container-max-width;
+
+      overflow: hidden;
+
+      transform-origin: 50% 50%;
+      backface-visibility: hidden;
+
+    }
+
+    .badge__text {
+      @include font-smoothing;
+      @include text-truncate;
+
+      display: block;
+
+      animation: badge-message-text 600ms linear both;
+
+      padding: 4px 12px 2px;
+      height: 100%;
+
+      letter-spacing: -.6px;
+      justify-content: center;
+
+      backface-visibility: hidden;
+    }
+  }
+
+  // Badge Styles
+  // -------------------------
+
+  &--icon,
+  &--avatar {
+    // default Avatar size
+    .avatar {
+      width: 32px;
+      height: 32px;
+    }
+
+    .badge__content {
+      position: absolute;
+      top: 0;
+      left: calc(100% - 9px);
+
+      animation: badge-icon 500ms linear both;
+
+      padding: 0 6px;
+
+      min-width: 20px;
+      height: 20px;
+      line-height: 20px;
+
+      font-size: 14px;
+
+      backface-visibility: hidden;
+
+      outline: 1px solid transparent;
+
+      &--icon {
+        padding: 0;
+
+        width: 20px;
+        height: 20px;
+
+        .icon {
+          @include default-font-smoothing;
+          @include font-semi-bold;
+
+          text-align: center;
+          line-height: 16px;
+          letter-spacing: normal;
+
+          font-size: 14px;
+        }
+
+        .icon-heart {
+          font-size: 12px;
+
+          &::before {
+            content: icon-char('195-heart-filled');
+          }
+        }
+
+        .icon-check::before {
+          content: icon-char('011-check-mark');
+        }
+
+        .icon-alert::before {
+          content: icon-char('196-exclamation-mark');
+        }
+      }
+    }
+  }
+
+  // Badge Color
+  // -------------------------
+
+  &--alert,
+  &--notification {
+    .badge__content {
+      background: $color-int-orange;
+
+      &:hover {
+        background: $color-int-orange--active;
+      }
+    }
+  }
+
+  &--confirmation {
+    .badge__content {
+      background: $color-int-green;
+
+      &:hover {
+        background: $color-int-green--active;
+      }
+    }
+  }
+}
+
+// Badge Message Animation
+// --------------------------------------------------
+
+@keyframes badge-message {
+  0% {
+    transform: scale(0);
+    max-width: 24px;
+  }
+
+  30% {
+    transform: scale(1);
+    max-width: 24px;
+  }
+
+  75% {
+    max-width: 272px;
+  }
+}
+
+@keyframes badge-message-text {
+  0% {
+    opacity: 0;
+  }
+
+  75% {
+    transform: scale(.95);
+    opacity: 0;
+    backface-visibility: hidden;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    backface-visibility: hidden;
+  }
+}
+
+// Badge Icon Animation
+// --------------------------------------------------
+
+@keyframes badge-icon {
+  0% {
+    transform: matrix3d(.7, 0, 0, 0, 0, .7, 0, 0, 0, 0, 1, 0, 0, 1.4, 0, 1);
+  }
+
+  4% {
+    transform: matrix3d(.83, 0, 0, 0, 0, .83, 0, 0, 0, 0, 1, 0, 0, .86, 0, 1);
+  }
+
+  4.3% {
+    transform: matrix3d(.841, 0, 0, 0, 0, .841, 0, 0, 0, 0, 1, 0, 0, .817, 0, 1);
+  }
+
+  7.91% {
+    transform: matrix3d(.967, 0, 0, 0, 0, .967, 0, 0, 0, 0, 1, 0, 0, .323, 0, 1);
+  }
+
+  8.61% {
+    transform: matrix3d(.987, 0, 0, 0, 0, .987, 0, 0, 0, 0, 1, 0, 0, .24, 0, 1);
+  }
+
+  11.91% {
+    transform: matrix3d(1.057, 0, 0, 0, 0, 1.057, 0, 0, 0, 0, 1, 0, 0, -.056, 0, 1);
+  }
+
+  12.91% {
+    transform: matrix3d(1.069, 0, 0, 0, 0, 1.069, 0, 0, 0, 0, 1, 0, 0, -.112, 0, 1);
+  }
+
+  15.82% {
+    transform: matrix3d(1.083, 0, 0, 0, 0, 1.083, 0, 0, 0, 0, 1, 0, 0, -.195, 0, 1);
+  }
+
+  17.22% {
+    transform: matrix3d(1.08, 0, 0, 0, 0, 1.08, 0, 0, 0, 0, 1, 0, 0, -.202, 0, 1);
+  }
+
+  20.42% {
+    transform: matrix3d(1.059, 0, 0, 0, 0, 1.059, 0, 0, 0, 0, 1, 0, 0, -.17, 0, 1);
+  }
+
+  24.92% {
+    transform: matrix3d(1.018, 0, 0, 0, 0, 1.018, 0, 0, 0, 0, 1, 0, 0, -.091, 0, 1);
+  }
+
+  28.33% {
+    transform: matrix3d(.994, 0, 0, 0, 0, .994, 0, 0, 0, 0, 1, 0, 0, -.041, 0, 1);
+  }
+
+  29.53% {
+    transform: matrix3d(.988, 0, 0, 0, 0, .988, 0, 0, 0, 0, 1, 0, 0, -.028, 0, 1);
+  }
+
+  34.03% {
+    transform: matrix3d(.979, 0, 0, 0, 0, .979, 0, 0, 0, 0, 1, 0, 0, .003, 0, 1);
+  }
+
+  39.44% {
+    transform: matrix3d(.987, 0, 0, 0, 0, .987, 0, 0, 0, 0, 1, 0, 0, .012, 0, 1);
+  }
+
+  43.14% {
+    transform: matrix3d(.996, 0, 0, 0, 0, .996, 0, 0, 0, 0, 1, 0, 0, .01, 0, 1);
+  }
+
+  52.15% {
+    transform: matrix3d(1.005, 0, 0, 0, 0, 1.005, 0, 0, 0, 0, 1, 0, 0, .002, 0, 1);
+  }
+
+  61.66% {
+    transform: matrix3d(1.001, 0, 0, 0, 0, 1.001, 0, 0, 0, 0, 1, 0, 0, -.001, 0, 1);
+  }
+
+  70.37% {
+    transform: matrix3d(.999, 0, 0, 0, 0, .999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+
+  83.98% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+
+  100% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+}

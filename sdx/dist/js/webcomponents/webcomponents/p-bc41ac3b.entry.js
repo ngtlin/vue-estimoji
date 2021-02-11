@@ -1,0 +1,1 @@
+import{r,h as s}from"./p-95c9f71a.js";const t=class{constructor(s){r(this,s)}render(){return s("slot",null)}};export{t as sdx_dummy}

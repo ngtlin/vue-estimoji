@@ -1,0 +1,11 @@
+:host, *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+sdx-accordion-item-header:hover span {
+  color: #0048CF;
+}
+sdx-accordion-item-header span {
+  color: #086adb;
+  transition: color 200ms cubic-bezier(0.4, 0, 0.6, 1);
+}

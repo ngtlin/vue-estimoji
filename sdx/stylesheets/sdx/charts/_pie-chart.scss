@@ -1,0 +1,384 @@
+//
+// Pie Chart
+// --------------------------------------------------
+
+/*doc
+---
+title: Pie chart
+name: 02-components-040-pie-charts-01
+category: Components - Chart (pie)
+---
+
+<p>Pie charts are used to show percentage based data. Data is shown in segments of different colours, with the sum total equalling 100%.</p>
+
+<p>
+  <sdx-pie-chart
+    value="15 GB"
+    description="Available"
+    data='[{
+      "value": 6,
+      "color": "azure",
+      "label": "Files (6 GB)",
+      "srHint": "6 gigabytes of files out of 36 gigabytes"
+    }, {
+      "value": 15,
+      "color": "turquoise",
+      "label": "Videos (15 GB)",
+      "srHint": "15 gigabytes of videos out of 36 gigabytes"
+    }, {
+      "value": 15,
+      "label": "Available (15 GB)",
+      "srHint": "15 gigabytes are available out of 36 gigabytes"
+    }]'
+  ></sdx-pie-chart>
+</p>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Variations</h2>
+
+  <h3>Legend placements</h3>
+
+  <p>The side by side version positions the legend to the side of the pie chart. This version is used when horizontal space isn’t an issue, for example on wide viewports like desktop.</p>
+  <p>The stacked version positions the explanation below the pie chart. Best use when horizontal space is restricted, for example on a narrow viewports like mobile or when the pie chart is displayed within a card or a narrow column.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/pie_charts/PlacementHorizontal_Light.png" alt="Pie chart with side by side legend">
+      <span class="fig-caption">Pie chart with side by side legend</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/pie_charts/PlacementVertical_Light.png" alt="Pie chart with side by side legend">
+      <span class="fig-caption">Pie chart with side by side legend</span>
+    </div>
+  </div>
+
+  <h2>Rules</h2>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+     <h3 class="margin-bottom-1">Proportions</h3>
+    <p>Data is shown in segments of different colours, with the sum total of segments equalling 100%.</p>
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/pie_charts/Proportions.png" alt="Example proportion">
+      <span class="fig-caption">The total sum of all segments is 100%</span>
+    </div>
+
+    <div class="col-xs-12 col-lg-6">
+    <h3 class="margin-bottom-1">Spacings</h3>
+    <p>A margin of 24px is required above and below the elements.</p>
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/pie_charts/SpacingAround.png" alt="Spacing Specification">
+      <span class="fig-caption">Spacing around</span>
+    </div>
+  </div>
+
+  <h3>Pie chart with one color</h3>
+
+  <p>Make sure the pie chart has always an open end so users can still identify it as a pie chart - even it has only one color.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/pie_charts/Empty-Pie-Chart-Copy@2x.jpg" alt="Example one color pie chart">
+      <span class="fig-caption">Make sure the pie chart has always an open end</span>
+    </div>
+  </div>
+
+  <h3>Typography</h3>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/pie_charts/Typography_Light.png" alt="Typography specifications">
+      <span class="fig-caption">Typography</span>
+    </div>
+  </div>
+</div>
+
+<h3>Mini Pie Chart</h3>
+
+<p>The Mini Pie chart can be used to conserve space in appropriate situations, for example in tables or cards. Unlike the regular Pie chart, they only display one single value and have no gaps or open ends.</p>
+
+<div class="row">
+  <div class="col-xs-12 col-lg-6">
+    <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/pie_charts/MiniChartPies_Light.png" alt="Mini pie chart specification">
+    <span class="fig-caption">Typography mini pie chart</span>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+<p>Pie charts are used to show percentage based data. Data is shown in segments of different colours, with the sum total equalling 100%.</p>
+
+```htmlmixed_webcomponent_sdx-pie-chart_accessible
+<sdx-pie-chart
+  value="15 GB"
+  description="Available"
+  data='[{
+    "value": 3,
+    "color": "azure",
+    "label": "Photos (3 GB)",
+    "srHint": "3 gigabytes of photos out of 30 gigabytes"
+  }, {
+    "value": 3,
+    "color": "turquoise",
+    "label": "Files (3 GB)",
+    "srHint": "3 gigabytes of files out of 30 gigabytes"
+  }, {
+    "value": 6,
+    "color": "iris",
+    "label": "Videos (6 GB)",
+    "srHint": "6 gigabytes of videos out of 30 gigabytes"
+  }, {
+    "value": 3,
+    "color": "orchid",
+    "label": "Music (3 GB)",
+    "srHint": "3 gigabytes of music out of 30 gigabytes"
+  }, {
+    "value": 15,
+    "label": "Available (15 GB)",
+    "srHint": "15 gigabytes are available out of 30 gigabytes"
+  }]'
+></sdx-pie-chart>
+```
+
+<h2>Variations</h2>
+
+<h3>Mini Pie Chart</h3>
+
+```htmlmixed_playground_accessible
+<div class="row">
+  <div class="col-md-2">
+    <sdx-pie-chart
+      value="80 %"
+      size="small"
+      data='[{
+        "value": 80,
+        "color": "azure",
+        "srHint": "80 percent"
+      }, {
+        "value": 20
+      }]'
+    ></sdx-pie-chart>
+  </div>
+
+  <div class="col-md-2">
+    <sdx-pie-chart
+      value="75 GB"
+      size="small"
+      data='[{
+        "value": 75,
+        "color": "turquoise",
+        "srHint": "75 gigabytes out of 100 gigabytes"
+      }, {
+        "value": 25
+      }]'
+    ></sdx-pie-chart>
+  </div>
+
+  <div class="col-md-2">
+    <sdx-pie-chart
+      value="60 min"
+      size="small"
+      data='[{
+        "value": 60,
+        "color": "iris",
+        "srHint": "60 minutes out of 120 minutes"
+      }, {
+        "value": 60
+      }]'
+    ></sdx-pie-chart>
+  </div>
+
+  <div class="col-md-2">
+    <sdx-pie-chart
+      value="50.–"
+      size="small"
+      data='[{
+        "value": 50,
+        "color": "orchid",
+        "srHint": "50 swiss francs out of 200 swiss francs"
+      }, {
+        "value": 150
+      }]'
+    ></sdx-pie-chart>
+  </div>
+
+  <div class="col-md-2">
+    <sdx-pie-chart
+      value="5 G"
+      size="small"
+      data='[{
+        "value": 5,
+        "color": "pink",
+        "srHint": "Fifth generation"
+      }]'
+    ></sdx-pie-chart>
+  </div>
+
+  <div class="col-md-2">
+    <sdx-pie-chart
+      value="100 MB"
+      size="small"
+      data='[{
+        "value": 0,
+        "srHint": "100 megabytes are available out of 100 megabytes"
+      }]'
+    ></sdx-pie-chart>
+  </div>
+</div>
+```
+*/
+
+// --------------------------------------------------
+
+$pie-chart-height: 182px;
+$pie-chart-offset: 10px;
+
+.pie-chart {
+  position: relative;
+
+  .js-chart {
+    position: relative;
+
+    height: $pie-chart-height;
+    width: $pie-chart-height;
+
+    text-align: center;
+    margin: 0 auto;
+
+    transform: rotate(-90deg);
+
+    > svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: $pie-chart-height;
+      height: $pie-chart-height;
+
+      fill: transparent;
+      stroke-width: 2;
+      stroke-linecap: round;
+    }
+  }
+
+  .meta {
+    @include typo-pie-chart-title;
+
+    position: absolute;
+    display: flex;
+
+    top: $pie-chart-offset;
+    left: 0;
+
+    width: $pie-chart-height;
+    height: $pie-chart-height - $pie-chart-offset;
+
+    margin: 0 auto;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .subtitle {
+      @include font-light;
+
+      font-size: 16px;
+      color: $color-gray-tint-4;
+      text-transform: capitalize;
+    }
+  }
+
+  .chart-wrapper {
+    position: relative;
+
+    margin: 20px auto;
+    width: $pie-chart-height;
+  }
+
+  // Stacked pie chart
+  // --------------------------------------------------
+
+  &--stacked {
+    display: flex;
+    justify-content: center;
+
+    .chart-wrapper {
+      margin: 20px;
+    }
+
+    .pie-chart__legend {
+      flex-direction: column;
+      align-items: flex-start;
+
+      margin-left: 32px;
+
+      li {
+        margin-bottom: 5px;
+      }
+
+      .bullet {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  // Chart Colors
+  // --------------------------------------------------
+
+  .orchid {
+    stroke: $color-orchid;
+
+    &--active {
+      stroke: $color-orchid--active;
+    }
+  }
+
+  .iris {
+    stroke: $color-iris;
+
+    &--active {
+      stroke: $color-iris--active;
+    }
+  }
+
+  .pink {
+    stroke: $color-pink;
+
+    &--active {
+      stroke: $color-pink--active;
+    }
+  }
+
+  .turquoise,
+  .apple, // deprecated
+  .petrol { // deprecated
+    stroke: $color-turquoise;
+
+    &--active {
+      stroke: $color-turquoise--active;
+    }
+  }
+
+  // Chart Legend
+  // --------------------------------------------------
+
+  &__legend {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+// Dark Background
+// --------------------------------------------------
+
+.bg--dark {
+  .pie-chart {
+    .meta .subtitle {
+      color: $color-white;
+    }
+  }
+}

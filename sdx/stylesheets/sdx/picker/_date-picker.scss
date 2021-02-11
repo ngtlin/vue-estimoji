@@ -1,0 +1,167 @@
+//
+// Date Picker
+// --------------------------------------------------
+
+/*doc
+---
+title: Date Picker
+name: 02-components-135-date-picker
+category: Components - Picker (date)
+---
+
+<p>Date pickers are control elements that display a calendar. It will automatically switch to native date pickers on mobile.</p>
+
+<div class="row margin-bottom-2">
+  <div class="col-xs-12 col-lg-6">
+    <sdx-input type="date" label="Date" placeholder="Date" sr-hint="Enter a valid date in day, month, year (for example 13.07.2019)"></sdx-input>
+  </div>
+</div>
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Rules</h2>
+
+  <div class="row margin-bottom-4">
+    <div class="col-xs-12 col-lg-6">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/picker_date/calendar.png" alt="Calendar example">
+      </div>
+      <span class="fig-caption">Calendar for desktop</span>
+    </div>
+
+    <div class="col-xs-12 col-lg-6">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/picker_date/calendar-mobile.png" alt="Calendar example mobile view (iOS)">
+      </div>
+      <span class="fig-caption">Calendar for mobile (here iOS)</span>
+    </div>
+  </div>
+
+  <h3>Date range</h3>
+
+  <p>For selecting date ranges use 2 date pickers to define the starting and end date – this is applies for desktop and mobile date pickers.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/picker_date/calendar-range.png" alt="Calendar example for date range usage">
+      </div>
+      <span class="fig-caption">Calendar date range usage</span>
+    </div>
+  </div>
+
+</div>
+
+
+```section_develop
+```
+
+<h2>Date</h2>
+
+```htmlmixed_playground
+<div class="row margin-bottom-2">
+  <div class="col-xs-12 col-lg-6">
+    <sdx-input type="date" label="Date" placeholder="Date" sr-hint="Enter a valid date in day, month, year (for example 13.07.2019)"></sdx-input>
+  </div>
+</div>
+```
+
+<h3>Date Picker Options</h3>
+
+<p>JSON configuration options can be passed to the flatpickr date picker library by setting the <code>flatpickr-options</code> attribute.</p>
+
+<h4>Language options</h4>
+
+```htmlmixed_playground
+<div class="row margin-bottom-2">
+  <div class="col-xs-12 col-lg-6">
+    <sdx-input type="date" label="Date" flatpickr-options='{"locale": "de"}' placeholder="German (default)" sr-hint="Enter a valid date in day, month, year (for example 13.07.2019)"></sdx-input>
+  </div>
+
+  <div class="col-xs-12 col-lg-6">
+    <sdx-input type="date" label="Date" flatpickr-options='{"locale": "fr"}' placeholder="French" sr-hint="Enter a valid date in day, month, year (for example 13.07.2019)"></sdx-input>
+  </div>
+</div>
+
+<div class="row margin-bottom-2">
+  <div class="col-xs-12 col-lg-6">
+    <sdx-input type="date" label="Date" flatpickr-options='{"locale": "it"}' placeholder="Italian" sr-hint="Enter a valid date in day, month, year (for example 13.07.2019)"></sdx-input>
+  </div>
+
+  <div class="col-xs-12 col-lg-6">
+    <sdx-input type="date" label="Date" flatpickr-options='{"locale": "en"}' placeholder="English" sr-hint="Enter a valid date in day, month, year (for example 13.07.2019)"></sdx-input>
+  </div>
+</div>
+```
+
+<h4>Restricted choices</h4>
+
+```htmlmixed_playground
+<div class="row margin-bottom-2">
+  <div class="col-xs-12 col-lg-6">
+    <sdx-input type="date" label="Date" flatpickr-options='{"minDate": "today"}' placeholder="Not in the past" sr-hint="Enter a valid date in day, month, year (for example 13.07.2019)"></sdx-input>
+  </div>
+
+  <div class="col-xs-12 col-lg-6">
+    <sdx-input type="date" label="Date" flatpickr-options='{"maxDate": "today"}' placeholder="Not in the future" sr-hint="Enter a valid date in day, month, year (for example 13.07.2019)"></sdx-input>
+  </div>
+</div>
+
+<div class="row margin-bottom-2">
+  <div class="col-xs-12 col-lg-6">
+    <sdx-input type="date" label="Date" flatpickr-options='{"altInput": true, "altFormat": "l j. F, Y"}' placeholder="Alternative Formatting" sr-hint="Enter a valid date in day, month, year (for example 13.07.2019)"></sdx-input>
+  </div>
+
+  <div class="col-xs-12 col-lg-6">
+    <sdx-input type="date" label="Date" flatpickr-options='{"mode": "multiple"}' placeholder="Multiple dates" sr-hint="Enter a valid date in day, month, year (for example 13.07.2019)"></sdx-input>
+  </div>
+</div>
+```
+
+<h4>Weekdays only</h4>
+
+```htmlmixed_playground
+<div class="row margin-bottom-2">
+  <div class="col-xs-12 col-lg-6">
+    <sdx-input id="date-no-weekends" type="date" label="Date" placeholder="Weekdays only" sr-hint="Enter a valid date in day, month, year (for example 13.07.2019)"></sdx-input>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Real JavaScript can't be passed as static JSON
+    document.getElementById("date-no-weekends").flatpickrOptions = {
+      disable: [
+        function(date) {
+          return date.getDay() > 5 || date.getDay() < 1;
+        }
+      ]
+    };
+  });
+</script>
+```
+
+<h4>Next week only</h4>
+
+```htmlmixed_playground
+<div class="row margin-bottom-2">
+  <div class="col-xs-12 col-lg-6">
+    <sdx-input id="date-next-week-only" type="date" label="Date" placeholder="In the next 7 days" sr-hint="Enter a valid date in day, month, year (for example 13.07.2019)"></sdx-input>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Real JavaScript can't be passed as static JSON
+    document.getElementById("date-next-week-only").flatpickrOptions = {
+      minDate: "today",
+      maxDate: new Date().fp_incr(7)
+    };
+  });
+</script>
+```
+
+*/
+

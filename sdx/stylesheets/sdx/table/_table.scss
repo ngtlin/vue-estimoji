@@ -1,0 +1,1001 @@
+//
+// Tables
+// --------------------------------------------------
+
+/*doc
+---
+title: Tables
+name: 02-components-175-tables-01-tables
+category: Components - Tables
+---
+
+<p>Data tables allow users to easily scan, compare, and analyse information – independently from screen size. They organize (complex) information in a meaningful way that’s easy to scan, so that users can compare values.</p>
+
+<div class="table-display padding-bottom-4">
+  <h3 class="table__title">The title</h3>
+  <div class="table__wrapper">
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        Internet
+      </div>
+      <div class="col-xs-12 col-md-8">
+        <form>
+          <div class="radio">
+            <input type='radio' name='dummy' id='radio01' checked>
+            <label for='radio01'>100 Mbit/s download max</label>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        Swisscom TV
+      </div>
+      <div class="col-xs-12 col-md-8">
+        <form>
+          <div class="radio">
+            <input type='radio' name='dummy' id='radio02-1'>
+            <label for='radio02-1'>SWISSCOM TV Plus 2.0</label>
+          </div>
+          <div class="radio">
+            <input type='radio' name='dummy' id='radio02-2'>
+            <label for='radio02-2'>SWISSCOM TV Light 2.0</label>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        Landline
+      </div>
+      <div class="col-xs-12 col-md-8">
+        <form>
+          <div class="radio">
+            <input type='radio' name='dummy' id='radio03-1'>
+            <label for='radio03-1'>Yes</label>
+          </div>
+          <div class="radio">
+            <input type='radio' name='dummy' id='radio03-2'>
+            <label for='radio03-2'>No</label>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Variation</h2>
+
+  <h3>Display tables</h3>
+
+  <p>Display tables are used to house small quantities of data, with the inclusion of radio buttons that allow users to select various elements.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/tables/Group-14@2x-6.png" alt="Display table with Call-to-Action button">
+      </div>
+        <span class="fig-caption">Display table with Call-to-Action button</span>
+    </div>
+  </div>
+
+  <h3>Image base tables</h3>
+
+  <p>Image tables help to make information clearer and more tangible. They use images in headings to visually show what the column within the table relates to. This enables users to read tables in a more visual way, making the data clearer and easier to understand. They can be positioned directly in page, or within separate modules and cards to help them stand out.</p>
+
+  <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <div class="img-container">
+         <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/tables/Group-18@2x-6.jpg" alt="Image based table">
+        </div>
+        <span class="fig-caption">Image based table</span>
+      </div>
+  </div>
+
+  <h3>Data-driven tables</h3>
+
+  <p>Use data tables for managing lists. Breaking down content into clearly labeled groups, and giving the user the ability to reorganise the order of these lists helps to create a more personal experience. Checkboxes should accompany each row if the user needs to select or manipulate data.</p>
+
+  <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <div class="img-container">
+          <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/tables/Group-12@2x-8.png" alt="Data driven table">
+        </div>
+        <span class="fig-caption">Data driven table</span>
+      </div>
+  </div>
+
+  <h2>Rules</h2>
+
+    <h3>Image table on mobile</h3>
+      <p>On mobile, swipe the image table header to change product.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/tables/Group-20@2x-4.jpg" alt="Image table on mobile">
+      <span class="fig-caption">Image table on mobile</span>
+    </div>
+  </div>
+
+  <h3>Margins</h3>
+
+  <p>Tables do not have to adhere to the Swisscom grid, as a table columns can vary in length and number</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/tables/Group-21@2x-5.jpg" alt="Specification for margins">
+    <span class="fig-caption">Specification for margins</span>
+    </div>
+  </div>
+
+  <h3>Typography</h3>
+
+  <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/tables/Group-23@2x-8.png" alt="Typography for tables">
+        <span class="fig-caption">Typography</span>
+      </div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+<h2>Data-driven tables</h2>
+
+<p>Use data tables for managing lists. Breaking down content into clearly labeled groups, and giving the user the ability to reorganise the order of these lists helps to create a more personal experience. Checkboxes should accompany each row if the user needs to select or manipulate data.</p>
+
+<h3>Basic Table</h3>
+
+<p>Create a SDX styled table by wrapping a <code>&lt;table&gt;</code> with a wrapper <code>&lt;div&gt;</code> and add the class <code>table</code> to it.</p>
+
+```htmlmixed
+<div class="table table--responsive">
+  <h3 class="table__title">Planets in the solar system</h3>
+  <div class="table__wrapper">
+    <table data-init="auto">
+      <thead>
+        <tr>
+          <th data-type="text">Planet</th>
+          <th data-type="number" class="js-ascending">Perihelion (AU)</th>
+          <th data-type="number">Volume</th>
+          <th data-type="number">Orbital period</th>
+          <th data-type="number">Escape velocity</th>
+          <th data-type="number">Satellites</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Venus</td>
+          <td>0.718440</td>
+          <td>0.815 Earths</td>
+          <td>0.615198 yr</td>
+          <td>0.36 km/s</td>
+          <td>0</td>
+          <td class="text-align-right">
+            <div class="checkbox checkbox--only">
+              <input type='checkbox' name='dummy' id='checkbox1-2'>
+              <label for='checkbox1-2'></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Earth</td>
+          <td>0.9832687</td>
+          <td data-value="1">1.08321 × 10<sup>12</sup> km<sup>3</sup></td>
+          <td>1.00001742096 yr</td>
+          <td>11.186 km/s</td>
+          <td>1</td>
+          <td class="text-align-right">
+            <div class="checkbox checkbox--only">
+              <input type='checkbox' name='dummy' id='checkbox1-3'>
+              <label for='checkbox1-3'></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Mars</td>
+          <td>1.3814</td>
+          <td>0.151 Earths</td>
+          <td>1.8808 yr</td>
+          <td>5.027 km/s</td>
+          <td>2</td>
+          <td class="text-align-right">
+            <div class="checkbox checkbox--only">
+              <input type='checkbox' name='dummy' id='checkbox1-4'>
+              <label for='checkbox1-4'></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Jupiter</td>
+          <td>4.95029</td>
+          <td>1321 Earths</td>
+          <td>11.8618 yr</td>
+          <td>59.5 km/s</td>
+          <td>67</td>
+          <td class="text-align-right">
+            <div class="checkbox checkbox--only">
+              <input type='checkbox' name='dummy' id='checkbox1-5'>
+              <label for='checkbox1-5'></label>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+```
+
+<h3>Responsive Table</h3>
+
+<p>Create responsive tables by wrapping any <code>&lt;table&gt;</code> in <code>table--responsive</code> to make them scroll horizontally when the container size smaller than the table.</p>
+
+```htmlmixed
+<div class="table table--responsive">
+  <h3 class="table__title">Planets in the solar system</h3>
+  <div class="table__wrapper">
+    <table data-init="auto">
+      <thead>
+        <tr>
+          <th>Planet</th>
+          <th data-type="number">Perihelion (AU)</th>
+          <th data-type="number">Volume</th>
+          <th data-type="number">Orbital period</th>
+          <th data-type="number">Escape velocity</th>
+          <th data-type="number">Satellites</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Venus</td>
+          <td>0.718440</td>
+          <td>0.815 Earths</td>
+          <td>0.615198 yr</td>
+          <td>0.36 km/s</td>
+          <td>0</td>
+          <td class="text-align-right">
+            <div class="checkbox checkbox--only">
+              <input type='checkbox' name='dummy' id='checkbox2-2'>
+              <label for='checkbox2-2'></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Earth</td>
+          <td>0.9832687</td>
+          <td data-value="1">1.08321 × 10<sup>12</sup> km<sup>3</sup></td>
+          <td>1.00001742096 yr</td>
+          <td>11.186 km/s</td>
+          <td>1</td>
+          <td class="text-align-right">
+            <div class="checkbox checkbox--only">
+              <input type='checkbox' name='dummy' id='checkbox2-3'>
+              <label for='checkbox2-3'></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Mars</td>
+          <td>1.3814</td>
+          <td>0.151 Earths</td>
+          <td>1.8808 yr</td>
+          <td>5.027 km/s</td>
+          <td>2</td>
+          <td class="text-align-right">
+            <div class="checkbox checkbox--only">
+              <input type='checkbox' name='dummy' id='checkbox2-4'>
+              <label for='checkbox2-4'></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Jupiter</td>
+          <td>4.95029</td>
+          <td>1321 Earths</td>
+          <td>11.8618 yr</td>
+          <td>59.5 km/s</td>
+          <td>67</td>
+          <td class="text-align-right">
+            <div class="checkbox checkbox--only">
+              <input type='checkbox' name='dummy' id='checkbox2-5'>
+              <label for='checkbox2-5'></label>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+```
+
+<h2>Table Styles</h2>
+
+<h3>Table with highlighted header and status</h3>
+
+```htmlmixed
+<div class="table table--responsive table--highlight">
+  <h3 class="table__title">Planets in the solar system</h3>
+  <div class="table__wrapper">
+    <table data-init="auto">
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>Planet</th>
+          <th data-type="number">Perihelion (AU)</th>
+          <th data-type="number">Volume</th>
+          <th data-type="number">Orbital period</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="status" aria-label="Unread"></span></td>
+          <td>Venus</td>
+          <td>0.718440</td>
+          <td>0.815 Earths</td>
+          <td>0.615198 yr</td>
+          <td class="text-align-right">
+            <div class="checkbox checkbox--only">
+              <input type='checkbox' name='dummy' id='checkbox5-1'>
+              <label for='checkbox5-1'></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><span class="status" aria-label="Unread"></span></td>
+          <td>Earth</td>
+          <td>0.9832687</td>
+          <td data-value="1">1.08321 × 10<sup>12</sup> km<sup>3</sup></td>
+          <td>1.00001742096 yr</td>
+          <td class="text-align-right">
+            <div class="checkbox checkbox--only">
+              <input type='checkbox' name='dummy' id='checkbox5-2'>
+              <label for='checkbox5-2'></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Mars</td>
+          <td>1.3814</td>
+          <td>0.151 Earths</td>
+          <td>1.8808 yr</td>
+          <td class="text-align-right">
+            <div class="checkbox checkbox--only">
+              <input type='checkbox' name='dummy' id='checkbox5-3'>
+              <label for='checkbox5-3'></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Jupiter</td>
+          <td>4.95029</td>
+          <td>1321 Earths</td>
+          <td>11.8618 yr</td>
+          <td class="text-align-right">
+            <div class="checkbox checkbox--only">
+              <input type='checkbox' name='dummy' id='checkbox5-4'>
+              <label for='checkbox5-4'></label>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+```
+
+<h3>Table with no spacing</h3>
+
+```htmlmixed
+<div class="table table--responsive  table--no-border">
+  <h3 class="table__title">Planets in the solar system</h3>
+  <div class="table__wrapper">
+    <table data-init="auto">
+      <thead>
+        <tr>
+          <th>Planet</th>
+          <th data-type="number">Perihelion (AU)</th>
+          <th data-type="number">Volume</th>
+          <th data-type="number">Orbital period</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Venus</td>
+          <td>0.718440</td>
+          <td>0.815 Earths</td>
+          <td>0.615198 yr</td>
+          <td class="text-align-right">
+            <div class="checkbox checkbox--only">
+              <input type='checkbox' name='dummy' id='checkbox6-1'>
+              <label for='checkbox6-1'></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Earth</td>
+          <td>0.9832687</td>
+          <td data-value="1">1.08321 × 10<sup>12</sup> km<sup>3</sup></td>
+          <td>1.00001742096 yr</td>
+          <td class="text-align-right">
+            <div class="checkbox checkbox--only">
+              <input type='checkbox' name='dummy' id='checkbox6-2'>
+              <label for='checkbox6-2'></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Mars</td>
+          <td>1.3814</td>
+          <td>0.151 Earths</td>
+          <td>1.8808 yr</td>
+          <td class="text-align-right">
+            <div class="checkbox checkbox--only">
+              <input type='checkbox' name='dummy' id='checkbox6-3'>
+              <label for='checkbox6-3'></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Jupiter</td>
+          <td>4.95029</td>
+          <td>1321 Earths</td>
+          <td>11.8618 yr</td>
+          <td class="text-align-right">
+            <div class="checkbox checkbox--only">
+              <input type='checkbox' name='dummy' id='checkbox6-4'>
+              <label for='checkbox6-4'></label>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+```
+
+<h2>Display tables</h2>
+
+<p>Display tables are used to house small quantities of data, with the inclusion of radio buttons that allow users to select various elements, contributing to a sum total at the bottom of the table. They are commonly used for product configurators, where users may be selecting add ons or additional features that incur charges. They can be used directly in page, or in cards. Display tables feature large titles and <code>stickers</code> that label the product type where applicable.</p>
+
+```htmlmixed
+<div class="table-display">
+  <h3 class="table__title">This is a title</h3>
+  <div class="table__wrapper">
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        Internet
+      </div>
+      <div class="col-xs-12 col-md-8">
+        <form>
+          <div class="radio">
+            <input type='radio' name='dummy' id='radio1' checked>
+            <label for='radio1'>100 Mbit/s download max</label>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        Swisscom TV
+      </div>
+      <div class="col-xs-12 col-md-8">
+        <form>
+          <div class="radio">
+            <input type='radio' name='dummy' id='radio2-1'>
+            <label for='radio2-1'>SWISSCOM TV Plus 2.0</label>
+          </div>
+          <div class="radio">
+            <input type='radio' name='dummy' id='radio2-2'>
+            <label for='radio2-2'>SWISSCOM TV Light 2.0</label>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-4">
+        Landline
+      </div>
+      <div class="col-xs-12 col-md-8">
+        <form>
+          <div class="radio">
+            <input type='radio' name='dummy' id='radio3-1'>
+            <label for='radio3-1'>Yes</label>
+          </div>
+          <div class="radio">
+            <input type='radio' name='dummy' id='radio3-2'>
+            <label for='radio3-2'>No</label>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+<h2>Table with arbitrary content</h2>
+
+<p>Tables with arbitrary content helps to easily build tables for a variety of use cases.</p>
+
+```htmlmixed
+<div class="table-generic">
+  <div class="table__wrapper">
+    <div class="row">
+      <div class="table-items col-xs-12 offset-md-3 col-md-5">
+        <div class="table-item text-align-center">
+          <img class="table-image" src="/$WEBROOT-THEME-BUILD$/img/samples/angebote-vivo-xl.png">
+          <p>Vivo <strong>XL</strong> - Vivo <strong>M</strong></p>
+        </div>
+      </div>
+      <div class="table-items col-xs-12 col-md-4">
+        <div class="table-item text-align-center">
+          <img class="table-image" src="/$WEBROOT-THEME-BUILD$/img/samples/angebote-vivo-s.png">
+          <p>Vivo <strong>S</strong> - Vivo <strong>XS</strong></p>
+        </div>
+      </div>
+    </div>
+    <div class="border-horizontal"></div>
+    <div class="row">
+      <div class="col-xs-12 col-md-3">
+        <p class="margin-0">Natel infinity 2.0 M</p>
+        <p class="margin-0">Natel infinity 2.0 L</p>
+        <p class="margin-0">Natel infinity 2.0 XL</p>
+      </div>
+      <div class="border-vertical"></div>
+      <div class="col-xs-12 col-md-5">
+        <div class="table-items center-vertical">
+          <h1 class="d1 margin-0 blue">20.–</h1>
+        </div>
+      </div>
+      <div class="border-vertical"></div>
+      <div class="col-xs-12 col-md-4">
+        <div class="table-items center-vertical">
+          <h1 class="d1 margin-0 blue">10.–</h1>
+        </div>
+      </div>
+    </div>
+    <div class="border-horizontal"></div>
+    <div class="row">
+      <div class="col-xs-12 col-md-3">
+        <p class="margin-0">Natel infinity 2.0 XS</p>
+        <p class="margin-0">Natel infinity 2.0 S</p>
+      </div>
+      <div class="border-vertical"></div>
+      <div class="col-xs-12 col-md-5">
+        <div class="table-items center-vertical">
+          <h1 class="d1 margin-0 blue">10.–</h1>
+        </div>
+      </div>
+      <div class="border-vertical"></div>
+      <div class="col-xs-12 col-md-4">
+        <div class="table-items center-vertical">
+          <h1 class="d1 margin-0 blue">5.–</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+*/
+
+// Arbitrary-Table wrapper styles
+// -------------------------
+
+.table-generic {
+  display: block;
+
+  .table__title {
+    margin-bottom: 16px;
+    border-bottom: 1px solid $color-table-border;
+  }
+
+  .table__wrapper {
+    > .row {
+      margin-left: 0;
+      margin-right: 0;
+
+      padding-left: 16px;
+      padding-right: 16px;
+
+      > [class*='col-'] {
+        padding: 0;
+        flex: 1;
+      }
+    }
+
+    .table-items {
+      display: flex;
+      justify-content: space-around;
+
+      height: 100%;
+    }
+
+    .table-item {
+      display: inline-block;
+
+      margin: 0 12px;
+    }
+
+    .table-image {
+      width: 80px;
+      height: auto;
+    }
+  }
+
+  // -------------------------
+  // arbitrary table styles
+  // -------------------------
+
+  .highlight {
+    background: $color-table-header-dark;
+  }
+
+  .border {
+    margin: 16px;
+    padding: 16px;
+    border: 1px solid $color-table-border;
+
+    &-horizontal {
+      margin: 16px 0;
+      border-bottom: 1px solid $color-table-border;
+    }
+
+    &-vertical {
+      margin: 0 16px;
+      border-right: 1px solid $color-table-border;
+    }
+  }
+}
+
+
+// Display-Table wrapper styles
+// -------------------------
+
+.table-display {
+  @include clearfix;
+
+  display: block;
+
+  .table__wrapper {
+    margin-bottom: 16px;
+
+    border-top: 1px solid $color-table-border;
+    border-bottom: 1px solid $color-table-border;
+
+    > .row {
+      margin: 0;
+      padding: 10px 0;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $color-table-border;
+      }
+
+      > [class^='col-'] {
+        padding: 6px 16px 0;
+      }
+    }
+
+    // set margin of form fields
+    // -------------------------
+
+    .checkbox + .checkbox {
+      margin-top: 8px;
+    }
+
+    .radio + .radio {
+      margin-top: 8px;
+    }
+  }
+
+  .button {
+    margin: 0 16px;
+  }
+
+  // Table styles
+  // -------------------------
+
+}
+
+
+
+// Data Table styles
+// -------------------------
+
+.table {
+  display: table;
+  width: 100%;
+
+  .table__wrapper {
+    display: table;
+    width: 100%;
+  }
+
+  table {
+    display: table;
+    width: 100%;
+
+    color: $color-table-text;
+
+    border-collapse: collapse;
+
+    border-top: 1px solid $color-table-border;
+    border-bottom: 1px solid $color-table-border;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  th,
+  td {
+    @include text-truncate;
+
+    padding-left: 8px;
+    padding-right: 8px;
+
+    text-align: left;
+
+    &:first-child {
+      padding-left: 16px;
+    }
+
+    &:last-child {
+      padding-right: 16px;
+    }
+  }
+
+  thead {
+    @include typo-headline-6;
+    @include font-semi-bold;
+
+    tr {
+      border-bottom: 1px solid $color-table-border;
+      text-align: left;
+    }
+
+    th {
+      padding-top: 25px;
+      padding-bottom: 23px;
+
+      &[data-type] {
+        cursor: pointer;
+      }
+
+      .arrow-icon {
+        @include arrow($color-nav-link);
+
+        display: inline-block;
+        visibility: hidden;
+        opacity: 0;
+
+        width: 16px;
+        height: 16px;
+
+        margin-left: 8px;
+
+        pointer-events: none;
+        transform-origin: 50% 50%;
+
+        transition:
+          visibility 200ms $standard-easing,
+          opacity 200ms $standard-easing;
+      }
+
+      &.js-ascending .arrow-icon {
+        @include arrow--down;
+
+        visibility: visible;
+        opacity: 1;
+      }
+
+      &.js-descending .arrow-icon {
+        @include arrow--up;
+
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
+  tbody {
+    @include text-small;
+    @include font-semi-light;
+    @include text-truncate;
+
+    tr {
+      text-align: left;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $color-table-border;
+      }
+    }
+
+    td {
+      padding-top: 20px;
+      padding-bottom: 17px;
+    }
+  }
+
+  .button {
+    margin: 0 16px;
+  }
+
+  // Responsive Table
+  // -------------------------
+
+  &--responsive {
+    @include clearfix;
+
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    .table__wrapper {
+      display: block;
+      width: 100%;
+      min-height: 0;
+
+      overflow-x: auto;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  // Deprecated
+  &--reflow {
+    display: block;
+
+    .table__wrapper {
+      display: block;
+      width: 100%;
+    }
+
+    table {
+      display: block;
+      position: relative;
+      width: 100%;
+    }
+
+    td,
+    th {
+      &:first-child {
+        padding-left: 8px;
+      }
+
+      &:last-child {
+        padding-right: 8px;
+      }
+    }
+
+    thead {
+      display: block;
+      float: left;
+
+      tr {
+        display: block;
+        border-bottom: 0;
+
+        th {
+          padding-left: 16px;
+
+          &::after {
+            content: '\00a0';
+          }
+        }
+      }
+    }
+
+    tbody {
+      display: block;
+
+      width: auto;
+      white-space: nowrap;
+
+      overflow-x: auto;
+      -ms-overflow-style: -ms-autohiding-scrollbar;
+
+      tr {
+        display: table-cell;
+        border-bottom: 0;
+
+        &:last-child {
+          td {
+            padding-right: 16px;
+          }
+        }
+      }
+    }
+
+    thead,
+    tbody,
+    tfoot {
+      tr {
+        border-bottom: 0 !important;
+      }
+    }
+
+    td:empty::after {
+      content: '\00a0';
+    }
+
+    tr {
+      td,
+      th {
+        display: block;
+
+        padding-top: 20px;
+        padding-bottom: 17px;
+
+        border-bottom: 1px solid $color-table-border;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+
+  // Table styles
+  // -------------------------
+
+  &--highlight {
+    thead {
+      background: $color-table-header-dark;
+    }
+  }
+
+  &--no-border {
+    .table__title {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    table {
+      th,
+      td {
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+
+// Table styles
+// -------------------------
+
+.table {
+  &__title {
+    @include text-truncate;
+
+    margin: 0;
+    padding: 0 16px 15px;
+
+    text-align: left;
+  }
+}
+
+// -------------------------
+

@@ -1,0 +1,414 @@
+//
+// Notification Modal
+// --------------------------------------------------
+
+/*doc
+---
+title: Notifications (modal)
+name: 02-components-130-notification-modal-01-overview
+category: Components - Notifications (modal)
+---
+
+<p>Modal notifications are large screen take overs featuring messaging and iconography that intentionally interrupt the users experience, usually require an action from the user in order to progress to the next stage in an experience, or because the notification is of particular significance.</p>
+
+<div class="row">
+  <div class="col-xs-12 col-lg-6">
+    <div class="img-container-dark">
+          <div class="modal modal--notification modal--open" role="dialog" tabindex="-1">
+          <div class="modal__content">
+            <button class="modal__close modal-cancel" aria-label="Close">
+              <i class="icon icon-022-close" aria-hidden="true"></i>
+            </button>
+            <div class="modal__body">
+              <div class="notification-message">
+                <i class="icon icon-051-message" aria-hidden="true"></i>
+                You have 4 new messages
+              </div>
+              <button class="button button--responsive button--thin">
+                Go to inbox
+              </button>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-lg-6">
+  </div>
+</div>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Variations</h2>
+
+  <h3>General notifications</h3>
+
+  <p>Blue notifications are used for non-critical notifications or notifications that aren’t confirming success.</p>
+
+  <div class="row margin-bottom-4">
+    <div class="col-xs-12 col-lg-6">
+      <div class="img-container-dark">
+            <div class="modal modal--notification modal--open" role="dialog" tabindex="-1">
+            <div class="modal__content">
+              <button class="modal__close modal-cancel" aria-label="Close">
+                <i class="icon icon-022-close" aria-hidden="true"></i>
+              </button>
+              <div class="modal__body">
+                <div class="notification-message">
+                  <i class="icon icon-051-message" aria-hidden="true"></i>
+                  You have 4 new messages
+                </div>
+                <button class="button button--responsive button--thin">
+                  Go to inbox
+                </button>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+    </div>
+  </div>
+
+  <h3>Confirmation notifcations</h3>
+
+  <p>The green notification should be used to indicate validation or success, for example to confirm success during the shopping process.</p>
+
+  <div class="row margin-bottom-4">
+    <div class="col-xs-12 col-lg-6">
+      <div class="img-container-dark">
+         <div class="modal modal--notification modal--notification--confirmation modal--open" role="dialog" tabindex="-1">
+            <div class="modal__content">
+              <button class="modal__close modal-cancel" aria-label="Close">
+                <i class="icon icon-022-close" aria-hidden="true"></i>
+              </button>
+              <div class="modal__body">
+                <div class="notification-message">
+                  <i class="icon icon-012-check-mark-circle" aria-hidden="true"></i>
+                  3 items added to your basket
+                </div>
+                <button class="button button--responsive button--thin">
+                  Continue shopping
+                </button>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+    </div>
+  </div>
+
+  <h3>Alert notifcations</h3>
+
+  <p>Orange notifications indicate a warning, for example something that needs urgent attention.</p>
+
+  <div class="row margin-bottom-4">
+      <div class="col-xs-12 col-lg-6">
+        <div class="img-container-dark">
+           <div class="modal modal--notification modal--notification--alert modal--open" role="dialog" tabindex="-1">
+              <div class="modal__content">
+                <button class="modal__close modal-cancel" aria-label="Close">
+                  <i class="icon icon-022-close" aria-hidden="true"></i>
+                </button>
+                <div class="modal__body">
+                  <div class="notification-message">
+                    <i class="icon icon-026-exclamation-mark-circle" aria-hidden="true"></i>
+                    You have 5 new alerts
+                  </div>
+                  <button class="button button--responsive button--thin">
+                    Okay
+                  </button>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-lg-6">
+      </div>
+    </div>
+
+  <h2>Rules</h2>
+
+  <h3>How to use notification modals</h3>
+
+  <p>Notifications modals behave just like conventional modal windows, but with the introduction of a bold color. They help to provide a clearly signposted and direct delivery of information to the user.<br>
+  This is reason why they are the only instance where the interaction colour palette is used as a background colour.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+    <h3 class="margin-bottom-1">Overlay</h3>
+    <p>The overlay is a globally 40% opacity and #333333 on all modal styles.</p>
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/notification_modal/Group-13@2x-14.jpg" alt="Overlay specifications">
+      <span class="fig-caption"> Modal overlay</span>
+    </div>
+
+    <div class="col-xs-12 col-lg-6">
+    <h3 class="margin-bottom-1">Alignment</h3>
+    <p>The modal is always horizontally and vertically centered within the viewport.</p>
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/notification_modal/Group-15@2x-14.jpg" alt="Centered alignment">
+      <span class="fig-caption">Centered alignment</span>
+    </div>
+  </div>
+
+  <h3>Typography</h3>
+
+  <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <div class="img-container">
+          <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/notification_modal/Group-16@2x-13.png" alt="Typography specifications">
+         </div>
+        <span class="fig-caption">Typography</span>
+      </div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+<h2>Usage</h2>
+
+<h3>Interactive sample</h3>
+
+<p>A responsive test page for the Notification Modal dialog is available at <a href="/samples/notification-modal.html">samples/notification-modal</a>. In additon to the responsive behavior it also demonstrates how to open and close the modal dialog.</p>
+
+<style>
+  .backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .modal {
+    position: relative;
+  }
+
+  .modal__content {
+    margin: 24px;
+    width: 100%;
+    height: 600px;
+  }
+</style>
+
+<p>There are serveral options for opening and closing a notification modal dialog, either use the <code>Modal</code> JavaScript component directly and call the <code>open()</code> and <code>close()</code> methods on the component; or add a button with the class <code>modal-trigger</code> and a <code>href</code> attribute with the id of the target modal dialog.</p>
+
+```htmlmixed
+<button class="button button--primary modal-trigger" href="myModalDialog">Open notification modal</button>
+```
+
+For closing the Modal, either call `close()` on the component manually,
+or add either the `modal-close` or `modal-cancel` class to a button in the Modal.
+The following events are triggered at the appropriate times: `opened`, `cancelled`, and `closed`.
+
+```htmlmixed
+<div class="modal modal--notification modal--open" role="dialog" tabindex="-1">
+  <div class="modal__content">
+    <button class="modal__close modal-cancel" aria-label="Close">
+      <i class="icon icon-022-close" aria-hidden="true"></i>
+    </button>
+    <div class="modal__body">
+      <div class="notification-message">
+        <i class="icon icon-051-message" aria-hidden="true"></i>
+        You have 4 new messages
+      </div>
+      <button class="button button--responsive button--thin">
+        Go to inbox
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="backdrop backdrop--open"></div>
+```
+<h2>Colours</h2>
+
+<h3>General Notifications</h3>
+
+<p>Use the blue notification for more generic messaging around the users general profile.</p>
+
+```htmlmixed
+<div class="modal modal--notification modal--open" role="dialog" tabindex="-1">
+  <div class="modal__content">
+    <button class="modal__close modal-cancel" aria-label="Close">
+      <i class="icon icon-022-close" aria-hidden="true"></i>
+    </button>
+    <div class="modal__body">
+      <div class="notification-message">
+        <i class="icon icon-051-message" aria-hidden="true"></i>
+        You have 4 new messages in your inbox
+      </div>
+      <button class="button button--responsive button--thin">
+        Go to inbox
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="backdrop backdrop--open"></div>
+```
+
+<h3>Confirmations / Rewards</h3>
+
+<p>Green notification should be used to indicate validation for example to reward a user at the end of an order process.</p>
+
+```htmlmixed
+<div class="modal modal--notification modal--notification--confirmation modal--open" role="dialog" tabindex="-1">
+  <div class="modal__content">
+    <button class="modal__close modal-cancel" aria-label="Close">
+      <i class="icon icon-022-close" aria-hidden="true"></i>
+    </button>
+    <div class="modal__body">
+      <div class="notification-message">
+        <i class="icon icon-012-check-mark-circle" aria-hidden="true"></i>
+        3 items added to your basket
+      </div>
+      <button class="button button--responsive button--thin">
+        Back to home
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="backdrop backdrop--open"></div>
+```
+
+<h3>Alerts / Error Notifications</h3>
+
+<p>Only use interaction orange notifications to indicate an error or something that needs urgent attention.</p>
+
+```htmlmixed
+<div class="modal modal--notification modal--notification--alert modal--open" role="dialog" tabindex="-1">
+  <div class="modal__content">
+    <button class="modal__close modal-cancel" aria-label="Close">
+      <i class="icon icon-022-close" aria-hidden="true"></i>
+    </button>
+    <div class="modal__body">
+      <div class="notification-message">
+        <i class="icon icon-026-exclamation-mark-circle" aria-hidden="true"></i>
+        You have 5 new alerts
+      </div>
+      <button class="button button--responsive button--thin">
+        Okay
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="backdrop backdrop--open"></div>
+```
+*/
+
+
+// --------------------------------------------------
+
+$notification-margin: 48px;
+$notification-inner-margin: 30px;
+
+// --------------------------------------------------
+
+
+// Notification Modal
+// --------------------------------------------------
+
+.modal--notification {
+  .modal__content {
+    background: $color-int-blue;
+
+    width: 100%;
+    height: 100%;
+
+    @include bp-tablet {
+      max-width: 460px;
+      height: auto;
+    }
+
+    .modal__close {
+      top: 22px;
+      right: 22px;
+
+      color: $color-white;
+    }
+
+    .modal__body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      height: 100%;
+
+      padding: $notification-inner-margin;
+
+      // Notification Message
+      // -------------------------
+
+      .notification-message {
+        @include font-semi-light;
+        @include typo-headline-4;
+        @include font-smoothing;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-grow: 1;
+
+        width: 100%;
+
+        color: $color-white;
+        text-align: center;
+
+        .icon {
+          font-size: 64px;
+
+          margin-bottom: $notification-inner-margin - 10;
+        }
+      }
+
+      // Notification Button
+      // -------------------------
+
+      .button {
+        border: 1px solid $color-white;
+        background-color: transparent;
+        color: $color-white;
+
+        margin-top: $notification-inner-margin;
+
+        // Hover, Focus, Active styles
+        // -------------------------
+
+        &:hover,
+        &:focus,
+        &:active {
+          border-color: rgba($color-white, .6);
+        }
+      }
+    }
+  }
+
+  // Grid Container in Modal
+  // --------------------------------------------------
+
+  > .container {
+    @include bp-xs-max {
+      height: calc(100% - #{$notification-margin});
+    }
+  }
+
+  // Notification Color
+  // -------------------------
+
+  &--alert {
+    .modal__content {
+      background: $color-int-orange;
+    }
+  }
+
+  &--confirmation {
+    .modal__content {
+      background: $color-int-green;
+    }
+  }
+}

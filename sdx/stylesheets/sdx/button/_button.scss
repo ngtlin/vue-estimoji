@@ -1,0 +1,542 @@
+//
+// Buttons
+// --------------------------------------------------
+
+/*doc
+---
+title: Buttons
+name: 02-components-015-button-01-buttons
+category: Components - Buttons
+---
+
+<p>
+  Buttons are graphical control elements that provide users a triggered event. They must contain a clear actionable text
+  and may additionally contain icons. Buttons are more visually dominant than text links. They guide the user through the
+  content as a visual highlight and act as "call to action".
+</p>
+
+<sdx-button-group>
+  <sdx-button label="Primary Button"></sdx-button>
+  <sdx-button theme="secondary" label="Secondary Button"></sdx-button>
+</sdx-button-group>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Variations</h2>
+
+  <h3>Primary Button</h3>
+
+  <p>
+    Primary buttons are used in the majority of cases. The interaction blue signifies that the buttons are clickable and
+    have a hover state. Icons can be used in buttons to help give their functionality more clarity at a glance.
+  </p>
+
+  <div class="bg padding-3 margin-bottom-4">
+    <sdx-button-group layout="fixed">
+      <sdx-button label="Primary"></sdx-button>
+      <sdx-button label="Disabled" disabled></sdx-button>
+      <sdx-button icon-name="icon-shopping-trolley" label="Order"></sdx-button>
+    </sdx-button-group>
+  </div>
+
+  <h3>Secondary button</h3>
+
+  <p>Secondary buttons are used in conjunction with primary buttons to indicate that the button is of lower priority.</p>
+
+  <div class="bg padding-3 margin-bottom-4">
+    <sdx-button-group layout="fixed">
+      <sdx-button theme="secondary" label="Secondary"></sdx-button>
+      <sdx-button theme="secondary" label="Disabled" disabled></sdx-button>
+      <sdx-button theme="secondary" icon-name="icon-shopping-trolley" label="Order"></sdx-button>
+    </sdx-button-group>
+  </div>
+
+  <h3>Confirmation button</h3>
+
+  <p>
+    Confirmation buttons are used for the final step in a process to indicate that an action is final and significant.
+    For example, an ‘Order’ button at the end of a checkout process or the upload button for a file.
+  </p>
+
+  <div class="bg padding-3 margin-bottom-4">
+    <sdx-button-group layout="fixed">
+      <sdx-button theme="confirm" label="Confirmation"></sdx-button>
+      <sdx-button theme="confirm" label="Disabled" disabled></sdx-button>
+      <sdx-button theme="confirm" label="Order" icon-name="icon-shopping-trolley"></sdx-button>
+    </sdx-button-group>
+  </div>
+
+  <h3>Outlined (ghost) buttons</h3>
+
+  <p>
+    Buttons on a coloured background should revert to the colourless theme and not use the interaction colours for buttons.
+  </p>
+
+  <div class="bg-navy padding-3 margin-bottom-4">
+    <sdx-button-group layout="fixed">
+      <sdx-button background="dark" label="Button"></sdx-button>
+      <sdx-button background="dark" label="Disabled" disabled></sdx-button>
+      <sdx-button background="dark" label="Order" icon-name="icon-shopping-trolley"></sdx-button>
+    </sdx-button-group>
+  </div>
+
+  <h3>Transparent button</h3>
+
+  <p>
+    Transparent buttons can be used for interactive icons (i.e. 'Close' buttons or tooltip toggles), text with icons and text only.
+    When using only text, make sure not to confuse it with <a class="link" href="/components_-_text_links.html">text links</a>.
+  </p>
+
+  <div class="margin-bottom-4">
+    <sdx-button theme="transparent" icon-name="icon-thumb-up" icon-size="3" sr-hint="Vote if you like"></sdx-button>
+  </div>
+
+  <h3>Buttons on image backgrounds</h3>
+
+  <p>
+    Buttons can be used over imagery. Always ensure high contrast between the imagery and the buttons by using the
+    appropriate light or dark button theme.
+  </p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+     <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/buttons/Bitmap-1@2x.png" alt="Buttons on light background image">
+      <span class="fig-caption">Varianton light image</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+     <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/buttons/Bitmap@2x-1.png" alt="Buttons on dark background image">
+      <span class="fig-caption">Variant on dark image</span>
+    </div>
+  </div>
+
+  <h2>Rules</h2>
+
+  <h3>Specifications</h3>
+
+<p>
+  <ul class="list">
+  <li class="single-line">
+  Buttons have a minimum width of 160px regardless of the word length to have a standard size.
+  </li>
+  <li class="single-line">
+  Buttons with icons should be optically aligned to ensure that the text and icon as a pair are vertically aligned.
+</li>
+<li class="single-line">
+Buttons feature a minimum of 16px padding between each other to help create clear click targets.
+</li>
+</ul>
+<p>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="img-container">
+       <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/buttons/button_specs.png" alt="Specification details of buttons">
+     </div>  
+     <span class="fig-caption">Specification</span>
+    </div>
+  </div>
+
+
+  <h3>Full width spacing</h3>
+
+  <p>Buttons can also be used full width within a container or aligning to the grid. The text remains center aligned.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/buttons/Group-31@2x-2.png" alt="Full width buttons example">
+        <span class="fig-caption">Full width buttons</span>
+    </div>
+  </div>
+
+
+</div>
+
+```section_develop
+```
+
+<h2>Button usage</h2>
+
+<p>For an example of how to use buttons in a form, please see <a href="/samples/form.html">samples/form</a>.</p>
+
+<h3>Variations</h3>
+
+<p>
+  There are four basic button themes: Primary, secondary, confirm and transparent. For buttons on coloured background,
+  set the attribute <code>background="dark"</code> for all buttons. This way, the basic button will be shown colourless.
+</p>
+
+<p>
+  The fourth theme, <code>theme="transparent"</code> comes with no border at all and can be used for example for
+  icon buttons or tooltip toggles (see section further down).
+</p>
+
+```htmlmixed_webcomponent_sdx-button_accessible
+<sdx-button-group>
+  <sdx-button label="Primary"></sdx-button>
+  <sdx-button label="Disabled" disabled></sdx-button>
+</sdx-button-group>
+
+<br/>
+
+<sdx-button-group>
+  <sdx-button theme="secondary" label="Secondary"></sdx-button>
+  <sdx-button theme="secondary" label="Disabled" disabled></sdx-button>
+</sdx-button-group>
+
+<br/>
+
+<sdx-button-group>
+  <sdx-button theme="confirm" label="Confirm"></sdx-button>
+  <sdx-button theme="confirm" label="Disabled" disabled></sdx-button>
+</sdx-button-group>
+
+<div class="bg bg-orchid margin-top-2">
+  <sdx-button-group>
+    <sdx-button background="dark" label="Order" icon-name="icon-shopping-trolley"></sdx-button>
+    <sdx-button background="dark" label="Order" icon-name="icon-shopping-trolley"disabled></sdx-button>
+  </sdx-button-group>
+</div>
+```
+
+<h3>Layout</h3>
+<p>
+  The sdx-button web component comes with two different layouts, the normal looking buttons and transparent ones.
+  They can be used for both buttons and links as well as for interactive icons. To get a link in button look, just add
+  the <code>href</code> attribute with value.
+</p>
+
+<p>
+  As a general rule of thumb and to stay accessible, use a link for actions navigating to another page
+  and a button otherwise (e.g. opening and closing elements). Should the url have to navigate to a new tab or window,
+  this needs to be mentioned in the <code>sr-hint</code> to mitigate confusion for the screen reader user.
+</p>
+
+```htmlmixed_playground_accessible
+<sdx-button-group>
+  <sdx-button label="Button"></sdx-button>
+  <sdx-button label="Link" href="javascript:void(0)"></sdx-button>
+  <sdx-button theme="secondary" label="Another Link" href="https://sdx.swisscom.ch/" target="_blank" sr-hint="opens in new tab or window"></sdx-button>
+</sdx-button-group>
+```
+
+<h4>Icons and transparent buttons</h4>
+<p>
+  Use <code>theme="transparent"</code> when you want to make your single icons interactive.
+  Add <code>theme="colorless"</code> when used on a coloured background.
+</p>
+<p>
+  Put a single icon into such a button in order to make it interactive and accessible in a more consistent and simpler
+  way. Remember to put an appropriate text for the screen reader for the <code>sr-hint</code> property.
+</p>
+
+<p>This theme can be used with both icons as well as text or a combination of it.</p>
+
+```htmlmixed_playground_accessible
+<sdx-button theme="transparent" icon-name="icon-thumb-up" icon-size="2" label="Like" sr-hint="Vote if you like"></sdx-button>
+```
+
+<h3>Button Group</h3>
+
+<p>
+  Buttons can be placed inside a <code>sdx-button-group</code>. The Button Group then defines the layout and
+  size of the buttons.
+</p>
+
+<p>Single buttons can be placed without a button group.</p>
+
+<ul class="list">
+  <li>
+    Button groups with the <code>responsive</code> layout are always right aligned and reversed in order. This makes the
+    first button in the DOM (primary) displayed as the first button on the right on desktops and on the top on mobiles.
+  </li>
+  <li>
+    To make the buttons use the full width of a group, use the layout <code>fill</code>.
+  </li>
+  <li>
+    Use the layout <code>fullwidth</code> to make every button use 100% of the width of the container. Buttons will be
+    vertically aligned. Full width buttons should only be used in smaller containers, i.e. the sidebar or inside cards.
+  </li>
+  <li>
+    To keep the buttons from resizing, use the <code>fixed</code> layout.
+  </li>
+</ul>
+
+```htmlmixed_webcomponent_sdx-button-group_accessible
+<sdx-button label="Single Button"></sdx-button>
+
+<hr/>
+
+<sdx-button-group>
+  <sdx-button theme="confirm" label="Button 1" onClick="console.log('button was clicked!')"></sdx-button>
+  <sdx-button theme="secondary" label="Button 2"></sdx-button>
+</sdx-button-group>
+
+<hr/>
+
+<sdx-button-group layout="fill">
+  <sdx-button label="Button 3"></sdx-button>
+  <sdx-button label="Button 4"></sdx-button>
+  <sdx-button label="Button 5"></sdx-button>
+</sdx-button-group>
+
+<hr/>
+
+<sdx-button-group layout="fullwidth">
+  <sdx-button theme="secondary" label="Button 6"></sdx-button>
+  <sdx-button theme="secondary" disabled label="Button 7"></sdx-button>
+</sdx-button-group>
+```
+*/
+
+// everything below here is deprecated
+// --------------------------------------------------
+
+
+
+$buttons: (
+  primary: (
+    button-color: $color-button-primary,
+    button-color--active: $color-button-primary--active,
+    color: $color-white,
+    text-opacity: .6
+  ),
+  secondary: (
+    button-color: $color-button-secondary,
+    button-color--active: $color-button-secondary--active,
+    color: $color-gray,
+    text-opacity: .4
+  ),
+  confirm: (
+    button-color: $color-button-confirm,
+    button-color--active: $color-button-confirm--active,
+    color: $color-white,
+    text-opacity: .6
+  )
+);
+
+// --------------------------------------------------
+
+$button-group-margin-v: $button-margin-vertical / 2;
+$button-group-margin-h: $button-margin-horizontal / 2;
+
+// --------------------------------------------------
+
+// Global Button styles
+// --------------------------------------------------
+
+.button-group {
+  display: flex;
+
+  margin: (-$button-group-margin-v) (-$button-group-margin-h);
+
+  flex-wrap: wrap;
+
+  // style buttons in group
+  .button {
+    margin: $button-group-margin-v $button-group-margin-h;
+  }
+}
+
+.button-group--responsive {
+  flex-direction: row-reverse;
+
+  .button {
+    width: 100%;
+
+    @include bp-sm {
+      width: auto;
+    }
+  }
+}
+
+// @Deprecated
+.button-group--left {
+  justify-content: flex-end;
+}
+
+.button-group--fill {
+  @include bp-sm {
+    flex-wrap: nowrap;
+  }
+
+  .button {
+    width: 100%;
+    min-width: 0;
+
+    flex: 0 1 auto;
+  }
+}
+
+// Vertically space out multiple button groups
+
+.button-group + .button-group {
+  margin-top: $button-group-margin-v;
+}
+
+button,
+.button {
+  cursor: pointer;
+}
+
+// Button Normal
+// --------------------------------------------------
+
+.button {
+  @include text-standard;
+  @include text-truncate;
+  @include font-smoothing;
+  @include font-plain;
+
+  display: inline-block;
+
+  position: relative;
+
+  transition: all 70ms $button-easing;
+
+  margin: 0;
+
+  outline: none;
+  border: 0;
+  border-bottom-style: none;
+  border-radius: $button-border-radius;
+  background: none;
+  cursor: pointer;
+
+  padding: $button-padding-vertical $button-padding-horizontal;
+
+  min-width: 160px;
+
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 0 0;
+
+  transform-origin: 50% 50%;
+
+  user-select: none;
+
+  // Active styles
+  // -------------------------
+
+  &:active {
+    transform: scale(.98);
+  }
+
+  // Disabled styles
+  // -------------------------
+
+  @include disabled;
+
+  // Button types
+  // -------------------------
+
+  @each $button, $settings in $buttons {
+    @if $button == primary {
+      &,
+      &--#{$button} {
+        @include button($settings);
+      }
+    } @else {
+      &--#{$button} {
+        @include button($settings);
+      }
+    }
+  }
+
+  // Icon styles
+  // -------------------------
+
+  &__icon {
+    padding: 12px 24px 12px 16px;
+  }
+
+  .icon {
+    margin-right: 7px;
+    font-size: 18px;
+  }
+
+}
+
+// Button Thin
+// --------------------------------------------------
+
+.button--thin,
+%button--thin {
+  $color: $color-white;
+
+  // -------------------------
+
+  padding: $button-padding-vertical - $button-border-width $button-padding-horizontal - $button-border-width;
+
+  @each $button, $settings in $buttons {
+    @if $button == primary {
+      &,
+      &.button--#{$button} {
+        @include button-thin($settings, $color-white);
+      }
+    } @else {
+      &.button--#{$button} {
+        @include button-thin($settings, $color-white);
+      }
+    }
+  }
+}
+
+// Dark Background
+// --------------------------------------------------
+
+.bg--dark {
+  .button {
+    @extend %button--thin;
+  }
+
+  a.button {
+    &:focus {
+      outline: 1px dotted $color-link--active;
+    }
+  }
+}
+
+// Full button
+// --------------------------------------------------
+
+.button-group--responsive .button--full,
+.button--full,
+%button--full {
+  display: block;
+  width: 100%;
+
+  &:active {
+    transform: scale(.9925, .98);
+  }
+}
+
+// Responsive button
+// --------------------------------------------------
+
+.button--responsive,
+%button--responsive {
+  width: 100%;
+
+  @include bp-sm {
+    width: auto;
+  }
+}
+
+// Specific overrides
+// --------------------------------------------------
+
+input[type='submit'],
+input[type='reset'],
+input[type='button'] {
+  &.button--full {
+    @extend %button--full;
+  }
+
+  &.button--responsive {
+    @extend %button--responsive;
+  }
+}

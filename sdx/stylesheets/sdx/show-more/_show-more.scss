@@ -1,0 +1,24 @@
+//
+// Show More
+// --------------------------------------------------
+
+/*doc
+---
+title: Show More
+name: 02-components-155-show-more
+category: Components - Show More
+---
+
+<p>The "Show More" component is a common design pattern used at the bottom of e-commerce category
+or search engine result pages to load more content triggered by a user interaction.</p>
+
+```htmlmixed_webcomponent_sdx-show-more_accessible
+<sdx-show-more
+  increment-by="10"
+  total-items="75"
+  from-label="of"
+  more-label="show 10 more"
+  increment-callback="console.log('Now displaying', arguments[0], 'results');"
+/>
+```
+*/

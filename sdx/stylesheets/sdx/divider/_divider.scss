@@ -1,0 +1,126 @@
+//
+// Divider
+// --------------------------------------------------
+
+/*doc
+---
+title: Dividers
+name: 02-components-060-divider
+category: Components - Dividers
+---
+
+<p>Dividers help to create clear groups of related information. There are three tiers of contrast on light backgrounds for divider lines and also a dark variant. Pick the most appropriate for your designs.</p>
+
+<p>Light gray divider</p>
+<div class="divider divider--light-gray"></div>
+
+<p>Mid gray divider</p>
+<div class="divider divider--mid-gray"></div>
+
+<p>Dark gray divider</p>
+<div class="divider divider--dark-gray"></div>
+
+
+```section_design
+```
+
+<div class="content-design">
+
+  <h2>Rules</h2>
+
+  <p><b>Please note:</b> Be careful with the usage of dividers as too many of them might clutter the design.</p>
+
+   <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <h3 class="margin-bottom-1">Vertical spacing</h3>
+        <p>The vertical spacing between dividers is 32px.</p>
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/divider/Group-11@2x-13.jpg" alt="Vertical spacing specification">
+      <span class="fig-caption">Vertical spacing</span>
+    </div>
+  <div class="col-xs-12 col-lg-6">
+    <h3 class="margin-bottom-1">Minimum width</h3>
+    <p>The divider is always 100% of the text width.</p>
+    <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/divider/Group-2@2x-5.jpg" alt="Minimum width specification">
+    <span class="fig-caption">Minimum width</span>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+<p>Dividers group and separate content within lists and page layouts. The divider is a thin rule, lightweight yet sufficient to distinguish content visually and spatially.</p>
+
+<p>SDX dividers default to "full-bleed", eg (full width).</p>
+
+```htmlmixed_accessible
+<p>This text is above the divider</p>
+<hr aria-hidden="true" />
+<p>This text is below the divider</p>
+```
+
+<h4>Light background dividers</h4>
+
+<p>There are three tiers of contrast on light backgrounds for divider lines, pick the most appropriate for your designs.</p>
+
+```htmlmixed_accessible
+<p>Light gray divider</p>
+<div class="divider divider--light-gray"></div>
+<p>Mid gray divider</p>
+<div class="divider divider--mid-gray"></div>
+<p>Dark gray divider</p>
+<div class="divider divider--dark-gray"></div>
+```
+
+<h4>Dark background dividers</h4>
+
+<p>There is only one contrast option on darker backgrounds</p>
+
+```htmlmixed_accessible
+<div class="bg bg--dark">
+  <p>This text is above the divider</p>
+  <div class="divider"></div>
+  <p>This text is below the divider</p>
+</div>
+```
+*/
+
+
+// --------------------------------------------------
+
+
+hr,
+.divider {
+  margin: 32px 0;
+
+  border: 0;
+  border-bottom: 1px solid $color-gray-tint-8;
+
+  &--light-gray {
+    border-bottom-color: $color-gray-tint-8;
+  }
+
+  &--mid-gray {
+    border-bottom-color: $color-gray-tint-6;
+  }
+
+  &--dark-gray {
+    border-bottom-color: $color-gray-tint-3;
+  }
+
+  // should only be used on dark backgrounds
+  &--white {
+    border-bottom-color: transparentize($color-white, .4);
+  }
+}
+
+// Dark Background
+// -------------------------
+
+.bg--dark {
+  hr,
+  .divider {
+    border: 0;
+    border-bottom: 1px solid transparentize($color-white, .4);
+  }
+}

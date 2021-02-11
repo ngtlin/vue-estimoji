@@ -1,0 +1,70 @@
+//
+// Color Picker
+// --------------------------------------------------
+
+/*doc
+---
+title: Colour Picker
+name: 02-components-134-color-picker
+category: Components - Picker (colour)
+---
+
+<p>The colour picker allows to offer multiple colours (e.g. for variants of one product).</p>
+
+<div class="row">
+  <div class="col-xs-12">
+    <sdx-color-picker
+      change-callback="console.log('Checked:', arguments[0])"
+      colors='[
+        { "name": "pink", "code": "#E61E64" },
+        { "name": "blue", "code": "#1781E3" },
+        { "name": "iris", "code": "#5944C6" },
+        { "name": "turquoise", "code": "#0EABA9" },
+        { "name": "white", "code": "#FFFFFF" }
+      ]'
+    ></sdx-color-picker>
+  </div>
+</div>
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Rules</h2>
+
+  <p>The colour picker provides 2 different behaviours:</p>
+
+  <ul class="list">
+    <li>Following the behaviour of a radio button: The user can only select one of the colours (e.g. on product detail pages)</li>
+    <li>Following the behavior of checkboxes: The user can select more than one colour (e.g. in filters)</li>
+  </ul>
+
+  <p>The colour picker is, like the <a href="components_-_picker_(option).html">option picker</a>, mostly used on product overview pages, product detail pages, or in filters.<br>Follow best practices: Is the product only available in one colour, display only this colour. Do not display disabled colour swatches.</p>
+
+  <h3>Specifications</h3>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/picker_color/specifications.png" alt="Specificationsfor colour picker">
+    </div>
+    <div class="col-xs-12 col-lg-6"></div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+```htmlmixed_webcomponent_sdx-color-picker
+<sdx-color-picker
+  change-callback="console.log('Checked:', arguments[0])"
+  colors='[
+    { "name": "pink", "code": "#E61E64" },
+    { "name": "blue", "code": "#1781E3" },
+    { "name": "iris", "code": "#5944C6" },
+    { "name": "turquoise", "code": "#0EABA9" },
+    { "name": "white", "code": "#FFFFFF" }
+  ]'
+></sdx-color-picker>
+```
+*/

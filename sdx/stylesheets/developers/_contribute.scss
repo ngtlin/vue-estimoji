@@ -1,0 +1,133 @@
+//
+// How to contribute
+// --------------------------------------------------
+
+/*doc
+---
+title: How to contribute
+name: 04-developers-05-contribute
+category: Developers - How to contribute
+---
+
+<h2>Install Git</h2>
+
+<p>First of all, you need to install Git, the versioning tool, in order to contribute. The installation procedure may vary depending on your operating system.</p>
+
+<h2>Clone the SDX git repository</h2>
+
+<p>The SDX repository can be found on <a href="https://git.swisscom.com/projects/SDX/repos/sdx">Swisscom Bitbucket</a>. You need to clone the code repository to your computer to work with the sources locally. To do so, open a terminal and type:</p>
+
+```htmlmixed_no_preview
+git clone ssh://git@git.swisscom.com:7999/sdx/sdx.git
+```
+
+<h2>Install dev dependencies</h2>
+
+<p>Make sure you have the following prerequisites installed:</p>
+
+<ul class="list">
+  <li><a href="https://nodejs.org/en/">NodeJS 11+</a></li>
+  <li><a href="https://www.ruby-lang.org/en/">Ruby</a> <span>(for Windows, use <a href="https://rubyinstaller.org/downloads/">RubyInstaller (with Devkit)</a></span>)</li>
+</ul>
+
+<p>In a terminal, run:</p>
+
+```htmlmixed_no_preview
+# Switch to your SDX directory and install the dependencies
+$ gem install hologram # maybe "sudo" has to be used
+$ npm ci
+
+# Run the dev server
+$ npm start
+$ open http://localhost:3000
+```
+
+<h2>Troubleshooting</h2>
+
+<h3>Authenticity can't be established</h3>
+
+<p>If asked to continuing connecting...</p>
+
+```htmlmixed_no_preview
+$ git clone ssh://git@git.swisscom.com:7999/sdx/sdx.git
+Cloning into 'sdx'...
+The authenticity of host '[git.swisscom.com]:7999' can't be established.
+RSA key fingerprint is SHA256:XXXXXXXXXXXXXXXXX.
+Are you sure you want to continue connecting (yes/no)?
+```
+
+<p>...accept the RSA key fingerprint by typing "yes" and hit enter.</p>
+
+<h3>Command Line Developer Tools missing on macOS</h3>
+
+<p>On macOS, you need to install both Xcode and the Command Line Developer Tools. Otherwise you might get an error like <i>"no developer tools were found at '/Applications/Xcode.app'"</i>.</p>
+
+```htmlmixed_no_preview
+xcode-select --install
+```
+
+<h3>Lack of access privileges</h3>
+
+<p>If you receive an error like that...</p>
+
+```htmlmixed_no_preview
+git clone ssh://git@git.swisscom.com:7999/sdx/sdx.git
+Cloning into 'sdx'...
+git@git.swisscom.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+```
+
+<p>Maybe you need to <a href="https://git.swisscom.com/plugins/servlet/ssh/account/keys">submit your SSH key to Bitbucket</a> in order to be able to clone the repository. If that is not the issue, maybe you have to log in to the Swisscom Teamspace to make sure your access rights aren't locked. Sometimes they are locked after being inactive for some time. If you don't have a Bitbucket account at all, <a href="https://wiki.swisscom.com/pages/viewpage.action?spaceKey=SDF&title=How+to+get+a+Bitbucket+Account">create a Bitbucket Account</a>. With that, it should be possible to login to the <a href="https://git.swisscom.com">Swisscom Bitbucket page</a>.</p>
+
+<h2>Create a pull request</h2>
+
+<p>Create a ticket for your change by clicking the "Report a Bug"-link above. This will generate a ticket number, like SDX-111. Then, create a branch with the ticket name in it (see Table below), like <i>bugfix/SDX-111-fix-button-color</i>.</p>
+
+<p>Then, commit and push the changes and create a pull request on the <a href="https://git.swisscom.com">Swisscom Bitbucket page</a>. After pushing the changes, a preview link will be created after the build, like <a href="http://sdx-styleguide-preview-sdx-111.scapp.swisscom.com/">http://sdx-styleguide-preview-sdx-<i>111</i>.scapp.swisscom.com/</a>.</p>
+
+<h3>Continuous Integration and Deployment</h3>
+
+<p>Every commit to the SDX Library repository is automatically built by our CI system. Commits and merges to <code>master</code>, <code>develop</code>, <code>release/*</code>, <code>feature/*</code>, <code>bugfix/*</code>, and <code>hotfix/*</code> branches are automatically deployed to the respective staging servers. Please include the Jira ticket number and title in each branch you create, for example: <code>bugfix/SDX-XXX-jira-issue-title</code>.</p>
+
+<p>The following table shows the different branches and their deployment targets:</p>
+
+<div class="table table--responsive margin-bottom-4">
+  <div class="table__wrapper">
+    <table data-init="auto">
+      <thead>
+        <tr>
+          <th>Branch</th>
+          <th>Target</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>master</code></td>
+          <td><a href="https://sdx.swisscom.ch">sdx.swisscom.ch</a></td>
+          <td>The latest released version of the library</td>
+        </tr>
+        <tr>
+          <td><code>develop</code></td>
+          <td><a href="https://sdx-styleguide-preview-develop.scapp.swisscom.com">sdx-styleguide-preview-develop.scapp.swisscom.com</a></td>
+          <td>The latest unreleased beta version, may be unstable</td>
+        </tr>
+        <tr>
+          <td><code>feature/*</code></td>
+          <td><i>sdx-styleguide-preview-sdx-<b>XXX</b>.scapp.swisscom.com</i></td>
+          <td>Preview of feature with JIRA ticket number <b>XXX</b></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<h3>Versioning</h3>
+
+<p>For transparency into our release cycle and in striving to maintain backward compatibility,
+the SDX Library is maintained under <a href="https://semver.org/">the Semantic Versioning guidelines</a>.</p>
+
+*/

@@ -1,0 +1,50 @@
+:host, *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:host {
+  display: flex;
+  border: 1px solid #d6d6d6;
+  height: 48px;
+  cursor: pointer;
+  color: #333;
+}
+:host .component {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+:host .component .option {
+  flex: 1;
+  align-self: center;
+  max-width: 100%;
+  padding: 0 16px;
+}
+
+:host(:hover:not(.disabled)), :host(.focus:not(.disabled)) {
+  background-color: #eef3f6;
+}
+
+:host(.selected:not(.multiple)) {
+  border-color: #086adb;
+  background-color: #086adb;
+  color: #fff;
+}
+
+:host(.selected:not(.multiple):hover), :host(.selected.focus:not(.multiple)) {
+  border-color: #0048CF;
+  background-color: #0048CF;
+}
+
+:host(.top) {
+  border-top: none;
+}
+
+:host(.bottom) {
+  border-bottom: none;
+}
+
+:host(.disabled) {
+  cursor: not-allowed;
+  color: #d6d6d6;
+}

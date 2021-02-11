@@ -1,0 +1,12 @@
+:host, *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:host {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: inline-block;
+  position: relative;
+}

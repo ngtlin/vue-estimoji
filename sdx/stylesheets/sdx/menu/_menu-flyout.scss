@@ -1,0 +1,470 @@
+//
+// Flyout Menu
+// --------------------------------------------------
+
+/*doc
+---
+title: Menu (flyout and contextual)
+name: 02-components-100-menu-01-flyout
+category: Components - Menu (flyout and contextual)
+---
+
+<p>Flyout and contextual menus are used to house additional functionality and content within various different contexts. They can be used to house quick links within cards, profile information and settings, as well as to provide additional contextual functionality.</p>
+
+<div>
+  <sdx-menu-flyout>
+    <sdx-menu-flyout-toggle>
+      <sdx-icon icon-name="icon-account" size="2" sr-hint="account"></sdx-icon>
+    </sdx-menu-flyout-toggle>
+
+    <sdx-menu-flyout-list>
+      <sdx-menu-flyout-list-item onclick="console.log('Deutsch');">Deutsch</sdx-menu-flyout-list-item>
+      <sdx-menu-flyout-list-item>English</sdx-menu-flyout-list-item>
+      <sdx-menu-flyout-list-item>Français</sdx-menu-flyout-list-item>
+      <sdx-menu-flyout-list-item>Italiano</sdx-menu-flyout-list-item>
+    </sdx-menu-flyout-list>
+  </sdx-menu-flyout>
+</div>
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Variations</h2>
+
+  <h3>Regular flyout menu</h3>
+
+  <p>Regular menus, or ‘flyouts’ are used to reveal functionality that’s behind an icon other than the navigation, such as settings and preferences, or glance views of your basket.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/menu_flyout_contextual/Group-7@2x-10.png" alt="Regular flyout">
+      <span class="fig-caption">Regular flyout</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/menu_flyout_contextual/Group-9@2x-11.png" alt="Regular flyout with hover on first nav item<">
+      <span class="fig-caption">Regular flyout with hover on first nav item</span>
+    </div>
+  </div>
+
+  <h3>Flyout with any content</h3>
+
+  <p>These menus can also be used to house any kind of content, e.g. text, and often feature titles to give a welcome message or title to explain the purpose of the menu. They can also contain a call to action (CTA), following the conventional logic for buttons.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/menu_flyout_contextual/Group-10@2x-13.jpg" alt="Flyout with any content">
+      <span class="fig-caption">Flyout with any content</span>
+    </div>
+    <div class="col-xs-12 col-lg-6"></div>
+  </div>
+
+  <h3>Profile menu</h3>
+
+  <p>Profile menus are the most complex form of menu, handling three different types of content in a single view. They feature listed offers contained within a grey panel, short text passages to give information to the user, and listed text links and CTAs.</p>
+
+  <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/menu_flyout_contextual/Group-11@2x-12.jpg" alt="Three column profile menu">
+  <span class="fig-caption">Three column profile menu</span>
+
+  <h3>Contextual menus</h3>
+
+  <p>Contextual menus are used to surface additional functionality relevant to a page on native applications, while still prioritising a key function that is most commonly used in that instance. The additional functionality is hidden inside an ellipsis icon.</p>
+  <p>When placed in a button, they can be fixed to the bottom of the viewport. This makes it easy and quick for the user.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/menu_flyout_contextual/Group-13@2x-12.jpg" alt="Closed contextual menu">
+      <span class="fig-caption">Closed contextual menu</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/menu_flyout_contextual/Group-14@2x-9.jpg" alt="Open contextual menu">
+      <span class="fig-caption">Open contextual menu</span>
+    </div>
+  </div>
+
+  <h3>Contextual flyout menu</h3>
+
+  <p>Contextual flyout menus are used for in page functionality on web based applications. They can be global to a page, or be fixed to an element on the page to reveal additional functionality.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/menu_flyout_contextual/Group-15@2x-11.png" alt="Regular flyout">
+      <span class="fig-caption">Regular flyout</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/menu_flyout_contextual/Group-16@2x.png" alt="Regular flyout with hover on first list item">
+      <span class="fig-caption">Regular flyout with hover on first list item</span>
+    </div>
+  </div>
+
+  <h2>Rules</h2>
+
+  <h3>Grid structure</h3>
+
+  <p>Contextual menus and flyouts using two columns. All additonal content (e.g. promotions) as extension can vary in size.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+    <div class="margin-bottom-1">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/menu_flyout_contextual/Group-17-Copy-6@2x.jpg" alt="Grid structure">
+    </div>
+      <span class="fig-caption">Grid structure</span>
+    </div>
+  </div>
+
+  <h3>Typography</h3>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/menu_flyout_contextual/Group-18@2x-9.png" alt="Grid structure">
+      <span class="fig-caption">Grid structure</span>
+    </div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+<h2>Flyout Menu</h2>
+
+<p>Flyout Menus are used to reveal functionality that’s behind an icon other than the navigation, such as settings and preferences, or glance views of your basket.</p>
+
+<p>Only use inline elements within <code>sdx-menu-flyout-toggle</code>.</p>
+
+```htmlmixed_webcomponent_sdx-menu-flyout_accessible
+<sdx-menu-flyout>
+  <sdx-menu-flyout-toggle>
+    <sdx-icon icon-name="icon-account" size="2" sr-hint="Choose language"></sdx-icon>
+  </sdx-menu-flyout-toggle>
+
+  <sdx-menu-flyout-list>
+    <sdx-menu-flyout-list-item onclick="console.log('Deutsch');">Deutsch</sdx-menu-flyout-list-item>
+    <sdx-menu-flyout-list-item href="#en">English</sdx-menu-flyout-list-item>
+    <sdx-menu-flyout-list-item>Français</sdx-menu-flyout-list-item>
+    <sdx-menu-flyout-list-item onclick="console.log('Will not execute');" disabled>Italiano</sdx-menu-flyout-list-item>
+    <sdx-menu-flyout-list-item href="#never" disabled>Esperanto</sdx-menu-flyout-list-item>
+  </sdx-menu-flyout-list>
+</sdx-menu-flyout>
+```
+
+<h3>Flyout with any content</h3>
+
+<p>These menus can also be used to house any kind of content. It is recommended to give them a width to make them fit your content. <b>NOTE:</b> Since they're responsive, they will change their width on mobiles, when there's not enough space. So make sure to create the content mobile-first.</p>
+
+```htmlmixed_playground_accessible
+<div class="text-align-right">
+  <sdx-menu-flyout direction="bottom-left">
+    <sdx-menu-flyout-toggle>
+      <sdx-icon icon-name="icon-account" size="2" sr-hint="account login flyout"></sdx-icon>
+    </sdx-menu-flyout-toggle>
+    <sdx-menu-flyout-content style="width: 480px;">
+      <p class="text-align-center">Welcome to My Swisscom</p>
+      <hr aria-hidden="true" />
+      <p>Log in to manage your invoices, products, orders and see more offers</p>
+      <sdx-button-group layout="fill">
+        <sdx-button theme="secondary" label="Cancel"></sdx-button>
+        <sdx-button label="Login"></sdx-button>
+      </sdx-button-group>
+    </sdx-menu-flyout-content>
+  </sdx-menu-flyout>
+</div>
+```
+
+<h2>Contextual Menu</h2>
+
+<style>
+  .exampleOutput .context {
+    position: relative;
+    bottom: auto;
+    max-width: 320px;
+  }
+</style>
+
+<p>Contextual menus are used to surface additional functionality relevant to a page on native applications, while still prioritising a key function that is most commonly used in that instance. The additional functionality is hidden inside an ellipsis icon.</p>
+
+<p><b>NOTE:</b> This component should only be used on the <code>phone</code> breakpoint and is not intended to be used on tablets and desktop breakpoints. For tablets and desktop it is recommended to use a flyout menu instead.</p>
+
+```htmlmixed
+<div class="context">
+  <div class="context__primary">
+    <a class="context-link" href="javascript:void(0);">
+      Check voicemail
+    </a>
+    <button class="context-link context-link--more" data-init="auto" data-toggle="flyout" data-target="#context">
+      <i class="icon icon-053-more"></i>
+    </button>
+  </div>
+
+  <div id="context" class="context__secondary js-flyout">
+    <ul>
+      <li>
+        <a class="context-link" href="javascript:void(0);">View itemised statement</a>
+      </li>
+      <li>
+        <a class="context-link" href="javascript:void(0);">Apply for extension</a>
+      </li>
+      <li>
+        <a class="context-link" href="javascript:void(0);">Download PDF bill</a>
+      </li>
+    </ul>
+  </div>
+</div>
+```
+*/
+
+// --------------------------------------------------
+
+.flyout {
+  display: none;
+
+  position: absolute;
+  top: 20px;
+
+  opacity: 0;
+  transform: translateY(-20px);
+
+  z-index: $zindex-menu;
+
+  background: $color-white;
+  box-shadow: 0 0 4px 0 rgba($color-black, .2);
+
+  &.is-open {
+    display: block;
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+// Menu Position
+// -------------------------
+
+.flyout--left {
+  left: 0;
+
+  .flyout__indicator::before {
+    left: 24px;
+  }
+}
+
+.flyout--right {
+  right: 0;
+}
+
+.flyout--top {
+  top: auto;
+  bottom: 100%;
+  transform: translateY(20px);
+
+  .flyout__indicator::before {
+    top: auto;
+    bottom: -7px;
+    box-shadow: 1px 1px 2px 0 rgba($color-black, .15);
+  }
+}
+
+// -------------------------
+
+.flyout__indicator::before {
+  position: absolute;
+  top: -7px;
+  right: 24px;
+
+  width: 14px;
+  height: 14px;
+
+  background: inherit;
+  box-shadow: -1px -1px 2px 0 rgba($color-black, .15);
+
+  transform: rotate(45deg);
+  z-index: -1;
+
+  content: '';
+}
+
+.flyout__content {
+  background: inherit;
+}
+
+// -------------------------
+
+.flyout__title {
+  margin-top: -4px;
+
+  text-align: center;
+}
+
+.flyout__text {
+  margin-bottom: 16px;
+
+  text-align: center;
+}
+
+// -------------------------
+
+.flyout--list {
+  width: 254px;
+
+  padding: 0;
+
+  li:not(:last-child) {
+    border-bottom: 1px solid $color-aluminum-tint-2;
+  }
+
+  .list-link {
+    display: block;
+
+    width: 100%;
+    padding: 12px 24px;
+
+    border: 0;
+
+    background: $color-white;
+
+    &:hover, &:focus {
+      color: $color-white;
+      background: $color-int-blue;
+    }
+  }
+}
+
+.flyout--info {
+  width: 369px;
+
+  padding: 24px;
+
+  hr,
+  .divider {
+    margin: 16px 0;
+  }
+}
+
+.context {
+  position: fixed;
+  bottom: 0;
+
+  width: 100%;
+
+  z-index: $zindex-menu;
+
+  background: $color-white;
+  box-shadow: 0 0 4px 0 rgba($color-black, .2);
+
+  // -------------------------
+
+  .context-link {
+    @include text-truncate;
+
+    display: inline-block;
+
+    width: 100%;
+    height: $menu-context-height;
+
+    padding: 0 24px;
+
+    flex: 1;
+
+    color: $color-int-blue;
+
+    border: 0;
+    background: $color-white;
+
+    line-height: $menu-context-height;
+
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  // -------------------------
+
+  &__primary {
+    display: flex;
+
+    position: relative;
+    width: 100%;
+    height: $menu-context-height;
+
+    z-index: $zindex-menu + 10;
+
+    .context-link {
+      color: $color-white;
+      background: $color-int-blue;
+
+      &:not(:last-child) {
+        border-right: 1px solid $color-aluminum-tint-2;
+      }
+
+      &--more {
+        width: $menu-context-height;
+        padding: 0;
+
+        flex: 0 0 auto;
+
+        font-size: 40px;
+
+        &.is-open {
+          color: $color-int-blue;
+          background: $color-white;
+        }
+      }
+    }
+  }
+
+  // -------------------------
+
+  &__secondary {
+    display: none;
+
+    position: absolute;
+    bottom: $menu-context-height;
+
+    width: 100%;
+
+    padding: 0;
+
+    opacity: 0;
+
+    background: $color-white;
+    box-shadow: 0 0 4px 0 rgba($color-black, .2);
+
+    z-index: $zindex-menu + 5;
+
+    &.is-open {
+      display: block;
+      opacity: 1;
+    }
+
+    li {
+      border-bottom: 1px solid $color-aluminum-tint-2;
+    }
+  }
+
+  // -------------------------
+
+  &--flyout {
+    position: initial;
+
+    display: flex;
+    justify-content: space-between;
+
+    padding: 24px;
+    box-shadow: none;
+
+    .flyout-icon {
+      color: $color-navy;
+    }
+
+    ~ .flyout {
+      top: 67px;
+      right: 20px;
+      max-width: 280px;
+      width: 100%;
+
+      &::before {
+        right: 13px;
+      }
+    }
+  }
+}

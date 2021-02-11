@@ -1,0 +1,318 @@
+@charset "UTF-8";
+:host, *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/*doc
+---
+title: Screen Readers
+name: 04-developers-25-screenreaders
+category: Developers - Screen Reader utils
+---
+
+<p>Hide an element to all devices except screen readers with <code>.sr-only</code>.
+Combine <code>.sr-only</code> with <code>.sr-only-focusable</code> to show the element again when it’s focused (e.g. by a keyboard-only user).</p>
+
+```htmlmixed_no_preview
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+```
+
+<p>Can also be used as a mixin.</p>
+
+```css_no_preview
+// Usage as a mixin
+.skip-navigation {
+  @include sr-only;
+  @include sr-only-focusable;
+}
+```
+
+*/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+
+.button-reset {
+  font-family: "TheSans", sans-serif;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-decoration: none;
+  text-align: center;
+  color: inherit;
+  margin: 0;
+}
+.button-reset::-moz-focus-inner {
+  border: 0;
+}
+
+:host {
+  display: inline-block;
+  outline: none;
+  width: auto;
+  min-width: 160px;
+}
+
+:host(.transparent) {
+  min-width: 0;
+}
+
+.component {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.primary,
+.secondary,
+.confirm {
+  position: relative;
+  width: 100%;
+  height: 48px;
+  margin: 0;
+  padding: 11px 23px;
+  border: 1px solid #086adb;
+  border-radius: 5px;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  transition: all 70ms cubic-bezier(0.4, 0, 0.6, 1);
+  transform-origin: 50% 50%;
+}
+.primary:active,
+.secondary:active,
+.confirm:active {
+  transform: scale(0.98);
+}
+.primary.disabled.disabled, .primary.disabled:disabled, .primary:disabled.disabled, .primary:disabled:disabled,
+.secondary.disabled.disabled,
+.secondary.disabled:disabled,
+.secondary:disabled.disabled,
+.secondary:disabled:disabled,
+.confirm.disabled.disabled,
+.confirm.disabled:disabled,
+.confirm:disabled.disabled,
+.confirm:disabled:disabled {
+  cursor: not-allowed;
+}
+.primary.disabled.disabled:active, .primary.disabled:disabled:active, .primary:disabled.disabled:active, .primary:disabled:disabled:active,
+.secondary.disabled.disabled:active,
+.secondary.disabled:disabled:active,
+.secondary:disabled.disabled:active,
+.secondary:disabled:disabled:active,
+.confirm.disabled.disabled:active,
+.confirm.disabled:disabled:active,
+.confirm:disabled.disabled:active,
+.confirm:disabled:disabled:active {
+  pointer-events: none;
+  transform: none;
+}
+.primary sdx-icon,
+.secondary sdx-icon,
+.confirm sdx-icon {
+  margin-right: 8px;
+}
+
+.primary {
+  border-color: #086adb;
+  background-color: #086adb;
+  color: #fff;
+}
+.primary:hover {
+  border-color: #0048CF;
+  background-color: #0048CF;
+}
+@media (hover: none) {
+  .primary {
+    border-color: #086adb;
+    background-color: #086adb;
+  }
+}
+.primary:focus, .primary:active {
+  border-color: #0048CF;
+  background-color: #0048CF;
+}
+.primary.disabled, .primary:disabled {
+  border-color: transparent;
+  background-color: rgba(8, 106, 219, 0.4);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.secondary {
+  border-color: #cfd5d9;
+  background-color: #cfd5d9;
+  color: #333;
+}
+.secondary:hover {
+  border-color: #b1b9be;
+  background-color: #b1b9be;
+}
+@media (hover: none) {
+  .secondary {
+    border-color: #cfd5d9;
+    background-color: #cfd5d9;
+  }
+}
+.secondary:focus, .secondary:active {
+  border-color: #b1b9be;
+  background-color: #b1b9be;
+}
+.secondary.disabled, .secondary:disabled {
+  border-color: transparent;
+  background-color: rgba(207, 213, 217, 0.4);
+  color: rgba(51, 51, 51, 0.4);
+}
+
+.confirm {
+  border-color: #1B8712;
+  background-color: #1B8712;
+  color: #fff;
+}
+.confirm:hover {
+  border-color: #0D6F2C;
+  background-color: #0D6F2C;
+}
+@media (hover: none) {
+  .confirm {
+    border-color: #1B8712;
+    background-color: #1B8712;
+  }
+}
+.confirm:focus, .confirm:active {
+  border-color: #0D6F2C;
+  background-color: #0D6F2C;
+}
+.confirm.disabled, .confirm:disabled {
+  border-color: transparent;
+  background-color: rgba(27, 135, 18, 0.4);
+}
+
+.primary.colorless,
+.secondary.colorless,
+.confirm.colorless {
+  border-color: #fff;
+  background-color: transparent;
+  color: #fff;
+}
+.primary.colorless:hover,
+.secondary.colorless:hover,
+.confirm.colorless:hover {
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+@media (hover: none) {
+  .primary.colorless,
+.secondary.colorless,
+.confirm.colorless {
+    border-color: #fff;
+    background-color: transparent;
+  }
+}
+.primary.colorless:focus, .primary.colorless:active,
+.secondary.colorless:focus,
+.secondary.colorless:active,
+.confirm.colorless:focus,
+.confirm.colorless:active {
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.primary.colorless.disabled, .primary.colorless:disabled,
+.secondary.colorless.disabled,
+.secondary.colorless:disabled,
+.confirm.colorless.disabled,
+.confirm.colorless:disabled {
+  border-color: rgba(255, 255, 255, 0.4);
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.transparent {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  transition: all 70ms cubic-bezier(0.4, 0, 0.6, 1);
+  background-color: transparent;
+  color: #086adb;
+}
+.transparent.invalid {
+  color: #d12;
+}
+.transparent:hover {
+  color: #0048CF;
+}
+.transparent:hover.invalid {
+  color: #be0000;
+}
+@media (hover: none) {
+  .transparent {
+    color: #086adb;
+  }
+  .transparent.invalid {
+    color: #d12;
+  }
+}
+.transparent:focus, .transparent:active {
+  color: #0048CF;
+}
+.transparent:focus.invalid, .transparent:active.invalid {
+  color: #be0000;
+}
+.transparent.disabled, .transparent.disabled.invalid, .transparent:disabled, .transparent:disabled.invalid {
+  color: rgba(51, 51, 51, 0.4);
+}
+.transparent.disabled.disabled, .transparent.disabled:disabled, .transparent.disabled.invalid.disabled, .transparent.disabled.invalid:disabled, .transparent:disabled.disabled, .transparent:disabled:disabled, .transparent:disabled.invalid.disabled, .transparent:disabled.invalid:disabled {
+  cursor: not-allowed;
+}
+.transparent.disabled.disabled:active, .transparent.disabled:disabled:active, .transparent.disabled.invalid.disabled:active, .transparent.disabled.invalid:disabled:active, .transparent:disabled.disabled:active, .transparent:disabled:disabled:active, .transparent:disabled.invalid.disabled:active, .transparent:disabled.invalid:disabled:active {
+  pointer-events: none;
+  transform: none;
+}
+.transparent.colorless, .transparent.colorless.invalid {
+  color: #fff;
+}
+.transparent.colorless:hover, .transparent.colorless.invalid:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+@media (hover: none) {
+  .transparent.colorless, .transparent.colorless.invalid {
+    border-bottom: none;
+    color: #fff;
+  }
+}
+.transparent.colorless:focus, .transparent.colorless:active, .transparent.colorless.invalid:focus, .transparent.colorless.invalid:active {
+  color: rgba(255, 255, 255, 0.8);
+}
+.transparent sdx-icon {
+  margin-right: 8px;
+}
+
+.text-h4 {
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.35px;
+}

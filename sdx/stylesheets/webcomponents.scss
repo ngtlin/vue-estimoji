@@ -1,0 +1,50 @@
+/*!
+* SDX Library v$VERSION$ - SDX "light" for consumers of Web Components.
+* Wrapped version
+*/
+
+// Variables and Mixins
+// -------------------------
+
+@import "sdx/variables";
+@import "sdx/functions";
+@import "sdx/mixins";
+
+// Fonts
+// -------------------------
+
+@import "sdx/fonts";
+
+// Hide until hydrated
+// -------------------------
+@import "sdx/hide-all-webcomponents";
+
+.sdx {
+  // Core
+  // -------------------------
+
+  @import "sdx/base/core";
+
+  // Foundation
+  // -------------------------
+
+  @import "sdx/color/color";
+  @import "sdx/typography/typography";
+  @import "sdx/grid/grid";
+
+  // Components
+  // -------------------------
+
+  @import "sdx/background/background";
+  @import "sdx/divider/divider";
+  @import "sdx/link/link";
+  @import "sdx/list/list";
+
+  // Utilities
+  // -------------------------
+
+  @import "sdx/utilities";
+
+  // For <body class="sdx"> or a <div> that acts as a body (container).
+  @include body-without-margin;
+}

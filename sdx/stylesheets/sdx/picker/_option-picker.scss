@@ -1,0 +1,66 @@
+//
+// Option Picker
+// --------------------------------------------------
+
+/*doc
+---
+title: Option Picker
+name: 02-components-136-option-picker
+category: Components - Picker (option)
+---
+
+<p>The option picker allows to offer various options (e.g. storage, size or
+dimensions of one product).</p>
+
+<div class="row">
+  <div class="col-xs-12">
+    <sdx-option-picker
+      change-callback="console.log('Checked:', arguments[0])"
+      options='[
+        { "name": "64 GB", "value": "64" },
+        { "name": "256 GB", "value": "256" }
+      ]'
+    ></sdx-option-picker>
+  </div>
+</div>
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Rules</h2>
+
+  <p>The option picker provides 2 different behaviours:</p>
+
+  <ul class="list">
+    <li>Following the behaviour of a radio button: The user can only select one of the options (e.g. on product detail pages)</li>
+    <li>Following the behavior of checkboxes: The user can select more than one option (e.g. in filters)</li>
+  </ul>
+
+   <p>The option picker is, like the <a href="components_-_picker_(colour).html">colour picker</a>, mostly used on product overview pages, product detail pages, or in filters.<br>Follow best practices: Is the product only available in one option, display only this option. Do not display disabled options.</p>
+
+  <h3>Specifications</h3>
+
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/picker_option/specifications.png" alt="Specificationsfor option picker">
+    </div>
+    <div class="col-xs-12 col-lg-6"></div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+```htmlmixed_webcomponent_sdx-option-picker
+<sdx-option-picker
+  change-callback="console.log('Checked:', arguments[0])"
+  options='[
+    { "name": "64 GB", "value": "64" },
+    { "name": "256 GB", "value": "256" }
+  ]'
+></sdx-option-picker>
+```
+*/

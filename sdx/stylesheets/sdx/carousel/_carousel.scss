@@ -1,0 +1,392 @@
+//
+// Carousel
+// --------------------------------------------------
+
+/*doc
+---
+title: Carousel
+name: 02-components-025-carousel-01
+category: Components - Carousel
+---
+
+<p>Carousels help to surface large quantities of content in smaller screen space. Organised into cards featuring images, headlines, category labels and meta data, content then links through to full content pages. Due to their full width presence on the page, carousels are best suited to use at the top or base of a page.</p>
+
+<p>A responsive test page for the Carousel is available at <a href="/samples/carousel.html">samples/carousel</a> and <a href="/samples/carousel-dark.html">samples/carousel-dark</a>.</p>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Variations</h2>
+
+  <h3>How to scale the carousel</h3>
+
+  <p>On reduced width screens show one less card in the carousel, maintaining the visibility of the offscreen cards.<br />Mobile carousels only display singular items, with arrows positioned below the card, with the addition of dot selection indicators that help to show the number of items in the carousel.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/carousel/Tablet-view@2x.jpg" alt="Carousel on tablet">
+      <span class="fig-caption">Tablet carousel</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/carousel/Mobile@2x.jpg" alt="Carousel on mobile">
+      <span class="fig-caption">Mobile carousel</span>
+    </div>
+  </div>
+
+  <h3>Light and dark versions</h3>
+
+  <p>Two variation of carousels are available for your designs, choose which one to use based on your background colour.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/carousel/Carousel-fig.3.png" alt="Light variant of carousel">
+      <span class="fig-caption">Light card version</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/carousel/Carousel-fig.4.png" alt="Dark variant of carousel">
+      <span class="fig-caption">Dark card version</span>
+    </div>
+  </div>
+
+  <h2>Rules</h2>
+
+  <h3>Cards move in batches</h3>
+
+  <p>Carousel cards move in batches, with a dot indicating how many steps are in the carousel. On desktop the carousel moves three cards at a time, on tablet by two cards and on mobile by one.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/carousel/Group-5@2x.jpg" alt="Example cards move in batches">
+      <span class="fig-caption">Cards should move in batches at a time</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+    </div>
+  </div>
+
+  <h3>Pagination is always centred</h3>
+
+  <p>As cards move left to right the dot moves to indicate that a user has move to the next step. The current pagination dot is always positioned in the centre of the carousel.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/carousel/Group-6@2x.jpg" alt="Pagination dots">
+        <span class="fig-caption">Pagination dots</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+    </div>
+  </div>
+
+  <h3>Outside the page margin</h3>
+
+  <p>Cards sat outside of the page margins are shown at a reduced opacity, allow users to focus on the smaller quantities of content at a time. Cards, although constructed on the grid, are positioned offset and centred to allow us to reveal addition cards that run of screen more clearly.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/carousel/Group-7@2x.jpg" alt="Example cards sat outside the page margin">
+      <span class="fig-caption">Cards sat outside the page margin</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+    </div>
+  </div>
+
+  <h3>Typography</h3>
+
+  <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/carousel/Group-8@2x.png" alt="Specifications typography">
+        <span class="fig-caption">Typography</span>
+      </div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+<p>Carousels help to surface large quantities of content in smaller screen space. Organised into cards featuring images, headlines, category labels and meta data, content then links through to full content pages. Due to their full width presence on the page, carousels are best suited to use at the top or base of a page.</p>
+
+<h2>Carousel sample</h2>
+
+<p>A responsive test page for the Carousel is available at <a href="/samples/carousel.html">samples/carousel</a> and <a href="/samples/carousel-dark.html">samples/carousel-dark</a></p>
+
+<h2>JavaScript Component</h2>
+
+<p>The JavaScript component documentation is available under <a href="/doc/classes/_src_carousel_carousel_.carousel.html">/doc</a>.</p>
+*/
+
+
+// --------------------------------------------------
+
+
+.carousel {
+  overflow: hidden;
+  outline: none;
+
+  &__container {
+    width: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  // Slider
+  // -------------------------
+
+  &__slider {
+    margin-bottom: 21px;
+
+    cursor: grab;
+
+    &-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      display: flex;
+      transition-property: transform;
+      box-sizing: content-box;
+    }
+
+    .slide {
+      position: relative;
+      flex-shrink: 0;
+
+      width: auto;
+      height: 100%;
+
+      max-width: 100%;
+
+      margin: 0 10px;
+
+      opacity: .2;
+
+      // Disable text selection as it conflicts with dragging
+      user-select: none;
+
+      transition: opacity 300ms $standard-easing;
+
+      box-shadow: 0 0 4px 0 rgba($color-black, .25);
+
+      @include bp-md {
+        max-width: 300px;
+      }
+
+      @include bp-xl {
+        max-width: 321px;
+      }
+
+      &--active {
+        opacity: 1;
+      }
+
+      &--next {
+        @include bp-md {
+          opacity: 1;
+        }
+      }
+
+      &--prev {
+        @include bp-xl {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  // Pagination
+  // -------------------------
+
+  &__pagination {
+    position: relative;
+    height: $carousel-button-small;
+
+    text-align: center;
+    transition: 300ms;
+    transform: translate3d(0, 0, 0);
+
+    z-index: 10;
+
+    .pagination-bullet {
+      display: inline-block;
+
+      position: relative;
+      width: $carousel-bullet-size;
+      height: $carousel-bullet-size;
+
+      margin: 4px 2px;
+
+      opacity: .5;
+      transition: opacity 150ms $standard-easing;
+
+      cursor: pointer;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: inherit;
+        height: inherit;
+
+        background: $color-int-blue;
+        border-radius: 100%;
+
+        transition: transform 150ms $standard-easing;
+        transform: scale(.5);
+
+        content: '';
+      }
+
+      &:hover {
+        opacity: .75;
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &--active {
+        &,
+        &:hover {
+          opacity: 1;
+        }
+
+        &::before {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+
+  // Buttons
+  // -------------------------
+
+  &__button-wrapper {
+    position: absolute;
+
+    bottom: 0;
+
+    width: inherit;
+    height: $carousel-button-small;
+
+    z-index: 15;
+    pointer-events: none;
+
+    @include bp-md {
+      top: calc(50% - #{$carousel-button-large});
+      bottom: inherit;
+
+      height: $carousel-button-large;
+    }
+  }
+
+  &__button-prev,
+  &__button-next {
+    position: absolute;
+
+    width: auto;
+    height: auto;
+
+    font-size: 22px;
+    background-image: none;
+
+    cursor: pointer;
+    outline: none;
+    pointer-events: auto;
+
+    color: $color-int-blue;
+
+    transition:
+      color 200ms $button-easing,
+      transform 300ms $button-easing;
+
+    @include bp-md {
+      font-size: 60px;
+    }
+
+    &:hover {
+      color: $color-int-blue--active;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:disabled {
+      pointer-events: none;
+
+      opacity: .4;
+    }
+
+    .icon {
+      @include default-font-smoothing;
+    }
+  }
+
+  &__button-prev {
+    top: -15px;
+    left: -20px;
+
+    padding: 15px 5px 15px 15px;
+
+    &:hover {
+      transform: translateX(-2px);
+    }
+
+    @include bp-md {
+      top: 0;
+      left: -10px;
+
+      padding: 0;
+    }
+  }
+
+  &__button-next {
+    right: -20px;
+    top: -15px;
+
+    padding: 15px 15px 15px 5px;
+
+    &:hover {
+      transform: translateX(2px);
+    }
+
+    @include bp-md {
+      top: 0;
+      right: -10px;
+
+      padding: 0;
+    }
+  }
+
+  // Responsive helpers
+  // -------------------------
+
+  .js-phone {
+    visibility: hidden;
+
+    @include bp-sm-max {
+      visibility: visible;
+    }
+  }
+
+  .js-tablet {
+    visibility: hidden;
+
+    @include media-breakpoint-between(md, lg) {
+      visibility: visible;
+    }
+  }
+
+  .js-desktop {
+    visibility: hidden;
+
+    @include bp-xl {
+      visibility: visible;
+    }
+  }
+}

@@ -1,0 +1,53 @@
+//
+// Scroll to Top
+// --------------------------------------------------
+
+/*doc
+---
+title: Scroll to Top
+name: 02-components-147-scroll-to-top-button-01-scroll-to-top-buttons
+category: Components - Scroll to Top
+---
+
+<p>A sticky scroll-to-top button to your website adds further ease of navigation to your website by allowing a user to
+scroll to the top of any given web page.</p>
+
+<p>This button is shown if the user scrolled one page length down and will be displayed as long as the users scrolls down
+to the bottom of the page or uses the interactive element to jump to the top of the page.</p>
+
+<div class="row margin-bottom-3">
+    <div class="col-xs-6 col-md-4 col-lg-2 bg-white text-align-center padding-4">
+      <sdx-scroll-to-top position="static" demo></sdx-scroll-to-top>
+    </div>
+    <div class="col-xs-6 col-md-4 col-lg-2 bg-horizon text-align-center padding-4">
+      <sdx-scroll-to-top position="static" demo></sdx-scroll-to-top>
+    </div>
+    <div class="col-xs-6 col-md-4 col-lg-2 bg-aluminum text-align-center padding-4">
+      <sdx-scroll-to-top position="static" demo></sdx-scroll-to-top>
+    </div>
+    <div class="col-xs-6 col-md-4 col-lg-2 bg-gray text-align-center padding-4">
+      <sdx-scroll-to-top position="static" demo></sdx-scroll-to-top>
+    </div>
+    <div class="col-xs-6 col-md-4 col-lg-2 bg-blue text-align-center padding-4">
+      <sdx-scroll-to-top position="static" demo></sdx-scroll-to-top>
+    </div>
+    <div class="col-xs-6 col-md-4 col-lg-2 bg-navy text-align-center padding-4">
+      <sdx-scroll-to-top position="static" demo></sdx-scroll-to-top>
+    </div>
+  </div>
+  <div class="fig-caption">Scroll to Top Button on differently coloured backgrounds</div>
+</div>
+
+<h2>Usage</h2>
+
+<p>This web component should preferrably be put either right to the beginning or the end within the body-tag,
+but can be put anywhere in between if need be.</p>
+
+<p><strong>Accessibility: </strong>It is completely hidden from screen readers as they already come with their own back-to-top functionality.</p>
+
+<br />
+
+```htmlmixed_webcomponent_sdx-scroll-to-top_accessible_no_preview
+  <sdx-scroll-to-top></sdx-scroll-to-top>
+```
+*/

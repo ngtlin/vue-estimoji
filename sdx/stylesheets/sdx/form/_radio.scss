@@ -1,0 +1,636 @@
+//
+// Radio Buttons
+// --------------------------------------------------
+
+/*doc
+---
+title: Radio Buttons
+name: 02-components-140-form-30-radiobuttons
+category: Components - Radio Buttons
+---
+
+<p>
+  Radio buttons are used when there is a list of two or more options that are mutually exclusive and the user must select
+  exactly one choice. In other words, clicking a non-selected radio button will deselect whatever other button was previously
+  selected in the list.
+</p>
+
+<p>
+  Following design standards (since 1984) enhances users' ability to predict what a control will do and how they'll
+  operate it. When they see a list of radio buttons, they know that they can only select one.
+</p>
+
+<p>
+  Radio button lists provide a clearer overview of the users' choices than a dropdown menu.
+  Radio buttons are also useful when the text label is long and might be obscured in a dropdown menu.
+  If you are offering more than four options to users, consider using a
+  <a href="/components_-_menu_(dropdown).html">dropdown menu</a>.
+</p>
+
+<div class="row">
+  <div class="col-xs-12 col-lg-6">
+    <form>
+      <sdx-input-group type="radio">
+        <div class="row margin-bottom-2">
+          <div class="col">
+            <sdx-input-item checked>
+              Option 1
+              <div slot="description">This is my supportive text.</div>
+            </sdx-input-item>
+          </div>
+        </div>
+        <div class="row margin-bottom-2">
+          <div class="col">
+            <sdx-input-item>Option 2</sdx-input-item>
+          </div>
+        </div>
+      </sdx-input-group>
+    </form>
+  </div>
+</div>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Variations and Usage Rules</h2>
+
+  <p>
+    There are two variations of radio buttons: The conventional radio buttons and the radio button containers.
+  </p>
+
+  <p>
+  <ul class="list">
+    <li>Radio button Ccontainers do not replace the conventional radio buttons, so be careful with the usage of this variation.</li>
+    <li>A selected radio button by default is recommended.</li>
+    <li>If users might need to refrain from making a selection, a radio button labeled “None” should be provided.</li>
+    <li>Structure the list of options in a logical and clear order so users' cognitive load is low.</li>
+    <li>Whenever possible, use radio buttons rather than drop-down menus, so that all options are permanently visible (and users can easily compare).</li>
+  </ul>
+  </p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <h3 class="margin-bottom-1">Conventional Radio Button</h3>
+      <h4 class="text-h5 margin-bottom-2">Used in forms</h4>
+
+      <form>
+        <sdx-input-group type="radio">
+          <div class="row margin-bottom-2">
+            <div class="col">
+              <sdx-input-item>
+                Delivery by priority mail
+              </sdx-input-item>
+            </div>
+          </div>
+          <div class="row margin-bottom-2">
+            <div class="col">
+              <sdx-input-item checked>
+                Collection at a Swisscom Shop<br/>
+                the following day
+              </sdx-input-item>
+            </div>
+          </div>
+          <div class="row margin-bottom-2">
+            <div class="col">
+              <sdx-input-item>
+                PickPost
+                <div slot="description">Flexibly collect the parcel at a PickPost point.</div>
+              </sdx-input-item>
+            </div>
+          </div>
+        </sdx-input-group>
+      </form>
+
+      <div class="hidden-lg-down" style="height: 16px;"></div>
+      <div class="hidden-md-down" style="height: 288px;"></div>
+
+      <ul class="list">
+        <li>Used in forms.</li>
+        <li>Must be positioned among themselves as fas as possible as users are working off one after the other steps in a form.</li>
+        <li>No pictures or graphics are used, the only exception being the error icons for the validation as well as the info icon of a tool tip</li>
+      </ul>
+    </div>
+
+    <div class="col-xs-12 col-lg-6">
+      <h3 class="margin-bottom-1">Radio Button Container</h3>
+      <h4 class="text-h5 margin-bottom-2">Used on sales and marketing pages</h4>
+
+      <form style="width: 280px;">
+        <sdx-input-group type="radio" theme="container">
+          <div class="row margin-bottom-2">
+            <div class="col">
+              <sdx-input-item checked>
+                International Fixed Option
+              </sdx-input-item>
+            </div>
+          </div>
+          <div class="row margin-bottom-2">
+            <div class="col">
+              <sdx-input-item>
+                Network International<br/>
+                Multiline Option <br/>
+                CHF 9.00/month
+              </sdx-input-item>
+            </div>
+          </div>
+          <div class="row margin-bottom-2">
+            <div class="col">
+              <sdx-input-item>
+                International Calls
+                <div slot="description">With the International Calls option, you can make unlimited calls.</div>
+              </sdx-input-item>
+            </div>
+          </div>
+          <div class="row margin-bottom-2">
+            <div class="col">
+              <sdx-input-item icon-name="icon-heart">
+                Protection Plus
+                <div slot="description">Covers your mobile phone against damage and misuse following theft.</div>
+              </sdx-input-item>
+            </div>
+          </div>
+        </sdx-input-group>
+      </form>
+
+      <ul class="list">
+        <li>Used on sales, marketing or product detail pages as graphical element to highlight the importance of this element.</li>
+        <li>Can be positioned among themselves or side by side.</li>
+        <li>Can have an sdx-icon.</li>
+        <li>Can have headlines with additional descriptive text.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Specifications</h3>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/radiobuttons/03_Dimensions_conventional_radiobuttons.png" alt="Dimensions, colours and typography for conventional radio buttons and radio button containers">
+      </div>
+      <span class="fig-caption">Dimensions, colours and typography for conventional radio buttons and radio button containers</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/radiobuttons/04_dimensions_multi-line_+_sidebyside_radio.png" alt="Dimensions, colours and typography for conventional radio buttons with multi-lines and radio buttons side-by-side">
+      </div>
+      <span class="fig-caption">Dimensions, colours and typography for conventional radio buttons with multi-lines and radio buttons side-by-side</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/radiobuttons/05_dimensions_radio_container.png" alt="Dimensions, colours and typography for radio button containers with multi-lines, vertically arranged or side-by-side">
+      </div>
+      <span class="fig-caption">Dimensions, colours and typography for radio button containers with multi-lines, vertically arranged or side-by-side</span>
+    </div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+```htmlmixed_webcomponent_sdx-input-item
+<!-- Radio button group (inline) -->
+<sdx-input-group type="radio" label="Radio group (inline)" inline change-callback="console.log('Checked:', arguments[0])">
+  <sdx-input-item value="option1" checked>Option 1</sdx-input-item>
+  <sdx-input-item value="option2">Option 2</sdx-input-item>
+</sdx-input-group>
+
+<hr>
+
+<!-- Radio button group (in a grid) -->
+<sdx-input-group type="radio" label="Radio group (in a grid)">
+  <div class="row">
+    <div class="col">
+      <sdx-input-item>
+        Option 1<br>
+        Multiple lines are also supported
+      </sdx-input-item>
+    </div>
+  </div>
+  <div class="row margin-top-2">
+    <div class="col">
+      <sdx-input-item checked>
+        Option 2
+        <div slot="description">Additional description text for more information.</div>
+      </sdx-input-item>
+    </div>
+  </div>
+  <div class="row margin-top-2">
+    <div class="col">
+      <sdx-input-item disabled>
+        Option 3
+        <div slot="description">This option can't be chosen.</div>
+      </sdx-input-item>
+    </div>
+  </div>
+</sdx-input-group>
+```
+
+<p>For an example of how to use radio buttons in a form, please see <a href="/samples/form.html">samples/form</a>.</p>
+
+<h2>Radio Button Container</h2>
+
+<h3>Inline layout (example with flex)</h3>
+
+```htmlmixed_playground
+<sdx-input-group type="radio" theme="container" inline>
+  <sdx-input-item checked style="flex: 1;">
+    Network International<br/>
+    Multiline Option <br/>
+    CHF 9.00/month
+  </sdx-input-item>
+  <sdx-input-item style="flex: 1;">
+    International Calls
+    <div slot="description">With the International Calls option, you can make unlimited calls.</div>
+  </sdx-input-item>
+  <sdx-input-item icon-name="icon-heart" style="flex: 1;">
+    Protection Plus
+    <div slot="description">Covers your mobile phone against damage and misuse following theft.</div>
+  </sdx-input-item>
+</sdx-input-group>
+```
+
+<h3>Inline layout (example with fixed width)</h3>
+
+```htmlmixed_playground
+<sdx-input-group type="radio" theme="container" inline>
+  <sdx-input-item checked style="width: 280px;"> <!-- choose a width for your content -->
+    Network International<br/>
+    Multiline Option <br/>
+    CHF 9.00/month
+  </sdx-input-item>
+  <sdx-input-item style="width: 280px;"> <!-- choose a width for your content -->
+    International Calls
+    <div slot="description">With the International Calls option, you can make unlimited calls.</div>
+  </sdx-input-item>
+  <sdx-input-item icon-name="icon-heart" style="width: 280px;"> <!-- choose a width for your content -->
+    Protection Plus
+    <div slot="description">Covers your mobile phone against damage and misuse following theft.</div>
+  </sdx-input-item>
+</sdx-input-group>
+```
+
+<h3>Grid layout</h3>
+
+```htmlmixed_playground
+<sdx-input-group type="radio" theme="container">
+  <div class="row margin-bottom-2">
+    <div class="col-xs-6">
+      <sdx-input-item checked>
+        International Fixed Option
+      </sdx-input-item>
+    </div>
+  </div>
+  <div class="row margin-bottom-2">
+    <div class="col-xs-6">
+      <sdx-input-item>
+        Network International<br/>
+        Multiline Option <br/>
+        CHF 9.00/month
+      </sdx-input-item>
+    </div>
+  </div>
+  <div class="row margin-bottom-2">
+    <div class="col-xs-6">
+      <sdx-input-item>
+        International Calls
+        <div slot="description">With the International Calls option, you can make unlimited calls.</div>
+      </sdx-input-item>
+    </div>
+  </div>
+  <div class="row margin-bottom-2">
+    <div class="col-xs-6">
+      <sdx-input-item icon-name="icon-heart">
+        Protection Plus
+        <div slot="description">Covers your mobile phone against damage and misuse following theft.</div>
+      </sdx-input-item>
+    </div>
+  </div>
+</sdx-input-group>
+```
+
+<h2>Validation</h2>
+
+<p>
+  To indicate to the user that a field or group is required, add the attribute <code>required</code>. This way, an
+  Asterisk will be added at the end of the group label automatically. <code>valid</code> needs to be set to <code>false</code>
+  and the <code>validation-message</code> needs to be added by the consumer to trigger the invalid states. The validation
+  logic needs to be implemented by the consumer.
+</p>
+
+```htmlmixed_playground
+<!-- Validate a radio group -->
+<form>
+  <sdx-input-group type="radio" label="Your choice" inline change-callback="console.log('Checked:', arguments[0])" valid="false" validation-message="Please choose an option" required>
+    <sdx-input-item value="option1">Option 1</sdx-input-item>
+    <sdx-input-item value="option2">Option 2</sdx-input-item>
+  </sdx-input-group>
+
+  <hr>
+
+  <!-- Validate a radio group (in a grid) -->
+  <sdx-input-group type="radio" label="Your choice" valid="false" validation-message="Please choose an option" required>
+    <div class="row margin-bottom-2">
+      <div class="col">
+        <sdx-input-item>
+          Option 1<br>
+          Multiple lines are also supported
+        </sdx-input-item>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <sdx-input-item>
+          Option 2
+          <div slot="description">Additional description text for more information.</div>
+        </sdx-input-item>
+      </div>
+    </div>
+  </sdx-input-group>
+</form>
+
+<p class="text-body-2 margin-top-2" aria-hidden="true">* Mandatory field</p>
+```
+*/
+
+
+// --------------------------------------------------
+
+
+// Mixins
+// -------------------------
+
+@mixin radio-hover($scale, $color) {
+  &::before {
+    border: 2px solid $color;
+  }
+
+  &::after {
+    background: $color;
+    border: 5px solid $color;
+    border-radius: 52%;
+    content: "";
+    left: 6px;
+    opacity: 1;
+    position: absolute;
+    top: 6px;
+    transform: scale($scale);
+  }
+}
+
+@mixin radio-focus($color: $color-radio-fill) {
+  &::before {
+    border: 2px solid $color;
+  }
+
+  &::after {
+    border: 5px solid $color;
+    border-radius: 52%;
+    content: "";
+    left: 6px;
+    opacity: 1;
+    position: absolute;
+    top: 6px;
+  }
+}
+
+// Radio wrapper styles
+// -------------------------
+
+.radio {
+  box-sizing: border-box;
+  + .radio {
+    margin-top: 14px;
+  }
+
+  &.add-space {
+    margin-bottom: 24px;
+  }
+
+  p {
+    @include font-semi-light;
+    @include text-small;
+
+    margin-top: 5px;
+    margin-bottom: 0;
+    padding-left: 36px;
+
+    color: $color-checkbox-supporting;
+  }
+
+  // Remove default Radio Buttons
+  // -------------------------
+
+  [type="radio"]:not(:checked),
+  [type="radio"]:checked {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+  }
+
+  // Radio Button styles
+  // -------------------------
+
+  [type="radio"] {
+    // Base styles
+    // -------------------------
+
+    + label {
+      @include font-semi-light;
+      @include text-standard;
+
+      display: inline-block;
+      position: relative;
+
+      cursor: pointer;
+
+      margin-bottom: 0;
+      padding-left: 36px;
+
+      color: $color-radio-label;
+
+      user-select: none;
+      backface-visibility: hidden;
+
+      &::before,
+      &::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        z-index: 0;
+        margin-top: 1px;
+
+        border-radius: 50%;
+
+        content: "";
+      }
+
+      &::before {
+        transition: all 120ms cubic-bezier(.785, .135, .15, .86);
+
+        width: $radio-size;
+        height: $radio-size;
+      }
+
+      &::after {
+        top: ($radio-size - $radio-active-size) / 2;
+        left: ($radio-size - $radio-active-size) / 2;
+
+        transition: all 120ms cubic-bezier(.785, .135, .15, .86);
+        transform-origin: 50% 50%;
+
+        width: $radio-active-size;
+        height: $radio-active-size;
+      }
+    }
+
+    &:not(:checked) + label {
+      @include radio-hover(0, $color-radio-empty);
+    }
+
+    // Hover styles
+    // -------------------------
+
+    &:hover + label {
+      @include radio-hover(.5, $color-radio-empty-hover);
+    }
+
+    // Focus styles
+    // -------------------------
+
+    &:focus + label {
+      @include radio-focus;
+    }
+
+    // Checked styles
+    // -------------------------
+
+    &:checked + label {
+      @include radio-hover(1, $color-radio-fill);
+    }
+
+    &:checked:focus + label {
+      @include radio-focus;
+    }
+
+    &:checked:hover + label {
+      @include radio-hover(1, $color-radio-fill-active);
+    }
+
+    // Disabled styles
+    // -------------------------
+
+    &:disabled + label {
+      opacity: .4;
+
+      pointer-events: none;
+
+      &::before {
+        border-color: $color-radio-empty;
+        background-color: transparent;
+      }
+    }
+
+    &:disabled:hover + label {
+      &::before {
+        border: 2px solid $color-radio-empty;
+      }
+
+      &::after {
+        background: none;
+      }
+    }
+
+    &:disabled:checked + label {
+      &::before {
+        border: 2px solid $color-radio-empty;
+      }
+
+      &::after {
+        background-color: $color-radio-empty;
+      }
+    }
+
+    &:disabled:not(:checked) + label::before {
+      border-color: $color-radio-empty;
+    }
+  }
+
+  // Radiobutton only style no label
+  // --------------------------------------------------
+
+  &--only {
+    [type="radio"] + label {
+      padding-left: $radio-size;
+    }
+  }
+}
+
+// Radio Form styles
+// --------------------------------------------------
+
+// Inline styles
+// -------------------------
+
+.form-inline {
+  .radio {
+    display: inline-block;
+    vertical-align: top;
+
+    + .radio {
+      margin-top: 0;
+      margin-left: 14px;
+    }
+  }
+}
+
+// Group styles
+// -------------------------
+
+.form-group {
+  label,
+  .label {
+    display: block;
+
+    margin-bottom: 8px;
+  }
+
+  // Validation Message
+  // -------------------------
+
+  .message {
+    max-height: 0;
+    margin-top: 0;
+
+    opacity: 0;
+
+    transition: 150ms all $standard-easing;
+
+    z-index: 10;
+  }
+
+  // Invalid Input Style
+  // -------------------------
+
+  &.invalid {
+    > .message {
+      max-height: 50px;
+      margin-top: 6px;
+
+      opacity: 1;
+
+      color: $color-input-invalid-text;
+      font-size: $form-input-invalid-font-size;
+    }
+  }
+}

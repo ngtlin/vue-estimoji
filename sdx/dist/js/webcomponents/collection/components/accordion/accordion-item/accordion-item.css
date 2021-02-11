@@ -1,0 +1,22 @@
+:host, *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:host {
+  display: block;
+}
+:host p {
+  padding: 13px 13px 14px 19px;
+}
+
+:host([arrow-position=center]) {
+  padding: 0;
+}
+
+:host(:not(:last-of-type)) .component {
+  border-bottom: 1px solid #d6d6d6;
+}
+
+.component {
+  position: relative;
+}

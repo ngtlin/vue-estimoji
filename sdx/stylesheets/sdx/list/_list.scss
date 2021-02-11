@@ -1,0 +1,393 @@
+//
+// Lists
+// --------------------------------------------------
+
+/*doc
+---
+title: Lists
+name: 02-components-080-lists
+category: Components - Lists
+---
+
+<p>Styled lists can be used to help group points together and give them prominence within the page hierarchy. There are two types of lists; structured lists that are numbered and unstructured lists that use bullet points.</p>
+
+<ul class="list single-line">
+  <li>Lorem ipsum dolor sit amet.</li>
+  <li>Lorem ipsum dolor sit atedur.</li>
+  <li>Lorem ipsum dolor sit amet.</li>
+</ul>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Variations</h2>
+
+  <h3>Ordered list</h3>
+
+    <div class="row margin-bottom-4">
+    <div class="col-xs-12 col-lg-6">
+      <h4>Single-line list</h4>
+      <ol class="list single-line">
+        <li>Lorem ipsum dolor sit amet, consectetur adipisici elit.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisici elit.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisici elit.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisici elit.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipisici elit.</li>
+      </ol>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+    <h4>Multiline list</h4>
+       <ol class="list">
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h3>Unordered list</h3>
+
+  <div class="row margin-bottom-4">
+    <div class="col-xs-12 col-lg-6">
+      <h4>Single-line list</h4>
+        <ul class="list">
+          <li class="single-line">Lorem ipsum dolor sit amet, consectetur adipisici elit.</li>
+          <li class="single-line">Lorem ipsum dolor sit amet, consectetur adipisici elit.</li>
+          <li class="single-line">Lorem ipsum dolor sit amet, consectetur adipisici elit.</li>
+          <li class="single-line">Lorem ipsum dolor sit amet, consectetur adipisici elit.</li>
+          <li class="single-line">Lorem ipsum dolor sit amet, consectetur adipisici elit.</li>
+        </ul>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+    <h4>Multiline list</h4>
+       <ul class="list">
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>Rules</h2>
+
+  <h3>Alignment</h3>
+
+  <p>
+    Numbers: Should be aligned to the baseline of the text and are right-aligned to the text.<br />
+    Bullets: They are aligned to the vertical centre point of the text.
+  </p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/lists/Group-17@2x-4.png" alt="Specifications alignment ordered list">
+      </div>
+      <span class="fig-caption">Ordered list alignment</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/lists/Group-18@2x-3.png" alt="Specifications alignment unordered list">
+      </div>
+      <span class="fig-caption">Unordered list alignment</span>
+    </div>
+  </div>
+
+  <p>Vertical spacing between paragraphs or text and lists is set to 40px, and is measured from descender to ascender.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/lists/Group-20@2x-1.png" alt="Specifications spaces between elements">
+      <span class="fig-caption">Space between elements</span>
+    </div>
+  </div>
+
+  <h3>Insertion</h3>
+
+  <p>Insertion spacing is 8px between text and the list element.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/lists/Group-19@2x.png" alt="Specifications spacing">
+      </div>
+      <span class="fig-caption">Insertion spacing</span>
+    </div>
+  </div>
+
+  <h3>Typography</h3>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/lists/Group-21@2x-2.png" alt="Specifications typography ordered list">
+      </div>
+      <span class="fig-caption">Typography ordered list</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/lists/Group-22@2x-2.png" alt="Specifications typography unordered list">
+      </div>
+      <span class="fig-caption">Typography unordered list</span>
+    </div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+<h2>Bullet list</h2>
+
+<h3>Bullet list single-line</h3>
+
+```htmlmixed_playground_accessible
+<h2>Lorem ipsum dolor sit amet</h2>
+
+<ul class="list single-line">
+  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+  <li>Lorem ipsum dolor sit atedur, labore aliqua.</li>
+  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+  <li>Lorem ipsum dolor sit atedur, labore aliqua.</li>
+</ul>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+```
+
+<h3>Bullet list multiline</h3>
+
+```htmlmixed_playground_accessible
+<h2>Lorem ipsum dolor</h2>
+
+<ul class="list">
+  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
+  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
+  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+</ul>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+```
+
+<h3>Formatting lists</h3>
+
+<p>To format lists, the class <code>single-line</code> can be applied to the individual list elements. This provides more compact spaces. </p>
+
+```htmlmixed_playground_accessible
+
+<ul class="list">
+  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
+  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
+  <ul class="list single-line">
+    <li>Lorem ipsum dolor</li>
+    <li>Lorem ipsum dolor</li>
+    <li>Lorem ipsum dolor</li>
+  </ul>
+  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+</ul>
+
+
+```
+
+
+<h3>Link list</h3>
+
+<p>When you display more than one link it is shown as a link list. The link list has a chevron to the right before each link element.</p>
+
+```htmlmixed_playground
+<ul class="list single-line">
+  <li class="icon-chevron-normal-right"><a href="javascript:void(0);">Mobile guides</a></li>
+  <li class="icon-chevron-normal-right"><a href="javascript:void(0);">Device manuals</a></li>
+  <li class="icon-chevron-normal-right"><a href="javascript:void(0);">MySwisscom App</a></li>
+  <li class="icon-chevron-normal-right"><a href="javascript:void(0);">Contract extension</a></li>
+</ul>
+```
+
+<h3>Check list</h3>
+
+```htmlmixed_playground_accessible
+<ul class="list single-line">
+  <li class="icon-check-mark">Lorem ipsum</li>
+  <li class="icon-check-mark">Lorem ipsum</li>
+  <li class="icon-check-mark">Lorem ipsum</li>
+  <li class="icon-check-mark">Lorem ipsum</li>
+</ul>
+```
+
+<h2>Numbered list</h2>
+
+<h3>Numbered list single-line</h3>
+
+```htmlmixed_playground_accessible
+<h2>Lorem ipsum dolor sit amet</h2>
+
+<ol class="list single-line">
+  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+  <li>Lorem ipsum dolor sit atedur, labore aliqua.</li>
+  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+  <li>Lorem ipsum dolor sit atedur, labore aliqua.</li>
+  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+</ol>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+```
+
+<h3>Numbered list multiline</h3>
+
+```htmlmixed_playground_accessible
+<h2>Lorem ipsum dolor sit amet</h2>
+
+<ol class="list">
+  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+  <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+</ol>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+```
+*/
+
+
+// --------------------------------------------------
+
+// Spacings
+// -------------------------
+
+%default {
+  margin-bottom: 13px;
+
+  @include bp-sm {
+    margin-bottom: 12px;
+  }
+}
+
+%single-line {
+  margin-bottom: 7px;
+
+  @include bp-sm {
+    margin-bottom: 6px;
+  }
+}
+
+// Reset List
+// -------------------------
+
+ul,
+menu,
+dir {
+  display: block;
+  padding: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// List Base
+// --------------------------------------------------
+
+ul.list ,
+ol.list {
+  margin-top: $baseline-3;
+  margin-bottom: $baseline-3;
+
+  ul.list ,
+  ol.list {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 18px;
+  }
+}
+
+
+// Bullet List
+// --------------------------------------------------
+
+ul.list {
+  &.single-line {
+    li {
+      @extend %single-line;
+    }
+  }
+
+  li {
+    @extend %default;
+    margin-left: 18px;
+
+    &::before {
+      color: $color-blue;
+      float: left;
+      margin-left: -18px;
+      font-size: 33px;
+    }
+
+    // Default icon
+    &:not([class*="icon-"])::before {
+      content: "•";
+    }
+
+    &[class*="icon-"]::before {
+      @include icon;
+      position: relative;
+      top: 3px;
+      right: 2px;
+    }
+
+    &[class*="icon-"] > a {
+      border-bottom: none;
+  }
+
+    &.single-line {
+      @extend %single-line;
+    }
+  }
+}
+
+
+// Numbered List
+// --------------------------------------------------
+
+ol.list {
+  counter-reset: mycounter;
+  display: table;
+
+  &.single-line {
+    li {
+      &::after {
+        @extend %single-line;
+      }
+    }
+  }
+
+  li {
+    list-style: none;
+    counter-increment: mycounter;
+    display: table-row;
+
+    &::before {
+      content: counter(mycounter) ".";
+      font-weight: $font-weight-semi-bold;
+      display: table-cell;
+      text-align: right;
+      padding-right: 8px;
+      color: $color-blue;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      @extend %default;
+    }
+  }
+}
+
+// Description Lists
+// -------------------------
+
+dt.list {
+  font-weight: $font-weight-light;
+}

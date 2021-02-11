@@ -1,0 +1,49 @@
+:host, *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:host {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  width: 100%;
+  padding: 24px 0;
+  text-align: center;
+  display: inline-block;
+  min-width: 240px;
+  outline: none;
+  font-size: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+:host .info-content {
+  padding-bottom: 14px;
+  line-height: 24px;
+  letter-spacing: 0.1px;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+:host(.hide-steps-label) .info-content {
+  display: none;
+}
+:host(.hide-steps-label) sdx-arrow {
+  top: -5px;
+}
+
+:host(.hide-arrows) sdx-arrow {
+  display: none;
+}
+
+sdx-arrow {
+  position: absolute;
+  top: 33px;
+  height: 80px;
+  width: 40px;
+}
+sdx-arrow.left {
+  left: 0;
+}
+sdx-arrow.right {
+  right: 0;
+}

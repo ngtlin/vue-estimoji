@@ -1,0 +1,70 @@
+//
+// Button Mixins
+// --------------------------------------------------
+
+@mixin button($settings) {
+  $button-color: map-get($settings, button-color);
+  $color: map-get($settings, color);
+  $disabled-button-color: rgba($button-color, .4);
+  $disabled-color: rgba($color, map-get($settings, text-opacity));
+
+  border: 0;
+  border-bottom-style: none;
+  border-color: $button-color;
+  background-color: $button-color;
+  color: $color;
+
+  // Hover, Focus, Active styles
+  // -------------------------
+
+  &:hover,
+  &:focus,
+  &:active {
+    border: 0;
+    border-bottom-style: none;
+    border-color: map-get($settings, button-color--active);
+    background-color: map-get($settings, button-color--active);
+    color: $color;
+  }
+
+  // Disabled styles
+  // -------------------------
+
+  &.disabled,
+  &:disabled {
+    border-color: $disabled-button-color;
+    background-color: $disabled-button-color;
+    color: $disabled-color;
+  }
+}
+
+@mixin button-thin($settings, $color) {
+  $button-color: map-get($settings, button-color);
+  $disabled-button-color: rgba($button-color, .4);
+  $disabled-color: rgba($color, .4);
+
+  border: $button-border-width solid $button-color;
+  background-color: transparent;
+  color: $color;
+
+  // Hover, Focus, Active styles
+  // -------------------------
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: map-get($settings, button-color--active);
+    background-color: rgba($button-color, .15);
+    color: $color;
+  }
+
+  // Disabled styles
+  // -------------------------
+
+  &.disabled,
+  &:disabled {
+    border-color: $disabled-button-color;
+    background-color: transparent;
+    color: $disabled-color;
+  }
+}

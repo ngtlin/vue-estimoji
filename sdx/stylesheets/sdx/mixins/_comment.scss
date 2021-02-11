@@ -1,0 +1,21 @@
+//
+// Comment Mixins
+// --------------------------------------------------
+
+@mixin make-comment-indent($size, $columns: $grid-columns, $gutters: $grid-gutters, $widths: $container-widths, $breakpoints: $grid-breakpoints) {
+  @each $breakpoint in map-keys($breakpoints) {
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+
+      $width: map-get($widths, $breakpoint);
+      $gutter: map-get($gutters, $breakpoint);
+
+      $padding: 0;
+      @if ($width != null) and ($gutter != null) {
+        $padding: (($width + $gutter) / $columns * $size);
+      } @else if ($gutter != null) {
+        $padding: calc((98vw - #{2 * $container-margin-width}) / #{$columns * $size});
+      }
+      padding-left: $padding;
+    }
+  }
+}

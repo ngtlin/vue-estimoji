@@ -1,0 +1,193 @@
+
+// Background Colours
+// ==================================================
+
+.bg-white {
+  background-color: $color-white;
+}
+
+.bg-navy {
+  background-color: $color-navy;
+}
+
+.bg-blue {
+  background-color: $color-blue;
+
+  &-tint-2,
+  &-40 {
+    background-color: $color-blue-tint-2;
+  }
+
+  &-tint-3,
+  &-20 {
+    background-color: $color-blue-tint-3;
+  }
+}
+
+.bg-aluminum,
+.bg-aluminium { // deprecated
+  background-color: $color-aluminum;
+
+  &-tint-2,
+  &-80 { // deprecated
+    background-color: $color-aluminum-tint-2;
+  }
+}
+
+.bg-horizon {
+  background-color: $color-horizon;
+
+  &-tint-2,
+  &-40 { // deprecated
+    background-color: $color-horizon-tint-2;
+  }
+}
+
+.bg-gray {
+  background-color: $color-gray;
+
+  &-tint-2,
+  &-90 { // deprecated
+    background-color: $color-gray-tint-2;
+  }
+
+  &-tint-3,
+  &-80 { // deprecated
+    background-color: $color-gray-tint-3;
+  }
+
+  &-tint-4,
+  &-mid { // deprecated
+    background-color: $color-gray-tint-4;
+  }
+
+  &-tint-5,
+  &-60 { // deprecated
+    background-color: $color-gray-tint-5;
+  }
+
+  &-tint-6,
+  &-40 { // deprecated
+    background-color: $color-gray-tint-6;
+  }
+
+  &-tint-7,
+  &-light { // deprecated
+    background-color: $color-gray-tint-7;
+  }
+
+  &-tint-8,
+  &-20 { // deprecated
+    background-color: $color-gray-tint-8;
+  }
+}
+
+.bg-sc {
+  &-blue {
+    background-color: $color-sc-blue;
+  }
+
+  &-red {
+    background-color: $color-sc-red;
+  }
+
+  &-navy {
+    background-color: $color-sc-navy;
+  }
+
+  &-white {
+    background-color: $color-white;
+  }
+}
+
+
+// Interaction Colours
+// --------------------------------------------------
+
+.bg-int {
+  &-blue {
+    background-color: $color-int-blue;
+
+    &--active {
+      background-color: $color-int-blue--active;
+    }
+  }
+
+  &-gray {
+    background-color: $color-int-gray;
+
+    &--active {
+      background-color: $color-int-gray--active;
+    }
+  }
+
+  &-green {
+    background-color: $color-int-green;
+
+    &--active {
+      background-color: $color-int-green--active;
+    }
+  }
+
+  &-red {
+    background-color: $color-int-red;
+
+    &--active {
+      background-color: $color-int-red--active;
+    }
+  }
+
+  &-orange {
+    background-color: $color-int-orange;
+
+    &--active {
+      background-color: $color-int-orange--active;
+    }
+  }
+}
+
+
+// Accent Colours
+// --------------------------------------------------
+
+.bg-azure {
+  background-color: $color-azure;
+
+  &--active {
+    background-color: $color-azure--active;
+  }
+}
+
+.bg-orchid {
+  background-color: $color-orchid;
+
+  &--active {
+    background-color: $color-orchid--active;
+  }
+}
+
+.bg-iris {
+  background-color: $color-iris;
+
+  &--active {
+    background-color: $color-iris--active;
+  }
+}
+
+.bg-pink {
+  background-color: $color-pink;
+
+  &--active {
+    background-color: $color-pink--active;
+  }
+}
+
+.bg-turquoise,
+.bg-apple, // deprecated
+.bg-petrol { // deprecated
+  background-color: $color-turquoise;
+
+  &--active {
+    background-color: $color-turquoise--active;
+  }
+}

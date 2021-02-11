@@ -1,0 +1,6 @@
+<script>
+  console.log("-XXX->href=", window.location.href);
+  var url = window.location.href;
+  url = url.replace(new RegExp("/jira-auth"), "/#/jira-auth");
+  window.location.href = url;
+</script>

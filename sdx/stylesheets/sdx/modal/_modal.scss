@@ -1,0 +1,395 @@
+//
+// Modal
+// --------------------------------------------------
+
+/*doc
+---
+title: Modals
+name: 02-components-105-modals-01-overview
+category: Components - Modals
+---
+
+<p>Modals are dialogs that appear on top of the main content. They move the system into a mode requiring an unser interaction. These dialogs disable the main content until the user explicitly interacts with them.</p>
+
+<p>A responsive test page for the Modal dialog: <a href="/samples/modal.html">samples/modal</a>.</p>
+
+<div class="row">
+  <div class="col-xs-12 col-lg-6">
+    <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/modal/Group-11@2x.png" alt="Example of a modal with 2 buttons">
+  </div>
+  <div class="col-xs-12 col-lg-6">
+  </div>
+</div>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Variations</h2>
+
+  <h3>Standard modals</h3>
+
+  <p>For devices over 768px wide use modal windows with side by side CTAs. Mobile modals use full width and stacked CTA’s to save horizontal space.<br />Buttons align right on modals used for >768px devices.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/modal/Group-11@2x.png" alt="Example of a modal with 2 buttons side-by-side">
+      <span class="fig-caption">768px uses side by size modals</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/modal/Group-12@2x-9.png" alt="Example of a modal with 2 buttons stacked">
+      <span class="fig-caption">768px modal view uses stacked CTA to save horizontal space</span>
+    </div>
+  </div>
+
+  <h3>Icon modal</h3>
+
+  <p>The icon modal varies in sizes, depending on the number of icons inside. These icons are distibuted evenly across the modal. When displaying more than five icons, a dividing line helps to separate the rows of icons.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/modal/Group-13@2x-10.jpg" alt="Example of a modal with 2 icons">
+      <span class="fig-caption">Modal with two icons</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/modal/Group-14@2x-7.jpg" alt="Example of a modal with 3 icons">
+      <span class="fig-caption">Modal with three icons</span>
+    </div>
+  </div>
+
+  <h2>Rules</h2>
+
+    <div class="row">
+    <div class="col-xs-12 col-lg-6">
+    <h3 class="margin-bottom-1">Overlay</h3>
+    <p>The ovelay is a globally 40% #333333 on all modal styles. The modal is always vertically centered.</p>
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/modal/Group-13@2x-14.jpg"alt="Background specification">
+      <span class="fig-caption">Background overlay colour</span>
+    </div>
+
+    <div class="col-xs-12 col-lg-6">
+    <h3 class="margin-bottom-1">Stacked buttons</h3>
+    <p>Use no more than three stacked buttons to avoid the modal getting too long.</p>
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/modal/Group-18@2x-7.png" alt="Specifications of stacked buttons">
+      <span class="fig-caption">Stacked buttons</span>
+    </div>
+  </div>
+
+  <h3>Typography</h3>
+
+  <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/modal/Group-21@2x-6.jpg" alt="Typography for modals">
+        <span class="fig-caption">Typography</span>
+      </div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+<p>Modals are used to display content in a layer above the app. There can only be one active modal dialog at a given time.</p>
+
+<h2>Interactive sample</h2>
+
+<p>A responsive test page for the Modal dialog is available at <a href="/samples/modal.html">samples/modal</a>. In additon to the responsive behavior it also demonstrates how to open and close the modal dialog.</p>
+
+<h2>Usage</h2>
+
+<style>
+  .codeExample .backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .codeExample .modal {
+    position: relative;
+  }
+
+  codeExample. .modal__content {
+    margin: 24px;
+    width: 100%;
+  }
+</style>
+
+<p>There are serveral options for opening and closing a modal dialog, either use the <code>Modal</code> JavaScript component directly and call the <code>open()</code> and <code>close()</code> methods on the component; or add a button with the class <code>modal-trigger</code> and a <code>href</code> attribute with the id of the target modal dialog.</p>
+
+```htmlmixed
+<button class="button button--primary modal-trigger" href="myModalDialog">Open modal</button>
+```
+
+For closing the Modal, either call `close()` on the component manually,
+or add either the `modal-close` or `modal-cancel` class to a button in the Modal.
+The following events are triggered at the appropriate times: `opened`, `cancelled`, and `closed`.
+
+<h3>Modal dialog with two buttons</h3>
+
+```htmlmixed
+<div class="modal modal--open" role="dialog" tabindex="-1">
+  <div class="modal__content">
+    <div class="modal__header">
+      <h1>Delete file</h1>
+      <button class="modal__close modal-cancel" aria-label="Close">
+        <i class="icon icon-022-close" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="modal__body">
+      <p>
+        Do you want to delete <strong>SDX_Library_Master.pdf</strong>?
+      </p>
+      <div class="button-group button-group--responsive">
+        <button class="button button--responsive button--primary align-right modal-close">
+          Yes, delete
+        </button>
+        <button class="button button--responsive button--secondary modal-cancel">
+          No, keep it
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="backdrop backdrop--open"></div>
+```
+
+<h3>Modal dialog with three buttons</h3>
+
+```htmlmixed
+<div class="modal modal--open" role="dialog" tabindex="-1">
+  <div class="modal__content">
+    <div class="modal__header">
+      <h1>Delete file</h1>
+      <button class="modal__close modal-cancel" aria-label="Close">
+        <i class="icon icon-022-close" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div class="modal__body">
+      <p>
+        Do you want to delete <strong>SDX_Library_Master.pdf</strong>?
+      </p>
+      <div class="button-group button-group--responsive">
+        <button class="button button--responsive button--primary modal-close">
+          Yes, delete
+        </button>
+        <button class="button button--responsive button--secondary modal-cancel">
+          No, keep it
+        </button>
+        <button class="button button--responsive button--secondary">
+          Learn More
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="backdrop backdrop--open"></div>
+```
+*/
+
+// --------------------------------------------------
+
+
+// Modal Dialog
+// --------------------------------------------------
+
+.modal {
+
+  // NOTE: This is set to flex in JS to makes sure the animations work
+  // and the modal does not take up space when hidden.
+  display: none;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: $zindex-modal + 1;
+
+  width: 100%;
+  height: 100%;
+
+  outline: none;
+  pointer-events: none;
+
+  &--open {
+    display: flex;
+
+    .modal__content {
+      transform: scale(1);
+
+      visibility: visible;
+      opacity: 1;
+    }
+
+  }
+
+  // Container
+  // -------------------------
+
+  > .container {
+    display: flex;
+  }
+
+  // Modal Content
+  // -------------------------
+
+  &__content {
+    position: relative;
+
+    margin: auto;
+    max-height: calc(100vh - #{$modal-spacing-height});
+
+    align-self: center;
+
+    padding: 0;
+
+    box-shadow: 0 0 4px rgba($color-black, .15);
+    background: $color-white;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    pointer-events: auto;
+
+    visibility: hidden;
+    opacity: 0;
+
+    transform: scale(.92);
+    transition:
+      transform 300ms 50ms,
+      opacity 300ms 50ms,
+      visibility 300ms 50ms;
+
+  }
+
+  // Modal Close Button
+  // -------------------------
+
+  &__close {
+    position: absolute;
+    top: 16px;
+    right: 13px;
+
+    width: 32px;
+    height: 32px;
+
+    cursor: pointer;
+    color: $color-navy;
+
+    @include bp-desktop {
+      top: 24px;
+      right: 26px;
+    }
+
+    .icon {
+      line-height: 32px;
+
+      font-size: 24px;
+      font-weight: 600;
+
+      @include bp-desktop {
+        font-size: 30px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  // Modal Header
+  // -------------------------
+
+  &__header {
+    border-bottom: 1px solid $color-gray-tint-8;
+
+    padding: 20px 64px 0 $modal-margin;
+
+    width: 100%;
+    height: 64px;
+
+    @include bp-desktop {
+      padding: 24px 64px 0 $modal-margin-desktop;
+
+      height: 80px;
+    }
+
+    @include headings {
+      @include text-truncate;
+
+      margin-bottom: 0;
+    }
+
+    h1 {
+      @include font-semi-bold;
+      @include typo-headline-5;
+
+      @include bp-desktop {
+        @include font-light;
+        @include typo-headline-4;
+      }
+    }
+  }
+
+  // Modal Body
+  // -------------------------
+
+  &__body {
+    @include text-standard;
+    @include smooth-scroll-on-ios;
+
+    overflow-y: auto;
+    max-height: calc(100vh - #{$modal-spacing-height} - 80px);
+
+    padding: 21px $modal-margin $modal-margin;
+
+    @include bp-desktop {
+      padding: 29px $modal-margin-desktop $modal-margin-desktop;
+    }
+
+    .button-group {
+      margin-top: 21px;
+
+      @include bp-desktop {
+        margin-top: 34px;
+      }
+    }
+  }
+
+  // Grid Container in Modal
+  // --------------------------------------------------
+
+  > .container {
+    @include bp-xs-max {
+      width: calc(102% - (2 * #{$modal-margin}));
+    }
+  }
+}
+
+// Modal Backdrop
+// --------------------------------------------------
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  transition: opacity 600ms, visibility 600ms;
+
+  visibility: hidden;
+  opacity: 0;
+
+  z-index: $zindex-modal;
+
+  background: rgba(0, 0, 0, .45);
+
+  width: 100%;
+  height: 100%;
+
+  &--open {
+    visibility: visible;
+    opacity: 1;
+
+    pointer-events: auto;
+  }
+}

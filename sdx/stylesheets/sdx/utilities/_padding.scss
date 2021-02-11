@@ -1,0 +1,97 @@
+//
+// Padding Dev Utilities
+// --------------------------------------------------
+
+/*doc
+---
+title: Padding
+name: 04-developers-20-padding
+category: Developers - Padding utils
+---
+
+<p>Apply SDX conform paddings to an element. The following padding options are available:</p>
+
+<p>Padding on all 4 sides of the element:</p>
+
+<ul class="list">
+  <li>.padding-0</li>
+  <li>.padding-1</li>
+  <li>.padding-2</li>
+  <li>.padding-3</li>
+  <li>.padding-4</li>
+</ul>
+
+<p>Padding on the left and right side of the element:</p>
+
+<ul class="list">
+  <li>.padding-h-0</li>
+  <li>.padding-h-1</li>
+  <li>.padding-h-2</li>
+  <li>.padding-h-3</li>
+  <li>.padding-h-4</li>
+</ul>
+
+<p>Padding on the top and bottom side of the element:
+
+<ul class="list">
+  <li>.padding-v-0</li>
+  <li>.padding-v-1</li>
+  <li>.padding-v-2</li>
+  <li>.padding-v-3</li>
+  <li>.padding-v-4</li>
+</ul>
+
+<p>Padding on the top of the element:</p>
+
+<ul class="list">
+  <li>.padding-top-0</li>
+  <li>.padding-top-1</li>
+  <li>.padding-top-2</li>
+  <li>.padding-top-3</li>
+  <li>.padding-top-4</li>
+</ul>
+
+<p>Padding on the bottom of the element:</p>
+
+<ul class="list">
+  <li>.padding-bottom-0</li>
+  <li>.padding-bottom-1</li>
+  <li>.padding-bottom-2</li>
+  <li>.padding-bottom-3</li>
+  <li>.padding-bottom-4</li>
+</ul>
+
+<p>Padding on the left side of the element:</p>
+
+<ul class="list">
+  <li>.padding-left-0</li>
+  <li>.padding-left-1</li>
+  <li>.padding-left-2</li>
+  <li>.padding-left-3</li>
+  <li>.padding-left-4</li>
+</ul>
+
+<p>Padding on the right side of the element:</p>
+
+<ul class="list">
+  <li>.padding-right-0</li>
+  <li>.padding-right-1</li>
+  <li>.padding-right-2</li>
+  <li>.padding-right-3</li>
+  <li>.padding-right-4</li>
+</ul>
+
+<p>Padding from a breakpoint and up, some examples:</p>
+
+<ul class="list">
+  <li>.padding-sm-0</li>
+  <li>.padding-md-h-1</li>
+  <li>.padding-lg-v-2</li>
+  <li>.padding-xl-top-3</li>
+  <li>.padding-ul-bottom-4</li>
+</ul>
+
+*/
+
+@import "whitespace";
+@include whitespace(padding);

@@ -1,0 +1,579 @@
+//
+// Commenting
+// --------------------------------------------------
+
+/*doc
+---
+title: Commenting
+name: 02-components-055-commenting
+category: Components - Commenting
+---
+
+<p>Commenting allows users to add comments to articles and posts. The commenting pattern follows a simple system of indentation for connected comments. The avatar, name and title of the contributor are all visible, along with basic functionality, for example like and follow.</p>
+
+<div class="comments">
+  <div class="comments__input">
+    <div class="avatar">
+      <img class="avatar__image" src="/$WEBROOT-THEME-BUILD$/img/samples/avatar.png" />
+    </div>
+    <div class="input-wrapper">
+      <form>
+        <div class="input-field input-multiline" data-init="auto">
+          <textarea id="multiline-1" placeholder="Leave a comment" data-min-rows="4" data-max-rows="10"></textarea>
+        </div>
+        <button class="button button--primary disabled is-hidden">
+          Post
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="comments__feed">
+    <div class="comment">
+      <div class="comment__wrapper">
+        <div class="comment__header">
+          <div class="avatar">
+            <img class="avatar__image" src="/$WEBROOT-THEME-BUILD$/img/samples/avatar.png" / alt="Robert Schmidt">
+          </div>
+          <div class="author">
+            <button class="link author__title">Robert Schmidt</button>
+            <span class="author__subtitle">Deputy Director of Communication</span>
+          </div>
+          <div class="meta">
+            <button class="link">Follow</button>
+          </div>
+        </div>
+        <div class="comment__body">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div>
+        <div class="comment__footer">
+          <button class="link">
+            <i class="icon icon-068-reply-message-2" aria-hidden="true"></i>
+            Reply
+          </button>
+          <button class="link">
+            Like
+          </button>
+          <div class="time">
+            25 minutes ago
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Variations</h2>
+
+  <h3>Commenting</h3>
+
+  <p>The commenting functionality is position at the bottom of editorial or blog content. It features the user avatar, name and titles to help identify who is commenting, as well as a time stamp, reply and like functionality. Where applicable, commenting can also feature a follow button.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/comment/Group-9@2x-3.jpg" alt="Example for comment and input field on desktop">
+       <span class="fig-caption">Comment and input field desktop</span>
+    </div>
+     <div class="col-xs-12 col-lg-6">
+         <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/comment/Group-11@2x-5.jpg" alt="Example for comment and input field on mobile">
+         <span class="fig-caption">Mobile comment and input field</span>
+      </div>
+  </div>
+
+  <h3>Comment feeds</h3>
+
+  <p>When showing lists of comments, they’re stacked vertically, and ordered by date, displaying the newest comments last. Replies are conneted to the original comment by placing them directly below, and indenting them by a single column.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/comment/Group-14@2x-1.jpg" alt="Example for feed on desktop">
+        <span class="fig-caption">Comment feed desktop</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/comment/Group-17@2x-1.jpg" alt="Example for feed on mobile">
+        <span class="fig-caption">Comment feed on mobile</span>
+    </div>
+
+  </div>
+
+  <h2>Rules</h2>
+
+  <h3>Indentation</h3>
+
+  <p>On Desktop: Replies within comment threads are displayed by indenting one column across from the original comment. This creates a clear visual link between the comments. Indentation on desktop is limited to two columns to preserve line length. The third reply would only have a two column indent.</p>
+  <p>On Mobile: Indentation on mobile is limited to just one column, regardless of the number of replies, due to the restricted width.</p>
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/comment/comment-indentation@2x.jpg" alt="Example for comment indentation on desktop">
+      <span class="fig-caption">Comment indentation on desktop</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/comment/content-indentation-2@2x.jpg" alt="Example for comment indentation on mobile">
+      <span class="fig-caption">Comment indentation on mobile</span>
+    </div>
+
+  </div>
+
+  <h3>Comment input field</h3>
+
+  <p>Comment input fields have a different behaviour to conventional input fields. The follow the same type specificiations and colour treatment, but their scale changes over the course of the interaction. When the user first clicks into the field, it automatically grows to accomodate four lines of text, and an inactive call to action appears below the field. Once the user starts to input text into the field the call to action becomes active. As more text is input into the field, it will grow to accomodate an additional line, and continue to grow as required, with no limit.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/comment/Group-21@2x-1.jpg" alt="Example for default comment field">
+        <span class="fig-caption">Default comment field</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/comment/Group-22@2x-1.jpg" alt="Example for active comment field">
+        <span class="fig-caption">Active comment field with no input</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/comment/Group-23@2x-2.jpg" alt="Example for active comment field with input and active post button">
+        <span class="fig-caption">Active comment field with input and active post button</span>
+    </div>
+  </div>
+
+  <h3>Typography</h3>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/comment/Group-24@2x-1.png" alt="Typography for commenting">
+      </div>
+      <span class="fig-caption">Typography</span>
+    </div>
+  </div>
+
+</div>
+
+
+```section_develop
+```
+
+<p>Commenting allows users to add comments to articles and posts. The commenting pattern follows a simple system of indentation for connected comments. The avatar, name and title of the contributor are all visible, along with basic functionality, for example like and follow.</p>
+
+<h3>Comment sample</h3>
+
+<p>A responsive test page for the comment pattern is available at <a href="/samples/comment.html">samples/comment</a>.</p>
+
+<h2>Variations</h2>
+
+<h3>Commenting</h3>
+
+<p>The commenting functionality is position at the bottom of editorial or blog content. It features the user avatar, name and titles to help identify who is commenting, as well as a time stamp, reply and like functionality. Where applicable, commenting can also feature a follow button.</p>
+
+<script>
+  function addEvents(input) {
+    var text = input.querySelector("textarea");
+    var button = input.querySelector("button");
+
+    if (text) {
+      text.addEventListener("focus", function(e) {
+        button.classList.remove("is-hidden");
+      });
+
+      text.addEventListener("blur", function(e) {
+        if (text.value === "" ) {
+          button.classList.add("is-hidden");
+        }
+      });
+
+      text.addEventListener("input", function(e) {
+        if (text.value != "") {
+          button.classList.remove("disabled");
+        } else {
+          button.classList.add("disabled");
+        }
+      });
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var inputs = document.querySelectorAll(".comments__input");
+    for (var i = 0; i < inputs.length; i++) {
+      addEvents(inputs[i]);
+    }
+  });
+</script>
+
+```htmlmixed_accessible
+<div class="comments">
+  <div class="comments__input">
+    <div class="avatar">
+      <img class="avatar__image" src="/$WEBROOT-THEME-BUILD$/img/samples/avatar.png" alt="Robert Schmidt"/>
+    </div>
+    <div class="input-wrapper">
+      <form>
+        <div class="input-field input-field--multiline" data-init="auto">
+          <textarea id="multiline-1" placeholder="Leave a comment" data-min-rows="4" data-max-rows="10"></textarea>
+        </div>
+        <button class="button button--primary disabled is-hidden">
+          Post
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="comments__feed">
+    <div class="comment">
+      <div class="comment__wrapper">
+        <div class="comment__header">
+          <div class="avatar">
+            <img class="avatar__image" src="/$WEBROOT-THEME-BUILD$/img/samples/avatar.png" alt="Robert Schmidt" />
+          </div>
+          <div class="author">
+            <button class="link author__title">Robert Schmidt</button>
+            <span class="author__subtitle">Deputy Director of Communication</span>
+          </div>
+          <div class="meta">
+            <button class="link">Follow</button>
+          </div>
+        </div>
+        <div class="comment__body">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div>
+        <div class="comment__footer">
+          <button class="link">
+            <i class="icon icon-068-reply-message-2" aria-hidden="true"></i>
+            Reply
+          </button>
+          <button class="link">
+            Like
+          </button>
+          <div class="time">
+            25 minutes ago
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+
+<h3>Comment feeds</h3>
+
+<p>When showing lists of comments, they’re stacked vertically, and ordered by date, displaying the newest comments last. Replies are conneted to the original comment by placing them directly below, and indenting them by a single column.</p>
+
+```htmlmixed_accessible
+<div class="comments">
+  <div class="comments__feed">
+    <div class="comment">
+      <div class="comment__wrapper">
+        <div class="comment__header">
+          <div class="avatar">
+            <img class="avatar__image" src="/$WEBROOT-THEME-BUILD$/img/samples/avatar.png" alt="Robert Schmidt" />
+          </div>
+          <div class="author">
+            <button class="link author__title">Robert Schmidt</button>
+            <span class="author__subtitle">Deputy Director of Communication</span>
+          </div>
+          <div class="meta">
+            <button class="link">Follow</button>
+          </div>
+        </div>
+        <div class="comment__body">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div>
+        <div class="comment__footer">
+          <button class="link">
+            <i class="icon icon-068-reply-message-2" aria-hidden="true"></i>
+            Reply
+          </button>
+          <button class="link">
+            Like
+          </button>
+          <div class="time">
+            25 minutes ago
+          </div>
+        </div>
+      </div>
+
+      <div class="comment">
+        <div class="comment__wrapper">
+          <div class="comment__header">
+            <div class="avatar">
+              <img class="avatar__image" src="/$WEBROOT-THEME-BUILD$/img/samples/avatar2.png" alt="Tobias Herrmann" />
+            </div>
+            <div class="author">
+              <button class="link author__title">Tobias Herrmann</button>
+              <span class="author__subtitle">Software Developer</span>
+            </div>
+            <div class="meta">
+              <button class="link">Follow</button>
+            </div>
+          </div>
+          <div class="comment__body">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+          <div class="comment__footer">
+            <button class="link">
+              <i class="icon icon-068-reply-message-2" aria-hidden="true"></i>
+              Reply
+            </button>
+            <button class="link">
+              Like
+            </button>
+            <div class="time">
+              25 minutes ago
+            </div>
+          </div>
+        </div>
+
+        <div class="comment">
+          <div class="comment__wrapper">
+            <div class="comment__header">
+              <div class="avatar">
+                <img class="avatar__image" src="/$WEBROOT-THEME-BUILD$/img/samples/avatar3.png" alt="Michael Höhn" />
+              </div>
+              <div class="author">
+                <button class="link author__title">Michael Höhn</button>
+                <span class="author__subtitle">Software Developer</span>
+              </div>
+              <div class="meta">
+                <button class="link">Follow</button>
+              </div>
+            </div>
+            <div class="comment__body">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </div>
+            <div class="comment__footer">
+              <button class="link">
+                <i class="icon icon-068-reply-message-2" aria-hidden="true"></i>
+                Reply
+              </button>
+              <button class="link">
+                Like
+              </button>
+              <div class="time">
+                25 minutes ago
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+*/
+
+
+// --------------------------------------------------
+
+.comments {
+
+  // Input Styles
+  // -------------------------
+
+  &__input {
+    @include text-standard;
+
+    display: flex;
+
+    border: 0;
+
+    .input-wrapper {
+      width: 100%;
+
+      .button {
+        float: right;
+        margin-bottom: 24px;
+
+        &.disabled {
+          border-color: rgba($color-button-secondary, .4);
+          background-color: rgba($color-button-secondary, .4);
+          color: rgba($color-gray, .4);
+        }
+
+        @include bp-phone-max {
+          display: none;
+        }
+      }
+    }
+
+    .avatar {
+      margin-right: 18px;
+      margin-top: 5px;
+
+      @include bp-phone-max {
+        display: none;
+      }
+
+      .avatar__image {
+        width: 41px;
+        height: 41px;
+
+        border-radius: 50%;
+      }
+    }
+
+    .input-multiline, // DEPRECATED
+    .input-field--multiline {
+      display: inline-flex;
+
+      width: 100%;
+      margin-bottom: 24px;
+
+      textarea {
+        margin-top: 0 !important;
+      }
+    }
+
+    .is-hidden {
+      display: none;
+    }
+  }
+
+  // Feed Styles
+  // -------------------------
+
+  &__feed {
+    margin-top: 1px;
+  }
+}
+
+// Comment Styles
+// --------------------------------------------------
+
+.comment {
+  @include text-standard;
+
+  // Comment indentation
+  > .comment {
+    @include make-comment-indent(1);
+
+    > .comment {
+      padding-left: 0;
+
+      @include bp-tablet {
+        @include make-comment-indent(1);
+      }
+
+      .comment {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &__wrapper {
+    margin-top: -1px;
+    padding: 13px 0 16px;
+
+    border-top: 1px solid $color-comment-border;
+    border-bottom: 1px solid $color-comment-border;
+  }
+
+  &__header {
+    @include typo-headline-5;
+
+    display: flex;
+    margin-bottom: 8px;
+
+    .author {
+      flex: 1;
+      overflow: hidden;
+
+      &__title,
+      &__subtitle {
+        @include text-truncate;
+
+        display: block;
+
+        max-width: 100%;
+      }
+    }
+
+    .meta {
+      margin-left: 18px;
+      align-self: center;
+
+      @include bp-phone-max {
+        display: none;
+      }
+    }
+
+  }
+
+  &__body {
+    margin-bottom: 7px;
+  }
+
+  &__footer {
+    .icon {
+      bottom: -1px;
+      font-size: 20px;
+    }
+
+    .time {
+      @include text-smaller;
+
+      float: right;
+      margin-top: 2px;
+
+      opacity: .5;
+    }
+  }
+
+  .link {
+    &,
+    &:hover,
+    &:focus {
+      border: 0;
+    }
+  }
+
+  .avatar {
+    margin-right: 18px;
+    margin-top: 3px;
+
+    .avatar__image {
+      width: 41px;
+      height: 41px;
+
+      border-radius: 50%;
+    }
+  }
+}
+
+
+// Dark Background
+// --------------------------------------------------
+
+.bg--dark {
+  .comments__input {
+    .input-wrapper {
+      .button {
+        &.disabled {
+          background-color: transparent;
+          color: rgba($color-button-secondary, .4);
+        }
+      }
+    }
+  }
+
+  .comment {
+    &__wrapper {
+      border-top: 1px solid $color-comment-dark-border;
+      border-bottom: 1px solid $color-comment-dark-border;
+    }
+
+    .link {
+      border: 0;
+      color: $color-link;
+
+      &:hover,
+      &:focus {
+        border: 0;
+        color: $color-link--active;
+      }
+    }
+  }
+}

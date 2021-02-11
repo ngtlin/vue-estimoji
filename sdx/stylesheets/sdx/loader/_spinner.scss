@@ -1,0 +1,168 @@
+//
+// Loader Spinner
+// --------------------------------------------------
+
+/*doc
+---
+title: Loading Spinner
+name: 02-components-090-loader-spinner-01
+category: Components - Loading Spinner
+---
+<p>The loading spinner helps to reassure users that a process is taking place. It should be used when offering a numeric explanation of progress isn’t necessary. <br/>The loading spinner is built around a central axis and is split into two colours. As soon as the loading stroke hits the axis the color changes.</p>
+
+<p>The loader spinner has two base sizes small (upper example) and large (lower example) for a variety of different uses.</p>
+
+<div>
+  <sdx-loading-spinner></sdx-loading-spinner>
+  <sdx-loading-spinner size="large"></sdx-loading-spinner>
+</div>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Variations</h2>
+
+  <h3>Sizes</h3>
+
+  <p>The small spinner is used where space is limited, for example on input fields to indicate loading.</p>
+
+  <p><sdx-loading-spinner></sdx-loading-spinner></p>
+
+  <p>The larger loading spinner is used on page loads and larger screen takeovers. This will often be the only element on the page so it needs to be more prominent.</p>
+
+  <p><sdx-loading-spinner size="large"></sdx-loading-spinner></p>
+
+  <h2>Rules</h2>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+    <h3 class="margin-bottom-1">Axis</h3>
+      <p>The loading spinner is built around an axis and is split into two colours. As soon as the loading stroke hits the axis it changes the color. Please refer to the animation assets for behaviour and movement references.</p>
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/loading_spinner/Group-15@2x-13.jpg" alt="Example showing the axis">
+      <span class="fig-caption">Axis</span>
+    </div>
+
+    <div class="col-xs-12 col-lg-6">
+    <h3 class="margin-bottom-1">Inside elements</h3>
+    <p>The smaller spinner can be used inside elements, particularly when using AJAX which can take an undetermined amount of time. This ensures the user that an action is in progress.</p>
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/loading_spinner/Group-10@2x-16.png" alt="Example inside an input field">
+      <span class="fig-caption">Loading spinner inside an input field</span>
+    </div>
+</div>
+</div>
+
+
+```section_develop
+```
+
+```htmlmixed_webcomponent_sdx-loading-spinner_accessible
+<sdx-loading-spinner sr-hint="Loading. Please wait."></sdx-loading-spinner>
+<sdx-loading-spinner size="large" sr-hint="Loading. Please wait."></sdx-loading-spinner>
+```
+*/
+
+// --------------------------------------------------
+
+
+// Loader Spinner Base
+// --------------------------------------------------
+
+.loader-spinner {
+  position: relative;
+
+  &,
+  &--large {
+    @include spritesheet-animation(
+      navy-large,
+      '#{$image-path}loader-spinner-navy-large',
+      'png',
+      $loader-spinner-large,
+      $loader-spinner-large,
+      $loader-sw-large,
+      $loader-sh-large,
+      $loader-duration,
+      $loader-steps
+    );
+
+    &.loader-spinner--plain {
+      @include spritesheet-animation(
+        plain-large,
+        '#{$image-path}loader-spinner-plain-large',
+        'png',
+        $loader-spinner-large,
+        $loader-spinner-large,
+        $loader-sw-large,
+        $loader-sh-large,
+        $loader-duration,
+        $loader-steps
+      );
+    }
+  }
+
+  &--small {
+    @include spritesheet-animation(
+      navy-small,
+      '#{$image-path}loader-spinner-navy-small',
+      'png',
+      $loader-spinner-small,
+      $loader-spinner-small,
+      $loader-sw-small,
+      $loader-sh-small,
+      $loader-duration,
+      $loader-steps
+    );
+
+    &.loader-spinner--plain {
+      @include spritesheet-animation(
+        plain-small,
+        '#{$image-path}loader-spinner-plain-small',
+        'png',
+        $loader-spinner-small,
+        $loader-spinner-small,
+        $loader-sw-small,
+        $loader-sh-small,
+        $loader-duration,
+        $loader-steps
+      );
+    }
+  }
+}
+
+
+// Dark Background
+// -------------------------
+
+.bg--dark {
+  .loader-spinner {
+    &,
+    &--large {
+      @include spritesheet-animation(
+        dark-large,
+        '#{$image-path}loader-spinner-dark-large',
+        'png',
+        $loader-spinner-large,
+        $loader-spinner-large,
+        $loader-sw-large,
+        $loader-sh-large,
+        $loader-duration,
+        $loader-steps
+      );
+    }
+
+    &--small {
+      @include spritesheet-animation(
+        dark-small,
+        '#{$image-path}loader-spinner-dark-small',
+        'png',
+        $loader-spinner-small,
+        $loader-spinner-small,
+        $loader-sw-small,
+        $loader-sh-small,
+        $loader-duration,
+        $loader-steps
+      );
+    }
+  }
+}

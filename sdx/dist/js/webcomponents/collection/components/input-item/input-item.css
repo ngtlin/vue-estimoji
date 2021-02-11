@@ -1,0 +1,265 @@
+@charset "UTF-8";
+:host, *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/*doc
+---
+title: Screen Readers
+name: 04-developers-25-screenreaders
+category: Developers - Screen Reader utils
+---
+
+<p>Hide an element to all devices except screen readers with <code>.sr-only</code>.
+Combine <code>.sr-only</code> with <code>.sr-only-focusable</code> to show the element again when it’s focused (e.g. by a keyboard-only user).</p>
+
+```htmlmixed_no_preview
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+```
+
+<p>Can also be used as a mixin.</p>
+
+```css_no_preview
+// Usage as a mixin
+.skip-navigation {
+  @include sr-only;
+  @include sr-only-focusable;
+}
+```
+
+*/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+
+:host(.input-container) {
+  display: block;
+}
+:host(.input-container) .component:hover input:checked + label {
+  border-color: #0048CF;
+  color: #0048CF;
+}
+:host(.input-container) .component:hover input:checked + label .icon {
+  color: #0048CF;
+}
+:host(.input-container) .component:hover label {
+  border-color: #858585;
+}
+:host(.input-container) .component:hover label .icon {
+  color: #858585;
+}
+:host(.input-container) .component.inline {
+  height: 100%;
+}
+:host(.input-container) .component.hide-checked-icon label {
+  padding-left: 10px;
+}
+:host(.input-container) .component.hide-checked-icon label::before, :host(.input-container) .component.hide-checked-icon label::after {
+  display: none;
+}
+:host(.input-container) .component input:focus + label {
+  border-color: #086adb;
+}
+:host(.input-container) .component input:checked + label {
+  border-color: #086adb;
+  color: #086adb;
+}
+:host(.input-container) .component input:checked + label .icon {
+  color: #086adb;
+}
+:host(.input-container) .component label {
+  border: 2px solid #adadad;
+  border-radius: 5px;
+  padding: 10px;
+  padding-left: 47px;
+  transition: border 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+:host(.input-container) .component label::before, :host(.input-container) .component label::after {
+  margin: 11px;
+}
+:host(.input-container) .component ::slotted([slot=description]) {
+  padding-left: 0;
+}
+
+:host {
+  display: inline-block;
+  max-width: 100%;
+}
+:host .component {
+  display: flex;
+  flex-flow: column;
+}
+:host .component:hover input:focus:checked + label::before {
+  border-color: #0048CF;
+}
+:host .component:hover input:checked + label::before {
+  border-color: #0048CF;
+}
+:host .component:hover input:checked + label::after {
+  color: #0048CF;
+  border-color: #0048CF;
+}
+:host .component:hover label::before {
+  border-color: #858585;
+}
+:host .component:hover label::after {
+  transform: scale(0.5) translateZ(0);
+}
+:host .component.invalid:hover label::before {
+  border-color: #adadad;
+}
+:host .component.invalid label::before {
+  border-color: #d12;
+}
+:host .component.disabled:hover input:checked + label::before {
+  border-color: #adadad;
+}
+:host .component.disabled:hover input:checked + label::after {
+  color: #adadad;
+  border-color: #adadad;
+  transform: scale(1) translateZ(0);
+}
+:host .component.disabled:hover label::before {
+  border-color: #adadad;
+}
+:host .component.disabled:hover label::after {
+  color: #adadad;
+  transform: scale(0) translateZ(0);
+}
+:host .component.disabled input:checked + label::before {
+  border-color: #adadad;
+}
+:host .component.disabled input:checked + label::after {
+  color: #adadad;
+  border-color: #adadad;
+}
+:host .component.disabled label {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: auto;
+}
+:host .component.disabled label::after {
+  transform: scale(0) translateZ(0);
+}
+:host .component.disabled ::slotted([slot=description]) {
+  opacity: 0.4;
+}
+:host .component input:focus:checked + label::before {
+  border-color: #086adb;
+}
+:host .component input:focus + label::before {
+  border-color: #086adb;
+}
+:host .component input:checked + label::before {
+  border-color: #086adb;
+}
+:host .component input:checked + label::after {
+  transform: scale(1) translateZ(0);
+  color: #086adb;
+  border-color: #086adb;
+}
+:host .component ::slotted([slot=description]) {
+  display: block;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0;
+  font-size: 16px;
+  padding-top: 5px;
+  padding-bottom: 3px;
+  padding-left: 37px;
+  color: #666;
+}
+:host .component input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+:host .component label {
+  cursor: pointer;
+  flex-grow: 1;
+  padding-left: 37px;
+  color: #333;
+  font-weight: 400;
+  line-height: 24px;
+  font-size: 18px;
+  margin-bottom: 0;
+  position: relative;
+}
+:host .component label::before, :host .component label::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 1px;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: 50% 50%;
+}
+:host .component label::before {
+  border: 2px solid #adadad;
+}
+:host .component label::after {
+  transform: scale(0) translateZ(0);
+}
+:host .component .icon-placeholder {
+  margin-top: 6px;
+  visibility: hidden;
+}
+:host .component .icon {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  transition: color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: #adadad;
+}
+:host .component.checkbox:hover label::after {
+  color: #858585;
+}
+:host .component.checkbox label::before {
+  border-radius: 5px;
+  width: 22px;
+  height: 22px;
+}
+:host .component.checkbox label::after {
+  font-family: sdx-icons;
+  content: "";
+  color: #adadad;
+  font-size: 18px;
+  text-align: left;
+  line-height: normal;
+  width: auto;
+  left: 2px;
+  top: 2px;
+}
+:host .component.radio:hover label::after {
+  border-color: #858585;
+}
+:host .component.radio label::before {
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+}
+:host .component.radio label::after {
+  top: 6px;
+  left: 6px;
+  border: 5px solid #adadad;
+  border-radius: 50%;
+}

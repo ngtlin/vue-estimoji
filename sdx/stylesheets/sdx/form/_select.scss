@@ -1,0 +1,564 @@
+//
+// Select
+// --------------------------------------------------
+
+/*doc
+---
+title: Menu (dropdown)
+name: 02-components-095-select-40-overview
+category: Components - Menu (dropdown)
+---
+
+<p>Use dropdown menus to contain information without overwhelming the user. When asking users to make multiple separate selections in forms or settings, dropdown menus help to reduce the amount of information displayed on screen at any one time. This makes content more digestible and focused.</p>
+
+<div class="row margin-bottom-2">
+  <div class="col-md-6">
+    <sdx-select label="What is your choice?" placeholder="Choose your option...">
+      <sdx-select-option value="option1">Option 1</sdx-select-option>
+      <sdx-select-option value="option2">Option 2</sdx-select-option>
+      <sdx-select-option value="option3">Option 3</sdx-select-option>
+      <sdx-select-option value="option4">Option 4</sdx-select-option>
+      <sdx-select-option value="option5">Option 5</sdx-select-option>
+    </sdx-select>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <sdx-select multiple label="What are your choices?" placeholder="Choose your options...">
+      <sdx-select-option value="option1">Option 1</sdx-select-option>
+      <sdx-select-option value="option2">Option 2</sdx-select-option>
+      <sdx-select-option value="option3">Option 3</sdx-select-option>
+      <sdx-select-option value="option4">Option 4</sdx-select-option>
+      <sdx-select-option value="option5">Option 5</sdx-select-option>
+    </sdx-select>
+  </div>
+</div>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Rules</h2>
+
+  <ul class="list">
+  <li class="single-line">Avoid very long dropdowns as it makes it impossible for users to see all available choices at a glance. Better consider alternative ways like radio buttons, so that all options are permanently visible. Users can easily compare them reduces cognitive load and help forms be more transparent.</li>
+  <li class="single-line">Avoid using dropdowns for two or three items when radiobuttons could be faster (e.g. for the title Mr/ Mrs).</li>
+  <li class="single-line">Avoid dropdowns when typing may be faster (e.g. state).</li>
+  <li class="single-line">Avoid dropdowns for highly familiar data.</li>
+  <li class="single-line">No dropdowns for date of birth as this leads to enormously effort for the user.</li>
+  </ul>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+    <h3 class="margin-bottom-1">Space between dropdowns</h3>
+    <p>A minimum of 16px are required between dropdown boxes.</p>
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/menus-dropdown/Group-18@2x-8.jpg" alt="Specifications space between different dropdown boxes">
+      <span class="fig-caption">16px are required between dropdown boxes</span>
+    </div>
+
+    <div class="col-xs-12 col-lg-6">
+    <h3 class="margin-bottom-1">Relationship with other elements</h3>
+    <p>Each collection of dropdown labels has 24px between them and other elements.</p>
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/menus-dropdown/Group-19@2x-3.jpg" alt="Spacing to other elements">
+      <span class="fig-caption">Relationship with other elements</span>
+    </div>
+    <div class="col-xs-12 col-lg-6"></div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+```htmlmixed_webcomponent_sdx-select
+<sdx-select
+  placeholder="Choose your car..."
+  label="Which car will you buy today?"
+  change-callback="console.log('Selected:', arguments)"
+>
+  <sdx-select-optgroup name="Swedish cars">
+    <sdx-select-option value="saab">Saab</sdx-select-option>
+    <sdx-select-option value="volvo" selected>Volvo</sdx-select-option>
+  </sdx-select-optgroup>
+  <sdx-select-optgroup name="German cars">
+    <sdx-select-option value="bmw">BMW</sdx-select-option>
+    <sdx-select-option value="mercedes">Mercedes</sdx-select-option>
+    <sdx-select-option value="vw">VW</sdx-select-option>
+  </sdx-select-optgroup>
+  <sdx-select-optgroup name="Other cars">
+    <sdx-select-option value="chevrolet">Chevrolet</sdx-select-option>
+    <sdx-select-option value="chrysler">Chrysler</sdx-select-option>
+    <sdx-select-option value="mazda">Mazda</sdx-select-option>
+    <sdx-select-option value="mg">MG</sdx-select-option>
+    <sdx-select-option value="toyota" disabled>Toyota</sdx-select-option>
+  </sdx-select-optgroup>
+</sdx-select>
+```
+
+<p>For an example of how to use selects in a form, please see <a href="/samples/form.html">samples/form</a>.</p>
+
+<h2>Validation</h2>
+
+```htmlmixed_playground
+<sdx-select label="What is your choice?" placeholder="Choose your option..." valid="false" validation-message="Please choose an option" required>
+  <sdx-select-option value="option1">Option 1</sdx-select-option>
+  <sdx-select-option value="option2">Option 2</sdx-select-option>
+  <sdx-select-option value="option3">Option 3</sdx-select-option>
+  <sdx-select-option value="option4">Option 4</sdx-select-option>
+  <sdx-select-option value="option5">Option 5</sdx-select-option>
+</sdx-select>
+
+<p class="text-body-2 margin-top-2" aria-hidden="true">* Mandatory field</p>
+```
+*/
+
+// --------------------------------------------------
+
+
+// Select wrapper styles
+// -------------------------
+
+.select {
+  @include text-standard;
+  position: relative;
+  margin-bottom: $select-inner-margin;
+  outline: none;
+  cursor: pointer;
+  z-index: $zindex-form-select;
+  color: $color-gray;
+  user-select: none;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    .select__placeholder {
+      border-color: $color-input-normal-form-hover;
+    }
+  }
+
+  select {
+    display: none;
+  }
+
+  // Button styles
+  // -------------------------
+
+  .select__button {
+    position: relative;
+    width: 100%;
+    height: $select-height;
+
+    &:hover {
+      .select__thumb {
+        color: $color-white;
+
+        .thumb-icon {
+          @include arrow-flat($color-int-blue--active);
+        }
+      }
+    }
+  }
+
+  // Thumb styles
+  // -------------------------
+
+  .select__thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all 200ms $standard-easing;
+    z-index: $zindex-form-select + 1;
+    border-radius: 0 $border-radius $border-radius 0;
+    cursor: inherit;
+    width: 30px;
+    height: inherit;
+    color: $color-int-blue;
+    transform-origin: 50% 50%;
+
+    .thumb-icon {
+      @include arrow-flat($color-int-blue);
+      display: flex;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      align-items: center;
+      justify-content: center;
+      transform-origin: 50% 50%;
+    }
+
+    .loader-spinner {
+      display: none;
+    }
+  }
+
+  // Placeholder styles
+  // -------------------------
+
+  .select__placeholder {
+    @include text-truncate;
+    background: $color-white;
+    display: block;
+    position: relative;
+    border: $border-width solid $color-gray-tint-7;
+    border-radius: $border-radius;
+    cursor: inherit;
+    padding: 12px 55px 12px 15px;
+    width: 100%;
+    height: inherit;
+    transition: border 200ms $standard-easing;
+    -webkit-appearance: none;
+  }
+
+  // Dropdown styles
+  // -------------------------
+
+  .select__dropdown {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin-bottom: 20px;
+    transform: scale(1, 1);
+    transform-origin: 50% 0;
+    transition: all 200ms $standard-easing;
+    opacity: 1;
+    z-index: $zindex-form-select + 1;
+    border-radius: 0 0 $border-radius $border-radius;
+    box-shadow: 0 0 4px 0 rgba($color-gray, .1);
+    background: $color-white;
+    width: 100%;
+    height: auto;
+    max-height: 0;
+    overflow: hidden;
+    color: $color-gray;
+
+    .dropdown-item {
+      @include text-truncate;
+      position: relative;
+      transition: all 200ms $standard-easing;
+      border: $border-width solid $color-gray-tint-7;
+      border-top: 0;
+      padding: 12px 15px 15px;
+      width: 100%;
+      height: $select-height;
+
+      &:last-child {
+        border-radius: 0 0 $border-radius $border-radius;
+      }
+
+      // Hover styles
+      // -------------------------
+
+      &:hover,
+      &--focused {
+        border-color: $color-int-blue;
+        background: $color-int-blue;
+        color: $color-white;
+      }
+
+      &--selected {
+        color: $color-int-green;
+
+        &::before {
+          float: right;
+          margin-right: -7px;
+          font-family: sdx-icons;
+          font-size: 16px;
+          content: icon-char('011-check-mark');
+        }
+      }
+
+      // Disabled style
+      // -------------------------
+
+      &--disabled {
+        &,
+        &:hover {
+          border-color: $color-gray-tint-7;
+          background: none;
+          cursor: not-allowed;
+          color: rgba($color-gray, .4);
+        }
+      }
+    }
+  }
+
+  // Validation Message
+  // -------------------------
+
+  .message {
+    max-height: 0;
+    margin-top: 0;
+    opacity: 0;
+    transition: 150ms all $standard-easing;
+    z-index: 10;
+  }
+
+  // Invalid Input Style
+  // -------------------------
+
+  &.invalid {
+    > .message {
+      max-height: 50px;
+      margin-top: 6px;
+      opacity: 1;
+      font-size: $form-input-invalid-font-size;
+      color: $color-input-invalid-text;
+    }
+  }
+
+  // Group item style
+  // -------------------------
+
+  .dropdown-group {
+    &__item {
+      @include text-truncate;
+      position: relative;
+      transition: all 200ms $standard-easing;
+      border: $border-width solid $color-gray-tint-7;
+      border-top: 0;
+      padding: 12px 15px 15px;
+      width: 100%;
+      height: $select-height;
+      background-color: $color-horizon;
+      color: $color-gray-tint-4;
+      pointer-events: none;
+
+      &:hover {
+        cursor: default;
+      }
+    }
+
+    .dropdown-item:last-child {
+      border-radius: 0;
+    }
+
+    &:last-child .dropdown-item:last-child {
+      border-radius: 0 0 $border-radius $border-radius;
+    }
+  }
+
+  // Closed style
+  // -------------------------
+
+  &--closed {
+    .select__thumb {
+      .thumb-icon {
+        @include arrow-flat--down;
+      }
+    }
+
+    .select__dropdown {
+      // animate the closing of the list
+      transform: scale(1, 0);
+      opacity: .2;
+    }
+  }
+
+  // Open style
+  // -------------------------
+
+  &--open {
+    z-index: $zindex-topmost;
+
+    .select__thumb {
+      border-radius: 0 $border-radius 0 0;
+
+      .thumb-icon {
+        @include arrow-flat--up;
+      }
+    }
+
+    .select__placeholder {
+      border-radius: $border-radius $border-radius 0 0;
+      box-shadow: 0 0 4px 0 rgba($color-gray, .1);
+      color: $color-int-blue;
+    }
+
+    .select__dropdown {
+      max-height: 512px;
+      overflow-y: auto;
+    }
+  }
+
+  // Disabled style
+  // -------------------------
+
+  &--disabled {
+    opacity: .4;
+    cursor: not-allowed;
+
+    .select__button:hover {
+      .select__thumb {
+        background: none;
+        color: $color-int-blue;
+
+        .thumb-icon {
+          @include arrow-flat($color-int-blue);
+        }
+      }
+    }
+  }
+
+  // Filterable style
+  // -------------------------
+
+  &--filterable {
+    .select__dropdown {
+      .dropdown-item {
+        strong {
+          transition: all 200ms $standard-easing;
+        }
+
+        &:hover {
+          strong {
+            color: $color-white !important;
+          }
+        }
+
+        &.dropdown-item--selected {
+          strong {
+            font-weight: inherit;
+          }
+        }
+
+        &:not(.dropdown-item--selected) {
+          strong {
+            color: $color-search-live-text-match;
+          }
+        }
+      }
+    }
+
+    .select__placeholder {
+      &:focus:not([readonly]) {
+        border-color: $color-input-selected-form;
+      }
+    }
+  }
+
+  // Loading style
+  // -------------------------
+
+  &--loading {
+    pointer-events: none; // Disable any interaction while loading
+
+    .select__thumb {
+      .loader-spinner {
+        display: block;
+        top: 50%;
+        left: 50%;
+        margin-top: -($loader-sh-small / 2);
+        margin-left: -($loader-sh-small / 2);
+      }
+
+      .thumb-icon {
+        display: none
+      }
+    }
+  }
+}
+
+// Light styles
+// --------------------------------------------------
+
+.select--minimal {
+
+  // Button styles
+  // -------------------------
+
+  .select__button:hover {
+    .select__thumb {
+      background: none;
+      color: $color-int-blue--active;
+
+      .thumb-icon {
+        @include arrow-flat($color-int-blue--active);
+      }
+    }
+  }
+
+  // Placeholder styles
+  // -------------------------
+
+  .select__placeholder {
+    border: 0;
+    border-bottom: 1px solid $color-gray-tint-7;
+    border-radius: 0;
+    box-shadow: none;
+    color: $color-gray;
+  }
+
+  // Dropdown styles
+  // -------------------------
+
+  .select__dropdown {
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0 0 4px 0 rgba($color-gray, .15);
+
+    .dropdown-item {
+      border: 0;
+      border-bottom: 1px solid $color-gray-tint-7;
+      border-radius: 0;
+
+      &:last-child {
+        border-bottom: 0;
+        border-radius: 0;
+      }
+    }
+  }
+
+  // Open style
+  // -------------------------
+
+  &.select--open {
+    .select__placeholder {
+      border-color: transparent;
+    }
+  }
+
+  // Dropdown for tabs
+  &.select--tabs {
+    .select__placeholder {
+      border: 0;
+      border-bottom: $tabs-bar-active solid $color-tabs-light-indicator;
+      border-radius: 0;
+      box-shadow: none;
+      color: $color-gray;
+    }
+  }
+}
+
+
+// --------------------------------------------------
+
+
+// Fallback styling (as good as it gets)
+// -------------------------
+
+select {
+  display: block;
+  position: relative;
+  border: $border-width solid $color-gray-tint-7;
+  border-radius: $border-radius;
+  background: $color-white;
+  cursor: pointer;
+  padding: 12px 55px 12px 15px;
+  width: auto;
+  height: $select-height;
+  color: $color-gray;
+  -webkit-appearance: none;
+}
+
+
+// Dark Background
+// -------------------------
+
+.bg--dark label {
+  font-weight: 400;
+}

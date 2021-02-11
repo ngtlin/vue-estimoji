@@ -1,0 +1,388 @@
+//
+// Ribbons and Stickers
+// --------------------------------------------------
+
+/*doc
+---
+title: Ribbons & Stickers
+name: 02-components-145-ribbons-and-stickers
+category: Components - Ribbons & Stickers
+---
+
+<p>For marketing and sales there are two possible elements which should be used very carefully:</p>
+<ol class="list">
+  <li>Ribbons: <br>
+  Best used on product lists or carousel sliders to differentiate the product family (e.g. devices).</li>
+  <li>Stickers: <br>
+    Can be used on teasers, banners, images, products to show the uniqueness (e.g. “Only at Swisscom”, “Get 10% off”, etc.).</li>
+</ol>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Variations</h2>
+
+  <h3 class="text-h4 margin-bottom-1">Ribbons</h3>
+  <p>There are two variations of ribbons, one on the corner and one the side.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/ribbons/Ribbon_corner.jpg" alt="Example with small ribbon on the corner">
+      <span class="fig-caption">Small ribbon on the corner</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/ribbons/Ribbon_side@2x.png" alt="Example with small ribbon on the side">
+      <span class="fig-caption">Small ribbon on the side</span>
+    </div>
+  </div>
+
+  <h3 class="text-h4 margin-bottom-1">Stickers</h3>
+  <p>There are variations of stickers in size and colour.</p>
+
+  <div class="row flex-items-xs-center margin-bottom-4">
+    <div class="col-xs-auto padding-1">
+      <sdx-sticker-circle size="112" bg-color-class="sc-white" color-class="sc-navy"
+        sr-hint="Nur bei Swisscom.">
+        <p slot="text" class="text-compact text-align-center margin-0">Nur bei<br>Swisscom</p>
+      </sdx-sticker-circle>
+    </div>
+    <div class="col-xs-auto padding-1">
+      <sdx-sticker-circle size="112" bg-color-class="sc-white" color-class="orchid"
+        sr-hint="Nur bei Swisscom.">
+        <p slot="text" class="text-compact text-align-center margin-0">Nur bei<br>Swisscom</p>
+      </sdx-sticker-circle>
+    </div>
+    <div class="col-xs-auto padding-1">
+      <sdx-sticker-circle size="112" bg-color-class="sc-navy" color-class="sc-white"
+        sr-hint="Nur bei Swisscom.">
+        <p slot="text" class="text-compact text-align-center margin-0">Nur bei<br>Swisscom</p>
+      </sdx-sticker-circle>
+    </div>
+    <div class="col-xs-auto padding-1">
+      <sdx-sticker-circle size="112" bg-color-class="orchid" color-class="sc-white"
+        sr-hint="Nur bei Swisscom.">
+        <p slot="text" class="text-compact text-align-center margin-0">Nur bei<br>Swisscom</p>
+      </sdx-sticker-circle>
+    </div>
+  </div>
+
+  <h2>Specifications</h2>
+
+<p>Pleaser note:<br>
+  As it should draw the user’s attention to a special condition of a product (e.g. special price, new product,
+  for a defined period of time, etc.), the usage must be well measured. Otherwise the user’s attention is spread
+  across too many featured offers, which then is counter-productive and overwhelming.
+</p>
+
+  <h3 class="text-h4 margin-bottom-1">Ribbons</h3>
+  <p>
+    For each variant you can use a small (14px), medium (16px) and large font size (18px).
+    The ribbons can be placed on the left and right hand side.
+  </p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/ribbons/Ribbon_corner_guidelines.jpg" alt="Specification for ribbon on the corner">
+      <span class="fig-caption">Specification for ribbon on the corner</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/ribbons/Ribbon_side_guidelines@2x.png" alt="Specification for ribbon on the side">
+      <span class="fig-caption">Specification for ribbon on the side</span>
+    </div>
+  </div>
+
+  <h3 class="text-h4 margin-bottom-1">Stickers</h3>
+  <p>
+    As a sticker should be flexible in size depending on the content there are 5 possible sizes (diameter)
+    in which the text can be placed: 112 px, 120 px, 160 px, 180 px, 240 px.
+  </p>
+
+  <div class="row flex-items-xs-center">
+    <div class="col-xs-auto padding-v-1">
+      <sdx-sticker-circle size="112" bg-color-class="sc-white" color-class="sc-navy"
+        sr-hint="Nur bei Swisscom.">
+        <p slot="text" class="text-compact text-align-center margin-0">Nur bei<br>Swisscom</p>
+      </sdx-sticker-circle>
+    </div>
+    <div class="col-xs-auto padding-v-1">
+      <sdx-sticker-circle size="120" bg-color-class="sc-white" color-class="sc-navy"
+        sr-hint="30 Franken sparen.">
+        <p slot="text" class="text-compact text-align-center margin-0"><sdx-price amount="30"></sdx-price> sparen</p>
+      </sdx-sticker-circle>
+    </div>
+    <div class="col-xs-auto padding-v-1">
+      <sdx-sticker-circle size="160" bg-color-class="sc-white" color-class="sc-navy"
+        sr-hint="SD Karte zusätzlich geschenkt.">
+        <p slot="text" class="text-compact text-align-center text-h4 margin-0">SD Karte<br>zusätzlich<br>geschenkt</p>
+      </sdx-sticker-circle>
+    </div>
+  </div>
+  <div class="row flex-items-xs-center margin-bottom-2">
+    <div class="col-xs-auto padding-v-1">
+      <sdx-sticker-circle size="180" bg-color-class="sc-white" color-class="sc-navy"
+        sr-hint="Bis 5 mal 20 Franken pro Monat sparen.">
+        <p slot="text" class="text-compact text-align-left margin-0">&nbsp; Bis 5x</p>
+        <p slot="text" class="text-compact text-align-center text-d2 margin-0"><sdx-price amount="20" period="/Mt." size="9"></sdx-price></p>
+        <p slot="text" class="text-compact text-align-right margin-0">sparen &nbsp;</p>
+      </sdx-sticker-circle>
+    </div>
+    <div class="col-xs-auto padding-v-1">
+      <sdx-sticker-circle size="240" bg-color-class="sc-white" color-class="sc-navy"
+        sr-hint="Xtra Rabatte">
+        <p slot="text" class="text-compact text-align-center text-h2 margin-0">
+          <sdx-icon icon-name="icon-214-present" size="6"></sdx-icon><br>
+          <span class="text-d1">XTRA</span><br>
+          Rabatte
+        </p>
+      </sdx-sticker-circle>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/stickers/stickers_rules.png">
+      <span class="fig-caption">Guidelines for stickers</span>
+    </div>
+  </div>
+
+  <h3>Typography</h3>
+
+  <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/ribbons/ribbon_typo@2x.png" alt="Ribbons Typography">
+        <span class="fig-caption">Ribbons Typography</span>
+      </div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+<h2>Variations</h2>
+
+<p>Below you can see the regular size examples of the Ribbon Badge on Corner and the Ribbon Badge on Side.</p>
+
+```htmlmixed_webcomponent_sdx-ribbon
+<sdx-ribbon label="PROMOTION">
+  <div style="background: lightblue; height: 130px;"></div>
+</sdx-ribbon>
+
+<br>
+
+<sdx-ribbon label="NEWEST" design="bookmark">
+  <div style="background: lightblue; height: 130px;"></div>
+</sdx-ribbon>
+```
+
+<p>Below you can see Sticker examples.</p>
+
+```htmlmixed_webcomponent_sdx-sticker-circle_accessible
+<div class="row">
+  <div class="col-xs-12 col-lg-6">
+    <sdx-sticker-circle size="120" bg-color-class="sc-white" color-class="sc-navy" left="10" bottom="10" content-width="469"
+      sr-hint="30 Franken sparen.">
+      <p slot="text" class="text-compact text-align-center margin-0"><sdx-price amount="30"></sdx-price> sparen</p>
+      <img src="/$WEBROOT-THEME-BUILD$/img/samples/samsung-galaxy-s10-plus-blue-450.png" class="img-responsive">
+    </sdx-sticker-circle>
+  </div>
+  <div class="col-xs-12 col-lg-6">
+    <sdx-sticker-circle size="160" bg-color-class="sc-white" color-class="sc-navy" left="10" bottom="10" content-width="469"
+      sr-hint="SD Karte zusätzlich geschenkt.">
+      <p slot="text" class="text-compact text-align-center text-h4 margin-0">SD Karte<br>zusätzlich<br>geschenkt</p>
+      <img src="/$WEBROOT-THEME-BUILD$/img/samples/samsung-galaxy-s10-plus-blue-450.png" class="img-responsive">
+    </sdx-sticker-circle>
+  </div>
+  <div class="col-xs-12 col-lg-6">
+    <sdx-sticker-circle size="180" bg-color-class="sc-white" color-class="sc-navy" left="10" bottom="10" content-width="469"
+      sr-hint="Bis 5 mal 20 Franken pro Monat sparen.">
+      <p slot="text" class="text-compact text-align-left margin-0">&nbsp; Bis 5x</p>
+      <p slot="text" class="text-compact text-align-center text-d2 margin-0"><sdx-price amount="20" period="/Mt." size="9"></sdx-price></p>
+      <p slot="text" class="text-compact text-align-right margin-0">sparen &nbsp;</p>
+      <img src="/$WEBROOT-THEME-BUILD$/img/samples/samsung-galaxy-s10-plus-blue-450.png" class="img-responsive">
+    </sdx-sticker-circle>
+  </div>
+  <div class="col-xs-12 col-lg-6">
+    <sdx-sticker-circle size="240" bg-color-class="sc-white" color-class="sc-navy" left="10" bottom="10" content-width="469"
+      sr-hint="Xtra Rabatte">
+      <p slot="text" class="text-compact text-align-center text-h2 margin-0">
+        <sdx-icon icon-name="icon-214-present" size="6"></sdx-icon><br>
+        <span class="text-d1">XTRA</span><br>
+        Rabatte
+      </p>
+      <img src="/$WEBROOT-THEME-BUILD$/img/samples/samsung-galaxy-s10-plus-blue-450.png" class="img-responsive">
+    </sdx-sticker-circle>
+  </div>
+</div>
+```
+
+```htmlmixed_webcomponent_sdx-price_accessible
+<div class="row text-align-center flex-items-xs-bottom">
+  <div class="col-xs-4">
+    <sdx-price amount="0.50" size="4" period="/Tag" sr-hint="50 Rappen pro Tag"></sdx-price>
+  </div>
+  <div class="col-xs-4">
+    <sdx-price amount="9.90" size="5" period="/Mt." sr-hint="Monatlich 9 Franken 90 Rappen"></sdx-price>
+  </div>
+  <div class="col-xs-4">
+    <sdx-price amount="75" class="navy" size="6" period="/year" sr-hint="75 Francs per year"></sdx-price>
+  </div>
+</div>
+```
+*/
+
+.ribbon, .ribbon-badge {
+  font-size: $ribbon-font-normal;
+  position: relative;
+  width: 100%;
+  height: 0;
+  z-index: $zindex-ribbon;
+}
+
+.ribbon {
+  .ribbon__wrap {
+    width: $ribbon-regular-dimension;
+    height: $ribbon-regular-dimension;
+    position: absolute;
+    overflow: hidden;
+    top: -5px;
+    right: -5px;
+  }
+
+  &.ribbon--left {
+    .ribbon__wrap {
+      right: auto;
+      left: -5px;
+    }
+
+    .ribbon__content {
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      top: auto;
+      bottom: 0;
+    }
+  }
+
+  &.ribbon--small {
+    font-size: $ribbon-font-small;
+
+    .ribbon__wrap {
+      width: $ribbon-small-dimension;
+      height: $ribbon-small-dimension;
+    }
+  }
+
+  &.ribbon--large {
+    font-size: $ribbon-font-large;
+
+    .ribbon__wrap {
+      width: $ribbon-large-dimension;
+      height: $ribbon-large-dimension;
+    }
+  }
+
+  .ribbon__content {
+    color: $color-sc-white;
+    background-color: $color-orchid;
+    text-align: center;
+    box-shadow: 0 -1px 3px $color-gray;
+
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+
+    -webkit-transform-origin: bottom left;
+    -moz-transform-origin: bottom left;
+    -ms-transform-origin: bottom left;
+    -o-transform-origin: bottom left;
+    transform-origin: bottom left;
+
+    position: absolute;
+    top: -24px; /* 24px lineheight */
+    width: calc(100% * 1.414); /* 100% * sqrt(2) - pythagoras */
+
+    &::before, &::after {
+      content: "";
+      position: absolute;
+      bottom: -$ribbon-corner-size;
+
+      border-left: $ribbon-corner-size solid transparent;
+      border-right: $ribbon-corner-size solid transparent;
+      border-top: $ribbon-corner-size solid $color-orchid--active;
+    }
+    &::before {
+      left: 0;
+    }
+    &::after {
+      right: 0;
+    }
+  }
+}
+
+.ribbon-badge {
+  .ribbon__content {
+    position: absolute;
+    display: inline-block;
+    right: -$ribbon-badge-corner-size;
+    top: 6px;
+
+    min-width: 70px;
+    padding: $ribbon-badge-padding-v $ribbon-badge-padding-h $ribbon-badge-padding-v;
+
+    background-color: $color-apple;
+    color: $color-white;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -$ribbon-badge-corner-size;
+
+      border-top: $ribbon-badge-corner-size solid $color-apple--active;
+      border-right: $ribbon-badge-corner-size solid transparent;
+    }
+  }
+
+  &.ribbon--left {
+    .ribbon__content {
+      right: auto;
+      left: -$ribbon-badge-corner-size;
+
+      &::after {
+        right: auto;
+        left: 0;
+
+        border-right: 0;
+        border-left: $ribbon-badge-corner-size solid transparent;
+      }
+    }
+  }
+
+  &.ribbon--small {
+    font-size: $ribbon-font-small;
+
+    .ribbon__content {
+      padding: $ribbon-badge-padding-v-small $ribbon-badge-padding-h $ribbon-badge-padding-v-small;
+    }
+  }
+
+  &.ribbon--large {
+    font-size: $ribbon-font-large;
+
+    .ribbon__content {
+      padding: $ribbon-badge-padding-v-large $ribbon-badge-padding-h $ribbon-badge-padding-v-large;
+    }
+  }
+}

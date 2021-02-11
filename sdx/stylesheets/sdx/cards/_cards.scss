@@ -1,0 +1,1759 @@
+//
+// Cards
+// --------------------------------------------------
+
+/*doc
+---
+title: Cards
+name: 02-components-020-cards-01-cards
+category: Components - Cards
+---
+
+<style>
+  .exampleOutput {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .exampleOutput .card {
+    flex: 1 1 auto;
+    margin: 12px;
+    max-width: 440px;
+  }
+
+  .exampleOutput .bg {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    flex: 1 1 auto;
+  }
+
+  .exampleOutput .card--upload-photos {
+    max-width: 640px;
+  }
+
+  .exampleOutput .card--upload-files {
+    max-width: 552px;
+  }
+
+  .exampleOutput .card--document {
+    max-width: 420px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .exampleOutput .bg {
+      flex: 1 1 270px;
+      margin: 0;
+    }
+
+    .exampleOutput .card {
+      flex: 1 1 270px;
+    }
+  }
+</style>
+
+<p>Cards are used to contain small amounts of focused information. They help to highlight its content because they stand out from the rest of the content. 
+<br> 
+Cards can contain images, text and interactive elements such as buttons and text links. Cards can be colour coded to establish a visual difference between multiple card types within the same view.</p>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="card card--dark card--notification" role="region" aria-labelledby="Global_Roaming_1">
+      <div class="card__header">
+        <h1 class="align-left" id="Global_Roaming_1">Data</h1>
+        <h2 class="align-right">Today 13:21</h2>
+      </div>
+      <p class="card__text">Global roaming is now switched on</p>
+    </div>
+  </div>
+  <div class="col-md-6">
+  </div>
+</div>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Variations</h2>
+
+  <h3>Actionable notification cards</h3>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/cards/Group-10@2x-9.jpg" alt="Notification card example with text-based content">
+      <span class="fig-caption">Notification card with text-based content</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/cards/Group-11@2x-9.jpg" alt="Notification card example with text-based content grey variant">
+      <span class="fig-caption">Grey variant</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/cards/Group-12@2x-5.jpg" alt="Notification card example with promotional content">
+      <span class="fig-caption">Notification card with promotional imagery</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/cards/Group-13@2x-6.jpg" alt="Notification card example with promotional content grey variant">
+      <span class="fig-caption">Grey variant</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/cards/Group-14@2x-4@2x.png" alt="Notification card example with full width image">
+      <span class="fig-caption">Notification card with full width image</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/cards/Group-15@2x-4.jpg" alt="Notification card example with full width image grey variant">
+      <span class="fig-caption">Grey variant</span>
+    </div>
+  </div>
+
+  <h3>Multi-column card</h3>
+
+  <p>Multi-column cards are designed to house multiple images with a single concept, e.g. ‘most recent’, ‘most popular’, ‘trending’, etc.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/cards/Group-18@2x-5@2x.png" alt="Example of a gridded multi-column card">
+      <span class="fig-caption">A gridded multi-column card</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/cards/Group-19@2x-2@2x.png" alt="Example of a gridded multi-column card grey variant">
+      <span class="fig-caption">Grey variant</span>
+    </div>
+  </div>
+
+  <h3>Documents card</h3>
+
+  <p>Document cards are designed to house complex information. They will often have a deeper level navigation spanning across multiple columns and require a strong typographic hierarchy.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/cards/Group-7-Copy-9@2x.png" alt="Example document card with outgoing links">
+      <span class="fig-caption">Documents card with outgoing links</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/cards/Group-22@2x-4.png" alt="Example document card with outgoing links gray variant">
+      <span class="fig-caption">Grey variant</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/cards/Group-23@2x-6.jpg" alt="Timetable example with icons and outgoing links">
+      <span class="fig-caption">Timetable example with icons and outgoing links</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/cards/Group-24@2x-3.jpg" alt="Timetable example with icons and outgoing links gray variant">
+      <span class="fig-caption">Grey variant</span>
+    </div>
+  </div>
+
+  <h2>Rules</h2>
+
+  <h3>Spacings</h3>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/cards/Group-17-Copy@2x.jpg" alt="Details vertical spacing">
+      <span class="fig-caption">Vertical spacing</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/cards/Group-17-Copy-2@2x.jpg" alt="Horizontal spacing specifications">
+      <span class="fig-caption">Horizontal spacing</span>
+    </div>
+    </div>
+  </div>
+
+  <h3>8 column grid</h3>
+
+  <p>All cards are built on an 8 column grid structure that helps make them flexible across different grid sizes. Content inside the card can vary in size and padding to fit into the grid. Having a flexible grid system allows to organise content within the card in various ways, fitting the needs of more content scenarios such as the use of icons and images.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/cards/Group-17-Copy-3@2x.jpg" alt="Details to column grid">
+      <span class="fig-caption">8 column grid</span>
+  </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/cards/Group-25@2x-4.jpg" alt="Example of layout variations">
+      <span class="fig-caption">Layout variations</span>
+    </div>
+  </div>
+
+  <h3>Typography</h3>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/cards/Group-26@2x-4.png" alt="Typography specifications">
+        <span class="fig-caption">Typography</span>
+    </div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+<p>Cards are used to group and smaller pieces of contain content in page, and give them extra emphasis. Cards are colour coded based on the content they’re surfacing.</p>
+
+<h2>How to use cards</h2>
+
+<p>Use cards to give content clearer separation from the rest of the content in page. With the addition of colour labelling, cards also helps to categorise content and makes wayfinding throughout products clearer.</p>
+
+<h2>8 column grid</h2>
+
+<p>All cards are built on an 8 column grid structure that helps make them flexible across different grid sizes. Content placed inside a card can change in size and padding to fit the variations in margin width and column width of the grid for the page that they're place inside. Use class <code>row</code> and classes <code>col-1</code> to <code>col-8</code> for the card grid.</p>
+
+<h2>Clickable Cards</h2>
+
+<p>Cards are by default not clickable. To make a card clickable add the class <code>card--clickable</code> to the card.</p>
+
+```htmlmixed_accessible
+<div class="card card--dark card--notification" role="region" aria-labelledby="Data_card_1">
+  <div class="card__header">
+    <h1 class="align-left" id="Data_card_1">Data</h1>
+    <span class="align-right">Today 13:21</span>
+  </div>
+  <p class="card__text">Global roaming is now switched on</p>
+</div>
+<div class="card card--dark card--notification card--clickable" role="region" aria-labelledby="Data_card_clickable">
+  <div class="card__header">
+    <h1 class="align-left" id="Data_card_clickable">Data</h1>
+    <span class="align-right">Today 13:21</span>
+  </div>
+  <p class="card__text">Global roaming is now switched on</p>
+</div>
+```
+
+<h2>Corners</h2>
+
+<p>To change the corners of the card to rounded or not rounded, set the class <code>card--rounded</code> or <code>card--not-rounded</code> to the card.</p>
+
+```htmlmixed_accessible
+<div class="card card--dark card--notification card--image-top card--clickable card--rounded" role="region" aria-labelledby="Swisscom_TV_1">
+  <div class="card__image" style="background-image:url('$WEBROOT-THEME-BUILD$/img/samples/online_services.jpg')" alt="Smartphone"></div>
+  <div class="card__body">
+    <div class="card__header">
+      <h1 class="align-left" id="Swisscom_TV_1">Swisscom TV</h1>
+      <span class="align-right">Today 13:21</span>
+    </div>
+    <p class="card__text">
+      We use our users’ data responsibly, to deliver relevant experiences.
+      <a href="javascript:void(0);" class="link">Find out more</a>
+    </p>
+  </div>
+</div>
+<div class="card card--dark card--notification card--image-top card--clickable card--not-rounded" role="region" aria-labelledby="Swisscom_TV_2">
+  <div class="card__image" style="background-image:url('$WEBROOT-THEME-BUILD$/img/samples/online_services.jpg')" alt="Smartphone"></div>
+  <div class="card__body">
+    <div class="card__header">
+      <h1 class="align-left" id="Swisscom_TV_2">Swisscom TV</h1>
+      <span class="align-right">Today 13:21</span>
+    </div>
+    <p class="card__text">
+      We use our users’ data responsibly, to deliver relevant experiences.
+      <a href="javascript:void(0);" class="link">Find out more</a>
+    </p>
+  </div>
+</div>
+```
+
+<h2>Colours</h2>
+
+<p>Cards can be colour coded to establish visual different between multiple card types within the same view.</p>
+
+```htmlmixed_accessible
+<div class="card card--dark card--notification card--clickable" role="region" aria-labelledby="Color_Navy">
+  <div class="card__header">
+    <h1 class="align-left" id="Color_Navy">Data</h1>
+    <span class="align-right">Today 13:21</span>
+  </div>
+  <p class="card__text">We use our users data responsibly, to deliver relevant experiences.</p>
+</div>
+
+<div class="card card--dark card--notification card--clickable card--blue" role="region" aria-labelledby="Color_Blue">
+  <div class="card__header">
+    <h1 class="align-left" id="Color_Blue">Data</h1>
+    <span class="align-right">Today 13:21</span>
+  </div>
+  <p class="card__text">We use our users data responsibly, to deliver relevant experiences.</p>
+</div>
+
+<div class="card card--dark card--notification card--clickable card--purple" role="region" aria-labelledby="Color_Purple">
+  <div class="card__header">
+    <h1 class="align-left" id="Color_Purple">Data</h1>
+    <span class="align-right">Today 13:21</span>
+  </div>
+  <p class="card__text">We use our users data responsibly, to deliver relevant experiences.</p>
+</div>
+
+<div class="card card--dark card--notification card--clickable card--turquoise" role="region" aria-labelledby="Color_Turquoise">
+  <div class="card__header">
+    <h1 class="align-left" id="Color_Turquoise">Data</h1>
+    <span class="align-right">Today 13:21</span>
+  </div>
+  <p class="card__text">We use our users data responsibly, to deliver relevant experiences.</p>
+</div>
+
+<div class="card card--dark card--notification card--clickable card--iris" role="region" aria-labelledby="Color_Iris">
+  <div class="card__header">
+    <h1 class="align-left" id="Color_Iris">Data</h1>
+    <span class="align-right">Today 13:21</span>
+  </div>
+  <p class="card__text">We use our users data responsibly, to deliver relevant experiences.</p>
+</div>
+
+<div class="card card--dark card--notification card--clickable card--pink" role="region" aria-labelledby="Color_Pink">
+  <div class="card__header">
+    <h1 class="align-left" id="Color_Pink">Data</h1>
+    <span class="align-right">Today 13:21</span>
+  </div>
+  <p class="card__text">We use our users data responsibly, to deliver relevant experiences.</p>
+</div>
+```
+
+<h2>Notification Cards</h2>
+
+<p>Notification cards have by default rounded corners. If you want the card to have no rounded corners add the class <code>card--not-rounded</code> to the card.</p>
+
+<h3>General Notification Card</h3>
+
+```htmlmixed_accessible
+<div class="bg bg--gray">
+  <div class="card card--notification" role="region" aria-labelledby="Clickable_Card_3">
+    <div class="card__header">
+      <h1 class="align-left" id="Clickable_Card_3">Data</h1>
+      <span class="align-right">Today 13:21</span>
+    </div>
+    <p class="card__text">Global roaming is now switched on</p>
+  </div>
+</div>
+<div class="bg bg--light">
+  <div class="card card--dark card--notification" role="region" aria-labelledby="Clickable_Card_4">
+    <div class="card__header">
+      <h1 class="align-left" id="Clickable_Card_4">Data</h1>
+      <span class="align-right">Today 13:21</span>
+    </div>
+    <p class="card__text">Global roaming is now switched on</p>
+  </div>
+</div>
+```
+
+<h3>Actionable Notification Cards</h3>
+
+```htmlmixed_accessible
+<div class="bg bg--gray">
+  <div class="card card--notification" role="region" aria-labelledby="Swisscom_TV_1">
+    <div class="card__header">
+      <h1 class="align-left" id="Swisscom_TV_1">Swisscom TV</h1>
+      <span class="align-right">Today 13:21</span>
+    </div>
+    <p class="card__text">Download Swisscom TV 2.0 app on phone to view all your TV stats and usage</p>
+    <a href="javascript:void(0);" class="link">Swisscom TV 2.0</a>
+  </div>
+</div>
+<div class="bg bg--light">
+  <div class="card card--dark card--notification" role="region" aria-labelledby="Swisscom_TV_2">
+    <div class="card__header">
+      <h1 class="align-left" id="Swisscom_TV_2">Swisscom TV</h1>
+      <span class="align-right">Today 13:21</span>
+    </div>
+    <p class="card__text">Download Swisscom TV 2.0 app on phone to view all your TV stats and usage</p>
+    <a href="javascript:void(0);" class="link">Swisscom TV 2.0</a>
+  </div>
+</div>
+```
+
+<h3>Image Top Notification Card</h3>
+
+```htmlmixed_accessible
+<div class="bg bg--gray">
+  <div class="card card--notification card--image-top" role="region" aria-labelledby="Swisscom_TV_3">
+    <div class="card__image" style="background-image:url('$WEBROOT-THEME-BUILD$/img/samples/online_services.jpg')"></div>
+    <div class="card__body">
+      <div class="card__header">
+        <h1 class="align-left" id="Swisscom_TV_3">Swisscom TV</h1>
+        <span class="align-right">Today 13:21</span>
+      </div>
+      <p class="card__text">
+        We use our users’ data responsibly, to deliver relevant experiences.
+        <a href="javascript:void(0);" class="link">Find out more</a>
+      </p>
+    </div>
+  </div>
+</div>
+<div class="bg bg--light">
+  <div class="card card--dark card--notification card--image-top" role="region" aria-labelledby="Swisscom_TV_4">
+    <div class="card__image" style="background-image:url('$WEBROOT-THEME-BUILD$/img/samples/online_services.jpg')"></div>
+    <div class="card__body">
+      <div class="card__header">
+        <h1 class="align-left" id="Swisscom_TV_4">Swisscom TV</h1>
+        <span class="align-right">Today 13:21</span>
+      </div>
+      <p class="card__text">
+        We use our users’ data responsibly, to deliver relevant experiences.
+        <a href="javascript:void(0);" class="link">Find out more</a>
+      </p>
+    </div>
+  </div>
+</div>
+```
+
+<h3>Image Bottom Notification Card</h3>
+
+```htmlmixed_accessible
+<div class="bg bg--gray">
+  <div class="card card--notification card--image-bottom" role="region" aria-labelledby="Swisscom_TV_5">
+    <div class="card__body">
+      <div class="card__header">
+        <h1 class="align-left" id="Swisscom_TV_5">Swisscom TV</h1>
+        <span class="align-right">Today 13:21</span>
+      </div>
+      <p class="card__text">
+        We use our users’ data responsibly, to deliver relevant experiences.
+        <a href="javascript:void(0);" class="link">Find out more</a>
+      </p>
+    </div>
+    <div class="card__image" style="background-image:url('$WEBROOT-THEME-BUILD$/img/samples/online_services.jpg')" alt="Smartphone"></div>
+  </div>
+</div>
+<div class="bg bg--light">
+  <div class="card card--dark card--notification card--image-bottom" role="region" aria-labelledby="Swisscom_TV_6">
+    <div class="card__body">
+      <div class="card__header">
+        <h1 class="align-left" id="Swisscom_TV_6">Swisscom TV</h1>
+        <span class="align-right">Today 13:21</span>
+      </div>
+      <p class="card__text">
+        We use our users’ data responsibly, to deliver relevant experiences.
+        <a href="javascript:void(0);" class="link">Find out more</a>
+      </p>
+    </div>
+    <div class="card__image" style="background-image:url('$WEBROOT-THEME-BUILD$/img/samples/online_services.jpg')" alt="Smartphone"></div>
+  </div>
+</div>
+```
+
+<h3>Promo Notification Card</h3>
+
+```htmlmixed_accessible
+<div class="bg bg--gray">
+  <div class="card card--notification card--promo" role="region" aria-labelledby="Offer_1">
+    <div class="card__header">
+      <h1 class="align-left" id="Offer_1">Offers</h1>
+      <span class="align-right">Today 13:21</span>
+    </div>
+    <img class="card__image" src="/$WEBROOT-THEME-BUILD$/img/samples/phones.png" alt="Samsung Galaxy S6">
+    <p class="card__text">
+      Samsung Galaxy S6, 99 CHF monthly with our M tariff
+      <a href="javascript:void(0);" class="link">Find out more</a>
+    </p>
+  </div>
+</div>
+<div class="bg bg--light">
+  <div class="card card--dark card--notification card--promo" role="region" aria-labelledby="Offer_1">
+    <div class="card__header">
+      <h1 class="align-left" id="Offer_1">Offers</h1>
+      <span class="align-right">Today 13:21</span>
+    </div>
+    <img class="card__image" src="/$WEBROOT-THEME-BUILD$/img/samples/phones.png" alt="Samsung Galaxy S6">
+    <p class="card__text">
+      Samsung Galaxy S6, 99 CHF monthly with our M tariff
+      <a href="javascript:void(0);" class="link">Find out more</a>
+    </p>
+  </div>
+</div>
+```
+
+<h3>Notes Notification Card</h3>
+
+```htmlmixed_accessible
+<div class="bg bg--gray">
+  <div class="card card--notification" role="region" aria-labelledby="Swisscom_TV_7">
+    <div class="card__header">
+      <h1 class="align-left" id="Swisscom_TV_7">Swisscom TV</h1>
+      <span class="align-right">Today 13:21</span>
+    </div>
+    <p class="card__text">Combine your NATEL® infinity subscription with NATEL® data. Your benefits: greater speeds and data volume with any device, regardless of the location. You also benefit automatically from a monthly discount.</p>
+  </div>
+</div>
+<div class="bg bg--light">
+  <div class="card card--dark card--notification" role="region" aria-labelledby="Swisscom_TV_8">
+    <div class="card__header">
+      <h1 class="align-left" id="Swisscom_TV_8">Swisscom TV</h1>
+      <span class="align-right">Today 13:21</span>
+    </div>
+    <p class="card__text">Combine your NATEL® infinity subscription with NATEL® data. Your benefits: greater speeds and data volume with any device, regardless of the location. You also benefit automatically from a monthly discount.</p>
+  </div>
+</div>
+```
+
+<h2>Documents Cards</h2>
+
+<p>Document cards have by default not rounded corners. If you want the card to have rounded corners add the class <code>card--rounded</code> to the card.</p>
+
+<h3>Documents Card</h3>
+
+```htmlmixed
+<div class="card card--dark card--document card--turquoise">
+  <div class="card__header">
+    Documents
+  </div>
+  <div class="card__body">
+    <a class="card__item" href="javascript:void(0);">
+      <div class="row center-vertical">
+        <div class="col-7 center-vertical">
+          <i class="card__item-icon icon icon--powerpoint icon-121-document-powerpoint" aria-hidden="true"></i>
+          <span class="sr-only">powerpoint-document</span>
+          <div class="card__item-wrapper">
+            <h1>Swisscom live erleben</h1>
+            <p>26.03.2016</p>
+          </div>
+        </div>
+        <div class="col-1 text-align-right">
+          <div class="card__item-detail">
+            <i class="icon icon-015-chevron-right" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </a>
+    <a class="card__item" href="javascript:void(0);">
+      <div class="row center-vertical">
+        <div class="col-7 center-vertical">
+          <i class="card__item-icon icon icon--word icon-122-document-word" aria-hidden="true"></i>
+          <span class="sr-only">word-document</span>
+          <div class="card__item-wrapper">
+            <h1>Power Yoga</h1>
+            <p>21.04.2016</p>
+          </div>
+        </div>
+        <div class="col-1 text-align-right">
+          <div class="card__item-detail">
+            <i class="icon icon-015-chevron-right" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </a>
+    <a class="card__item" href="javascript:void(0);">
+      <div class="row center-vertical">
+        <div class="col-7 center-vertical">
+          <i class="card__item-icon icon icon--excel icon-120-document-excel" aria-hidden="true"></i>
+          <span class="sr-only">excel-document</span>
+          <div class="card__item-wrapper">
+            <h1>Swisscom Management Event</h1>
+            <p>27.04.2016</p>
+          </div>
+        </div>
+        <div class="col-1 text-align-right">
+          <div class="card__item-detail">
+            <i class="icon icon-015-chevron-right" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </a>
+    <a class="card__item" href="javascript:void(0);">
+      <div class="row center-vertical">
+        <div class="col-7 center-vertical">
+          <i class="card__item-icon icon icon--pdf icon-123-document-pdf" aria-hidden="true"></i>
+          <span class="sr-only">pdf-document</span>
+          <div class="card__item-wrapper">
+            <h1>Swisscom live erleben</h1>
+            <p>27.04.2016</p>
+          </div>
+        </div>
+        <div class="col-1 text-align-right">
+          <div class="card__item-detail">
+            <i class="icon icon-015-chevron-right" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </a>
+    <a class="card__item" href="javascript:void(0);">
+      <div class="row center-vertical">
+        <div class="col-7 center-vertical">
+          <i class="card__item-icon icon icon--word icon-122-document-word" aria-hidden="true"></i>
+          <span class="sr-only">word-document</span>
+          <div class="card__item-wrapper">
+            <h1>Swisscom live erleben</h1>
+            <p>27.04.2016</p>
+          </div>
+        </div>
+        <div class="col-1 text-align-right">
+          <div class="card__item-detail">
+            <i class="icon icon-015-chevron-right" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="card__footer">
+    <button class="link">
+      Show more
+    </button>
+  </div>
+</div>
+```
+
+<h3>Travel Card</h3>
+
+```htmlmixed
+<div class="card card--dark card--document card--pink">
+  <div class="card__header">
+    Travel
+  </div>
+  <div class="card__body">
+    <div class="card__item">
+      <div class="card__travel-station">
+        <h1>Next trains</h1>
+        <p>from <strong>Bern Station</strong></p>
+      </div>
+    </div>
+    <a class="card__item" href="javascript:void(0);">
+      <div class="row center-vertical">
+        <div class="col-1">
+          <i class="card__item-icon icon icon-097-suitcase" aria-hidden="true"></i>
+        </div>
+        <div class="col-3 card__travel-time">
+          <p>in 5 min</p>
+          <h1>17:45</h1>
+        </div>
+        <div class="col-3 card__travel-direction">
+          <p>IR 2529 nach</p>
+          <h1>Luzern</h1>
+        </div>
+        <div class="col-1 text-align-right">
+          <div class="card__item-detail">
+            <i class="icon icon-015-chevron-right" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </a>
+    <a class="card__item" href="javascript:void(0);">
+      <div class="row center-vertical">
+        <div class="col-1">
+          <i class="card__item-icon icon icon-097-suitcase" aria-hidden="true"></i>
+        </div>
+        <div class="col-3 card__travel-time">
+          <p>in 5 min</p>
+          <h1>17:45</h1>
+        </div>
+        <div class="col-3 card__travel-direction">
+          <p>IR 2529 nach</p>
+          <h1>Luzern</h1>
+        </div>
+        <div class="col-1 text-align-right">
+          <div class="card__item-detail">
+            <i class="icon icon-015-chevron-right" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </a>
+    <a class="card__item" href="javascript:void(0);">
+      <div class="row center-vertical">
+        <div class="col-1">
+          <i class="card__item-icon icon icon-097-suitcase" aria-hidden="true"></i>
+        </div>
+        <div class="col-3 card__travel-time">
+          <p>in 5 min</p>
+          <h1>17:45</h1>
+        </div>
+        <div class="col-3 card__travel-direction">
+          <p>IR 2529 nach</p>
+          <h1>Luzern</h1>
+        </div>
+        <div class="col-1 text-align-right">
+          <div class="card__item-detail">
+            <i class="icon icon-015-chevron-right" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </a>
+    <a class="card__item" href="javascript:void(0);">
+      <div class="row center-vertical">
+        <div class="col-1">
+          <i class="card__item-icon icon icon-097-suitcase" aria-hidden="true"></i>
+        </div>
+        <div class="col-3 card__travel-time">
+          <p>in 5 min</p>
+          <h1>17:45</h1>
+        </div>
+        <div class="col-3 card__travel-direction">
+          <p>IR 2529 nach</p>
+          <h1>Luzern</h1>
+        </div>
+        <div class="col-1 text-align-right">
+          <div class="card__item-detail">
+            <i class="icon icon-015-chevron-right" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+```
+<h2>News Cards</h2>
+
+<p>The news card is available in the default and the <i>dark</i> style.</p>
+
+```htmlmixed_accessible
+<div class="bg bg-light">
+  <div class="card card--news" role="region" aria-labelledby="Card_11_1">
+  <div class="card__image" style="background-image:url('$WEBROOT-THEME-BUILD$/img/samples/online_services.jpg')" alt="Smartphone"></div>
+    <div class="card__body">
+      <div class="card__header"><a class="align-left link" href="javascript:void(0);">Swisscom TV</a></div>
+      <h1 class="card__title" id="Card_11_1">Card 11</h1>
+      <p class="text-b2 card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+      <div class="card__tray">
+        <div class="tray-item"><i class="icon icon-043-heart" aria-hidden="true"></i><span class="sr-only">likes</span><span class="count">9</span></div>
+        <div class="tray-item"><i class="icon icon-080-speech-bubble" aria-hidden="true"></i><span class="sr-only">comments</span><span class="count">11</span></div>
+        <div class="tray-item"><i class="icon icon-082-star" aria-hidden="true"></i><span class="sr-only">favorites</span><span class="count">4</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bg bg--gray">
+  <div class="card card--news card--dark" role="region" aria-labelledby="Card_11_2">
+    <div class="card__image" style="background-image:url('$WEBROOT-THEME-BUILD$/img/samples/online_services.jpg')" alt="Smartphone"></div>
+    <div class="card__body">
+      <div class="card__header"><a class="align-left link" href="javascript:void(0);">Swisscom TV</a></div>
+      <h1 class="card__title" id="Card_11_2">Card 11</h1>
+      <p class="text-b2 card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+      <div class="card__tray">
+        <div class="tray-item"><i class="icon icon-043-heart" aria-hidden="true"></i><span class="sr-only">likes</span><span class="count">9</span></div>
+        <div class="tray-item"><i class="icon icon-080-speech-bubble" aria-hidden="true"></i><span class="sr-only">comments</span><span class="count">11</span></div>
+        <div class="tray-item"><i class="icon icon-082-star" aria-hidden="true"></i><span class="sr-only">favorites</span><span class="count">4</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+<h3>Linkbox with icon</h3>
+
+```htmlmixed
+<div class="card card--navigation card--dark card--document card--blue">
+  <div class="card__header">
+    <i class="icon icon-160-wlan icon--s2" aria-hidden="true"><span class="sr-only">testimage for screen reader</span></i> WLAN
+  </div>
+  <div class="card__body">
+    <a class="card__item" href="javascript:void(0);">
+      <div class="row center-vertical">
+        <div class="col-7 card__item-wrapper">
+          <h1>Switch on WLAN</h1>
+        </div>
+        <div class="col-1 text-align-right">
+          <div class="card__item-detail">
+            <i class="icon icon-015-chevron-right" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </a>
+    <a class="card__item" href="javascript:void(0);">
+      <div class="row center-vertical">
+        <div class="col-7 card__item-wrapper">
+          <h1>WLAN password and settings</h1>
+        </div>
+        <div class="col-1 text-align-right">
+          <div class="card__item-detail">
+            <i class="icon icon-015-chevron-right" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+```
+
+<h3>Linkbox without truncate</h3>
+
+```htmlmixed
+<div class="card card--navigation card--dark card--document card--blue">
+  <div class="card__header">
+     <i class="icon icon-165-transmitter icon--s2" aria-hidden="true"></i> Swisscom public WLAN
+  </div>
+  <div class="card__body">
+    <a class="card__item card__item--no-truncate" href="javascript:void(0);">
+      <div class="row center-vertical">
+        <div class="col-7 card__item-wrapper">
+          <h1>Surf the internet with your tablet, notebook or smartphone at hotspots.</h1>
+        </div>
+        <div class="col-1 text-align-right">
+          <div class="card__item-detail">
+            <i class="icon icon-015-chevron-right" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+```
+
+<h3>Linkbox no background</h3>
+
+```htmlmixed
+<div class="card card--document card--no-color">
+  <div class="card__body">
+    <a class="card__item" href="javascript:void(0);">
+      <div class="row center-vertical">
+        <div class="col-7 center-vertical">
+          <div class="card__item-wrapper">
+            <h1>iPhone 7</h1>
+            <p>Settings, SIM-Options, PUK</p>
+          </div>
+        </div>
+        <div class="col-1 text-align-right">
+          <div class="card__item-detail">
+            <i class="icon icon-015-chevron-right" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </a>
+    <a class="card__item" href="javascript:void(0);">
+      <div class="row center-vertical">
+        <div class="col-7 center-vertical">
+          <div class="card__item-wrapper">
+            <h1>MobilePay</h1>
+            <p>Manage EasyPay, Natel®Pay-Options</p>
+          </div>
+        </div>
+        <div class="col-1 text-align-right">
+          <div class="card__item-detail">
+            <i class="icon icon-015-chevron-right" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </a>
+     <a class="card__item" href="javascript:void(0);">
+      <div class="row center-vertical">
+        <div class="col-6 center-vertical">
+          <div class="card__item-wrapper">
+            <h1>Devices and SIM</h1>
+            <p>Settings, SIM-Options, PUK</p>
+          </div>
+        </div>
+        <div class="col-1 center-vertical">
+        <div class="badge badge--icon">
+          <span class="badge__content">8</span>
+        </div>
+        </div>
+        <div class="col-1 text-align-right">
+          <div class="card__item-detail">
+            <i class="icon icon-015-chevron-right" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </a>
+    <a class="card__item" href="javascript:void(0);">
+      <div class="row center-vertical">
+        <div class="col-7 center-vertical">
+          <div class="card__item-wrapper">
+            <h1>Technical Support</h1>
+            <p>Help and Support</p>
+          </div>
+        </div>
+        <div class="col-1 text-align-right">
+          <div class="card__item-detail">
+            <i class="icon icon-015-chevron-right" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+```
+
+<h4>Action Message Card</h4>
+
+```htmlmixed_accessible
+<div class="card card--message-action card--dark card--icon">
+  <i class="card__item-icon icon icon-023-download icon--s3" aria-hidden="true"></i>
+  <span class="sr-only">This is an information message</span>
+  <div class="card__body">
+    <p>Export your product list and learn more about your products.
+      <a class="link link--underline" href="javascript:void(0);">Product list with more details</a>
+    </p>
+  </div>
+</div>
+```
+
+<h4>Info Message Card</h4>
+
+```htmlmixed_accessible
+<div class="card card--message-info card--icon card--border" role="region" aria-labelledby="WLAN">
+  <i class="card__item-icon icon icon-046-information-circle icon--s3" aria-hidden="true"></i>
+  <span class="sr-only">This is an information message</span>
+  <div class="card__body">
+    <h1 id="WLAN">Improve your WLAN quality</h1>
+    <p>With the help of the <a href="javascript:void(0);">My Swisscom Assistant</a> you can improve your WLAN quality.
+    </p>
+  </div>
+</div>
+```
+
+<h4>Success Message Card</h4>
+
+```htmlmixed_accessible
+<div class="card card--message-success card--icon card--border" role="region" aria-labelledby="Registration">
+  <i class="card__item-icon icon icon-012-check-mark-circle icon--s3" aria-hidden="true"></i>
+  <span class="sr-only">This is a success message</span>
+  <div class="card__body">
+    <h1 id="Registration">Your registration has succeeded</h1>
+    <p>To resend your verification e-mail
+      <a href="javascript:void(0);">click here</a>.
+    </p>
+  </div>
+</div>
+```
+
+<h4>Important Message Card</h4>
+
+```htmlmixed_accessible
+<div class="card card--message-important card--icon card--border" role="region" aria-labelledby="Router">
+  <i class="card__item-icon icon icon-026-exclamation-mark-circle icon--s3" aria-hidden="true"></i>
+  <span class="sr-only">This is a warning message</span>
+  <div class="card__body">
+    <h1 id="Router">Router problems</h1>
+    <p>Your DSL router cannot be reached. Therefore, it is only possible to view or print your data at the moment.</p>
+  </div>
+</div>
+```
+
+<h4>Alert Message Card</h4>
+
+```htmlmixed_accessible
+<div class="card card--message-alert card--icon card--border" role="region" aria-labelledby="Combox">
+  <i class="card__item-icon icon icon-026-exclamation-mark-circle icon--s3" aria-hidden="true"></i>
+  <span class="sr-only">This is an error message</span>
+  <div class="card__body">
+    <h1 id="Combox">COMBOX® not found</h1>
+    <p>No COMBOX® could be found with the number 079 12355 88. Not all COMBOX®-numbers can be displayed.</p>
+  </div>
+</div>
+```
+
+<h4>Message Card with huge content (to be used only for message cards with a title)</h4>
+<p>Here you have the option to align the content on the left</p>
+
+```htmlmixed_accessible
+<div class="card card--message-important card--icon card--border card--compact" role="region" aria-labelledby="Router_Problems">
+  <i class="card__item-icon icon icon-026-exclamation-mark-circle icon--s3" aria-hidden="true"></i>
+  <span class="sr-only">This is a warning message</span>
+  <div class="card__body">
+    <h1 id="Router_Problems">Router problems</h1>
+    <p>Your DSL router cannot be reached. Therefore, it is only possible to view or print your data at the moment. If you would like to change your data please ensure that your DSL router is switched on.
+		If this warning also appears when the DSL router is switched on, please <a href="">log in to the Customer Center</a> to make changes later.
+    </p>
+  </div>
+</div>
+```
+
+*/
+
+// --------------------------------------------------
+
+
+.card {
+
+  // Setup 8 column grid system in Cards
+  // -------------------------
+
+  .row {
+    @include make-card-row($card-grid-gutter);
+  }
+
+  @include make-card-columns($card-grid-columns, $card-grid-gutter);
+
+
+  // Base Styles
+  // -------------------------
+
+  position: relative;
+
+  width: 100%;
+
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 30px 24px;
+
+  background: $color-card-bg;
+
+  color: $color-gray;
+
+  overflow: hidden;
+
+  transition: background 200ms $standard-easing;
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: $color-card-navy;
+  }
+
+  .card__header {
+    @include typo-headline-5;
+    @include font-semi-light;
+  }
+
+  .card__footer {
+    padding: 24px;
+  }
+
+  .card__text {
+    @include text-standard;
+    margin: 0;
+  }
+
+  .link::before {
+    content: '';
+    display: block;
+    margin-top: 4px;
+  }
+
+
+  // Card Variant Styles
+  // -------------------------
+
+  &--dark {
+    background: $color-card-gray-bg;
+  }
+
+
+  // Clickable Card Styles
+  // -------------------------
+
+  &.card--clickable {
+    cursor: pointer;
+
+    &:hover {
+      background: $color-card-bg--active;
+
+      &.card--dark {
+        background: $color-card-gray-bg--active;
+      }
+    }
+  }
+
+
+  // Card Styles
+  // --------------------------------------------------
+
+  // Notification Styles
+  // -------------------------
+
+  &--notification {
+    padding: 12px 16px 20px;
+
+    border-radius: $card-border;
+
+    .card__header {
+      @include clearfix;
+
+      h1,
+      h2, span {
+        @include text-smaller;
+        margin-bottom: 4px;
+      }
+
+      h1 {
+        @include font-semi-bold;
+      }
+
+      h2, span {
+        @include font-semi-light;
+        color: $color-gray-tint-4;
+      }
+    }
+  }
+
+
+  // Image Styles
+  // -------------------------
+
+  &--image-top,
+  &--image-bottom {
+    padding: 0;
+
+    &::before {
+      content: none;
+    }
+
+    .card__image {
+      position: relative;
+
+      width: 100%;
+      height: $card-image-height;
+
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      overflow: hidden;
+
+      // filter would be the nice solution, but IE 10 and 11 is not supporting it :(
+      // so we use a ::before element with a black background
+      //filter: brightness(1);
+
+      &::before {
+        content: '';
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        background: rgba($color-black, .1);
+
+        opacity: 0;
+
+        transition: opacity 200ms $standard-easing;
+      }
+    }
+
+    .card__body {
+      position: relative;
+
+      padding: 12px 16px 20px;
+
+      &::before {
+        content: '';
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 4px;
+
+        background: $color-card-navy;
+      }
+    }
+  }
+
+  &--image-top {
+    .card__image::before {
+      border-radius: $card-border $card-border 0 0;
+    }
+
+    &.card--clickable {
+      &:hover {
+        // filter would be the nice solution, but IE 10 and 11 is not supporting it :(
+        //.card__image {
+        //  filter: brightness(.9);
+        //}
+
+        .card__image::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &--image-bottom {
+    .card__image::before {
+      border-radius: 0 0 $card-border $card-border;
+    }
+
+    &.card--clickable {
+      &:hover {
+        // filter would be the nice solution, but IE 10 and 11 is not supporting it :(
+        //.card__image {
+        //  filter: brightness(.9);
+        //}
+
+        .card__image::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  // Promo Styles
+  // -------------------------
+
+  &--promo {
+    .card__image {
+      display: block;
+
+      max-width: 100%;
+
+      margin: 0 auto;
+
+      opacity: 1;
+
+      transition: opacity 200ms $standard-easing;
+    }
+
+    &.card--clickable {
+      &:hover {
+        .card__image {
+          // filter would be the nice solution, but IE 10 and 11 is not supporting it :(
+          // so we use opacity to fade the image slightly
+          // filter: brightness(.9);
+
+          opacity: .95;
+        }
+      }
+    }
+  }
+
+
+  // Upload Styles
+  // -------------------------
+
+  &--upload-photos {
+    padding-top: 23px;
+    padding-bottom: 24px;
+
+    border-radius: 0;
+
+    .card__header {
+      padding-bottom: 25px;
+    }
+
+    .card__body {
+      display: flex;
+      overflow: hidden;
+    }
+
+    .card__image {
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+
+      img {
+        display: block;
+
+        width: auto;
+        height: 103px;
+      }
+    }
+  }
+
+  &--upload-files {
+    padding: 0;
+
+    border-radius: 0;
+
+    .card__header {
+      padding: 25px 24px 21px;
+      border-bottom: 1px solid $color-aluminum;
+    }
+
+    .card__item {
+      @include text-standard;
+
+      padding: 21px 24px 22px;
+      align-items: center;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $color-aluminum;
+      }
+
+      .card__item-icon {
+        margin-right: 6px;
+
+        float: left;
+        font-size: 30px;
+      }
+
+      .card__text {
+        @include text-truncate;
+      }
+    }
+  }
+
+  // Document Styles
+  // -------------------------
+
+  &--document {
+    padding: 0;
+
+    border-radius: 0;
+
+    a {
+      margin: 0;
+      color: inherit;
+      border-bottom: inherit;
+
+      .card__item-detail {
+        color: $color-int-blue;
+      }
+
+      &:hover {
+        .card__item-detail {
+          color: $color-int-blue--active;
+        }
+      }
+    }
+
+      &.card--no-color {
+        .card__item:hover {
+          background-color: $color-card-bg--active;
+        }
+      }
+
+    .card__header {
+      @include typo-headline-4;
+      @include font-light;
+
+      padding: 22px 24px 17px;
+      border-bottom: 1px solid $color-aluminum;
+    }
+
+    .card__footer {
+      border-top: 1px solid $color-aluminum;
+
+      text-align: center;
+    }
+
+    .card__item {
+      @include text-standard;
+
+      display: block;
+
+      padding: 15px 24px 16px;
+      align-items: center;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $color-aluminum;
+      }
+
+      &:hover{
+        background-color: $color-card-gray-bg--active;
+      }
+
+      .card__item-icon {
+        margin-top: 1px;
+        margin-right: 6px;
+
+        float: left;
+        font-size: 30px;
+      }
+
+      .card__item-detail {
+        font-size: 21px;
+
+        .icon {
+          @include font-semi-bold;
+        }
+      }
+
+      .card__item-wrapper {
+        overflow: hidden;
+        p {
+          &:hover {
+            text-decoration: underline;
+            color: $color-int-blue--active;
+          }
+        }
+      }
+
+      &.card__item--no-truncate {
+        h1,
+        p {
+          white-space: normal;
+        }
+      }
+
+      h1,
+      p {
+        @include text-truncate;
+        margin: 0;
+      }
+
+      h1 {
+        @include font-semi-bold;
+
+        line-height: 22px;
+        letter-spacing: 0;
+        font-size: 16px;
+      }
+
+      p {
+        line-height: normal;
+        letter-spacing: .1px;
+        font-size: 14px;
+
+        color: $color-gray-tint-4;
+      }
+    }
+
+    // Travel Styles
+    // -------------------------
+
+    .card__travel {
+      &-station {
+        h1 {
+          @include typo-headline-4;
+          @include font-light;
+
+          color: $color-gray-tint-4;
+        }
+
+        p {
+          @include text-standard;
+          @include font-light;
+
+          color: $color-gray-tint-4;
+
+          strong {
+            @include font-semi-bold;
+            color: $color-gray;
+          }
+        }
+      }
+
+      &-time {
+        h1 {
+          @include typo-headline-4;
+          @include font-light;
+
+          color: $color-gray;
+        }
+
+        p {
+          @include text-small;
+          @include font-semi-light;
+
+          color: $color-gray-tint-4;
+        }
+      }
+
+      &-direction {
+        h1 {
+          @include text-small;
+          @include font-semi-bold;
+
+          color: $color-gray;
+        }
+
+        p {
+          @include text-small;
+          @include font-semi-light;
+
+          color: $color-gray-tint-4;
+        }
+      }
+    }
+  }
+
+  // News Styles
+  // -------------------------
+
+  &--news {
+    padding: 0;
+
+    &::before {
+      content: none;
+    }
+
+    .card__image {
+      position: relative;
+
+      width: 100%;
+      height: $card-image-news-height;
+
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center top;
+
+      overflow: hidden;
+    }
+
+    .card__header {
+      @include clearfix;
+
+      h2,
+      p,
+      a {
+        @include text-small;
+      }
+    }
+
+    .card__body {
+      position: relative;
+
+      padding: 7px 16px 12px;
+
+      .card__title {
+        @include typo-headline-4;
+        @include font-semi-light;
+
+        margin-bottom: 5px;
+      }
+
+      .card__text {
+        @include text-small;
+        @include font-semi-light;
+      }
+    }
+
+    .card__tray {
+      width: 100%;
+      margin-top: 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .tray-item {
+      position: relative;
+      margin-right: 30px;
+
+      .icon {
+        color: $color-int-blue;
+        font-size: 24px;
+      }
+
+      .count {
+        @include font-semi-light;
+
+        position: absolute;
+        top: -4px;
+
+        font-size: 12px;
+        color: $color-gray;
+      }
+    }
+  }
+
+  // News Dark Style
+  // -------------------------
+
+  &--dark {
+    &.card--news {
+      @include font-smoothing;
+
+      background: $color-navy;
+      color: $color-white;
+
+      .tray-item {
+        .count {
+          color: $color-int-blue;
+        }
+      }
+    }
+  }
+
+  // Border Options
+  // -------------------------
+
+  &--rounded {
+    border-radius: $card-border;
+  }
+
+  &--not-rounded {
+    &,
+    .card__image::before {
+      border-radius: 0;
+    }
+  }
+
+  &--border {
+    border: 0 solid $color-gray-tint-8;
+    border-width: 0 1px 1px 1px;
+  }
+
+  // Navigation Card
+  // -------------------------
+
+  &--navigation {
+    .card__header {
+      .icon {
+        margin-right: 16px;
+      }
+    }
+
+    .card__item {
+      &:hover {
+        background: $color-card-gray-bg--active;
+      }
+
+      h1 {
+        font-size: 16px;
+        font-weight: normal;
+      }
+    }
+
+    .card__text {
+      padding: 15px 24px;
+
+      a {
+        color: $color-blue;
+
+        &:hover {
+          color: $color-int-blue--active;
+        }
+      }
+      .link::before {
+        content: normal;
+      }
+    }
+  }
+
+  &--icon {
+    .card__body {
+      padding-bottom: 0;
+      padding-left: $card-compact-padding-left;
+      padding-right: 0;
+      padding-top: 3px;
+    }
+  }
+
+  &--compact {
+    .card__body {
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 3px;
+
+      > h1, h2, h3, h4, h5, h6 {
+        padding-left: $card-compact-padding-left;
+      }
+    }
+  }
+
+  &__item-icon {
+    float: left;
+  }
+
+  // Message Cards
+  // -------------------------
+
+  &--message-action {
+    &::before {
+      background: $color-blue;
+    }
+
+    .card__item-icon {
+      color: $color-blue;
+    }
+  }
+
+  &--message-info {
+    &::before {
+      background: $color-turquoise;
+    }
+
+    .card__item-icon {
+      color: $color-turquoise;
+    }
+  }
+
+  &--message-success {
+    &::before {
+      background: $color-int-green;
+    }
+
+    .card__item-icon {
+      color: $color-int-green;
+    }
+  }
+
+  &--message-important {
+    &::before {
+      background: $color-int-orange;
+    }
+
+    .card__item-icon {
+      color: $color-int-orange;
+    }
+  }
+
+  &--message-alert {
+    &::before {
+      background: $color-int-red;
+    }
+
+    .card__item-icon {
+      color: $color-int-red;
+    }
+  }
+
+  // Card Color
+  // -------------------------
+
+  &--navy::before {
+    background: $color-card-navy;
+  }
+
+  &--blue::before {
+    background: $color-card-blue;
+  }
+
+  &--purple::before {
+    background: $color-card-purple;
+  }
+
+  &--turquoise::before,
+  &--apple::before,   // deprecated
+  &--petrol::before { // deprecated
+    background: $color-card-turquoise;
+  }
+
+  &--iris::before {
+    background: $color-card-iris;
+  }
+
+  &--pink::before {
+    background: $color-card-pink;
+  }
+
+  &--orchid::before {
+    background: $color-orchid;
+  }
+
+  &--green::before {
+    background: $color-int-green;
+  }
+
+  &--orange::before {
+    background: $color-int-orange;
+  }
+
+  &--red::before {
+    background: $color-int-red;
+  }
+
+  &--no-color::before {
+    background: $color-gray-tint-8;
+    height: 1px;
+  }
+
+  .badge.badge--icon {
+    margin: 0 0 16px 16px;
+  }
+}
+
+// Margin after Heading for Message Cards
+//
+[class^="card card--message-"] {
+  .card__body {
+    h1, h2, h3, h4, h5, h6 {
+      line-height: 32px;
+      letter-spacing: -.35px;
+      font-size: 24px;
+      font-weight: 300;
+      margin-bottom: 24px;
+    }
+  }
+}

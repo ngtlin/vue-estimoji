@@ -1,0 +1,798 @@
+//
+// Range Sliders
+// --------------------------------------------------
+
+/*doc
+---
+title: Sliders
+name: 02-components-160-range-01-rangeslider
+category: Components - Sliders
+---
+
+<p>Sliders are used to control settings across a scale. Standard step sliders feature fixed points on the scale, free sliders give users complete control over more specific variables like percentages.</p>
+
+<div class="range">
+  <input type="range" data-init="auto" min="10" max="1000" value="300" list="speeds" tabindex="1" step="any">
+  <datalist id="speeds">
+    <option label="10 Mbits/s">10</option>
+    <option label="20 Mbits/s">20</option>
+    <option label="100 Mbits/s">100</option>
+    <option label="300 Mbits/s">300</option>
+    <option label="1 Gbits/s">1000</option>
+  </datalist>
+</div>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Variations</h2>
+
+  <h3>Step slider</h3>
+
+  <p>Sliders use the same interaction states as primary CTAs, using the interaction palette to signify their state.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/range_sliders/Group-10@2x-15.jpg" alt="Static state">
+        <span class="fig-caption">Static state</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/range_sliders/Group-26@2x-6.jpg" alt="Hover state">
+        <span class="fig-caption">Hover state</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/range_sliders/Group-28@2x-5.jpg" alt="On click or drag state">
+        <span class="fig-caption">On click/drag</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/range_sliders/Group-45@2x-1.jpg" alt="Disabled state">
+        <span class="fig-caption">Disabled state</span>
+    </div>
+  </div>
+
+
+
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <h3 class="margin-bottom-1">Step sliders with hints</h3>
+      <p>Step sliders have hover states shown with a dot hint. Users can click on them without dragging.</p>
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/range_sliders/Group-20@2x.jpg" alt="Active slider with step rollover">
+      <span class="fig-caption">Active slider with step rollover</span>
+    </div>
+
+    <div class="col-xs-12 col-lg-6">
+    <h3 class="margin-bottom-1">Sliders with switches</h3>
+     <p>By integrating switches, sliders can be displayed as disabled or enabled.</p>
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/range_sliders/Group-19@2x-4.jpg" alt="Slider with activity switch">
+      <span class="fig-caption">Slider with activity switch</span>
+    </div>
+  </div>
+
+  <h3>Free slider</h3>
+
+  <p>Free sliders have no fixed step options and give users a much wider range of selection options.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/range_sliders/Group-32@2x.jpg" alt="Static state">
+        <span class="fig-caption">Static state</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/range_sliders/Group-34@2x.jpg" alt="Hover state">
+        <span class="fig-caption">Hover state/drag</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/range_sliders/Group-36@2x-1.jpg" alt="On click and drag state">
+        <span class="fig-caption">On click/drag</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/range_sliders/Group-38@2x-1.jpg" alt="Disabled state">
+        <span class="fig-caption">Disabled state</span>
+    </div>
+  </div>
+
+  <h2>Rules</h2>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <h3 class="margin-bottom-1">Breakpoints</h3>
+      <p>When the screen becomes too small for the slider, it becomes a drop down menu.</p>
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/range_sliders/Group-41@2x-1.jpg" alt="Drop down on smaller devices">
+      <span class="fig-caption">Drop down on smaller devices</span>
+    </div>
+
+    <div class="col-xs-12 col-lg-6">
+    <h3 class="margin-bottom-1">Vertical spacing</h3>
+    <p>Slider containers should be seperated by 16px of verticle spacing.</p>
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/range_sliders/Group-8@2x-8.jpg" alt="Space specification">
+      <span class="fig-caption">Space between sliders</span>
+    </div>
+  </div>
+
+  <h3>Clickable areas</h3>
+
+  <p>A user can jump to any step along the slider without using the handle. This is done by clicking/tapping on clickable areas between the steps. A dot hint will appear on the slider bar to indicate where a user has activated.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/range_sliders/Group-42@2x-1.jpg" alt="Specification clickable area">
+      <span class="fig-caption">Clickable areas</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+    </div>
+  </div>
+
+  <h3>Typography</h3>
+
+  <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/range_sliders/Group-43@2x-1.jpg" alt="Typography specification">
+        <span class="fig-caption">Typography</span>
+      </div>
+  </div>
+
+</div>
+
+
+```section_develop
+```
+
+<h4>Step slider with data options</h4>
+
+```htmlmixed
+<div class="range">
+  <input type="range" data-init="auto" min="10" max="1000" value="300" list="speeds" tabindex="1"/>
+  <datalist id="speeds">
+    <option label="10 Mbits/s">10</option>
+    <option label="20 Mbits/s">20</option>
+    <option label="100 Mbits/s">100</option>
+    <option label="300 Mbits/s">300</option>
+    <option label="1 Gbits/s">1000</option>
+  </datalist>
+</div>
+```
+
+```htmlmixed
+<div class="range">
+  <input type="range" data-init="auto" list="data" tabindex="2" />
+  <datalist id="data">
+    <option label="Light">1</option>
+    <option label="Basic">2</option>
+    <option label="Plus">3</option>
+  </datalist>
+</div>
+```
+
+```htmlmixed
+<div class="range">
+  <input type="range" data-init="auto" list="data2" tabindex="3" />
+  <datalist id="data2">
+    <option label="Domestic">1</option>
+    <option label="Domestic & international">2</option>
+  </datalist>
+</div>
+```
+
+<h4>Ticks without explicit labels</h4>
+
+<p>If <code>options</code> are provided but no <code>labels</code> are specified the <b>range</b> component automatically generates the labels based on the provided options value.</p>
+
+```htmlmixed
+<div class="range">
+  <input type="range" data-init="auto" list="nolabels" tabindex="4" />
+  <datalist id="nolabels">
+    <option>1</option>
+    <option>1.5</option>
+    <option>2</option>
+    <option>2.5</option>
+    <option>3</option>
+  </datalist>
+</div>
+```
+
+<h4>Disabled step slider</h4>
+
+```htmlmixed
+<div class="range">
+  <input type="range" data-init="auto" min="10" max="1000" value="300" list="speeds" disabled/>
+  <datalist id="speeds">
+    <option label="10 Mbits/s">10</option>
+    <option label="20 Mbits/s">20</option>
+    <option label="100 Mbits/s">100</option>
+    <option label="300 Mbits/s">300</option>
+    <option label="1 Gbits/s">1000</option>
+  </datalist>
+</div>
+```
+
+<h3>Free Slider (Light)</h3>
+
+<p>The light style of the free slider. Use the <code>formatter</code> parameter to customize output formatting on the thumb thumbnail and the output label. In order for the component to find your formatting function it has to be available globally.</p>
+
+```htmlmixed
+<div class="range range--light">
+  <input type="range" data-init="auto" id="range11" min="0" max="360" value="180" step="1" tabindex="9" formatter="degreesFormatter"/>
+  <output for="range11">0</output>
+</div>
+<div class="range range--light">
+  <input type="range" data-init="auto" id="range12" min="0" max="360" value="180" step="1" disabled formatter="degreesFormatter"/>
+  <output for="range12">0</output>
+</div>
+
+<script>
+  function degreesFormatter(value, short) {
+    return value + "°";
+  }
+</script>
+```
+*/
+
+
+// --------------------------------------------------
+
+// Variables
+// -------------------------
+
+$track-border-width: 0;
+$track-border-color: transparent;
+$track-border-radius: 20px;
+$track-height: 2px;
+$thumb-height: 28px;
+$track-offset: 32px;
+$tooltip-size: 48px;
+$tick-hover-top: 12px;
+$tick-top: $tick-hover-top + 1;
+
+// --------------------------------------------------
+
+
+@mixin range-track {
+  transition: all 200ms ease;
+
+  width: 100%;
+  height: $track-height;
+}
+
+@mixin range-thumb($height: 28px, $width: 28px) {
+  z-index: 1;
+
+  border: 2px solid $color-blue;
+  border-radius: 50%;
+
+  box-shadow: inset 0 0 0 3px $color-white;
+  background-color: $color-white;
+
+  width: $width;
+  height: $height;
+
+  transform-origin: 50% 50%;
+  user-select: none;
+
+  &:active {
+    background-color: $color-int-blue--active;
+  }
+
+  &:hover {
+    border-color: $color-int-blue--active;
+  }
+}
+
+@mixin range-thumb--active {
+  border-color: $color-int-blue--active;
+  background-color: $color-int-blue--active;
+
+  .range-thumb__value {
+    transform: scale(1);
+  }
+}
+
+@mixin range-thumb--disabled {
+  .range-thumb__value {
+    transform: scale(0);
+  }
+}
+
+// --------------------------------------------------
+
+
+// Range wrapper styles
+// -------------------------
+
+.range {
+  @include font-sans;
+  @include font-smoothing;
+
+  position: relative;
+
+  margin: 0 16px 24px;
+  @include bp-tablet {
+    margin: 0 32px 24px;
+  }
+
+  outline: none;
+  height: auto;
+  user-select: none;
+
+  // Remove default Range
+  // -------------------------
+
+  input[type='range'] {
+    display: none;
+  }
+
+  // Label and Output styles
+  // -------------------------
+
+  label {
+    margin: 0;
+    margin-top: 32px;
+  }
+
+  output {
+    @include font-semi-bold;
+    @include text-smaller;
+
+    color: $color-gray;
+  }
+
+  // Range styles
+  // -------------------------
+
+  .range-container {
+    position: relative;
+
+    margin-top: 19px;
+
+    cursor: pointer;
+
+    width: 100%;
+    height: auto;
+    min-height: $thumb-height;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .range-track {
+    @include range-track;
+
+    position: absolute;
+    top: 13px;
+    left: 0;
+
+    z-index: 1;
+    background: $color-gray-tint-6;
+
+    &__progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      background: $color-blue;
+
+      width: 0;
+      height: $track-height;
+    }
+  }
+
+  .range-slider {
+    display: table;
+  }
+
+  .range-tick {
+    display: table-cell;
+    position: relative;
+
+    padding: 40px 8px 0;
+
+    height: auto;
+
+    text-align: center;
+    color: $color-gray-tint-6;
+
+    user-select: none;
+
+    word-break: break-all;
+
+    &::before {
+      position: absolute;
+      top: $tick-top;
+      left: 50%;
+
+      background: $color-gray-tint-6;
+
+      width: 1px;
+      height: 8px;
+
+      content: '';
+    }
+
+    &:first-child {
+      padding-left: 0;
+
+      text-align: left;
+
+      &::before {
+        position: absolute;
+        top: $tick-top;
+        left: $track-offset;
+      }
+
+      &::after {
+        position: absolute;
+        top: $tick-hover-top;
+        left: $track-offset - 2px;
+      }
+    }
+
+    &:last-child {
+      padding-right: 0;
+
+      text-align: right;
+
+      &::before {
+        position: absolute;
+        top: $tick-top;
+        right: $track-offset;
+        left: inherit;
+      }
+
+      &::after {
+        position: absolute;
+        top: $tick-hover-top;
+        right: $track-offset - 2px;
+        left: inherit;
+      }
+    }
+
+    &::after {
+      position: absolute;
+      top: $tick-hover-top;
+      left: calc(50% - 2px);
+
+      transform: scale(0);
+      transition: 120ms all ease-in-out;
+
+      z-index: 5;
+
+      border-radius: 100%;
+      background: $color-int-blue--active;
+
+      width: 5px;
+      height: 5px;
+
+      content: '';
+
+      transform-origin: 50% 50%;
+    }
+
+    &__label {
+      @include font-semi-light;
+
+      position: relative;
+
+      text-align: center;
+
+      color: $color-gray;
+      font-size: 14px;
+
+      user-select: none;
+    }
+
+    &--active,
+    &:hover {
+      .range-tick__label {
+        @include font-semi-bold;
+
+        color: $color-int-blue--active;
+      }
+    }
+
+    &:hover {
+      &::after {
+        transform: scale(1);
+      }
+    }
+  }
+
+  .range-thumb {
+    @include range-thumb;
+    position: absolute;
+    top: 0;
+
+    z-index: 10;
+    margin: 0;
+
+    &__value {
+      position: absolute;
+      bottom: 37px;
+      left: calc(50% - 25px);
+
+      transform: scale(0);
+      transition: 120ms all;
+
+      opacity: 1;
+
+      border-radius: 8px;
+      background: $color-int-blue--active;
+
+      min-width: $tooltip-size;
+      height: $tooltip-size;
+
+      text-align: center;
+      line-height: $tooltip-size;
+
+      color: $color-white;
+
+      font-size: 16px;
+    }
+
+    &:active {
+      @include range-thumb--active;
+    }
+  }
+
+  &--active {
+    .range-thumb {
+      @include range-thumb--active;
+    }
+  }
+
+  // Disabled style
+  // -------------------------
+
+  &--disabled {
+    .range-container {
+      cursor: not-allowed;
+    }
+
+    .range-track {
+      background: $color-disabled !important;
+
+      &__progress {
+        background: $color-disabled !important;
+      }
+    }
+
+    .range-thumb {
+      @include range-thumb--disabled;
+
+      &,
+      &:hover {
+        border-color: $color-disabled !important;
+      }
+
+      &:active {
+        @include range-thumb--disabled;
+
+        background-color: $color-white;
+      }
+    }
+
+    .range-tick {
+      color: $color-disabled !important;
+
+      &::before {
+        background: $color-disabled !important;
+      }
+
+      &,
+      &:hover {
+        .range-tick__label {
+          @include font-semi-light;
+
+          color: $color-disabled !important;
+        }
+
+        &::after {
+          transform: scale(0);
+        }
+      }
+    }
+  }
+
+  // While dragging the thumb
+  // --------------------------------------------------
+
+  &--dragging {
+    .range-tick {
+      &:hover {
+        &::after {
+          transform: scale(0);
+        }
+      }
+    }
+  }
+}
+
+
+// Light styles
+// --------------------------------------------------
+
+.range--light {
+  margin: 40px;
+  @include bp-tablet {
+    margin: 40px;
+  }
+}
+
+
+// Dark Background
+// --------------------------------------------------
+
+.bg--dark {
+  .range {
+
+    output {
+      color: $color-white;
+    }
+
+    .range-track {
+      background: $color-white;
+    }
+
+    .range-tick {
+      &,
+      &__label {
+        color: $color-white;
+      }
+
+      &--active,
+      &:hover {
+        .range-tick__label {
+          color: $color-int-blue--active;
+        }
+      }
+    }
+
+    .range-thumb {
+      box-shadow: inset 0 0 0 3px $color-navy;
+      background-color: $color-navy;
+
+      &:active {
+        @include range-thumb--active;
+      }
+    }
+
+    &--active {
+      .range-thumb {
+        @include range-thumb--active;
+      }
+    }
+
+    &--disabled {
+      opacity: .5;
+
+      .range-thumb {
+        @include range-thumb--disabled;
+
+        &:active {
+          @include range-thumb--disabled;
+
+          background-color: $color-navy;
+        }
+      }
+    }
+  }
+}
+
+
+// HTML 5 range styles
+// --------------------------------------------------
+
+// To use the HTML5 styling add the class "html5" to your input element.
+
+// NOTE: Due to the limited styling capabilities of the range input element the below style
+// definition is not conform to the SDX styleguide. The styles are defined as a fallback and
+// for future use once styling capabilities improve.
+
+@mixin range-thumb-html5($height: 28px, $width: 28px) {
+  @include range-thumb($height, $width);
+  margin: $height / 2 0 0;
+}
+
+input[type='range'].html5 {
+  position: relative;
+  margin: $thumb-height / 2 0;
+
+  outline: none;
+  border: 0;
+
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+// WebKit
+// -------------------------
+
+input[type='range'].html5 {
+  &::-webkit-slider-runnable-track {
+    @include range-track;
+
+    border: $track-border-width solid $track-border-color;
+    border-radius: $track-border-radius;
+    background: $color-gray-tint-6;
+  }
+
+  &::-webkit-slider-thumb {
+    @include range-thumb-html5;
+    margin-top: ((-$track-border-width * 2 + $track-height) / 2) - ($thumb-height / 2);
+    -webkit-appearance: none;
+  }
+}
+
+// FireFox
+// -------------------------
+
+input[type='range'].html5 {
+  /* fix for FF unable to apply focus style bug  */
+  border: 1px solid #fff;
+
+  &::-moz-range-track {
+    /*required for proper track sizing in FF*/
+    border: 0;
+    background: $color-gray-tint-6;
+    height: $track-height;
+  }
+
+  &::-moz-range-thumb {
+    @include range-thumb-html5(24px, 24px);
+    outline: none;
+  }
+
+  // hide the outline behind the border
+  &:-moz-focusring {
+    outline: 1px solid transparent;
+    outline-offset: -1px;
+  }
+
+  &::-moz-focus-outer {
+    border: 0;
+  }
+}
+
+// IE 10+ / Edge
+// -------------------------
+
+input[type='range'].html5 {
+  &::-ms-track {
+    @include range-track;
+    border-width: $thumb-height 0;
+    border-color: transparent;
+    background: transparent;
+    color: transparent;
+  }
+
+  &::-ms-fill-lower {
+    background: $color-blue;
+  }
+
+  &::-ms-fill-upper {
+    background: $color-gray-tint-6;
+  }
+
+  &::-ms-thumb {
+    @include range-thumb-html5;
+    margin: $thumb-height / 2 0;
+  }
+
+  &::-ms-tooltip {
+    display: none;
+  }
+}

@@ -1,0 +1,446 @@
+//
+// Notification Header
+// --------------------------------------------------
+
+/*doc
+---
+title: Notifications (header)
+name: 02-components-125-notification-header-01-overview
+category: Components - Notifications (header)
+---
+
+<p>Notification headers are colored strips which run across the top of a product, beneath the header bar or navigation.</p>
+
+<div class="margin-bottom-4">
+  <div class="input-field">
+    <input type="text" id="message-text-1" placeholder="Notification text" value="You have <strong>4</strong> new messages in your inbox">
+    <label for="message-text-1">Notification text</label>
+  </div>
+  <div class="radio">
+    <input type="radio" name="options" id="default" value="" checked="">
+    <label for="default">Default notification</label>
+  </div>
+  <div class="radio">
+    <input type="radio" name="options" id="confirmation" value="notification--confirmation">
+    <label for="confirmation">Confirmation / Success notification</label>
+  </div>
+  <div class="radio add-space">
+    <input type="radio" name="options" id="alert" value="notification--alert">
+    <label for="alert">Alert / Warning notification</label>
+  </div>
+
+  <sdx-button label="Show notification" onclick="showNotification()"></sdx-button>
+
+  <script>
+    function showNotification() {
+      var callback = function() {
+        alert("Notification was clicked");
+      };
+
+      var cancelCallback = function() {
+        alert("Notification was cancelled");
+      };
+
+      var message = document.getElementById("message-text-1");
+      var modifier = document.querySelector("input[name='options']:checked").value;
+
+      // open the notification
+      var notification = sdx.Notification.showOnHeader("header", message.value || "Notification Text", callback, cancelCallback, modifier);
+
+      // remove the notification
+      setTimeout(function(){ notification.close() }, 2000);
+    }
+  </script>
+</div>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Variations</h2>
+
+  <h3>General notifications</h3>
+
+  <p>Blue notifications are used for non-critical notifications or notifications that aren’t confirming success.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/notification_header/Group-3@2x-6.png" alt="Example general notification">
+      </div>
+      <span class="fig-caption">General notification</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/notification_header/Group-4@2x-5.png" alt="Example general notification hover-state">
+       </div>
+      <span class="fig-caption">Hover state of a general notification</span>
+    </div>
+  </div>
+
+  <h3>Confirmation notifications</h3>
+
+  <p>Green notifications should be used to indicate validation or success, for example to confirm success during the shopping process or at the end of an order process.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <div class="img-container">
+         <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/notification_header/Group-7@2x-12.png" alt="Example success notification">
+      </div>
+      <span class="fig-caption">Confirmation notification to confirm items has been added to the cart</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/notification_header/Group-20@2x-1.png" alt="Example success notification hover-state">
+       </div>
+      <span class="fig-caption">Hover state for confirmation notification</span>
+    </div>
+  </div>
+
+  <h3>Alert notifications</h3>
+
+  <p>Orange notifications indicate a warning, for example something that needs the users' urgent attention.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/notification_header/Group-16@2x-14.png" alt="Example warning notification">
+       </div>
+      <span class="fig-caption">Warning notification</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/notification_header/Group-15@2x-15.png" alt="Example warning notification hover-state">
+       </div>
+      <span class="fig-caption">Hover state of a warning notification</span>
+    </div>
+  </div>
+
+  <h2>Rules</h2>
+
+<p>Notifications headers are used to give users in-page information about something new, urgent or to confirm an action that’s just been made by the user. They do this in a non-disruptive way.<br>
+Notifications use the SDX interaction color palette. They run the full width of the page.</p>
+
+
+  <h3>Closing behaviour</h3>
+
+  <p>There are to closing behaviours for the notification variations: Those which can be closed have a close icon. That means that the user has to close the notification actively.<bra>
+  The other version has no close icon which means that the system closes the notification after an appropriate time.</p>
+
+ <ul class="list">
+  <li class="single-line">
+  Genreal notifications are simple messages which need no feedback from the user. They have a close icon so users can control their reading speed.
+  </li>
+  <li class="single-line">
+  Confirmation notifications have no close icon because they just confirm a success triggered by the user and do not distract the user by claiming an additional action.
+  </li>
+  <li class="single-line">
+  Alert notifications might have a close icon when somehting is blocking the process and urgent feedback from the user is needed. If no feedback is needed no close icon is shown. The system will close the notification after an appropriate time.
+  </li>
+</ul>
+
+
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/notification_header/Group-17@2x-13.png" alt="Closing the notification">
+      <span class="fig-caption">Closing the notification</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+    </div>
+  </div>
+
+  <h3>Fixed over content</h3>
+
+  <p>Notifications are always placed over the content and fixed to the top of viewport, for emphasis and clarity.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/notification_header/Group-5-Copy-2@2x.png" alt="Fixed over content">
+      <span class="fig-caption">Fixed over content</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+    </div>
+  </div>
+
+  <h3>Typography</h3>
+
+  <div class="row">
+   <div class="col-xs-12 col-lg-12">
+     <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/notification_header/Group-18@2x-10.png" alt="Typography specifications">
+     <span class="fig-caption">Typography</span>
+   </div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+<h2>Usage</h2>
+
+```htmlmixed
+<div class="input-field">
+  <input type="text" id="message-text-1" placeholder="Notification text" value="You have <strong>4</strong> new messages in your inbox">
+  <label for="message-text-1">Notification text</label>
+</div>
+
+<div class="radio">
+  <input type='radio' name='options' id='default' value='' checked>
+  <label for='default'>Default notification</label>
+</div>
+<div class="radio">
+  <input type='radio' name='options' id='confirmation' value='notification--confirmation'>
+  <label for='confirmation'>Confirmation / Success notification</label>
+</div>
+<div class="radio add-space">
+  <input type='radio' name='options' id='alert' value='notification--alert'>
+  <label for='alert'>Alert / Warning notification</label>
+</div>
+
+<sdx-button label="Show notification" onclick="showNotification()"></sdx-button>
+
+<script>
+  function showNotification() {
+    var callback = function() {
+      alert("Notification was clicked");
+    };
+
+    var cancelCallback = function() {
+      alert("Notification was cancelled");
+    };
+
+    var message = document.getElementById("message-text-1");
+    var modifier = document.querySelector("input[name='options']:checked").value;
+
+    // open the notification
+    var notification = sdx.Notification.showOnHeader("header", message.value || "Notification Text", callback, cancelCallback, modifier);
+
+    // remove the notification
+    setTimeout(function(){ notification.close() }, 2000);
+  }
+</script>
+```
+
+```htmlmixed
+<div class="notification-header notification--open">
+  <div class="notification__content">
+    <div class="notification__body">
+      You have <strong>4</strong> new messages in your inbox
+    </div>
+    <button class="notification__close notification-cancel" aria-label="Close">
+      <i class="icon icon-022-close" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>
+```
+
+```htmlmixed
+<div class="notification-header notification--open">
+  <div class="notification__content">
+    <div class="notification__body">
+      Please check the highlighted fields
+    </div>
+    <button class="notification__close notification-cancel" aria-label="Close">
+      <i class="icon icon-022-close" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>
+```
+
+<h2>Colours</h2>
+
+<p>Notifications are categorised into three categories: general, confirmation/success/ and alerts/warnings. Blue represents general notifications, e.g messages in your inbox. Green for confirmation of user actions or completion of a process, e.g completing checkout. Orange to give alerts and warnings to users, e.g failed uploads or storage reaching capacity.</p>
+
+<h3>General Notifications</h3>
+
+```htmlmixed
+<div class="notification-header notification--open">
+  <div class="notification__content">
+    <div class="notification__body">
+      You have <strong>4</strong> new messages in your inbox
+    </div>
+    <button class="notification__close notification-cancel" aria-label="Close">
+      <i class="icon icon-022-close" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>
+```
+
+<h3>Confirmations / Success</h3>
+
+```htmlmixed
+<div class="notification-header notification--confirmation notification--open">
+  <div class="notification__content">
+    <div class="notification__body">
+      <strong>3</strong> items added to your basket
+    </div>
+    <button class="notification__close notification-cancel" aria-label="Close">
+      <i class="icon icon-022-close" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>
+```
+
+<h3>Alerts and Warnings</h3>
+
+```htmlmixed
+<div class="notification-header notification--alert notification--open">
+  <div class="notification__content">
+    <div class="notification__body">
+      You have <strong>5</strong> new alerts
+    </div>
+    <button class="notification__close notification-cancel" aria-label="Close">
+      <i class="icon icon-022-close" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>
+```
+*/
+
+
+// --------------------------------------------------
+
+$notification-height: 74px;
+
+$notification-easing: cubic-bezier(.35, .035, .275, .9);
+
+// --------------------------------------------------
+
+
+// Notification Header
+// --------------------------------------------------
+
+.notification-header {
+  position: relative;
+  overflow: hidden;
+
+  height: 0;
+
+  transition: height 400ms $notification-easing;
+
+  .notification__content {
+    display: flex;
+    position: absolute;
+
+    bottom: 0;
+
+    width: 100%;
+    height: $notification-height;
+
+    padding: 21px 24px;
+
+    transition: background 400ms $notification-easing;
+
+    background: $color-int-blue;
+
+    align-items: center;
+    justify-content: space-between;
+
+    cursor: pointer;
+
+    z-index: 1;
+    outline: none;
+
+    &:hover {
+      background: $color-int-blue--active;
+    }
+
+    @include bp-tablet {
+      padding: 21px 38px;
+    }
+
+    .notification__body {
+      @include font-semi-light;
+      @include text-standard;
+      @include text-truncate;
+      @include font-smoothing;
+
+      color: $color-white;
+
+      opacity: 0;
+      animation: fade-in 300ms 400ms forwards $notification-easing;
+
+      strong {
+        @include font-semi-bold;
+        font-size: 16px;
+      }
+    }
+
+    button {
+      position: relative;
+      right: -5px;
+
+      cursor: pointer;
+
+      width: 32px;
+      height: 32px;
+
+      opacity: 0;
+      animation: fade-in 300ms 400ms forwards $notification-easing;
+
+      .icon {
+        line-height: 32px;
+        color: $color-white;
+
+        font-size: 34px;
+      }
+    }
+  }
+}
+
+.notification {
+
+  // Notification Open
+  // -------------------------
+
+  &--open {
+    height: $notification-height;
+  }
+
+  // Notification Color
+  // -------------------------
+
+  &--alert {
+    .notification__content {
+      background: $color-int-orange;
+
+      &:hover {
+        background: $color-int-orange--active;
+      }
+    }
+  }
+
+  &--confirmation {
+    .notification__content {
+      background: $color-int-green;
+
+      &:hover {
+        background: $color-int-green--active;
+      }
+    }
+  }
+}
+
+// Notification Animation
+// --------------------------------------------------
+
+@keyframes notification-show {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: $notification-height;
+  }
+}

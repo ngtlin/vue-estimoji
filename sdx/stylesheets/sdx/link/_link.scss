@@ -1,0 +1,180 @@
+//
+// Links
+// --------------------------------------------------
+
+/*doc
+---
+title: Text Links
+name: 02-components-185-text-links
+category: Components - Text Links
+---
+
+<a name="intro"></a><h2>Introduction</h2>
+<p>Text links are the simplest interactive element. They help to clearly label interactive elements within text, footers and navigation.</p>
+<p>This is some description text and a <a href="#">text link</a></p>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Variations</h2>
+
+  <h3>Standard text links</h3>
+
+  <p>In page text links use the Swisscom interaction blue. This helps to differentiate them from standard body text and headings, without the need to use buttons across all CTAs.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/links/Group@2x-1.png" alt="Design details standard links">
+      <span class="fig-caption">An unvisited link (top) and clicked/hover state link (bottom)</span>
+    </div>
+  </div>
+
+  <h3>Navigation text links</h3>
+
+  <p>Text links inside a navigation differ from conventional text links. Their static state is Swisscom Navy. They are positioning and scaled differently from conventional page text links to give them greater page hierarchy.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/links/Group-10@2x-5.jpg" alt="Design details navigation links">
+      <span class="fig-caption">An unvisited link (top) and clicked/hover state link (bottom)</span>
+    </div>
+  </div>
+
+  <h3>Typography</h3>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/links/Group-11@2x-1.png" alt="Typography specification for standard links">
+      <span class="fig-caption">Typography standard 18px</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/links/Group-16@2x-3.png" alt="Typography specification for navigation links">
+      <span class="fig-caption">Typography navigation</span>
+    </div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+
+<p>In page text links are supported on both the <code>&lt;a&gt;</code> and <code>&lt;button&gt;</code> tag by applying the <code>link</code> class to the element.</p>
+
+```htmlmixed
+<p>This is some description text above the text link</p>
+<a href="#">Text link</a>
+<a class="link" href="#">Text link</a>
+<button class="link" href="#" role="link">Text link</button>
+```
+
+<p>Text links can be used in text paragraphs.</p>
+
+```htmlmixed
+<p>This is a <a class="link" href="#">link</a> in a inline text paragraph.</p>
+<p class="text-b2">This is a <a class="link" href="#">link</a> in a inline text paragraph.</p>
+<p class="text-sm">This is a <a class="link" href="#">link</a> in a inline text paragraph.</p>
+```
+*/
+
+
+// --------------------------------------------------
+
+
+// Link Normal
+// --------------------------------------------------
+
+a,
+a.link,
+button.link {
+  position: relative;
+
+  transition:
+    border-bottom 200ms $button-easing,
+    color 200ms $button-easing;
+
+  outline: none;
+
+  border-bottom: 1px solid $color-link;
+
+  cursor: pointer;
+  text-decoration: none;
+
+  color: $color-link;
+
+  &:hover,
+  &:focus {
+    border-bottom: 1px solid $color-link--active;
+    color: $color-link--active;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  & + a,
+  & + a.link,
+  & + button.link {
+    margin-left: 24px;
+  }
+
+  &--white {
+    &, &:hover, &:focus {
+      color: $color-white;
+      border-color: $color-white;
+    }
+
+    &:focus {
+      box-shadow: 0 0 2px $color-white;
+      border: 1px solid;
+    }
+  }
+}
+
+p {
+  a,
+  a.link,
+  button.link {
+    & + a,
+    & + a.link,
+    & + button.link {
+      margin-left: 0;
+    }
+  }
+}
+
+
+// Link Dark
+// --------------------------------------------------
+
+.link--dark,
+%link--dark {
+  border-bottom: 1px solid $color-link-dark;
+  color: $color-link-dark;
+
+  &:hover {
+    border-bottom: 1px solid $color-link-dark--active;
+    color: $color-link-dark--active;
+  }
+
+  &:focus {
+    box-shadow: 0 0 1px $color-link-dark--active;
+  }
+}
+
+
+// Dark Background
+// -------------------------
+
+.bg--dark {
+  a,
+  a.link,
+  button.link {
+    @extend %link--dark;
+  }
+}

@@ -1,0 +1,97 @@
+//
+// Margin Dev Utilities
+// --------------------------------------------------
+
+/*doc
+---
+title: Margin
+name: 04-developers-15-margin
+category: Developers - Margin utils
+---
+
+<p>Apply SDX conform margins to an element. The following margin options are available:</p>
+
+<p>Margin on all 4 sides of the element:</p>
+
+<ul class="list">
+  <li>.margin-0</li>
+  <li>.margin-1</li>
+  <li>.margin-2</li>
+  <li>.margin-3</li>
+  <li>.margin-4</li>
+</ul>
+
+<p>Margin on the left and right side of the element:</p>
+
+<ul class="list">
+  <li>.margin-h-0</li>
+  <li>.margin-h-1</li>
+  <li>.margin-h-2</li>
+  <li>.margin-h-3</li>
+  <li>.margin-h-4</li>
+</ul>
+
+<p>Margin on the top and bottom side of the element:</p>
+
+<ul class="list">
+  <li>.margin-v-0</li>
+  <li>.margin-v-1</li>
+  <li>.margin-v-2</li>
+  <li>.margin-v-3</li>
+  <li>.margin-v-4</li>
+</ul>
+
+<p>Margin on the top of the element:</p>
+
+<ul class="list">
+  <li>.margin-top-0</li>
+  <li>.margin-top-1</li>
+  <li>.margin-top-2</li>
+  <li>.margin-top-3</li>
+  <li>.margin-top-4</li>
+</ul>
+
+<p>Margin on the bottom of the element:</p>
+
+<ul class="list">
+  <li>.margin-bottom-0</li>
+  <li>.margin-bottom-1</li>
+  <li>.margin-bottom-2</li>
+  <li>.margin-bottom-3</li>
+  <li>.margin-bottom-4</li>
+</ul>
+
+<p>Margin on the left side of the element:</p>
+
+<ul class="list">
+  <li>.margin-left-0</li>
+  <li>.margin-left-1</li>
+  <li>.margin-left-2</li>
+  <li>.margin-left-3</li>
+  <li>.margin-left-4</li>
+</ul>
+
+<p>Margin on the right side of the element:</p>
+
+<ul class="list">
+  <li>.margin-right-0</li>
+  <li>.margin-right-1</li>
+  <li>.margin-right-2</li>
+  <li>.margin-right-3</li>
+  <li>.margin-right-4</li>
+</ul>
+
+<p>Margin from a breakpoint and up, some examples:</p>
+
+<ul class="list">
+  <li>.margin-sm-0</li>
+  <li>.margin-md-h-1</li>
+  <li>.margin-lg-v-2</li>
+  <li>.margin-xl-top-3</li>
+  <li>.margin-ul-bottom-4</li>
+</ul>
+
+*/
+
+@import "whitespace";
+@include whitespace(margin);

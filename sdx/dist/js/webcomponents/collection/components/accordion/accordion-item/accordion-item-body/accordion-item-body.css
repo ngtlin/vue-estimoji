@@ -1,0 +1,21 @@
+:host, *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:host {
+  overflow: hidden;
+  display: block;
+}
+
+:host(:not(.open)) {
+  display: none;
+  opacity: 0;
+}
+
+:host([arrow-position=left]) .component {
+  margin-left: 24px;
+}
+
+.component {
+  margin: 0 13px 14px 19px;
+}

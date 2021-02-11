@@ -1,0 +1,265 @@
+//
+// Full Progress Bar
+// --------------------------------------------------
+
+/*doc
+---
+title: Progress Bar
+name: 02-components-138-progress-10-barfull
+category: Components - Progress Bar
+---
+
+<p>Progress bars guide users step-by-step through a process, clearly communicating where they are in the process by using numbers and text.</p>
+
+<img class="img-responsive padding-bottom-4" src="/$WEBROOT-THEME-BUILD$/img/design/progressbar-header/progressbar-header.png">
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Rules</h2>
+
+  <h3>Progress indicators</h3>
+
+  <p>
+  The interaction palette is used to give users clarity about what is completed and what is remaining. 
+  <ul class="list single-line">
+    <li>Green indicates a completed step.</li>
+    <li>Blue indicates the step they are currently on.</li>
+    <li>Stroked outlines are used to represent the remaining steps.</li>
+  </ul>
+Please note: The progress bar should be placed on the top of the content page.</p>
+
+  <h3> Completed step</h3>
+
+  <p>Steps are in green to show the user they have been completed. They are clickable so that users can always can go back to re-check or to change inputs.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/progressbar-header/Group-4@2x-6.jpg" alt="Example for a completed step">
+      <span class="fig-caption">Completed step</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/progressbar-header/Group-6@2x-9.jpg"  alt="Example for a completed step on hover">
+      <span class="fig-caption">Completed step on hover</span>
+    </div>
+  </div>
+
+  <h3> Current step</h3>
+
+  <p>The current step is colored in blue, while previous steps remain green.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/progressbar-header/Group-8@2x-9.jpg" alt="Example for the current step">
+      <span class="fig-caption">Current step</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+     <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/progressbar-header/Group-10@2x-18.jpg" alt="Example for the current step on hover">
+      <span class="fig-caption">Incomplete step on hover</span>
+    </div>
+  </div>
+
+  <h3>Incomplete step</h3>
+
+  <p>Incompleted steps are outlined in blue.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/progressbar-header/Group-12@2x-15.jpg" alt="Example for an incomplete step">
+      <span class="fig-caption">Incomplete step</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/progressbar-header/Group-14@2x-13.jpg" alt="Example for an incomplete step on hover">
+      <span class="fig-caption">Incomplete step on hover</span>
+    </div>
+  </div>
+
+</div>
+
+
+```section_develop
+```
+
+```htmlmixed_webcomponent_sdx-progress-full
+<sdx-progress-full
+    step="1"
+    steps-label="steps"
+    step-change-callback="console.log('Active step', arguments)">
+  <sdx-progress-full-step>Introduction</sdx-progress-full-step>
+  <sdx-progress-full-step>Settings</sdx-progress-full-step>
+  <sdx-progress-full-step>Customization</sdx-progress-full-step>
+  <sdx-progress-full-step>Connection</sdx-progress-full-step>
+  <sdx-progress-full-step>Security</sdx-progress-full-step>
+  <sdx-progress-full-step>Payment</sdx-progress-full-step>
+  <sdx-progress-full-step>Confirmation</sdx-progress-full-step>
+</sdx-progress-full>
+
+<!-- Demo buttons (these are *not* required for the <sdx-progress-full /> to work) -->
+<sdx-button-group>
+  <sdx-button label="Next step" onclick="document.querySelector('sdx-progress-full').nextStep()"></sdx-button>
+  <sdx-button theme="secondary" label="Previous step" onclick="document.querySelector('sdx-progress-full').previousStep()"></sdx-button>
+</sdx-button-group>
+```
+*/
+
+
+// --------------------------------------------------
+
+
+// Mixins
+// --------------------------------------------------
+
+@mixin progress-full-completed {
+  color: $color-white;
+  border-color: $color-int-green;
+  background-color: $color-int-green;
+
+  &:hover {
+    color: $color-white;
+    border-color: $color-int-green--active;
+    background-color: $color-int-green--active;
+  }
+}
+
+@mixin progress-full-current {
+  color: $color-white;
+  border-color: $color-blue;
+  background-color: $color-blue;
+
+  &:hover {
+    color: $color-white;
+    border-color: $color-int-blue--active;
+    background-color: $color-int-blue--active;
+  }
+}
+
+// --------------------------------------------------
+
+
+// Progress-Full wrapper
+// -------------------------
+
+.progress-full {
+  @include font-smoothing;
+
+  position: relative;
+  width: 100%;
+
+  margin: 24px 0;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  @include bp-tablet {
+    margin: 32px 0;
+  }
+
+  &__bar {
+    outline: none;
+
+    .indicator {
+      @include font-semi-light;
+
+      width: 24px;
+      height: 24px;
+
+      border: 1px solid $color-blue;
+      border-radius: 100%;
+
+      color: $color-blue;
+      background-color: transparent;
+
+      line-height: 1;
+      letter-spacing: normal;
+      font-size: 14px;
+      text-align: center;
+
+      transition: all 150ms ease-in-out;
+
+      cursor: pointer;
+
+      + .indicator {
+        margin-left: 16px;
+
+        @include bp-tablet {
+          margin-left: 24px;
+        }
+      }
+
+      &:hover {
+        color: $color-int-blue--active;
+        border-color: $color-int-blue--active;
+      }
+
+      &--completed {
+        @include progress-full-completed;
+      }
+
+      &--current {
+        @include progress-full-current;
+      }
+    }
+  }
+
+  &__sections {
+    @include font-semi-light;
+
+    position: relative;
+    width: 100%;
+    height: 18px;
+
+    margin-top: 11px;
+
+    line-height: 1;
+    letter-spacing: -.35px;
+    font-size: 16px;
+
+    color: $color-gray-tint-4;
+
+    span {
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      width: 100%;
+      height: 100%;
+
+      visibility: hidden;
+    }
+
+    .section--active {
+      visibility: visible;
+    }
+  }
+}
+
+// Dark Background
+// -------------------------
+.bg--dark {
+  .progress-full {
+    &__bar .indicator {
+      color: $color-white;
+      border-color: $color-white;
+
+      &:hover {
+        color: $color-int-blue;
+        border-color: $color-int-blue;
+      }
+
+      &--completed {
+        @include progress-full-completed;
+      }
+
+      &--current {
+        @include progress-full-current;
+      }
+    }
+
+    &__sections {
+      color: $color-white;
+    }
+  }
+}

@@ -1,0 +1,1008 @@
+//
+// Colours
+// --------------------------------------------------
+
+/*doc
+---
+title: Colours
+name: 01-foundation-02-colors-01-brand
+category: Foundation - Colours
+---
+
+<p>Our colour system consists of four palettes, each with a specific role. They work together to create visual impact,
+  reinforce the Swisscom brand, clearly signpost interactions and enrich content.
+</p>
+
+<style>
+  .color-picker {
+    margin-top: 22px;
+  }
+
+  .color-picker ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .color-picker li {
+    margin: 1px 0;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+  }
+
+  .color-picker li::before {
+    content: '';
+  }
+
+  ul,
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .title {
+    border-bottom: 1px solid;
+    margin-bottom: 6px;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .swatch {
+    float: left;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    border-radius: 50%;
+  }
+</style>
+
+<div class="row color-picker">
+  <div class="col-xs-6 col-md-4 col-xl-2">
+    <div class="title">Primary colours</div>
+    <div class="row">
+      <ul class="col-xs-12">
+        <li>
+          <div class="swatch bg-sc-navy"></div>
+          <div>Swisscom Navy</div>
+        </li>
+        <li>
+          <div class="swatch bg-sc-blue"></div>
+          <div>Swisscom Blue</div>
+        </li>
+        <li>
+          <div class="swatch bg-sc-red"></div>
+          <div>Swisscom Red</div>
+        </li>
+        <li>
+          <div class="swatch bg-sc-white" style="box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);"></div>
+          <div>White</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-xs-6 col-md-8 col-xl-4">
+    <div class="title">Support colours</div>
+    <div class="row">
+      <ul class="col-xs-12 col-md-6">
+        <li>
+          <div class="swatch bg-gray"></div>
+          <div>Dark Grey</div>
+        </li>
+        <li>
+          <div class="swatch bg-gray-tint-2"></div>
+          <div>Grey Tint 2</div>
+        </li>
+        <li>
+          <div class="swatch bg-gray-tint-3"></div>
+          <div>Grey Tint 3</div>
+        </li>
+        <li>
+          <div class="swatch bg-gray-tint-4"></div>
+          <div>Grey Tint 4</div>
+        </li>
+        <li>
+          <div class="swatch bg-gray-tint-5"></div>
+          <div>Grey Tint 5</div>
+        </li>
+        <li>
+          <div class="swatch bg-gray-tint-6"></div>
+          <div>Grey Tint 6</div>
+        </li>
+        <li>
+          <div class="swatch bg-gray-tint-7"></div>
+          <div>Grey Tint 7</div>
+        </li>
+        <li>
+          <div class="swatch bg-gray-tint-8"></div>
+          <div>Grey Tint 8</div>
+        </li>
+      </ul>
+      <ul class="col-xs-12 col-md-6">
+        <li>
+          <div class="swatch bg-int-blue"></div>
+          <div>Blue</div>
+        </li>
+        <li>
+          <div class="swatch bg-blue-tint-2"></div>
+          <div>Blue Tint 2</div>
+        </li>
+        <li>
+          <div class="swatch bg-blue-tint-3"></div>
+          <div>Blue Tint 3</div>
+        </li>
+        <li>
+          <div class="swatch bg-aluminium"></div>
+          <div>Aluminium</div>
+        </li>
+        <li>
+          <div class="swatch bg-aluminium-tint-2"></div>
+          <div>Aluminium Tint 2</div>
+        </li>
+        <li>
+          <div class="swatch bg-horizon"></div>
+          <div>Horizon</div>
+        </li>
+        <li>
+          <div class="swatch bg-horizon-tint-2"></div>
+          <div>Horizon Tint 2</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-xs-6 col-md-4 col-xl-2">
+    <div class="title">Interaction colours</div>
+    <div class="row">
+      <ul class="col-xs-12">
+         <li>
+          <div class="swatch bg-int-blue"></div>
+          <div>Interaction Blue</div>
+        </li>
+        <li>
+          <div class="swatch bg-int-blue--active"></div>
+          <div>Blue Rollover</div>
+        </li>
+        <li>
+          <div class="swatch bg-int-gray"></div>
+          <div>Interaction Grey</div>
+        </li>
+        <li>
+          <div class="swatch bg-int-gray--active"></div>
+          <div>Grey Rollover</div>
+        </li>
+           <li>
+          <div class="swatch bg-int-green"></div>
+          <div>Interaction Green</div>
+        </li>
+        <li>
+          <div class="swatch bg-int-green--active"></div>
+          <div>Green Rollover</div>
+        </li>
+        <li>
+          <div class="swatch bg-int-red"></div>
+          <div>Interaction Red</div>
+        </li>
+        <li>
+          <div class="swatch bg-int-red--active"></div>
+          <div>Red Rollover</div>
+        </li>
+         <li>
+          <div class="swatch bg-int-orange"></div>
+          <div>Interaction Orange</div>
+        </li>
+        <li>
+          <div class="swatch bg-int-orange--active"></div>
+          <div>Orange Rollover</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-xs-6 col-md-8 col-xl-4">
+    <div class="title">Accent colours</div>
+    <div class="row">
+      <ul class="col-xs-12 col-md-6">
+        <li>
+          <div class="swatch bg-turquoise"></div>
+          <div>Turquoise</div>
+        </li>
+        <li>
+          <div class="swatch bg-turquoise--active"></div>
+          <div>Turquoise Rollover</div>
+        </li>
+        <li>
+          <div class="swatch bg-azure"></div>
+          <div>Azure</div>
+        </li>
+        <li>
+          <div class="swatch bg-azure--active"></div>
+          <div>Azure Rollover</div>
+        </li>
+        <li>
+          <div class="swatch bg-iris"></div>
+          <div>Iris</div>
+        </li>
+        <li>
+          <div class="swatch bg-iris--active"></div>
+          <div>Iris Rollover</div>
+        </li>
+      </ul>
+      <ul class="col-xs-12 col-md-6">
+        <li>
+          <div class="swatch bg-orchid"></div>
+          <div>Orchid</div>
+        </li>
+        <li>
+          <div class="swatch bg-orchid--active"></div>
+          <div>Orchid Rollover</div>
+        </li>
+        <li>
+          <div class="swatch bg-pink"></div>
+          <div>Pink</div>
+        </li>
+        <li>
+          <div class="swatch bg-pink--active"></div>
+          <div>Pink Rollover</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h2 class="margin-top-2">Accessible colours</h2>
+
+<p>
+  In order to ensure the accessibility requirements, the interaction colours <strong>blue</strong>, <strong>green</strong> and <strong>orange</strong>, deviate from our corporate colour system.
+  This improvement is optimized for the most common components using white font colour. <br/>
+  When combining the colours, please ensure that the colour contrast meets the <a href="https://www.w3.org/WAI/WCAG21/quickref/#contrast-minimum" target="_blank">WCAG 2.1</a> level AA guidelines.
+  To check the ratio, use the online Contrast Checker from <a href="https://webaim.org/resources/contrastchecker/" target="_blank">Webaim</a> or the <a href="https://developer.paciellogroup.com/resources/contrastanalyser/" target="_blank">Colour Contrast Analyser</a>.
+</p>
+
+<div class="row margin-v-4">
+    <div class="col-xs-6 col-md-6 col-lg-2 col-sm-2">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-int-blue"></div>
+        <p class="sg-color-name">Interaction Blue</p>
+        <p class="sg-color-code">
+          CSS: .int-blue<br/>
+          <span class="gray-tint-4">Hex: #086ADB</span><br/>
+          <span class="gray-tint-4">RGB: 8, 106, 219</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-6 col-lg-2 col-sm-2">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-int-blue--active"></div>
+        <p class="sg-color-name">Blue Rollover</p>
+        <p class="sg-color-code">
+          CSS: .int-blue--active<br/>
+          <span class="gray-tint-4">Hex: #0048CF</span><br/>
+          <span class="gray-tint-4">RGB: 0, 72, 207</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-6 col-lg-2 col-sm-2">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-int-green"></div>
+        <p class="sg-color-name">Interaction Green</p>
+        <p class="sg-color-code">
+          CSS: .int-green<br/>
+          <span class="gray-tint-4">Hex: #1B8712</span><br/>
+          <span class="gray-tint-4">RGB: 27, 135, 18</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-6 col-lg-2 col-sm-2">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-int-green--active"></div>
+        <p class="sg-color-name">Green Rollover</p>
+        <p class="sg-color-code">
+          CSS: .int-green--active<br/>
+          <span class="gray-tint-4">Hex: #0D6F2C</span><br/>
+          <span class="gray-tint-4">RGB: 13, 111, 44</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-6 col-lg-2 col-sm-2">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-int-orange"></div>
+        <p class="sg-color-name">Interaction Orange</p>
+        <p class="sg-color-code">
+          CSS: .int-orange<br/>
+          <span class="gray-tint-4">Hex: #CF4A0C</span><br/>
+          <span class="gray-tint-4">RGB: 207, 74, 12</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-6 col-lg-2 col-sm-2">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-int-orange--active"></div>
+        <p class="sg-color-name">Orange Rollover</p>
+        <p class="sg-color-code">
+          CSS: .int-orange--active<br/>
+          <span class="gray-tint-4">Hex: #BA3E06</span><br/>
+          <span class="gray-tint-4">RGB: 186, 62, 6</span><br/>
+        </p>
+      </div>
+    </div>
+</div>
+
+<p>
+  For the components in this styleguide the colours are already provided. For a sufficient contrast when displaying coloured text in <strong>green</strong> and <strong>orange</strong>, use <strong>rollover</strong> colours.
+</p>
+
+<div class="row padding-bottom-4">
+    <div class="col-xs-12 col-lg-6 padding-4">
+        <div class="text-align-center">
+            <sdx-icon icon-name="icon-check-mark" size="1" color-class="int-green--active" sr-hint="I am accessible"></sdx-icon>
+            <span class="int-green--active">I am accessible</span>
+        </div>
+        <div class="text-align-center margin-top-2">
+            <sdx-icon icon-name="icon-information-circle" size="1" color-class="int-orange--active" sr-hint="I am accessible"></sdx-icon>
+            <span class="int-orange--active">I am accessible</span>
+        </div>
+    </div>
+    <div class="col-xs-12 col-lg-6 padding-4 bg-horizon">
+        <div class="text-align-center">
+            <sdx-icon icon-name="icon-check-mark" size="1" color-class="int-green--active" sr-hint="I am accessible"></sdx-icon>
+            <span class="int-green--active">I am accessible</span>
+        </div>
+        <div class="text-align-center margin-top-2">
+            <sdx-icon icon-name="icon-information-circle" size="1" color-class="int-orange--active" sr-hint="I am accessible"></sdx-icon>
+            <span class="int-orange--active">I am accessible</span>
+        </div>
+    </div>
+</div>
+
+```section_design
+```
+
+<div class="content-design">
+
+  <h2>Colour palette</h2>
+
+  <p>The Swisscom colour palette consists of primary, support, interactive and accent colours:</p>
+
+  <ul class="list margin-bottom-4">
+    <li>White has priority over all other colours. In addition to white, navy, blue and red are our <strong>primary colours</strong>. The primary colours characterize the entire brand appearance.</li>
+    <li>The <strong>support colours</strong> are restrained and unobtrusive. They are used primarily for structuring the design and for typography.</li>
+    <li><strong>Interaction colours</strong> are restrained to maintain a consistent treatment for interactive elements. They help to differentiate between static and interactive content in page, without relying on hover states.</li>
+    <li>The <strong>accent colours</strong> are intended for information graphics and for setting small highlights.</li>
+  </ul>
+
+  <div class="row margin-bottom-4">
+    <div class="col-xs-12">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/colors/01_Colour-Palette.png" alt="Overview of the colour palette">
+    </div>
+  </div>
+
+  <p>The Swisscom colour palette for Adobe CC can be downloaded <a href="https://brand.swisscom.com/document/61#/farbpalette" target="_blank">here</a>.</p>
+
+  <h3>Primary colours</h3>
+
+  <p>The use of primary colours within SDX helps to reinforce the presence of the Swisscom master brand throughout all
+    Swisscom digital experiences.
+  </p>
+
+  <div class="row padding-v-2 margin-v-4">
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-sc-navy"></div>
+        <p class="sg-color-name">Swisscom Navy</p>
+        <p class="sg-color-code">
+          CSS: .sc-navy<br/>
+          <span class="gray-tint-4">Hex: #001155</span><br/>
+          <span class="gray-tint-4">RGB: 0, 17, 85</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-sc-white" style="box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);"></div>
+        <p class="sg-color-name">White</p>
+        <p class="sg-color-code">
+          CSS: .sc-white<br/>
+          <span class="gray-tint-4">Hex: #FFFFFF</span><br/>
+          <span class="gray-tint-4">RGB: 255, 255, 255</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-sc-blue"></div>
+        <p class="sg-color-name">Swisscom Blue</p>
+        <p class="sg-color-code">
+          CSS: .sc-blue<br/>
+          <span class="gray-tint-4">Hex: #11AAFF</span><br/>
+          <span class="gray-tint-4">RGB: 17, 170, 255</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-sc-red"></div>
+        <p class="sg-color-name">Swisscom Red</p>
+        <p class="sg-color-code">
+          CSS: .sc-red<br/>
+          <span class="gray-tint-4">Hex: #DD1122</span><br/>
+          <span class="gray-tint-4">RGB: 221, 17, 34</span><br/>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/colors/Group-4@2x.jpg" alt="Typography using primary colours">
+      <span class="fig-caption">Typography using primary colours</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/colors/Group-37@2x.jpg" alt="Icons using primary colours">
+      <span class="fig-caption">Icons using primary colours</p>
+    </div>
+  </div>
+
+  <h3 class="margin-top-4">Support colours</h3>
+
+  <p>Support colours are the most widely used across all screens and components and used as the foundation on which
+    all our products are made from.
+  </p>
+  <p>Dark grey is used for the majority of non-interactive typography. Mid and light grey can be used for creating
+    levels of hierarchy between similar size piece of text.
+  </p>
+  <p>SDX has seperate interaction and accent colour palettes that feature AA accessible alternative colours to
+    Swisscom blue and red for use in digital products.
+  </p>
+
+  <div class="row margin-v-4 padding-top-4">
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-gray"></div>
+        <p class="sg-color-name">Dark Grey</p>
+        <p class="sg-color-code">
+          CSS: .gray<br/>
+          <span class="gray-tint-4">Hex: #333333</span><br/>
+          <span class="gray-tint-4">RGB: 51, 51, 51</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-gray-tint-2"></div>
+        <p class="sg-color-name">Grey Tint 2</p>
+        <p class="sg-color-code">
+          CSS: .gray-tint-2<br/>
+          <span class="gray-tint-4">Hex: #474747</span><br/>
+          <span class="gray-tint-4">RGB: 71, 71, 71</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-gray-tint-3"></div>
+        <p class="sg-color-name">Grey Tint 3</p>
+        <p class="sg-color-code">
+          CSS: .gray-tint-3<br/>
+          <span class="gray-tint-4">Hex: #5C5C5C</span><br/>
+          <span class="gray-tint-4">RGB: 92, 92, 92</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-gray-tint-4"></div>
+        <p class="sg-color-name">Grey Tint 4</p>
+        <p class="sg-color-code">
+          CSS: .gray-tint-4<br/>
+          <span class="gray-tint-4">Hex: #666666</span><br/>
+          <span class="gray-tint-4">RGB: 102, 102, 102</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-gray-tint-5"></div>
+        <p class="sg-color-name">Grey Tint 5</p>
+        <p class="sg-color-code">
+          CSS: .gray-tint-5<br/>
+          <span class="gray-tint-4">Hex: #858585</span><br/>
+          <span class="gray-tint-4">RGB: 133, 133, 133</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-gray-tint-6"></div>
+        <p class="sg-color-name">Grey Tint 6</p>
+        <p class="sg-color-code">
+          CSS: .gray-tint-6<br/>
+          <span class="gray-tint-4">Hex: #ADADAD</span><br/>
+          <span class="gray-tint-4">RGB: 173, 173, 173</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-gray-tint-7"></div>
+        <p class="sg-color-name">Grey Tint 7</p>
+        <p class="sg-color-code">
+          CSS: .gray-tint-7<br/>
+          <span class="gray-tint-4">Hex: #BBBBBB</span><br/>
+          <span class="gray-tint-4">RGB: 187, 187, 187</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-gray-tint-8"></div>
+        <p class="sg-color-name">Grey Tint 8</p>
+        <p class="sg-color-code">
+          CSS: .gray-tint-8<br/>
+          <span class="gray-tint-4">Hex: #D6D6D6</span><br/>
+          <span class="gray-tint-4">RGB: 214, 214, 214</span><br/>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row padding-v-2 margin-v-4">
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-int-blue"></div>
+        <p class="sg-color-name">Interaction Blue</p>
+        <p class="sg-color-code">
+          CSS: .int-blue<br/>
+          <span class="gray-tint-4">Hex: #086ADB</span><br/>
+          <span class="gray-tint-4">RGB: 8, 106, 219</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-blue-tint-2"></div>
+        <p class="sg-color-name">Blue Tint 2</p>
+        <p class="sg-color-code">
+          CSS: .blue-tint-2<br/>
+          <span class="gray-tint-4">Hex: #A2CDF4</span><br/>
+          <span class="gray-tint-4">RGB: 162, 205, 244</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-blue-tint-3"></div>
+        <p class="sg-color-name">Blue Tint 3</p>
+        <p class="sg-color-code">
+          CSS: .blue-tint-3<br/>
+          <span class="gray-tint-4">Hex: #D1E6F9</span><br/>
+          <span class="gray-tint-4">RGB: 209, 230, 249</span><br/>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row margin-v-4 padding-bottom-4">
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-aluminium"></div>
+        <p class="sg-color-name">Aluminium</p>
+        <p class="sg-color-code">
+          CSS: .aluminum<br/>
+          <span class="gray-tint-4">Hex: #DDE3E7</span><br/>
+          <span class="gray-tint-4">RGB: 221, 227, 231</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-aluminium-tint-2"></div>
+        <p class="sg-color-name">Aluminium Tint 2</p>
+        <p class="sg-color-code">
+          CSS: .aluminum-tint-2<br/>
+          <span class="gray-tint-4">Hex: #E4E9EC</span><br/>
+          <span class="gray-tint-4">RGB: 228, 233, 236</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-horizon"></div>
+        <p class="sg-color-name">Horizon</p>
+        <p class="sg-color-code">
+          CSS: .horizon<br/>
+          <span class="gray-tint-4">Hex: #EEF3F6</span><br/>
+          <span class="gray-tint-4">RGB: 238, 243, 246</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-horizon-tint-2"></div>
+        <p class="sg-color-name">Horizon Tint 2</p>
+        <p class="sg-color-code">
+          CSS: .horizon-tint-2<br/>
+          <span class="gray-tint-4">Hex: #F8FAFB</span><br/>
+          <span class="gray-tint-4">RGB: 248, 250, 251</span><br/>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/colors/Group-42@2x.jpg" alt="Desktop mega menu using support colours">
+      <span class="fig-caption">Desktop mega menu using support colours</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/colors/Group-43@2x.jpg" alt="Mobile side navigation using support colours">
+      <span class="fig-caption">Mobile side navigation using support colours</span>
+    </div>
+  </div>
+
+
+  <h3>Interaction colours</h3>
+
+  <p>Interaction colours are designed to maintain a consistent treatment for interactive elements. They help to
+    differentiate between static and interactive content in page, without relying on hover states.<br/>This means
+    both touch and mouse users are able to intuitively navigate content and services.
+  </p>
+
+  <h4>Primary interaction colours</h4>
+
+  <div class="row margin-v-4">
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-int-blue"></div>
+        <p class="sg-color-name">Interaction Blue</p>
+        <p class="sg-color-code">
+          CSS: .int-blue<br/>
+          <span class="gray-tint-4">Hex: #086ADB</span><br/>
+          <span class="gray-tint-4">RGB: 8, 106, 219</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-int-blue--active"></div>
+        <p class="sg-color-name">Blue Rollover</p>
+        <p class="sg-color-code">
+          CSS: .int-blue--active<br/>
+          <span class="gray-tint-4">Hex: #0048CF</span><br/>
+          <span class="gray-tint-4">RGB: 0, 72, 207</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-int-gray"></div>
+        <p class="sg-color-name">Interaction Grey</p>
+        <p class="sg-color-code">
+          CSS: .int-gray<br/>
+          <span class="gray-tint-4">Hex: #CFD5D9</span><br/>
+          <span class="gray-tint-4">RGB: 207, 213, 217</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-int-gray--active"></div>
+        <p class="sg-color-name">Grey Rollover</p>
+        <p class="sg-color-code">
+          CSS: .int-gray--active<br/>
+          <span class="gray-tint-4">Hex: #B1B9BE</span><br/>
+          <span class="gray-tint-4">RGB: 177, 185, 190</span><br/>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <h4>Secondary interaction colours</h4>
+
+  <div class="row margin-v-4">
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-int-green"></div>
+        <p class="sg-color-name">Interaction Green</p>
+        <p class="sg-color-code">
+          CSS: .int-green<br/>
+          <span class="gray-tint-4">Hex: #1B8712</span><br/>
+          <span class="gray-tint-4">RGB: 27, 135, 18</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-int-green--active"></div>
+        <p class="sg-color-name">Green Rollover</p>
+        <p class="sg-color-code">
+          CSS: .int-green--active<br/>
+          <span class="gray-tint-4">Hex: #0D6F2C</span><br/>
+          <span class="gray-tint-4">RGB: 13, 111, 44</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview  bg-int-red"></div>
+        <p class="sg-color-name">Interaction Red</p>
+        <p class="sg-color-code">
+          CSS: .int-red<br/>
+          <span class="gray-tint-4">Hex: #DD1122</span><br/>
+          <span class="gray-tint-4">RGB: 221, 17, 34</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-int-red--active"></div>
+        <p class="sg-color-name">Red Rollover</p>
+        <p class="sg-color-code">
+          CSS: .int-red--active<br/>
+          <span class="gray-tint-4">Hex: #BE0000</span><br/>
+          <span class="gray-tint-4">RGB: 190, 0, 0</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-int-orange"></div>
+        <p class="sg-color-name">Interaction Orange</p>
+        <p class="sg-color-code">
+          CSS: .int-orange<br/>
+          <span class="gray-tint-4">Hex: #CF4A0C</span><br/>
+          <span class="gray-tint-4">RGB: 207, 74, 12</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-int-orange--active"></div>
+        <p class="sg-color-name">Orange Rollover</p>
+        <p class="sg-color-code">
+          CSS: .int-orange--active<br/>
+          <span class="gray-tint-4">Hex: #BA3E06</span><br/>
+          <span class="gray-tint-4">RGB: 186, 62, 6</span><br/>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/colors/color-interaction-buttons@2x-1.png" alt="Interaction colours in buttons">
+      </div>
+      <span class="fig-caption">Interaction colours in buttons</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/colors/color-interaction-alert@2x-1.png" alt="Interaction colours in alerts">
+      </div>
+     <span class="fig-caption">Interaction colours in alerts</span>
+    </div>
+  </div>
+
+  <h3>Accent colours</h3>
+
+  <p>Accent colours are used as accents to help enrich content and experiences while serving a functional purpose.
+    They help to create visual links between content and can act as signifiers of content themes throughout
+    services.
+  </p>
+  <p>They’re most commonly used within cards and when displaying data in graphs and charts.</p>
+
+  <div class="row margin-v-4">
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-turquoise"></div>
+        <p class="sg-color-name">Turquoise</p>
+        <p class="sg-color-code">
+          CSS: .turquoise<br/>
+          <span class="gray-tint-4">Hex: #0EABA9</span><br/>
+          <span class="gray-tint-4">RGB: 14, 171, 169</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-turquoise--active"></div>
+        <p class="sg-color-name">Turquoise Rollover</p>
+        <p class="sg-color-code">
+          CSS: .turqoise--active<br/>
+          <span class="gray-tint-4">Hex: #0C847E</span><br/>
+          <span class="gray-tint-4">RGB: 12, 132, 126</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-azure"></div>
+        <p class="sg-color-name">Azure</p>
+        <p class="sg-color-code">
+          CSS: .azure<br/>
+          <span class="gray-tint-4">Hex: #086ADB</span><br/>
+          <span class="gray-tint-4">RGB: 8, 106, 219</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-azure--active"></div>
+        <p class="sg-color-name">Azure Rollover</p>
+        <p class="sg-color-code">
+          CSS: .azure--active<br/>
+          <span class="gray-tint-4">Hex: #0048CF</span><br/>
+          <span class="gray-tint-4">RGB: 0, 72, 207</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-iris"></div>
+        <p class="sg-color-name">Iris</p>
+        <p class="sg-color-code">
+          CSS: .iris<br/>
+          <span class="gray-tint-4">Hex: #5944C6</span><br/>
+          <span class="gray-tint-4">RGB: 89, 68, 198</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-iris--active"></div>
+        <p class="sg-color-name">Iris Rollover</p>
+        <p class="sg-color-code">
+          CSS: .iris--active<br/>
+          <span class="gray-tint-4">Hex: #42389E</span><br/>
+          <span class="gray-tint-4">RGB: 66, 56, 1578</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-orchid"></div>
+        <p class="sg-color-name">Orchid</p>
+        <p class="sg-color-code">
+          CSS: .orchid<br/>
+          <span class="gray-tint-4">Hex: #A63297</span><br/>
+          <span class="gray-tint-4">RGB: 166, 50, 151</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-orchid--active"></div>
+        <p class="sg-color-name">Orchid Rollover</p>
+        <p class="sg-color-code">
+          CSS: .orchid--active<br/>
+          <span class="gray-tint-4">Hex: #7F2879</span><br/>
+          <span class="gray-tint-4">RGB: 127, 40, 121</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-pink"></div>
+        <p class="sg-color-name">Pink</p>
+        <p class="sg-color-code">
+          CSS: .pink<br/>
+          <span class="gray-tint-4">Hex: #E61E64</span><br/>
+          <span class="gray-tint-4">RGB: 230, 30, 100</span><br/>
+        </p>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-3">
+      <div class="sg-color">
+        <div class="sg-color-preview bg-pink--active"></div>
+        <p class="sg-color-name">Pink Rollover</p>
+        <p class="sg-color-code">
+          CSS: .pink--active<br/>
+          <span class="gray-tint-4">Hex: #BF1B5A</span><br/>
+          <span class="gray-tint-4">RGB: 191, 27, 90</span><br/>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <p>Standard variants of the content colours should always be used first.</p>
+  <p>Only use the dark variants specifically as a pair with the standard colour, or when all standard colours are
+    already in use in the same visual. For interactive elements where the standard variants of content colours are
+    used, the dark variants can be used as Rollovers.
+  </p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/colors/05_Accent-Colours-PieChart.png" alt="Pie charts using accent colours">
+      <span class="fig-caption">Pie charts using accent colours</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/colors/05_Accent-Colours-Cards.png" alt="Cards using accent colours">
+      <span class="fig-caption">Cards using accent colours</span>
+    </div>
+  </div>
+
+
+  <h4>Colour Tints</h4>
+
+  <p>Tints of accent colours are available for use within extremely complete data sets, but should not be used in any
+    other context.
+  </p>
+
+  <div class="row margin-bottom-4">
+    <div class="col-xs-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/colors/06_Accent-Colour-Tints.png" alt="Accent colours tints">
+    </div>
+  </div>
+
+
+  <h3>Using full bleed colour</h3>
+
+  <p>Full bleed colour can be used in a number of instances, either to complement content or to add emphasis to an
+    element within a page.
+  </p>
+  <p>Full bleed colour should be used sparingly and a conscious effort should be made to maintain the proportionate
+    usage of colour outlined in the colour ratio diagram at the top of this page.
+  </p>
+  <p>When pairing content colours full bleed with stickers, the dark variant should be used for the background, and
+    the standard variant used for the sticker. This helps to give stickers more prominence, and prevents the background
+    colour from dominating.
+  </p>
+
+  <div class="row margin-bottom-4">
+    <div class="col-xs-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/colors/color-full-bleed@2x.jpg" alt="Application exampless of full bleed colours">
+    </div>
+  </div>
+
+
+  <h3>Combining accent colours</h3>
+
+  <p>Accent colours can be used on their own or in combination with other accent colours, but should not be combined
+    with colours from the other palettes.
+  </p>
+  <p>Azure is the same colour like Swisscom interaction blue. While Azure can be used as an Accent on page content
+  be aware that it can interfere with interaction elements.
+  </p>
+  <p>Text should always be white, and buttons should revert to the ‘on dark’ variant of the secondary button and
+    avoid using the interaction colours for buttons on colour.
+  </p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/colors/color-content-text-button@2x.jpg" alt="Interaction colours in buttons">
+      <span class="fig-caption">Interaction colours in buttons</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/colors/color-content-individual@2x.jpg" alt="Interaction colours in alerts">
+      <span class="fig-caption">Interaction colours in alerts</span>
+    </div>
+  </div>
+
+  <h3>Wayfinding with colour</h3>
+
+  <p>They help to create visual links between content and can act as signifiers of content themes throughout
+    services.
+  </p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/colors/color-wayfinding@2x.jpg" alt="Examples of usages to create visual associations with colors.">
+    </div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+<p>All colours can be applied to text, icons, or backgrounds using the corresponding CSS class.
+  A prefix
+  <code>bg-</code>
+  is required to set a background colour.
+</p>
+*/
+
+@import "../utilities/color";
+@import "../utilities/bg-color";

@@ -1,0 +1,6845 @@
+@charset "UTF-8";
+/*!
+* SDX Library v2.11.2 - SDX "light" for consumers of Web Components.
+* Wrapped version
+*/
+@font-face {
+  font-family: "TheSans";
+  font-weight: 200;
+  font-style: normal;
+  src: url("../fonts/TheSans/TheSansB_200_.eot") format("eot"), url("../fonts/TheSans/TheSansB_200_.woff2") format("woff2"), url("../fonts/TheSans/TheSansB_200_.woff") format("woff"), url("../fonts/TheSans/TheSansB_200_.ttf") format("truetype"), url("../fonts/TheSans/TheSansB_200_.svg#TheSansB_200_") format("svg");
+}
+@font-face {
+  font-family: "TheSans";
+  font-weight: 300;
+  font-style: normal;
+  src: url("../fonts/TheSans/TheSansB_300_.eot") format("eot"), url("../fonts/TheSans/TheSansB_300_.woff2") format("woff2"), url("../fonts/TheSans/TheSansB_300_.woff") format("woff"), url("../fonts/TheSans/TheSansB_300_.ttf") format("truetype"), url("../fonts/TheSans/TheSansB_300_.svg#TheSansB_300_") format("svg");
+}
+@font-face {
+  font-family: "TheSans";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/TheSans/TheSansB_400_.eot") format("eot"), url("../fonts/TheSans/TheSansB_400_.woff2") format("woff2"), url("../fonts/TheSans/TheSansB_400_.woff") format("woff"), url("../fonts/TheSans/TheSansB_400_.ttf") format("truetype"), url("../fonts/TheSans/TheSansB_400_.svg#TheSansB_400_") format("svg");
+}
+@font-face {
+  font-family: "TheSans";
+  font-weight: 500;
+  font-style: normal;
+  src: url("../fonts/TheSans/TheSansB_500_.eot") format("eot"), url("../fonts/TheSans/TheSansB_500_.woff2") format("woff2"), url("../fonts/TheSans/TheSansB_500_.woff") format("woff"), url("../fonts/TheSans/TheSansB_500_.ttf") format("truetype"), url("../fonts/TheSans/TheSansB_500_.svg#TheSansB_500_") format("svg");
+}
+@font-face {
+  font-family: "TheSans";
+  font-weight: 600;
+  font-style: normal;
+  src: url("../fonts/TheSans/TheSansB_600_.eot") format("eot"), url("../fonts/TheSans/TheSansB_600_.woff2") format("woff2"), url("../fonts/TheSans/TheSansB_600_.woff") format("woff"), url("../fonts/TheSans/TheSansB_600_.ttf") format("truetype"), url("../fonts/TheSans/TheSansB_600_.svg#TheSansB_600_") format("svg");
+}
+@font-face {
+  font-family: "TheSans";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/TheSans/TheSansB_700_.eot") format("eot"), url("../fonts/TheSans/TheSansB_700_.woff2") format("woff2"), url("../fonts/TheSans/TheSansB_700_.woff") format("woff"), url("../fonts/TheSans/TheSansB_700_.ttf") format("truetype"), url("../fonts/TheSans/TheSansB_700_.svg#TheSansB_700_") format("svg");
+}
+@font-face {
+  font-family: "TheSans";
+  font-weight: 800;
+  font-style: normal;
+  src: url("../fonts/TheSans/TheSansB_800_.eot") format("eot"), url("../fonts/TheSans/TheSansB_800_.woff2") format("woff2"), url("../fonts/TheSans/TheSansB_800_.woff") format("woff"), url("../fonts/TheSans/TheSansB_800_.ttf") format("truetype"), url("../fonts/TheSans/TheSansB_800_.svg#TheSansB_800_") format("svg");
+}
+@font-face {
+  font-family: "TheSans";
+  font-weight: 900;
+  font-style: normal;
+  src: url("../fonts/TheSans/TheSansB_900_.eot") format("eot"), url("../fonts/TheSans/TheSansB_900_.woff2") format("woff2"), url("../fonts/TheSans/TheSansB_900_.woff") format("woff"), url("../fonts/TheSans/TheSansB_900_.ttf") format("truetype"), url("../fonts/TheSans/TheSansB_900_.svg#TheSansB_900_") format("svg");
+}
+@font-face {
+  font-family: "TheSans";
+  font-weight: 200;
+  font-style: italic;
+  src: url("../fonts/TheSans/TheSansB_200i.eot") format("eot"), url("../fonts/TheSans/TheSansB_200i.woff2") format("woff2"), url("../fonts/TheSans/TheSansB_200i.woff") format("woff"), url("../fonts/TheSans/TheSansB_200i.ttf") format("truetype"), url("../fonts/TheSans/TheSansB_200i.svg#TheSansB_200i") format("svg");
+}
+@font-face {
+  font-family: "TheSans";
+  font-weight: 300;
+  font-style: italic;
+  src: url("../fonts/TheSans/TheSansB_300i.eot") format("eot"), url("../fonts/TheSans/TheSansB_300i.woff2") format("woff2"), url("../fonts/TheSans/TheSansB_300i.woff") format("woff"), url("../fonts/TheSans/TheSansB_300i.ttf") format("truetype"), url("../fonts/TheSans/TheSansB_300i.svg#TheSansB_300i") format("svg");
+}
+@font-face {
+  font-family: "TheSans";
+  font-weight: 400;
+  font-style: italic;
+  src: url("../fonts/TheSans/TheSansB_400i.eot") format("eot"), url("../fonts/TheSans/TheSansB_400i.woff2") format("woff2"), url("../fonts/TheSans/TheSansB_400i.woff") format("woff"), url("../fonts/TheSans/TheSansB_400i.ttf") format("truetype"), url("../fonts/TheSans/TheSansB_400i.svg#TheSansB_400i") format("svg");
+}
+@font-face {
+  font-family: "TheSans";
+  font-weight: 500;
+  font-style: italic;
+  src: url("../fonts/TheSans/TheSansB_500i.eot") format("eot"), url("../fonts/TheSans/TheSansB_500i.woff2") format("woff2"), url("../fonts/TheSans/TheSansB_500i.woff") format("woff"), url("../fonts/TheSans/TheSansB_500i.ttf") format("truetype"), url("../fonts/TheSans/TheSansB_500i.svg#TheSansB_500i") format("svg");
+}
+@font-face {
+  font-family: "TheSans";
+  font-weight: 600;
+  font-style: italic;
+  src: url("../fonts/TheSans/TheSansB_600i.eot") format("eot"), url("../fonts/TheSans/TheSansB_600i.woff2") format("woff2"), url("../fonts/TheSans/TheSansB_600i.woff") format("woff"), url("../fonts/TheSans/TheSansB_600i.ttf") format("truetype"), url("../fonts/TheSans/TheSansB_600i.svg#TheSansB_600i") format("svg");
+}
+@font-face {
+  font-family: "TheSans";
+  font-weight: 700;
+  font-style: italic;
+  src: url("../fonts/TheSans/TheSansB_700i.eot") format("eot"), url("../fonts/TheSans/TheSansB_700i.woff2") format("woff2"), url("../fonts/TheSans/TheSansB_700i.woff") format("woff"), url("../fonts/TheSans/TheSansB_700i.ttf") format("truetype"), url("../fonts/TheSans/TheSansB_700i.svg#TheSansB_700i") format("svg");
+}
+@font-face {
+  font-family: "TheSans";
+  font-weight: 800;
+  font-style: italic;
+  src: url("../fonts/TheSans/TheSansB_800i.eot") format("eot"), url("../fonts/TheSans/TheSansB_800i.woff2") format("woff2"), url("../fonts/TheSans/TheSansB_800i.woff") format("woff"), url("../fonts/TheSans/TheSansB_800i.ttf") format("truetype"), url("../fonts/TheSans/TheSansB_800i.svg#TheSansB_800i") format("svg");
+}
+@font-face {
+  font-family: "TheSans";
+  font-weight: 900;
+  font-style: italic;
+  src: url("../fonts/TheSans/TheSansB_900i.eot") format("eot"), url("../fonts/TheSans/TheSansB_900i.woff2") format("woff2"), url("../fonts/TheSans/TheSansB_900i.woff") format("woff"), url("../fonts/TheSans/TheSansB_900i.ttf") format("truetype"), url("../fonts/TheSans/TheSansB_900i.svg#TheSansB_900i") format("svg");
+}
+@font-face {
+  font-family: "TheSerif";
+  font-weight: 200;
+  font-style: normal;
+  src: url("../fonts/TheSerif/TheSerifB_200_.eot") format("eot"), url("../fonts/TheSerif/TheSerifB_200_.woff2") format("woff2"), url("../fonts/TheSerif/TheSerifB_200_.woff") format("woff"), url("../fonts/TheSerif/TheSerifB_200_.ttf") format("truetype"), url("../fonts/TheSerif/TheSerifB_200_.svg#TheSerifB_200_") format("svg");
+}
+@font-face {
+  font-family: "TheSerif";
+  font-weight: 300;
+  font-style: normal;
+  src: url("../fonts/TheSerif/TheSerifB_300_.eot") format("eot"), url("../fonts/TheSerif/TheSerifB_300_.woff2") format("woff2"), url("../fonts/TheSerif/TheSerifB_300_.woff") format("woff"), url("../fonts/TheSerif/TheSerifB_300_.ttf") format("truetype"), url("../fonts/TheSerif/TheSerifB_300_.svg#TheSerifB_300_") format("svg");
+}
+@font-face {
+  font-family: "TheSerif";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/TheSerif/TheSerifB_400_.eot") format("eot"), url("../fonts/TheSerif/TheSerifB_400_.woff2") format("woff2"), url("../fonts/TheSerif/TheSerifB_400_.woff") format("woff"), url("../fonts/TheSerif/TheSerifB_400_.ttf") format("truetype"), url("../fonts/TheSerif/TheSerifB_400_.svg#TheSerifB_400_") format("svg");
+}
+@font-face {
+  font-family: "TheSerif";
+  font-weight: 500;
+  font-style: normal;
+  src: url("../fonts/TheSerif/TheSerifB_500_.eot") format("eot"), url("../fonts/TheSerif/TheSerifB_500_.woff2") format("woff2"), url("../fonts/TheSerif/TheSerifB_500_.woff") format("woff"), url("../fonts/TheSerif/TheSerifB_500_.ttf") format("truetype"), url("../fonts/TheSerif/TheSerifB_500_.svg#TheSerifB_500_") format("svg");
+}
+@font-face {
+  font-family: "TheSerif";
+  font-weight: 600;
+  font-style: normal;
+  src: url("../fonts/TheSerif/TheSerifB_600_.eot") format("eot"), url("../fonts/TheSerif/TheSerifB_600_.woff2") format("woff2"), url("../fonts/TheSerif/TheSerifB_600_.woff") format("woff"), url("../fonts/TheSerif/TheSerifB_600_.ttf") format("truetype"), url("../fonts/TheSerif/TheSerifB_600_.svg#TheSerifB_600_") format("svg");
+}
+@font-face {
+  font-family: "TheSerif";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/TheSerif/TheSerifB_700_.eot") format("eot"), url("../fonts/TheSerif/TheSerifB_700_.woff2") format("woff2"), url("../fonts/TheSerif/TheSerifB_700_.woff") format("woff"), url("../fonts/TheSerif/TheSerifB_700_.ttf") format("truetype"), url("../fonts/TheSerif/TheSerifB_700_.svg#TheSerifB_700_") format("svg");
+}
+@font-face {
+  font-family: "TheSerif";
+  font-weight: 800;
+  font-style: normal;
+  src: url("../fonts/TheSerif/TheSerifB_800_.eot") format("eot"), url("../fonts/TheSerif/TheSerifB_800_.woff2") format("woff2"), url("../fonts/TheSerif/TheSerifB_800_.woff") format("woff"), url("../fonts/TheSerif/TheSerifB_800_.ttf") format("truetype"), url("../fonts/TheSerif/TheSerifB_800_.svg#TheSerifB_800_") format("svg");
+}
+@font-face {
+  font-family: "TheSerif";
+  font-weight: 200;
+  font-style: italic;
+  src: url("../fonts/TheSerif/TheSerifB_200i.eot") format("eot"), url("../fonts/TheSerif/TheSerifB_200i.woff2") format("woff2"), url("../fonts/TheSerif/TheSerifB_200i.woff") format("woff"), url("../fonts/TheSerif/TheSerifB_200i.ttf") format("truetype"), url("../fonts/TheSerif/TheSerifB_200i.svg#TheSerifB_200i") format("svg");
+}
+@font-face {
+  font-family: "TheSerif";
+  font-weight: 300;
+  font-style: italic;
+  src: url("../fonts/TheSerif/TheSerifB_300i.eot") format("eot"), url("../fonts/TheSerif/TheSerifB_300i.woff2") format("woff2"), url("../fonts/TheSerif/TheSerifB_300i.woff") format("woff"), url("../fonts/TheSerif/TheSerifB_300i.ttf") format("truetype"), url("../fonts/TheSerif/TheSerifB_300i.svg#TheSerifB_300i") format("svg");
+}
+@font-face {
+  font-family: "TheSerif";
+  font-weight: 400;
+  font-style: italic;
+  src: url("../fonts/TheSerif/TheSerifB_400i.eot") format("eot"), url("../fonts/TheSerif/TheSerifB_400i.woff2") format("woff2"), url("../fonts/TheSerif/TheSerifB_400i.woff") format("woff"), url("../fonts/TheSerif/TheSerifB_400i.ttf") format("truetype"), url("../fonts/TheSerif/TheSerifB_400i.svg#TheSerifB_400i") format("svg");
+}
+@font-face {
+  font-family: "TheSerif";
+  font-weight: 500;
+  font-style: italic;
+  src: url("../fonts/TheSerif/TheSerifB_500i.eot") format("eot"), url("../fonts/TheSerif/TheSerifB_500i.woff2") format("woff2"), url("../fonts/TheSerif/TheSerifB_500i.woff") format("woff"), url("../fonts/TheSerif/TheSerifB_500i.ttf") format("truetype"), url("../fonts/TheSerif/TheSerifB_500i.svg#TheSerifB_500i") format("svg");
+}
+@font-face {
+  font-family: "TheSerif";
+  font-weight: 600;
+  font-style: italic;
+  src: url("../fonts/TheSerif/TheSerifB_600i.eot") format("eot"), url("../fonts/TheSerif/TheSerifB_600i.woff2") format("woff2"), url("../fonts/TheSerif/TheSerifB_600i.woff") format("woff"), url("../fonts/TheSerif/TheSerifB_600i.ttf") format("truetype"), url("../fonts/TheSerif/TheSerifB_600i.svg#TheSerifB_600i") format("svg");
+}
+@font-face {
+  font-family: "TheSerif";
+  font-weight: 700;
+  font-style: italic;
+  src: url("../fonts/TheSerif/TheSerifB_700i.eot") format("eot"), url("../fonts/TheSerif/TheSerifB_700i.woff2") format("woff2"), url("../fonts/TheSerif/TheSerifB_700i.woff") format("woff"), url("../fonts/TheSerif/TheSerifB_700i.ttf") format("truetype"), url("../fonts/TheSerif/TheSerifB_700i.svg#TheSerifB_700i") format("svg");
+}
+@font-face {
+  font-family: "TheSerif";
+  font-weight: 800;
+  font-style: italic;
+  src: url("../fonts/TheSerif/TheSerifB_800i.eot") format("eot"), url("../fonts/TheSerif/TheSerifB_800i.woff2") format("woff2"), url("../fonts/TheSerif/TheSerifB_800i.woff") format("woff"), url("../fonts/TheSerif/TheSerifB_800i.ttf") format("truetype"), url("../fonts/TheSerif/TheSerifB_800i.svg#TheSerifB_800i") format("svg");
+}
+@font-face {
+  font-family: "sdx-icons";
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/sdx-icons/sdx-icons.eot") format("eot"), url("../fonts/sdx-icons/sdx-icons.woff2") format("woff2"), url("../fonts/sdx-icons/sdx-icons.woff") format("woff"), url("../fonts/sdx-icons/sdx-icons.ttf") format("truetype"), url("../fonts/sdx-icons/sdx-icons.svg#sdx-icons") format("svg");
+}
+sdx-accordion, sdx-animation, sdx-arrow, sdx-button, sdx-color-picker, sdx-dummy, sdx-expand-and-collapse, sdx-flip, sdx-icon, sdx-input, sdx-input-item, sdx-loading-spinner, sdx-menu-flyout, sdx-numeric-stepper, sdx-option-picker, sdx-pie-chart, sdx-price, sdx-progress-full, sdx-ribbon, sdx-scroll-to-top, sdx-search, sdx-select, sdx-show-more, sdx-sticker-circle, sdx-tabs, sdx-text-truncate, sdx-validation-message {
+  visibility: hidden;
+}
+
+.sdx {
+  /*doc
+  ---
+  title: Colours
+  name: 01-foundation-02-colors-01-brand
+  category: Foundation - Colours
+  ---
+
+  <p>Our colour system consists of four palettes, each with a specific role. They work together to create visual impact,
+    reinforce the Swisscom brand, clearly signpost interactions and enrich content.
+  </p>
+
+  <style>
+    .color-picker {
+      margin-top: 22px;
+    }
+
+    .color-picker ul {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .color-picker li {
+      margin: 1px 0;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+    }
+
+    .color-picker li::before {
+      content: '';
+    }
+
+    ul,
+    ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .title {
+      border-bottom: 1px solid;
+      margin-bottom: 6px;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .swatch {
+      float: left;
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      border-radius: 50%;
+    }
+  </style>
+
+  <div class="row color-picker">
+    <div class="col-xs-6 col-md-4 col-xl-2">
+      <div class="title">Primary colours</div>
+      <div class="row">
+        <ul class="col-xs-12">
+          <li>
+            <div class="swatch bg-sc-navy"></div>
+            <div>Swisscom Navy</div>
+          </li>
+          <li>
+            <div class="swatch bg-sc-blue"></div>
+            <div>Swisscom Blue</div>
+          </li>
+          <li>
+            <div class="swatch bg-sc-red"></div>
+            <div>Swisscom Red</div>
+          </li>
+          <li>
+            <div class="swatch bg-sc-white" style="box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);"></div>
+            <div>White</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-8 col-xl-4">
+      <div class="title">Support colours</div>
+      <div class="row">
+        <ul class="col-xs-12 col-md-6">
+          <li>
+            <div class="swatch bg-gray"></div>
+            <div>Dark Grey</div>
+          </li>
+          <li>
+            <div class="swatch bg-gray-tint-2"></div>
+            <div>Grey Tint 2</div>
+          </li>
+          <li>
+            <div class="swatch bg-gray-tint-3"></div>
+            <div>Grey Tint 3</div>
+          </li>
+          <li>
+            <div class="swatch bg-gray-tint-4"></div>
+            <div>Grey Tint 4</div>
+          </li>
+          <li>
+            <div class="swatch bg-gray-tint-5"></div>
+            <div>Grey Tint 5</div>
+          </li>
+          <li>
+            <div class="swatch bg-gray-tint-6"></div>
+            <div>Grey Tint 6</div>
+          </li>
+          <li>
+            <div class="swatch bg-gray-tint-7"></div>
+            <div>Grey Tint 7</div>
+          </li>
+          <li>
+            <div class="swatch bg-gray-tint-8"></div>
+            <div>Grey Tint 8</div>
+          </li>
+        </ul>
+        <ul class="col-xs-12 col-md-6">
+          <li>
+            <div class="swatch bg-int-blue"></div>
+            <div>Blue</div>
+          </li>
+          <li>
+            <div class="swatch bg-blue-tint-2"></div>
+            <div>Blue Tint 2</div>
+          </li>
+          <li>
+            <div class="swatch bg-blue-tint-3"></div>
+            <div>Blue Tint 3</div>
+          </li>
+          <li>
+            <div class="swatch bg-aluminium"></div>
+            <div>Aluminium</div>
+          </li>
+          <li>
+            <div class="swatch bg-aluminium-tint-2"></div>
+            <div>Aluminium Tint 2</div>
+          </li>
+          <li>
+            <div class="swatch bg-horizon"></div>
+            <div>Horizon</div>
+          </li>
+          <li>
+            <div class="swatch bg-horizon-tint-2"></div>
+            <div>Horizon Tint 2</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-4 col-xl-2">
+      <div class="title">Interaction colours</div>
+      <div class="row">
+        <ul class="col-xs-12">
+           <li>
+            <div class="swatch bg-int-blue"></div>
+            <div>Interaction Blue</div>
+          </li>
+          <li>
+            <div class="swatch bg-int-blue--active"></div>
+            <div>Blue Rollover</div>
+          </li>
+          <li>
+            <div class="swatch bg-int-gray"></div>
+            <div>Interaction Grey</div>
+          </li>
+          <li>
+            <div class="swatch bg-int-gray--active"></div>
+            <div>Grey Rollover</div>
+          </li>
+             <li>
+            <div class="swatch bg-int-green"></div>
+            <div>Interaction Green</div>
+          </li>
+          <li>
+            <div class="swatch bg-int-green--active"></div>
+            <div>Green Rollover</div>
+          </li>
+          <li>
+            <div class="swatch bg-int-red"></div>
+            <div>Interaction Red</div>
+          </li>
+          <li>
+            <div class="swatch bg-int-red--active"></div>
+            <div>Red Rollover</div>
+          </li>
+           <li>
+            <div class="swatch bg-int-orange"></div>
+            <div>Interaction Orange</div>
+          </li>
+          <li>
+            <div class="swatch bg-int-orange--active"></div>
+            <div>Orange Rollover</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-xs-6 col-md-8 col-xl-4">
+      <div class="title">Accent colours</div>
+      <div class="row">
+        <ul class="col-xs-12 col-md-6">
+          <li>
+            <div class="swatch bg-turquoise"></div>
+            <div>Turquoise</div>
+          </li>
+          <li>
+            <div class="swatch bg-turquoise--active"></div>
+            <div>Turquoise Rollover</div>
+          </li>
+          <li>
+            <div class="swatch bg-azure"></div>
+            <div>Azure</div>
+          </li>
+          <li>
+            <div class="swatch bg-azure--active"></div>
+            <div>Azure Rollover</div>
+          </li>
+          <li>
+            <div class="swatch bg-iris"></div>
+            <div>Iris</div>
+          </li>
+          <li>
+            <div class="swatch bg-iris--active"></div>
+            <div>Iris Rollover</div>
+          </li>
+        </ul>
+        <ul class="col-xs-12 col-md-6">
+          <li>
+            <div class="swatch bg-orchid"></div>
+            <div>Orchid</div>
+          </li>
+          <li>
+            <div class="swatch bg-orchid--active"></div>
+            <div>Orchid Rollover</div>
+          </li>
+          <li>
+            <div class="swatch bg-pink"></div>
+            <div>Pink</div>
+          </li>
+          <li>
+            <div class="swatch bg-pink--active"></div>
+            <div>Pink Rollover</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="margin-top-2">Accessible colours</h2>
+
+  <p>
+    In order to ensure the accessibility requirements, the interaction colours <strong>blue</strong>, <strong>green</strong> and <strong>orange</strong>, deviate from our corporate colour system.
+    This improvement is optimized for the most common components using white font colour. <br/>
+    When combining the colours, please ensure that the colour contrast meets the <a href="https://www.w3.org/WAI/WCAG21/quickref/#contrast-minimum" target="_blank">WCAG 2.1</a> level AA guidelines.
+    To check the ratio, use the online Contrast Checker from <a href="https://webaim.org/resources/contrastchecker/" target="_blank">Webaim</a> or the <a href="https://developer.paciellogroup.com/resources/contrastanalyser/" target="_blank">Colour Contrast Analyser</a>.
+  </p>
+
+  <div class="row margin-v-4">
+      <div class="col-xs-6 col-md-6 col-lg-2 col-sm-2">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-int-blue"></div>
+          <p class="sg-color-name">Interaction Blue</p>
+          <p class="sg-color-code">
+            CSS: .int-blue<br/>
+            <span class="gray-tint-4">Hex: #086ADB</span><br/>
+            <span class="gray-tint-4">RGB: 8, 106, 219</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-6 col-lg-2 col-sm-2">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-int-blue--active"></div>
+          <p class="sg-color-name">Blue Rollover</p>
+          <p class="sg-color-code">
+            CSS: .int-blue--active<br/>
+            <span class="gray-tint-4">Hex: #0048CF</span><br/>
+            <span class="gray-tint-4">RGB: 0, 72, 207</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-6 col-lg-2 col-sm-2">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-int-green"></div>
+          <p class="sg-color-name">Interaction Green</p>
+          <p class="sg-color-code">
+            CSS: .int-green<br/>
+            <span class="gray-tint-4">Hex: #1B8712</span><br/>
+            <span class="gray-tint-4">RGB: 27, 135, 18</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-6 col-lg-2 col-sm-2">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-int-green--active"></div>
+          <p class="sg-color-name">Green Rollover</p>
+          <p class="sg-color-code">
+            CSS: .int-green--active<br/>
+            <span class="gray-tint-4">Hex: #0D6F2C</span><br/>
+            <span class="gray-tint-4">RGB: 13, 111, 44</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-6 col-lg-2 col-sm-2">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-int-orange"></div>
+          <p class="sg-color-name">Interaction Orange</p>
+          <p class="sg-color-code">
+            CSS: .int-orange<br/>
+            <span class="gray-tint-4">Hex: #CF4A0C</span><br/>
+            <span class="gray-tint-4">RGB: 207, 74, 12</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-6 col-lg-2 col-sm-2">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-int-orange--active"></div>
+          <p class="sg-color-name">Orange Rollover</p>
+          <p class="sg-color-code">
+            CSS: .int-orange--active<br/>
+            <span class="gray-tint-4">Hex: #BA3E06</span><br/>
+            <span class="gray-tint-4">RGB: 186, 62, 6</span><br/>
+          </p>
+        </div>
+      </div>
+  </div>
+
+  <p>
+    For the components in this styleguide the colours are already provided. For a sufficient contrast when displaying coloured text in <strong>green</strong> and <strong>orange</strong>, use <strong>rollover</strong> colours.
+  </p>
+
+  <div class="row padding-bottom-4">
+      <div class="col-xs-12 col-lg-6 padding-4">
+          <div class="text-align-center">
+              <sdx-icon icon-name="icon-check-mark" size="1" color-class="int-green--active" sr-hint="I am accessible"></sdx-icon>
+              <span class="int-green--active">I am accessible</span>
+          </div>
+          <div class="text-align-center margin-top-2">
+              <sdx-icon icon-name="icon-information-circle" size="1" color-class="int-orange--active" sr-hint="I am accessible"></sdx-icon>
+              <span class="int-orange--active">I am accessible</span>
+          </div>
+      </div>
+      <div class="col-xs-12 col-lg-6 padding-4 bg-horizon">
+          <div class="text-align-center">
+              <sdx-icon icon-name="icon-check-mark" size="1" color-class="int-green--active" sr-hint="I am accessible"></sdx-icon>
+              <span class="int-green--active">I am accessible</span>
+          </div>
+          <div class="text-align-center margin-top-2">
+              <sdx-icon icon-name="icon-information-circle" size="1" color-class="int-orange--active" sr-hint="I am accessible"></sdx-icon>
+              <span class="int-orange--active">I am accessible</span>
+          </div>
+      </div>
+  </div>
+
+  ```section_design
+  ```
+
+  <div class="content-design">
+
+    <h2>Colour palette</h2>
+
+    <p>The Swisscom colour palette consists of primary, support, interactive and accent colours:</p>
+
+    <ul class="list margin-bottom-4">
+      <li>White has priority over all other colours. In addition to white, navy, blue and red are our <strong>primary colours</strong>. The primary colours characterize the entire brand appearance.</li>
+      <li>The <strong>support colours</strong> are restrained and unobtrusive. They are used primarily for structuring the design and for typography.</li>
+      <li><strong>Interaction colours</strong> are restrained to maintain a consistent treatment for interactive elements. They help to differentiate between static and interactive content in page, without relying on hover states.</li>
+      <li>The <strong>accent colours</strong> are intended for information graphics and for setting small highlights.</li>
+    </ul>
+
+    <div class="row margin-bottom-4">
+      <div class="col-xs-12">
+          <img class="img-responsive" src="/theme-build-v2.11.2/img/design/colors/01_Colour-Palette.png" alt="Overview of the colour palette">
+      </div>
+    </div>
+
+    <p>The Swisscom colour palette for Adobe CC can be downloaded <a href="https://brand.swisscom.com/document/61#/farbpalette" target="_blank">here</a>.</p>
+
+    <h3>Primary colours</h3>
+
+    <p>The use of primary colours within SDX helps to reinforce the presence of the Swisscom master brand throughout all
+      Swisscom digital experiences.
+    </p>
+
+    <div class="row padding-v-2 margin-v-4">
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-sc-navy"></div>
+          <p class="sg-color-name">Swisscom Navy</p>
+          <p class="sg-color-code">
+            CSS: .sc-navy<br/>
+            <span class="gray-tint-4">Hex: #001155</span><br/>
+            <span class="gray-tint-4">RGB: 0, 17, 85</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-sc-white" style="box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.2);"></div>
+          <p class="sg-color-name">White</p>
+          <p class="sg-color-code">
+            CSS: .sc-white<br/>
+            <span class="gray-tint-4">Hex: #FFFFFF</span><br/>
+            <span class="gray-tint-4">RGB: 255, 255, 255</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-sc-blue"></div>
+          <p class="sg-color-name">Swisscom Blue</p>
+          <p class="sg-color-code">
+            CSS: .sc-blue<br/>
+            <span class="gray-tint-4">Hex: #11AAFF</span><br/>
+            <span class="gray-tint-4">RGB: 17, 170, 255</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-sc-red"></div>
+          <p class="sg-color-name">Swisscom Red</p>
+          <p class="sg-color-code">
+            CSS: .sc-red<br/>
+            <span class="gray-tint-4">Hex: #DD1122</span><br/>
+            <span class="gray-tint-4">RGB: 221, 17, 34</span><br/>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-lg-6">
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/colors/Group-4@2x.jpg" alt="Typography using primary colours">
+        <span class="fig-caption">Typography using primary colours</span>
+      </div>
+      <div class="col-xs-12 col-lg-6">
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/colors/Group-37@2x.jpg" alt="Icons using primary colours">
+        <span class="fig-caption">Icons using primary colours</p>
+      </div>
+    </div>
+
+    <h3 class="margin-top-4">Support colours</h3>
+
+    <p>Support colours are the most widely used across all screens and components and used as the foundation on which
+      all our products are made from.
+    </p>
+    <p>Dark grey is used for the majority of non-interactive typography. Mid and light grey can be used for creating
+      levels of hierarchy between similar size piece of text.
+    </p>
+    <p>SDX has seperate interaction and accent colour palettes that feature AA accessible alternative colours to
+      Swisscom blue and red for use in digital products.
+    </p>
+
+    <div class="row margin-v-4 padding-top-4">
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-gray"></div>
+          <p class="sg-color-name">Dark Grey</p>
+          <p class="sg-color-code">
+            CSS: .gray<br/>
+            <span class="gray-tint-4">Hex: #333333</span><br/>
+            <span class="gray-tint-4">RGB: 51, 51, 51</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-gray-tint-2"></div>
+          <p class="sg-color-name">Grey Tint 2</p>
+          <p class="sg-color-code">
+            CSS: .gray-tint-2<br/>
+            <span class="gray-tint-4">Hex: #474747</span><br/>
+            <span class="gray-tint-4">RGB: 71, 71, 71</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-gray-tint-3"></div>
+          <p class="sg-color-name">Grey Tint 3</p>
+          <p class="sg-color-code">
+            CSS: .gray-tint-3<br/>
+            <span class="gray-tint-4">Hex: #5C5C5C</span><br/>
+            <span class="gray-tint-4">RGB: 92, 92, 92</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-gray-tint-4"></div>
+          <p class="sg-color-name">Grey Tint 4</p>
+          <p class="sg-color-code">
+            CSS: .gray-tint-4<br/>
+            <span class="gray-tint-4">Hex: #666666</span><br/>
+            <span class="gray-tint-4">RGB: 102, 102, 102</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-gray-tint-5"></div>
+          <p class="sg-color-name">Grey Tint 5</p>
+          <p class="sg-color-code">
+            CSS: .gray-tint-5<br/>
+            <span class="gray-tint-4">Hex: #858585</span><br/>
+            <span class="gray-tint-4">RGB: 133, 133, 133</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-gray-tint-6"></div>
+          <p class="sg-color-name">Grey Tint 6</p>
+          <p class="sg-color-code">
+            CSS: .gray-tint-6<br/>
+            <span class="gray-tint-4">Hex: #ADADAD</span><br/>
+            <span class="gray-tint-4">RGB: 173, 173, 173</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-gray-tint-7"></div>
+          <p class="sg-color-name">Grey Tint 7</p>
+          <p class="sg-color-code">
+            CSS: .gray-tint-7<br/>
+            <span class="gray-tint-4">Hex: #BBBBBB</span><br/>
+            <span class="gray-tint-4">RGB: 187, 187, 187</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-gray-tint-8"></div>
+          <p class="sg-color-name">Grey Tint 8</p>
+          <p class="sg-color-code">
+            CSS: .gray-tint-8<br/>
+            <span class="gray-tint-4">Hex: #D6D6D6</span><br/>
+            <span class="gray-tint-4">RGB: 214, 214, 214</span><br/>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row padding-v-2 margin-v-4">
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-int-blue"></div>
+          <p class="sg-color-name">Interaction Blue</p>
+          <p class="sg-color-code">
+            CSS: .int-blue<br/>
+            <span class="gray-tint-4">Hex: #086ADB</span><br/>
+            <span class="gray-tint-4">RGB: 8, 106, 219</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-blue-tint-2"></div>
+          <p class="sg-color-name">Blue Tint 2</p>
+          <p class="sg-color-code">
+            CSS: .blue-tint-2<br/>
+            <span class="gray-tint-4">Hex: #A2CDF4</span><br/>
+            <span class="gray-tint-4">RGB: 162, 205, 244</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-blue-tint-3"></div>
+          <p class="sg-color-name">Blue Tint 3</p>
+          <p class="sg-color-code">
+            CSS: .blue-tint-3<br/>
+            <span class="gray-tint-4">Hex: #D1E6F9</span><br/>
+            <span class="gray-tint-4">RGB: 209, 230, 249</span><br/>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row margin-v-4 padding-bottom-4">
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-aluminium"></div>
+          <p class="sg-color-name">Aluminium</p>
+          <p class="sg-color-code">
+            CSS: .aluminum<br/>
+            <span class="gray-tint-4">Hex: #DDE3E7</span><br/>
+            <span class="gray-tint-4">RGB: 221, 227, 231</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-aluminium-tint-2"></div>
+          <p class="sg-color-name">Aluminium Tint 2</p>
+          <p class="sg-color-code">
+            CSS: .aluminum-tint-2<br/>
+            <span class="gray-tint-4">Hex: #E4E9EC</span><br/>
+            <span class="gray-tint-4">RGB: 228, 233, 236</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-horizon"></div>
+          <p class="sg-color-name">Horizon</p>
+          <p class="sg-color-code">
+            CSS: .horizon<br/>
+            <span class="gray-tint-4">Hex: #EEF3F6</span><br/>
+            <span class="gray-tint-4">RGB: 238, 243, 246</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-horizon-tint-2"></div>
+          <p class="sg-color-name">Horizon Tint 2</p>
+          <p class="sg-color-code">
+            CSS: .horizon-tint-2<br/>
+            <span class="gray-tint-4">Hex: #F8FAFB</span><br/>
+            <span class="gray-tint-4">RGB: 248, 250, 251</span><br/>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-lg-6">
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/colors/Group-42@2x.jpg" alt="Desktop mega menu using support colours">
+        <span class="fig-caption">Desktop mega menu using support colours</span>
+      </div>
+      <div class="col-xs-12 col-lg-6">
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/colors/Group-43@2x.jpg" alt="Mobile side navigation using support colours">
+        <span class="fig-caption">Mobile side navigation using support colours</span>
+      </div>
+    </div>
+
+
+    <h3>Interaction colours</h3>
+
+    <p>Interaction colours are designed to maintain a consistent treatment for interactive elements. They help to
+      differentiate between static and interactive content in page, without relying on hover states.<br/>This means
+      both touch and mouse users are able to intuitively navigate content and services.
+    </p>
+
+    <h4>Primary interaction colours</h4>
+
+    <div class="row margin-v-4">
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-int-blue"></div>
+          <p class="sg-color-name">Interaction Blue</p>
+          <p class="sg-color-code">
+            CSS: .int-blue<br/>
+            <span class="gray-tint-4">Hex: #086ADB</span><br/>
+            <span class="gray-tint-4">RGB: 8, 106, 219</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-int-blue--active"></div>
+          <p class="sg-color-name">Blue Rollover</p>
+          <p class="sg-color-code">
+            CSS: .int-blue--active<br/>
+            <span class="gray-tint-4">Hex: #0048CF</span><br/>
+            <span class="gray-tint-4">RGB: 0, 72, 207</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-int-gray"></div>
+          <p class="sg-color-name">Interaction Grey</p>
+          <p class="sg-color-code">
+            CSS: .int-gray<br/>
+            <span class="gray-tint-4">Hex: #CFD5D9</span><br/>
+            <span class="gray-tint-4">RGB: 207, 213, 217</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-int-gray--active"></div>
+          <p class="sg-color-name">Grey Rollover</p>
+          <p class="sg-color-code">
+            CSS: .int-gray--active<br/>
+            <span class="gray-tint-4">Hex: #B1B9BE</span><br/>
+            <span class="gray-tint-4">RGB: 177, 185, 190</span><br/>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <h4>Secondary interaction colours</h4>
+
+    <div class="row margin-v-4">
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-int-green"></div>
+          <p class="sg-color-name">Interaction Green</p>
+          <p class="sg-color-code">
+            CSS: .int-green<br/>
+            <span class="gray-tint-4">Hex: #1B8712</span><br/>
+            <span class="gray-tint-4">RGB: 27, 135, 18</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-int-green--active"></div>
+          <p class="sg-color-name">Green Rollover</p>
+          <p class="sg-color-code">
+            CSS: .int-green--active<br/>
+            <span class="gray-tint-4">Hex: #0D6F2C</span><br/>
+            <span class="gray-tint-4">RGB: 13, 111, 44</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview  bg-int-red"></div>
+          <p class="sg-color-name">Interaction Red</p>
+          <p class="sg-color-code">
+            CSS: .int-red<br/>
+            <span class="gray-tint-4">Hex: #DD1122</span><br/>
+            <span class="gray-tint-4">RGB: 221, 17, 34</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-int-red--active"></div>
+          <p class="sg-color-name">Red Rollover</p>
+          <p class="sg-color-code">
+            CSS: .int-red--active<br/>
+            <span class="gray-tint-4">Hex: #BE0000</span><br/>
+            <span class="gray-tint-4">RGB: 190, 0, 0</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-int-orange"></div>
+          <p class="sg-color-name">Interaction Orange</p>
+          <p class="sg-color-code">
+            CSS: .int-orange<br/>
+            <span class="gray-tint-4">Hex: #CF4A0C</span><br/>
+            <span class="gray-tint-4">RGB: 207, 74, 12</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-int-orange--active"></div>
+          <p class="sg-color-name">Orange Rollover</p>
+          <p class="sg-color-code">
+            CSS: .int-orange--active<br/>
+            <span class="gray-tint-4">Hex: #BA3E06</span><br/>
+            <span class="gray-tint-4">RGB: 186, 62, 6</span><br/>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-lg-6">
+        <div class="img-container">
+          <img class="img-responsive" src="/theme-build-v2.11.2/img/design/colors/color-interaction-buttons@2x-1.png" alt="Interaction colours in buttons">
+        </div>
+        <span class="fig-caption">Interaction colours in buttons</span>
+      </div>
+      <div class="col-xs-12 col-lg-6">
+        <div class="img-container">
+          <img class="img-responsive" src="/theme-build-v2.11.2/img/design/colors/color-interaction-alert@2x-1.png" alt="Interaction colours in alerts">
+        </div>
+       <span class="fig-caption">Interaction colours in alerts</span>
+      </div>
+    </div>
+
+    <h3>Accent colours</h3>
+
+    <p>Accent colours are used as accents to help enrich content and experiences while serving a functional purpose.
+      They help to create visual links between content and can act as signifiers of content themes throughout
+      services.
+    </p>
+    <p>They’re most commonly used within cards and when displaying data in graphs and charts.</p>
+
+    <div class="row margin-v-4">
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-turquoise"></div>
+          <p class="sg-color-name">Turquoise</p>
+          <p class="sg-color-code">
+            CSS: .turquoise<br/>
+            <span class="gray-tint-4">Hex: #0EABA9</span><br/>
+            <span class="gray-tint-4">RGB: 14, 171, 169</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-turquoise--active"></div>
+          <p class="sg-color-name">Turquoise Rollover</p>
+          <p class="sg-color-code">
+            CSS: .turqoise--active<br/>
+            <span class="gray-tint-4">Hex: #0C847E</span><br/>
+            <span class="gray-tint-4">RGB: 12, 132, 126</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-azure"></div>
+          <p class="sg-color-name">Azure</p>
+          <p class="sg-color-code">
+            CSS: .azure<br/>
+            <span class="gray-tint-4">Hex: #086ADB</span><br/>
+            <span class="gray-tint-4">RGB: 8, 106, 219</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-azure--active"></div>
+          <p class="sg-color-name">Azure Rollover</p>
+          <p class="sg-color-code">
+            CSS: .azure--active<br/>
+            <span class="gray-tint-4">Hex: #0048CF</span><br/>
+            <span class="gray-tint-4">RGB: 0, 72, 207</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-iris"></div>
+          <p class="sg-color-name">Iris</p>
+          <p class="sg-color-code">
+            CSS: .iris<br/>
+            <span class="gray-tint-4">Hex: #5944C6</span><br/>
+            <span class="gray-tint-4">RGB: 89, 68, 198</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-iris--active"></div>
+          <p class="sg-color-name">Iris Rollover</p>
+          <p class="sg-color-code">
+            CSS: .iris--active<br/>
+            <span class="gray-tint-4">Hex: #42389E</span><br/>
+            <span class="gray-tint-4">RGB: 66, 56, 1578</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-orchid"></div>
+          <p class="sg-color-name">Orchid</p>
+          <p class="sg-color-code">
+            CSS: .orchid<br/>
+            <span class="gray-tint-4">Hex: #A63297</span><br/>
+            <span class="gray-tint-4">RGB: 166, 50, 151</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-orchid--active"></div>
+          <p class="sg-color-name">Orchid Rollover</p>
+          <p class="sg-color-code">
+            CSS: .orchid--active<br/>
+            <span class="gray-tint-4">Hex: #7F2879</span><br/>
+            <span class="gray-tint-4">RGB: 127, 40, 121</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-pink"></div>
+          <p class="sg-color-name">Pink</p>
+          <p class="sg-color-code">
+            CSS: .pink<br/>
+            <span class="gray-tint-4">Hex: #E61E64</span><br/>
+            <span class="gray-tint-4">RGB: 230, 30, 100</span><br/>
+          </p>
+        </div>
+      </div>
+      <div class="col-xs-6 col-md-3">
+        <div class="sg-color">
+          <div class="sg-color-preview bg-pink--active"></div>
+          <p class="sg-color-name">Pink Rollover</p>
+          <p class="sg-color-code">
+            CSS: .pink--active<br/>
+            <span class="gray-tint-4">Hex: #BF1B5A</span><br/>
+            <span class="gray-tint-4">RGB: 191, 27, 90</span><br/>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <p>Standard variants of the content colours should always be used first.</p>
+    <p>Only use the dark variants specifically as a pair with the standard colour, or when all standard colours are
+      already in use in the same visual. For interactive elements where the standard variants of content colours are
+      used, the dark variants can be used as Rollovers.
+    </p>
+
+    <div class="row">
+      <div class="col-xs-12 col-lg-6">
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/colors/05_Accent-Colours-PieChart.png" alt="Pie charts using accent colours">
+        <span class="fig-caption">Pie charts using accent colours</span>
+      </div>
+      <div class="col-xs-12 col-lg-6">
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/colors/05_Accent-Colours-Cards.png" alt="Cards using accent colours">
+        <span class="fig-caption">Cards using accent colours</span>
+      </div>
+    </div>
+
+
+    <h4>Colour Tints</h4>
+
+    <p>Tints of accent colours are available for use within extremely complete data sets, but should not be used in any
+      other context.
+    </p>
+
+    <div class="row margin-bottom-4">
+      <div class="col-xs-12">
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/colors/06_Accent-Colour-Tints.png" alt="Accent colours tints">
+      </div>
+    </div>
+
+
+    <h3>Using full bleed colour</h3>
+
+    <p>Full bleed colour can be used in a number of instances, either to complement content or to add emphasis to an
+      element within a page.
+    </p>
+    <p>Full bleed colour should be used sparingly and a conscious effort should be made to maintain the proportionate
+      usage of colour outlined in the colour ratio diagram at the top of this page.
+    </p>
+    <p>When pairing content colours full bleed with stickers, the dark variant should be used for the background, and
+      the standard variant used for the sticker. This helps to give stickers more prominence, and prevents the background
+      colour from dominating.
+    </p>
+
+    <div class="row margin-bottom-4">
+      <div class="col-xs-12">
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/colors/color-full-bleed@2x.jpg" alt="Application exampless of full bleed colours">
+      </div>
+    </div>
+
+
+    <h3>Combining accent colours</h3>
+
+    <p>Accent colours can be used on their own or in combination with other accent colours, but should not be combined
+      with colours from the other palettes.
+    </p>
+    <p>Azure is the same colour like Swisscom interaction blue. While Azure can be used as an Accent on page content
+    be aware that it can interfere with interaction elements.
+    </p>
+    <p>Text should always be white, and buttons should revert to the ‘on dark’ variant of the secondary button and
+      avoid using the interaction colours for buttons on colour.
+    </p>
+
+    <div class="row">
+      <div class="col-xs-12 col-lg-6">
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/colors/color-content-text-button@2x.jpg" alt="Interaction colours in buttons">
+        <span class="fig-caption">Interaction colours in buttons</span>
+      </div>
+      <div class="col-xs-12 col-lg-6">
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/colors/color-content-individual@2x.jpg" alt="Interaction colours in alerts">
+        <span class="fig-caption">Interaction colours in alerts</span>
+      </div>
+    </div>
+
+    <h3>Wayfinding with colour</h3>
+
+    <p>They help to create visual links between content and can act as signifiers of content themes throughout
+      services.
+    </p>
+
+    <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/colors/color-wayfinding@2x.jpg" alt="Examples of usages to create visual associations with colors.">
+      </div>
+    </div>
+  </div>
+
+
+  ```section_develop
+  ```
+
+  <p>All colours can be applied to text, icons, or backgrounds using the corresponding CSS class.
+    A prefix
+    <code>bg-</code>
+    is required to set a background colour.
+  </p>
+  */
+  /*doc
+  ---
+  title: Typography
+  name: 01-foundation-05-typography-01-typography
+  category: Foundation - Typography
+  ---
+
+  <p>Our brand font Thesis has an appealing modern appearance and excellent readability. The independent Swisscom typography is an important design element of the brand identity.</p>
+  <p>The following instructions shows which font size, leading and weight that can be used. By limiting the number of styles the products remain clean and simple.</p>
+
+  <h1>H1: Discover your personal universe</h1>
+  <h2>H2: Discover your personal universe</h2>
+  <h3>H3: Discover your personal universe</h3>
+  <h4>H4: Discover your personal universe</h4>
+  <h5>H5: Discover your personal universe</h5>
+  <h6>H6: Discover your personal universe</h6>
+
+  <hr/>
+
+  <h1>H1: Discover your personal universe</h1>
+  <p>Immerse yourself in new genres. Crime stories, SciFi or romance? Films, series, documentaries or eSports? Swisscom TV gives you everything your heart desires on screen. Total convenience: it's easy to set up access to your favourite genres on the home screen.</p>
+
+  <h2>H2: Discover your personal universe</h2>
+  <p>Immerse yourself in new genres. Crime stories, SciFi or romance? Films, series, documentaries or eSports? Swisscom TV gives you everything your heart desires on screen. Total convenience: it's easy to set up access to your favourite genres on the home screen.</p>
+
+  <h3>H3: Discover your personal universe</h3>
+  <p>Immerse yourself in new genres. Crime stories, SciFi or romance? Films, series, documentaries or eSports? Swisscom TV gives you everything your heart desires on screen. Total convenience: it's easy to set up access to your favourite genres on the home screen.</p>
+
+  <h4>H4: Discover your personal universe</h4>
+  <p>Immerse yourself in new genres. Crime stories, SciFi or romance? Films, series, documentaries or eSports? Swisscom TV gives you everything your heart desires on screen. Total convenience: it's easy to set up access to your favourite genres on the home screen.</p>
+
+  <h5>H5: Discover your personal universe</h5>
+  <p>Immerse yourself in new genres. Crime stories, SciFi or romance? Films, series, documentaries or eSports? Swisscom TV gives you everything your heart desires on screen. Total convenience: it's easy to set up access to your favourite genres on the home screen.</p>
+
+  <h6>H6: Discover your personal universe</h6>
+  <p>Immerse yourself in new genres. Crime stories, SciFi or romance? Films, series, documentaries or eSports? Swisscom TV gives you everything your heart desires on screen. Total convenience: it's easy to set up access to your favourite genres on the home screen.</p>
+
+  <h2>Font Weights</h2>
+
+   <div class="row content-design">
+        <div class="col-xs-12 col-lg-12">
+          <img class="img-responsive img-container-border" src="/theme-build-v2.11.2/img/design/typo/type-font-weight@2x.png">
+          <span class="fig-caption">Font weight characteristics</span>
+        </div>
+    </div>
+
+  ```section_design
+  ```
+  <div class="content-design">
+    <h2>Rules</h2>
+
+    <h3>Typefaces</h3>
+
+    <p>When designing for SDX, there are two typefaces to choose from – <strong>TheSans</strong> and <strong>TheSerif</strong> – each available in semi-light and semi-bold.</p>
+
+    <p>The Sans is our primary typeface and is used across all applications. The Serif is Swisscom’s voice and is <strong>only used for quotations</strong>.</p>
+
+    <div class="row">
+        <div class="col-xs-12 col-lg-6">
+          <img class="img-responsive img-responsive-border" src="/theme-build-v2.11.2/img/design/typo/type-the-sans@2x.png">
+          <span class="fig-caption">The Sans</span>
+        </div>
+        <div class="col-xs-12 col-lg-6">
+          <img class="img-responsive img-responsive-border" src="/theme-build-v2.11.2/img/design/typo/type-the-serif@2x.png">
+          <span class="fig-caption">The Serif</span>
+        </div>
+    </div>
+
+    <h3>Using colour and typography</h3>
+
+    <p>When using colour backgrounds, only white must be used as font colour. <br/>
+    The colour matrix demonstrates the accessibility of typefaces across the entire colour palette, at all specified sizes.</p>
+
+    <div class="row">
+        <div class="col-xs-12 col-lg-12">
+          <img class="img-responsive" src="/theme-build-v2.11.2/img/design/typo/type-and-color-accessibility@2x.png" alt="Example colour and typography">
+          <span class="fig-caption">Colour and typography</span>
+        </div>
+    </div>
+
+    <h3>Type hierarchy and colour</h3>
+
+    <p>When creating layouts using typography, only the following colours should be used to give content hierarchy. All other colours should never be used for typography.</p>
+
+    <div class="row margin-h-4 margin-bottom-4">
+        <div class="col-lg-12">
+            <div class="row margin-bottom-4">
+              <div class="col-xs-6 col-md-3">
+                <div class="sg-color">
+                  <div class="sg-color-preview bg-gray"></div>
+                  <div class="text-align-left margin-top-1">
+                    Primary text<br/>
+                    <span class="gray-tint-4">
+                        Swisscom dark grey <br/>
+                        #333333 <br/>
+                        51, 51, 51
+                      </span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6 col-md-3">
+                <div class="sg-color">
+                  <div class="sg-color-preview bg-navy"></div>
+                  <div class="text-align-left margin-top-1">
+                    Primary text<br/>
+                    <span class="gray-tint-4">
+                        Swisscom navy<br/>
+                        #001155 <br/>
+                        0, 17, 85
+                      </span>
+                  </div>
+                </div>
+               </div>
+               <div class="col-xs-6 col-md-3">
+                <div class="sg-color">
+                  <div class="sg-color-preview bg-gray-tint-4"></div>
+                  <div class="text-align-left margin-top-1">
+                    Secondary text<br/>
+                    <span class="gray-tint-4">
+                        Swisscom mid gray<br/>
+                        #666666 <br/>
+                        102, 102, 102
+                      </span>
+                  </div>
+                </div>
+               </div>
+              <div class="col-xs-6 col-md-3">
+                <div class="sg-color">
+                  <div class="sg-color-preview bg-blue"></div>
+                  <div class="text-align-left margin-top-1">
+                    Text link<br/>
+                    <span class="gray-tint-4">
+                        Interaction blue<br/>
+                        #086ADB <br/>
+                        8, 106, 219
+                      </span>
+                  </div>
+                </div>
+               </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <img class="img-responsive img-container-border" src="/theme-build-v2.11.2/img/design/typo/type-font-example@2x.png" alt="Type format example">
+        <span class="fig-caption">Type format example</span>
+      </div>
+    </div>
+
+    <h3>Types sizes for body text</h3>
+
+    <p>The default body font size is 18px. Depending on the application you can choose a font-size of 16px. The following classes are defined for this purpose <code>text-standard</code> and <code>text-small</code>.</p>
+
+    <div class="row margin-bottom-4">
+      <div class="col-xs-12 col-lg-6">
+        <h4>Standard body text</h4>
+        <p class="text-standard text-align-justify">Immerse yourself in new genres. Crime stories, SciFi or romance? Films, series, documentaries or eSports? Swisscom TV gives you everything your heart desires on screen. Total convenience: it's easy to set up access to your favourite genres on the home screen.</p>
+      </div>
+      <div class="col-xs-12 col-lg-6">
+        <h4>Smaller body text</h4>
+        <p class="text-small text-align-justify">Immerse yourself in new genres. Crime stories, SciFi or romance? Films, series, documentaries or eSports? Swisscom TV gives you everything your heart desires on screen. Total convenience: it's easy to set up access to your favourite genres on the home screen.</p>
+      </div>
+    </div>
+
+    <h3>Letter-spacing</h3>
+
+    <p>We achieve a compact type face by reducing letter spacing. With larger font sizes, a smaller letter is crucial for readability. The letter spacing is usually increased for very small font sizes.</p>
+
+    <div class="row">
+        <div class="col-xs-12 col-lg-6">
+          <img class="img-responsive" src="/theme-build-v2.11.2/img/design/typo/type-letter-spacing-large@2x.png">
+          <span class="fig-caption">Letter-spacing larger font size</span>
+        </div>
+          <div class="col-xs-12 col-lg-6">
+          <img class="img-responsive" src="/theme-build-v2.11.2/img/design/typo/type-letter-spacing-small@2x.png">
+          <span class="fig-caption">Letter-spacing smaller font size</span>
+        </div>
+    </div>
+
+  </div>
+
+
+  ```section_develop
+  ```
+  <p>The SDX Library includes the two standard fonts <b>TheSans</b> and <b>TheSerif</b>. It uses its responsiveness to automatically adjust the font-size and properties depending on a series of media queries.</p>
+
+  <h3>Body font size</h3>
+
+  <p>The default font size is 18px. This font size will automatically be applied for the text. However, in certain cases where you want to change the default size, the class <code>text-small</code> should be added to the HTML elements directly.</p>
+
+  ```htmlmixed
+  <p class="text-standard">My body text size</p>
+  <p class="text-small">My body text size</p>
+  ```
+
+  <h2>Smaller text</h2>
+
+  <p>For smaller text for example asterisk notes add <code>text-smaller</code></p>
+
+  ```htmlmixed
+  <p class="text-smaller">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  ```
+
+  <p>The SDX Library includes the two standard fonts <b>TheSans</b> and <b>TheSerif</b>. It uses it's responsiveness to automatically adjust the font-size and properties depending on a series of media queries.</p>
+
+  <h3>Font Type Sans</h3>
+
+  <p>The default style uses the <b>TheSans</b> font and will automatically be applied to the text. However, in certain cases where <b>TheSans</b> must be explicitly applied then the <code>font--sans</code> class should be added to the HTML elements directly.</p>
+
+  ```htmlmixed
+  <h4 class="font font--sans">Headline 4: Swisscom intends to continue reducing roaming prices</h4>
+  <p class="font font--sans">Swisscom intends to continue reducing roaming prices</p>
+  ```
+  <h3>Font Type Serif</h3>
+
+  <p>This font <code>font--serif</code> is only used for quotes.</p>
+
+  ```htmlmixed
+  <p class="font font--serif"><q>We have to keep customer promises</q> <br> <span class="text-small font font--sans">(Quote by Urs Schaeppi)</span></p>
+  ```
+
+  <h3>Font Weight</h3>
+
+  <p>To change the font weight form the default weight <b>Light</b> to a different weight add the classes <code>font--light</code>, <code>font--semi-light</code> or <code>font--semi-bold</code> to the element.</p>
+
+  ```htmlmixed
+  <p class="font font--light">Swisscom intends to continue reducing roaming prices</p>
+  <p class="font font--semi-light">Swisscom intends to continue reducing roaming prices</p>
+  <p class="font font--semi-bold">Swisscom intends to continue reducing roaming prices</p>
+  ```
+
+  <h2>Headings</h2>
+
+  <p>All HTML headings, from <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>, should be used to structure the page semantically correct. Make sure to use just a single one <code>&lt;h1 class="text-h1"&gt;</code> on the entire page and do not skip a heading only for design matters. Instead, use classes like <code>class="text-h1"</code> to make your heading look the way you want it.</p>
+
+  ```htmlmixed
+  <h1 class="text-h1">I’m a H1</h1>
+  <h2 class="text-h2">I’m a H2</h2>
+  <h3 class="text-h3">I’m a H3</h3>
+  <!-- ...etc. -->
+
+  <h4 class="text-h1">I’m semantically a H4 but I look like a H1</h4>
+  <h5 class="text-h2">I’m semantically a H5 but I look like a H2</h5>
+  <h6 class="text-h3">I’m semantically a H6 but I look like a H3</h6>
+  <!-- ...etc. -->
+  ```
+
+  <h2>Display Headings</h2>
+
+  <p>Traditional heading elements are designed to work best in the meat of your page content. When you need a heading to stand out, consider using a display heading, a larger slightly more opinionated heading style.<br/>
+  To add a display heading add one of the following classes <code>text-d1</code>, <code>text-d2</code> or <code>text-d3</code> to the element.</p>
+
+  ```htmlmixed
+  <h1 class="text-d1">Display 1: Swisscom intends to continue reducing roaming prices</h1>
+  <h1 class="text-d2">Display 2: Swisscom intends to continue reducing roaming prices</h1>
+  <h1 class="text-d3">Display 3: Swisscom intends to continue reducing roaming prices</h1>
+  ```
+
+  */
+  /*doc
+  ---
+  title: Grids
+  name: 01-foundation-03-grid-01
+  category: Foundation - Grids
+  ---
+
+  <style>
+    .exampleIntroSection .row [class^=col-],
+    .exampleOutput .row [class^=col-] {
+      background-color: #DDE3E7;
+      background-clip: content-box;
+      font-size: 16px;
+    }
+
+    .exampleIntroSection .row [class^=col-] {
+      border: 0;
+    }
+
+    .exampleOutput .row [class^=col-] {
+      border: 1px solid white;
+    }
+
+    .exampleIntroSection .row {
+      height: 160px; background-color: #F8FAFB;"
+    }
+  </style>
+
+  <p>Different combinations of column widths and arrangements can be used to support the intention of the design. Uniform column widths create calm, functional layouts. Variation between column widths can create visually dynamic and exciting layouts.</p>
+
+  <div class="exampleIntroSection">
+    <div class="row">
+      <div class="col-xs"></div>
+      <div class="col-xs"></div>
+      <div class="col-xs"></div>
+      <div class="col-xs"></div>
+      <div class="col-xs"></div>
+      <div class="col-xs"></div>
+      <div class="col-xs"></div>
+      <div class="col-xs"></div>
+      <div class="col-xs"></div>
+      <div class="col-xs"></div>
+      <div class="col-xs"></div>
+      <div class="col-xs"></div>
+    </div>
+
+    <span class="fig-caption">Resize your browser to see how the grid responds to different screen sizes</span>
+  </div>
+
+  ```section_design
+  ```
+
+  <div class="content-design">
+    <h2>Rules</h2>
+
+    <h3>Breakpoints</h3>
+
+    <div class="table table--responsive">
+      <div class="table__wrapper">
+        <table data-init="auto">
+          <thead>
+            <tr>
+              <th>Breakpoint</th>
+              <th>Container</th>
+              <th>Gutter</th>
+              <th>Margin</th>
+              <th>CSS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>&gt;= 1440px</td>
+              <td>1356px</td>
+              <td>24px</td>
+              <td>Fluid</td>
+              <td><code>col-ul-*</code></td>
+            </tr>
+            <tr>
+              <td>&gt;= 1280px</td>
+              <td>1200px</td>
+              <td>24px</td>
+              <td>Fluid</td>
+              <td><code>col-xl-*</code></td>
+            </tr>
+            <tr>
+              <td>&gt;= 1024px</td>
+              <td>940px</td>
+              <td>24px</td>
+              <td>Fluid</td>
+              <td><code>col-lg-*</code></td>
+            </tr>
+            <tr>
+              <td>&gt;= 768px</td>
+              <td>726px</td>
+              <td>16px</td>
+              <td>Fluid</td>
+              <td><code>col-md-*</code></td>
+            </tr>
+            <tr>
+              <td>&gt;= 480px</td>
+              <td>428px</td>
+              <td>8px</td>
+              <td>Fluid</td>
+              <td><code>col-sm-*</code></td>
+            </tr>
+            <tr>
+              <td>&lt; 480px</td>
+              <td>Fluid</td>
+              <td>8px</td>
+              <td>24px</td>
+              <td><code>col-xs-*</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p>
+      Which screen sizes are the most commonly used? See <a href="https://gs.statcounter.com/screen-resolution-stats/all/">screen resolution stats</a>.
+    </p>
+
+    <h3>Layout options</h3>
+
+    <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/grids/grid-1440-columns@2x.jpg">
+        <span class="fig-caption">1440px — 480px column usage combinations</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/grids/grid-480-columns@2x.jpg">
+        <span class="fig-caption">&lt; 480px column usage combinations</span>
+      </div>
+    </div>
+
+    <h3>Baseline grid</h3>
+
+    <p>Our baseline dictates the horizontal positioning of typography across all screens within Swisscom services. No matter the screen width, margins or column width, the baseline grid is always set to 8px. This ensures a consistent treatment of type placement and line spacing across all products at all sizes.</p>
+
+    <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/grids/grid-baseline@2x.jpg">
+        <span class="fig-caption">Baseline grid</span>
+      </div>
+    </div>
+
+    <p>All typography, when using the defined sizes, will naturally align to the baseline grid. Graphic elements should aim to align to the baseline where possible but this isn’t mandatory.</p>
+
+    <h3>Axis alignment</h3>
+
+    <p>The concept of the Swisscom axis within SDX is derived from the Swisscom master brand, and the Life Form itself. Use the axis plotted on any grid column to create interesting and asymmetric layouts.</p>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/grids/LogoAxis.png">
+        <span class="fig-caption">The axis alignment stems from the central axis of the Swisscom Life Form</span>
+      </div>
+      <div class="col-xs-12 col-lg-6"></div>
+    </div>
+
+    <h3>Axis in application</h3>
+
+    <div class="row">
+      <div class="col-xs-12 col-lg-6">
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/grids/grid-axis-article@2x.jpg">
+        <span class="fig-caption">Vertical aligment in an article</span>
+      </div>
+    </div>
+
+    <p>For mobile breakpoints, the left edge of page content aligns to the central axis in the Life Form and is always the outside margin of the underlying grid.</p>
+
+    <div class="row">
+      <div class="col-xs-12 col-lg-6">
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/grids/grid-align-small-screen@2x.jpg">
+        <span class="fig-caption">Vertical alignment on smaller screens</span>
+      </div>
+      <div class="col-xs-12 col-lg-6"></div>
+    </div>
+  </div>
+
+
+  ```section_develop
+  ```
+
+  <p>The SDX library includes a responsive, mobile first 12 column grid system. It includes predefined classes for easy layout options and is based on Bootstrap's Grid component. The grid is using a flexbox based system by default.</p>
+
+  ```htmlmixed_no_preview
+  <div class="container"> <!-- or use "container-fluid" to skip breakpoints -->
+    <div class="row">
+      <div class="col-xs">col-xs</div>
+      <div class="col-xs">col-xs</div>
+    </div>
+  </div>
+  ```
+
+  <h2>Introduction</h2>
+
+  <p>Grid systems are used for creating page layouts through a series of rows and columns that house your content. Here's how the Bootstrap grid system works:</p>
+
+  <ul class="list">
+    <li>Rows must be placed within a <code>.container</code> (fixed-width) or <code>.container-fluid</code> (full-width) for proper alignment and padding. Use rows to create horizontal groups of columns.</li>
+    <li>Content should be placed within columns, and only columns may be immediate children of rows.</li>
+    <li>Predefined grid classes like <code>.row</code> and <code>.col-xs-4</code> are available for quickly making grid layouts. Sass mixins can also be used for more semantic layouts.</li>
+    <li>Columns create gutters (gaps between column content) via <code>padding</code>. That padding is offset in rows for the first and last column via negative margin on <code>.rows</code>.</li>
+    <li>The negative margin is why the examples below are outdented. It's so that content within grid columns is lined up with non-grid content.</li>
+    <li>Grid columns are created by specifying the number of 12 available columns you wish to span. For example, three equal columns would use three <code>.col-xs-4</code>.</li>
+    <li>If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.</li>
+    <li>Grid classes apply to devices with screen widths greater than or equal to the breakpoint sizes, and override grid classes targeted at smaller devices. Therefore, e.g. applying any <code>.col-md-*</code> class to an element will not only affect its styling on medium devices but also on large devices if a <code>.col-lg-*</code> class is not present.</li>
+  </ul>
+
+  <h2>Sample mobile-to-desktop layout</h2>
+
+  <p>Using a set of <code>.col-md-*</code> grid classes, you can create a basic grid system that starts out stacked on mobile devices and tablet devices (the extra small to small range) before becoming horizontal on desktop (medium) devices. Place grid columns in any <code>.row</code>.</p>
+
+  ```htmlmixed_playground
+  <div class="row">
+    <div class="col-xs-12 col-md-1">col-xs-12 col-md-1</div>
+    <div class="col-xs-12 col-md-1">col-xs-12 col-md-1</div>
+    <div class="col-xs-12 col-md-1">col-xs-12 col-md-1</div>
+    <div class="col-xs-12 col-md-1">col-xs-12 col-md-1</div>
+    <div class="col-xs-12 col-md-1">col-xs-12 col-md-1</div>
+    <div class="col-xs-12 col-md-1">col-xs-12 col-md-1</div>
+    <div class="col-xs-12 col-md-1">col-xs-12 col-md-1</div>
+    <div class="col-xs-12 col-md-1">col-xs-12 col-md-1</div>
+    <div class="col-xs-12 col-md-1">col-xs-12 col-md-1</div>
+    <div class="col-xs-12 col-md-1">col-xs-12 col-md-1</div>
+    <div class="col-xs-12 col-md-1">col-xs-12 col-md-1</div>
+    <div class="col-xs-12 col-md-1">col-xs-12 col-md-1</div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-8">col-xs-12 col-md-8</div>
+    <div class="col-xs-12 col-md-4">col-xs-12 col-md-4</div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-4">col-xs-12 col-md-4</div>
+    <div class="col-xs-12 col-md-4">col-xs-12 col-md-4</div>
+    <div class="col-xs-12 col-md-4">col-xs-12 col-md-4</div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-6">col-xs-12 col-md-6</div>
+    <div class="col-xs-12 col-md-6">col-xs-12 col-md-6</div>
+  </div>
+  ```
+
+  <h3>Equal-width</h3>
+
+  <p>Utilize breakpoint-specific column classes for equal-width columns. Add any number of <code>.col-{breakpoint}</code>s for each breakpoint you need and every column will be the same width.</p>
+
+  <p>For example, here are two grid layouts that apply to every device and viewport, from xs to ul.</p>
+
+  ```htmlmixed_playground
+  <div class="row">
+    <div class="col-xs">1 of 2</div>
+    <div class="col-xs">1 of 2</div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs">1 of 3</div>
+    <div class="col-xs">1 of 3</div>
+    <div class="col-xs">1 of 3</div>
+  </div>
+  ```
+
+  <h3>Setting one column width</h3>
+
+  <p>Auto-layout for columns also means you can set the width of one column and the others will automatically resize around it. You may use predefined grid classes (as shown below), grid mixins, or inline widths. Note that the other columns will resize no matter the width of the center column.</p>
+
+  ```htmlmixed_playground
+  <div class="row">
+    <div class="col-xs">1 of 3</div>
+    <div class="col-xs-6">2 of 3 (wider)</div>
+    <div class="col-xs">3 of 3</div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs">1 of 3</div>
+    <div class="col-xs-5">2 of 3 (wider)</div>
+    <div class="col-xs">3 of 3</div>
+  </div>
+  ```
+
+  <h3>Variable width content</h3>
+
+  <p>Using the <code>.col-{breakpoint}-auto</code> classes, columns can size themselves based on the natural width of their content. This comes in handy with single line content like inputs, numbers, etc. This, in conjunction with "horizontal alignment" classes, can be used for centering layouts with uneven column sizes as viewport width changes.</p>
+
+  ```htmlmixed_playground
+  <div class="row flex-items-md-center">
+    <div class="col-xs col-lg-2">1 of 3</div>
+    <div class="col-xs-12 col-md-auto">Variable width content</div>
+    <div class="col-xs col-lg-2">3 of 3</div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs">1 of 3</div>
+    <div class="col-xs-12 col-md-auto">Variable width content</div>
+    <div class="col-xs col-lg-2">3 of 3</div>
+  </div>
+  ```
+
+  <h2>Responsive classes</h2>
+
+  <p>The SDX grid includes six tiers of predefined classes for building complex responsive layouts. Customize the size of your columns on extra small (xs), small (sm), medium (md), large (lg), extra large (xl) or ultra large (ul) devices however you see fit.</p>
+
+  <h3>All breakpoints</h3>
+
+  <p>For grids that are the same from the smallest of devices to the largest, use the <code>.col-xs</code> and <code>.col-xs-*</code> classes. Specify a numbered class when you need a particularly sized column; otherwise, feel free to stick to <code>.col-xs</code>.</p>
+
+  <p>The grid requires a class for full-width columns. If you have a <code>.col-sm-6</code> and don’t add <code>.col-xs-12</code>, your <code>xs</code> grid will not render correctly.</p>
+
+  ```htmlmixed_playground
+  <div class="row">
+    <div class="col-xs">col-xs</div>
+    <div class="col-xs">col-xs</div>
+    <div class="col-xs">col-xs</div>
+    <div class="col-xs">col-xs</div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-8">col-xs-8</div>
+    <div class="col-xs-4">col-xs-4</div>
+  </div>
+  ```
+
+  ```htmlmixed_playground
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      1 of 2 (stacked on mobile)
+    </div>
+
+    <div class="col-xs-12 col-md-6">
+      1 of 2 (stacked on mobile)
+    </div>
+  </div>
+  ```
+
+  <h2>Alignment</h2>
+
+  <p>Use flexbox alignment utilities to vertically and horizontally align columns.</p>
+
+  <h3>Vertical alignment</h3>
+
+  <h4>Align the whole row</h4>
+
+  ```htmlmixed_playground
+  <div class="row flex-items-xs-top" style="height: 80px; border: 1px solid #DDE3E7;">
+    <div class="col-xs">1 of 3</div>
+    <div class="col-xs">1 of 3</div>
+    <div class="col-xs">1 of 3</div>
+  </div>
+
+  <br>
+
+  <div class="row flex-items-xs-middle" style="height: 80px; border: 1px solid #DDE3E7;">
+    <div class="col-xs">1 of 3</div>
+    <div class="col-xs">1 of 3</div>
+    <div class="col-xs">1 of 3</div>
+  </div>
+
+  <br>
+
+  <div class="row flex-items-xs-bottom" style="height: 80px; border: 1px solid #DDE3E7;">
+    <div class="col-xs">1 of 3</div>
+    <div class="col-xs">1 of 3</div>
+    <div class="col-xs">1 of 3</div>
+  </div>
+  ```
+
+  <h4>Align individual items</h4>
+
+  ```htmlmixed_playground
+  <div class="row" style="height: 80px; border: 1px solid #DDE3E7;">
+    <div class="col-xs flex-xs-top">1 of 3</div>
+    <div class="col-xs flex-xs-middle">1 of 3</div>
+    <div class="col-xs flex-xs-bottom">1 of 3</div>
+  </div>
+  ```
+
+  <h3>Horizontal alignment</h3>
+
+  ```htmlmixed_playground
+  <div class="row flex-items-xs-left">
+    <div class="col-xs-4">1 of 2</div>
+    <div class="col-xs-4">1 of 2</div>
+  </div>
+
+  <div class="row flex-items-xs-center">
+    <div class="col-xs-4">1 of 2</div>
+    <div class="col-xs-4">1 of 2</div>
+  </div>
+
+  <div class="row flex-items-xs-right">
+    <div class="col-xs-4">1 of 2</div>
+    <div class="col-xs-4">1 of 2</div>
+  </div>
+
+  <div class="row flex-items-xs-around">
+    <div class="col-xs-4">1 of 2</div>
+    <div class="col-xs-4">1 of 2</div>
+  </div>
+
+  <div class="row flex-items-xs-between">
+    <div class="col-xs-4">1 of 2</div>
+    <div class="col-xs-4">1 of 2</div>
+  </div>
+  ```
+
+  <h2>No gutters</h2>
+
+  <p>The gutters between columns in our predefined grid classes can be removed with <code>.no-gutters</code>. This removes the negative <code>margins</code> from <code>.row</code> and the horizontal <code>padding</code> from all immediate children columns.</p>
+
+  ```htmlmixed_playground
+  <div class="row no-gutters">
+    <div class="col-xs-12 col-sm-6 col-md-8">
+      col-xs-12 col-sm-6 col-md-8
+    </div>
+
+    <div class="col-xs-6 col-md-4">
+      col-xs-6 col-md-4
+    </div>
+  </div>
+  ```
+  <h2>Reordering</h2>
+
+  <h3>Flex order</h3>
+
+  <p>Use flexbox utilities for controlling the visual order of your content.</p>
+
+  ```htmlmixed_playground
+  <div class="row">
+    <div class="col-xs flex-xs-unordered">
+      1st, but unordered
+    </div>
+
+    <div class="col-xs flex-xs-last">
+      2nd, but last
+    </div>
+
+    <div class="col-xs flex-xs-first">
+      3rd, but first
+    </div>
+  </div>
+  ```
+
+  <h3>Offsetting columns</h3>
+
+  <p>Move columns to the right using <code>offset-md-*</code> classes. These classes increase the left margin of a column by <code>*</code> columns. For example, <code>.offset-md-4</code> moves <code>.col-md-4</code> over four columns.</p>
+
+  ```htmlmixed_playground
+  <div class="row">
+    <div class="col-md-4">
+      col-md-4
+    </div>
+
+    <div class="col-md-4 offset-md-4">
+      col-md-4 offset-md-4
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 offset-md-3">
+      col-md-3 offset-md-3
+    </div>
+
+    <div class="col-md-3 offset-md-3">
+      col-md-3 offset-md-3
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      col-md-6 offset-md-3
+    </div>
+  </div>
+  ```
+
+  <h3>Push and pull</h3>
+
+  <p>Easily change the order of our built-in grid columns with <code>.push-md-*</code> and <code>.pull-md-*</code> modifier classes.</p>
+
+  ```htmlmixed_playground
+  <div class="row">
+    <div class="col-md-9 push-md-3">
+      col-md-9 push-md-3
+    </div>
+
+    <div class="col-md-3 pull-md-9">
+      col-md-3 pull-md-9
+    </div>
+  </div>
+  ```
+
+  <!-- -------------------------------------------------- -->
+
+  <h2>Grid without margin (mobile only)</h2>
+
+  <p>Using <code>.full-width--mobile-only</code> on any element will render them in full screen mode for mobile devices and tablet devices (the extra small to small range) only, whereas larger screens render normally.</p>
+
+  ```htmlmixed_playground
+  <div class="full-width--mobile-only">
+    <div class="row">
+      <div class="col-xs-12 col-md-1">col-md-1</div>
+      <div class="col-xs-12 col-md-1">col-md-1</div>
+      <div class="col-xs-12 col-md-1">col-md-1</div>
+      <div class="col-xs-12 col-md-1">col-md-1</div>
+      <div class="col-xs-12 col-md-1">col-md-1</div>
+      <div class="col-xs-12 col-md-1">col-md-1</div>
+      <div class="col-xs-12 col-md-1">col-md-1</div>
+      <div class="col-xs-12 col-md-1">col-md-1</div>
+      <div class="col-xs-12 col-md-1">col-md-1</div>
+      <div class="col-xs-12 col-md-1">col-md-1</div>
+      <div class="col-xs-12 col-md-1">col-md-1</div>
+      <div class="col-xs-12 col-md-1">col-md-1</div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-8">col-md-8</div>
+      <div class="col-xs-12 col-md-4">col-md-4</div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-4">col-md-4</div>
+      <div class="col-xs-12 col-md-4">col-md-4</div>
+      <div class="col-xs-12 col-md-4">col-md-4</div>
+    </div>
+  </div>
+  ```
+  */
+  /*doc
+  ---
+  title: Dividers
+  name: 02-components-060-divider
+  category: Components - Dividers
+  ---
+
+  <p>Dividers help to create clear groups of related information. There are three tiers of contrast on light backgrounds for divider lines and also a dark variant. Pick the most appropriate for your designs.</p>
+
+  <p>Light gray divider</p>
+  <div class="divider divider--light-gray"></div>
+
+  <p>Mid gray divider</p>
+  <div class="divider divider--mid-gray"></div>
+
+  <p>Dark gray divider</p>
+  <div class="divider divider--dark-gray"></div>
+
+
+  ```section_design
+  ```
+
+  <div class="content-design">
+
+    <h2>Rules</h2>
+
+    <p><b>Please note:</b> Be careful with the usage of dividers as too many of them might clutter the design.</p>
+
+     <div class="row">
+      <div class="col-xs-12 col-lg-6">
+        <h3 class="margin-bottom-1">Vertical spacing</h3>
+          <p>The vertical spacing between dividers is 32px.</p>
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/divider/Group-11@2x-13.jpg" alt="Vertical spacing specification">
+        <span class="fig-caption">Vertical spacing</span>
+      </div>
+    <div class="col-xs-12 col-lg-6">
+      <h3 class="margin-bottom-1">Minimum width</h3>
+      <p>The divider is always 100% of the text width.</p>
+      <img class="img-responsive" src="/theme-build-v2.11.2/img/design/divider/Group-2@2x-5.jpg" alt="Minimum width specification">
+      <span class="fig-caption">Minimum width</span>
+    </div>
+  </div>
+
+
+  ```section_develop
+  ```
+
+  <p>Dividers group and separate content within lists and page layouts. The divider is a thin rule, lightweight yet sufficient to distinguish content visually and spatially.</p>
+
+  <p>SDX dividers default to "full-bleed", eg (full width).</p>
+
+  ```htmlmixed_accessible
+  <p>This text is above the divider</p>
+  <hr aria-hidden="true" />
+  <p>This text is below the divider</p>
+  ```
+
+  <h4>Light background dividers</h4>
+
+  <p>There are three tiers of contrast on light backgrounds for divider lines, pick the most appropriate for your designs.</p>
+
+  ```htmlmixed_accessible
+  <p>Light gray divider</p>
+  <div class="divider divider--light-gray"></div>
+  <p>Mid gray divider</p>
+  <div class="divider divider--mid-gray"></div>
+  <p>Dark gray divider</p>
+  <div class="divider divider--dark-gray"></div>
+  ```
+
+  <h4>Dark background dividers</h4>
+
+  <p>There is only one contrast option on darker backgrounds</p>
+
+  ```htmlmixed_accessible
+  <div class="bg bg--dark">
+    <p>This text is above the divider</p>
+    <div class="divider"></div>
+    <p>This text is below the divider</p>
+  </div>
+  ```
+  */
+  /*doc
+  ---
+  title: Text Links
+  name: 02-components-185-text-links
+  category: Components - Text Links
+  ---
+
+  <a name="intro"></a><h2>Introduction</h2>
+  <p>Text links are the simplest interactive element. They help to clearly label interactive elements within text, footers and navigation.</p>
+  <p>This is some description text and a <a href="#">text link</a></p>
+
+
+  ```section_design
+  ```
+
+  <div class="content-design">
+    <h2>Variations</h2>
+
+    <h3>Standard text links</h3>
+
+    <p>In page text links use the Swisscom interaction blue. This helps to differentiate them from standard body text and headings, without the need to use buttons across all CTAs.</p>
+
+    <div class="row">
+      <div class="col-xs-12 col-lg-6">
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/links/Group@2x-1.png" alt="Design details standard links">
+        <span class="fig-caption">An unvisited link (top) and clicked/hover state link (bottom)</span>
+      </div>
+    </div>
+
+    <h3>Navigation text links</h3>
+
+    <p>Text links inside a navigation differ from conventional text links. Their static state is Swisscom Navy. They are positioning and scaled differently from conventional page text links to give them greater page hierarchy.</p>
+
+    <div class="row">
+      <div class="col-xs-12 col-lg-6">
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/links/Group-10@2x-5.jpg" alt="Design details navigation links">
+        <span class="fig-caption">An unvisited link (top) and clicked/hover state link (bottom)</span>
+      </div>
+    </div>
+
+    <h3>Typography</h3>
+
+    <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/links/Group-11@2x-1.png" alt="Typography specification for standard links">
+        <span class="fig-caption">Typography standard 18px</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/links/Group-16@2x-3.png" alt="Typography specification for navigation links">
+        <span class="fig-caption">Typography navigation</span>
+      </div>
+    </div>
+  </div>
+
+
+  ```section_develop
+  ```
+
+
+  <p>In page text links are supported on both the <code>&lt;a&gt;</code> and <code>&lt;button&gt;</code> tag by applying the <code>link</code> class to the element.</p>
+
+  ```htmlmixed
+  <p>This is some description text above the text link</p>
+  <a href="#">Text link</a>
+  <a class="link" href="#">Text link</a>
+  <button class="link" href="#" role="link">Text link</button>
+  ```
+
+  <p>Text links can be used in text paragraphs.</p>
+
+  ```htmlmixed
+  <p>This is a <a class="link" href="#">link</a> in a inline text paragraph.</p>
+  <p class="text-b2">This is a <a class="link" href="#">link</a> in a inline text paragraph.</p>
+  <p class="text-sm">This is a <a class="link" href="#">link</a> in a inline text paragraph.</p>
+  ```
+  */
+  /*doc
+  ---
+  title: Lists
+  name: 02-components-080-lists
+  category: Components - Lists
+  ---
+
+  <p>Styled lists can be used to help group points together and give them prominence within the page hierarchy. There are two types of lists; structured lists that are numbered and unstructured lists that use bullet points.</p>
+
+  <ul class="list single-line">
+    <li>Lorem ipsum dolor sit amet.</li>
+    <li>Lorem ipsum dolor sit atedur.</li>
+    <li>Lorem ipsum dolor sit amet.</li>
+  </ul>
+
+
+  ```section_design
+  ```
+
+  <div class="content-design">
+    <h2>Variations</h2>
+
+    <h3>Ordered list</h3>
+
+      <div class="row margin-bottom-4">
+      <div class="col-xs-12 col-lg-6">
+        <h4>Single-line list</h4>
+        <ol class="list single-line">
+          <li>Lorem ipsum dolor sit amet, consectetur adipisici elit.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisici elit.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisici elit.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisici elit.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipisici elit.</li>
+        </ol>
+      </div>
+      <div class="col-xs-12 col-lg-6">
+      <h4>Multiline list</h4>
+         <ol class="list">
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+        </ol>
+      </div>
+    </div>
+
+    <h3>Unordered list</h3>
+
+    <div class="row margin-bottom-4">
+      <div class="col-xs-12 col-lg-6">
+        <h4>Single-line list</h4>
+          <ul class="list">
+            <li class="single-line">Lorem ipsum dolor sit amet, consectetur adipisici elit.</li>
+            <li class="single-line">Lorem ipsum dolor sit amet, consectetur adipisici elit.</li>
+            <li class="single-line">Lorem ipsum dolor sit amet, consectetur adipisici elit.</li>
+            <li class="single-line">Lorem ipsum dolor sit amet, consectetur adipisici elit.</li>
+            <li class="single-line">Lorem ipsum dolor sit amet, consectetur adipisici elit.</li>
+          </ul>
+      </div>
+      <div class="col-xs-12 col-lg-6">
+      <h4>Multiline list</h4>
+         <ul class="list">
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Rules</h2>
+
+    <h3>Alignment</h3>
+
+    <p>
+      Numbers: Should be aligned to the baseline of the text and are right-aligned to the text.<br />
+      Bullets: They are aligned to the vertical centre point of the text.
+    </p>
+
+    <div class="row">
+      <div class="col-xs-12 col-lg-6">
+        <div class="img-container">
+          <img class="img-responsive" src="/theme-build-v2.11.2/img/design/lists/Group-17@2x-4.png" alt="Specifications alignment ordered list">
+        </div>
+        <span class="fig-caption">Ordered list alignment</span>
+      </div>
+      <div class="col-xs-12 col-lg-6">
+        <div class="img-container">
+          <img class="img-responsive" src="/theme-build-v2.11.2/img/design/lists/Group-18@2x-3.png" alt="Specifications alignment unordered list">
+        </div>
+        <span class="fig-caption">Unordered list alignment</span>
+      </div>
+    </div>
+
+    <p>Vertical spacing between paragraphs or text and lists is set to 40px, and is measured from descender to ascender.</p>
+
+    <div class="row">
+      <div class="col-xs-12 col-lg-6">
+        <img class="img-responsive" src="/theme-build-v2.11.2/img/design/lists/Group-20@2x-1.png" alt="Specifications spaces between elements">
+        <span class="fig-caption">Space between elements</span>
+      </div>
+    </div>
+
+    <h3>Insertion</h3>
+
+    <p>Insertion spacing is 8px between text and the list element.</p>
+
+    <div class="row">
+      <div class="col-xs-12 col-lg-6">
+        <div class="img-container">
+          <img class="img-responsive" src="/theme-build-v2.11.2/img/design/lists/Group-19@2x.png" alt="Specifications spacing">
+        </div>
+        <span class="fig-caption">Insertion spacing</span>
+      </div>
+    </div>
+
+    <h3>Typography</h3>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="img-container">
+          <img class="img-responsive" src="/theme-build-v2.11.2/img/design/lists/Group-21@2x-2.png" alt="Specifications typography ordered list">
+        </div>
+        <span class="fig-caption">Typography ordered list</span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="img-container">
+          <img class="img-responsive" src="/theme-build-v2.11.2/img/design/lists/Group-22@2x-2.png" alt="Specifications typography unordered list">
+        </div>
+        <span class="fig-caption">Typography unordered list</span>
+      </div>
+    </div>
+  </div>
+
+
+  ```section_develop
+  ```
+
+  <h2>Bullet list</h2>
+
+  <h3>Bullet list single-line</h3>
+
+  ```htmlmixed_playground_accessible
+  <h2>Lorem ipsum dolor sit amet</h2>
+
+  <ul class="list single-line">
+    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+    <li>Lorem ipsum dolor sit atedur, labore aliqua.</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+    <li>Lorem ipsum dolor sit atedur, labore aliqua.</li>
+  </ul>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  ```
+
+  <h3>Bullet list multiline</h3>
+
+  ```htmlmixed_playground_accessible
+  <h2>Lorem ipsum dolor</h2>
+
+  <ul class="list">
+    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+  </ul>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  ```
+
+  <h3>Formatting lists</h3>
+
+  <p>To format lists, the class <code>single-line</code> can be applied to the individual list elements. This provides more compact spaces. </p>
+
+  ```htmlmixed_playground_accessible
+
+  <ul class="list">
+    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </li>
+    <ul class="list single-line">
+      <li>Lorem ipsum dolor</li>
+      <li>Lorem ipsum dolor</li>
+      <li>Lorem ipsum dolor</li>
+    </ul>
+    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+  </ul>
+
+
+  ```
+
+
+  <h3>Link list</h3>
+
+  <p>When you display more than one link it is shown as a link list. The link list has a chevron to the right before each link element.</p>
+
+  ```htmlmixed_playground
+  <ul class="list single-line">
+    <li class="icon-chevron-normal-right"><a href="javascript:void(0);">Mobile guides</a></li>
+    <li class="icon-chevron-normal-right"><a href="javascript:void(0);">Device manuals</a></li>
+    <li class="icon-chevron-normal-right"><a href="javascript:void(0);">MySwisscom App</a></li>
+    <li class="icon-chevron-normal-right"><a href="javascript:void(0);">Contract extension</a></li>
+  </ul>
+  ```
+
+  <h3>Check list</h3>
+
+  ```htmlmixed_playground_accessible
+  <ul class="list single-line">
+    <li class="icon-check-mark">Lorem ipsum</li>
+    <li class="icon-check-mark">Lorem ipsum</li>
+    <li class="icon-check-mark">Lorem ipsum</li>
+    <li class="icon-check-mark">Lorem ipsum</li>
+  </ul>
+  ```
+
+  <h2>Numbered list</h2>
+
+  <h3>Numbered list single-line</h3>
+
+  ```htmlmixed_playground_accessible
+  <h2>Lorem ipsum dolor sit amet</h2>
+
+  <ol class="list single-line">
+    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+    <li>Lorem ipsum dolor sit atedur, labore aliqua.</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+    <li>Lorem ipsum dolor sit atedur, labore aliqua.</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+  </ol>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  ```
+
+  <h3>Numbered list multiline</h3>
+
+  ```htmlmixed_playground_accessible
+  <h2>Lorem ipsum dolor sit amet</h2>
+
+  <ol class="list">
+    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+    <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+  </ol>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  ```
+  */
+  /*doc
+  ---
+  title: Clearfix
+  name: 04-developers-10-clearfix
+  category: Developers - Clearfix utils
+  ---
+
+  <p>Easily clear floats by adding <code>.clearfix</code> to the parent element.</p>
+
+  ```htmlmixed_no_preview
+  <div class="clearfix">...</div>
+  ```
+
+  <p>Can also be used as a mixin.</p>
+
+  ```css_no_preview
+  // Usage as a mixin
+  .element {
+    @include clearfix;
+  }
+  ```
+
+  */
+  /*doc
+  ---
+  title: Margin
+  name: 04-developers-15-margin
+  category: Developers - Margin utils
+  ---
+
+  <p>Apply SDX conform margins to an element. The following margin options are available:</p>
+
+  <p>Margin on all 4 sides of the element:</p>
+
+  <ul class="list">
+    <li>.margin-0</li>
+    <li>.margin-1</li>
+    <li>.margin-2</li>
+    <li>.margin-3</li>
+    <li>.margin-4</li>
+  </ul>
+
+  <p>Margin on the left and right side of the element:</p>
+
+  <ul class="list">
+    <li>.margin-h-0</li>
+    <li>.margin-h-1</li>
+    <li>.margin-h-2</li>
+    <li>.margin-h-3</li>
+    <li>.margin-h-4</li>
+  </ul>
+
+  <p>Margin on the top and bottom side of the element:</p>
+
+  <ul class="list">
+    <li>.margin-v-0</li>
+    <li>.margin-v-1</li>
+    <li>.margin-v-2</li>
+    <li>.margin-v-3</li>
+    <li>.margin-v-4</li>
+  </ul>
+
+  <p>Margin on the top of the element:</p>
+
+  <ul class="list">
+    <li>.margin-top-0</li>
+    <li>.margin-top-1</li>
+    <li>.margin-top-2</li>
+    <li>.margin-top-3</li>
+    <li>.margin-top-4</li>
+  </ul>
+
+  <p>Margin on the bottom of the element:</p>
+
+  <ul class="list">
+    <li>.margin-bottom-0</li>
+    <li>.margin-bottom-1</li>
+    <li>.margin-bottom-2</li>
+    <li>.margin-bottom-3</li>
+    <li>.margin-bottom-4</li>
+  </ul>
+
+  <p>Margin on the left side of the element:</p>
+
+  <ul class="list">
+    <li>.margin-left-0</li>
+    <li>.margin-left-1</li>
+    <li>.margin-left-2</li>
+    <li>.margin-left-3</li>
+    <li>.margin-left-4</li>
+  </ul>
+
+  <p>Margin on the right side of the element:</p>
+
+  <ul class="list">
+    <li>.margin-right-0</li>
+    <li>.margin-right-1</li>
+    <li>.margin-right-2</li>
+    <li>.margin-right-3</li>
+    <li>.margin-right-4</li>
+  </ul>
+
+  <p>Margin from a breakpoint and up, some examples:</p>
+
+  <ul class="list">
+    <li>.margin-sm-0</li>
+    <li>.margin-md-h-1</li>
+    <li>.margin-lg-v-2</li>
+    <li>.margin-xl-top-3</li>
+    <li>.margin-ul-bottom-4</li>
+  </ul>
+
+  */
+  /*doc
+  ---
+  title: Padding
+  name: 04-developers-20-padding
+  category: Developers - Padding utils
+  ---
+
+  <p>Apply SDX conform paddings to an element. The following padding options are available:</p>
+
+  <p>Padding on all 4 sides of the element:</p>
+
+  <ul class="list">
+    <li>.padding-0</li>
+    <li>.padding-1</li>
+    <li>.padding-2</li>
+    <li>.padding-3</li>
+    <li>.padding-4</li>
+  </ul>
+
+  <p>Padding on the left and right side of the element:</p>
+
+  <ul class="list">
+    <li>.padding-h-0</li>
+    <li>.padding-h-1</li>
+    <li>.padding-h-2</li>
+    <li>.padding-h-3</li>
+    <li>.padding-h-4</li>
+  </ul>
+
+  <p>Padding on the top and bottom side of the element:
+
+  <ul class="list">
+    <li>.padding-v-0</li>
+    <li>.padding-v-1</li>
+    <li>.padding-v-2</li>
+    <li>.padding-v-3</li>
+    <li>.padding-v-4</li>
+  </ul>
+
+  <p>Padding on the top of the element:</p>
+
+  <ul class="list">
+    <li>.padding-top-0</li>
+    <li>.padding-top-1</li>
+    <li>.padding-top-2</li>
+    <li>.padding-top-3</li>
+    <li>.padding-top-4</li>
+  </ul>
+
+  <p>Padding on the bottom of the element:</p>
+
+  <ul class="list">
+    <li>.padding-bottom-0</li>
+    <li>.padding-bottom-1</li>
+    <li>.padding-bottom-2</li>
+    <li>.padding-bottom-3</li>
+    <li>.padding-bottom-4</li>
+  </ul>
+
+  <p>Padding on the left side of the element:</p>
+
+  <ul class="list">
+    <li>.padding-left-0</li>
+    <li>.padding-left-1</li>
+    <li>.padding-left-2</li>
+    <li>.padding-left-3</li>
+    <li>.padding-left-4</li>
+  </ul>
+
+  <p>Padding on the right side of the element:</p>
+
+  <ul class="list">
+    <li>.padding-right-0</li>
+    <li>.padding-right-1</li>
+    <li>.padding-right-2</li>
+    <li>.padding-right-3</li>
+    <li>.padding-right-4</li>
+  </ul>
+
+  <p>Padding from a breakpoint and up, some examples:</p>
+
+  <ul class="list">
+    <li>.padding-sm-0</li>
+    <li>.padding-md-h-1</li>
+    <li>.padding-lg-v-2</li>
+    <li>.padding-xl-top-3</li>
+    <li>.padding-ul-bottom-4</li>
+  </ul>
+
+  */
+  /*doc
+  ---
+  title: Screen Readers
+  name: 04-developers-25-screenreaders
+  category: Developers - Screen Reader utils
+  ---
+
+  <p>Hide an element to all devices except screen readers with <code>.sr-only</code>.
+  Combine <code>.sr-only</code> with <code>.sr-only-focusable</code> to show the element again when it’s focused (e.g. by a keyboard-only user).</p>
+
+  ```htmlmixed_no_preview
+  <a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+  ```
+
+  <p>Can also be used as a mixin.</p>
+
+  ```css_no_preview
+  // Usage as a mixin
+  .skip-navigation {
+    @include sr-only;
+    @include sr-only-focusable;
+  }
+  ```
+
+  */
+  /*doc
+  ---
+  title: Text
+  name: 04-developers-30-text
+  category: Developers - Text utils
+  ---
+
+  <h3>Text alignment</h3>
+
+  <p>Easily realign text to components with text alignment classes.</p>
+
+  ```htmlmixed_playground
+  <p class="text-align-left">Left aligned text on all viewport sizes.</p>
+  <p class="text-align-center">Center aligned text on all viewport sizes.</p>
+  <p class="text-align-right">Right aligned text on all viewport sizes.</p>
+  <p class="text-align-justify">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
+  ```
+
+  <h3>Text transformation</h3>
+
+  <p>Transform text in components with text capitalization classes.</p>
+
+  <p>Note how text-capitalize only changes the first letter of each word, leaving the case of any other letters unaffected.</p>
+
+  ```htmlmixed_playground
+  <p class="text-lowercase">Lowercased text.</p>
+  <p class="text-uppercase">Uppercased text.</p>
+  <p class="text-capitalize">capiTaliZed text.</p>
+  ```
+
+  <h3>Text truncate</h3>
+
+  <p>Trunctate texts using the CSS class <code>.text-truncate</code> (which adds an ellipsis).</p>
+
+  ```htmlmixed_playground
+  <p class="text-truncate">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
+  ```
+
+  <p>In cases where the CSS class <code>.text-truncate</code> does not work (because of <code>::before</code>), the Web Component <code>&lt;sdx-text-truncate /&gt;</code> can be used.</p>
+
+  ```htmlmixed_playground
+  <p>
+    <sdx-text-truncate>Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</sdx-text-truncate>
+  </p>
+  ```
+
+  <h3>Maximum text width</h3>
+
+  <p>To make long text paragraphs easier to read, SDX recommends to limit their width to a maximum of 700px. This helper class makes it easy to ensure that the text will wrap and never exceed this limit.</p>
+
+  ```htmlmixed_playground
+  <p class="text-recommended-max-width">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
+  ```
+  */
+  /*doc
+  ---
+  title: Visibility
+  name: 04-developers-35-visibility
+  category: Developers - Visibility utils
+  ---
+
+  <h3>Invisible content</h3>
+
+  <p>The <code>.invisible</code> and <code>.visible</code> class can be used to toggle only the visibility of an element, meaning its display is not modified and the element can still affect the flow of the document.</p>
+
+  ```htmlmixed
+  <p class="invisible">not visible</p>
+  <p class="visible">visible</p>
+  ```
+
+  <h3>Responsive visibility</h3>
+
+  <p>For faster mobile-friendly development, use these utility classes for showing and hiding content by device via media query.</p>
+
+  <ul class="list">
+    <li>
+      The <code>.hidden-*-up</code> classes hide the element when the viewport is at the given breakpoint or wider. For example, <code>.hidden-md-up</code> hides an element on medium, large, and extra-large viewports.
+    </li>
+    <li>
+      The <code>.hidden-*-down</code> classes hide the element when the viewport is at the given breakpoint or smaller. For example, <code>.hidden-md-down</code> hides an element on extra-small, small, and medium viewports.
+    </li>
+    <li>
+      You can combine one <code>.hidden-*-up</code> class with one <code>.hidden-*-down</code> class to show an element only on a given interval of screen sizes. For example, <code>.hidden-sm-down.hidden-xl-up</code> shows the element only on medium and large viewports. Using multiple <code>.hidden-*-up</code> classes or multiple <code>.hidden-*-down</code> classes is redundant and pointless.
+    </li>
+  </ul>
+
+  <p>If you want to go for specific devices (phone, tablet or desktop) use the device specific classes instead of the breakpoint specific classes:</p>
+
+  <ul class="list">
+    <li>
+      Phone: <code>.hidden-phone-up</code> or <code>.hidden-phone-down</code>
+    </li>
+    <li>
+      Tablet: <code>.hidden-tablet-up</code> or <code>.hidden-tablet-down</code>
+    </li>
+    <li>
+      Desktop: <code>.hidden-desktop-up</code> or <code>.hidden-desktop-down</code>
+    </li>
+  </ul>
+
+  */
+  font-family: "TheSans", sans-serif;
+  font-weight: 300;
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+  text-rendering: optimizeLegibility;
+  color: #333;
+  box-sizing: border-box;
+  margin: 0;
+}
+.sdx *, .sdx *::before, .sdx *::after {
+  box-sizing: inherit;
+}
+.sdx .white {
+  color: #fff;
+}
+.sdx .navy {
+  color: #015;
+}
+.sdx .blue {
+  color: #086adb;
+}
+.sdx .blue-tint-2, .sdx .blue-40 {
+  color: #a2cdf4;
+}
+.sdx .blue-tint-3, .sdx .blue-20 {
+  color: #d1e6f9;
+}
+.sdx .aluminum,
+.sdx .aluminium {
+  color: #dde3e7;
+}
+.sdx .aluminum-tint-2, .sdx .aluminum-80,
+.sdx .aluminium-tint-2,
+.sdx .aluminium-80 {
+  color: #e4e9ec;
+}
+.sdx .horizon {
+  color: #eef3f6;
+}
+.sdx .horizon-tint-2, .sdx .horizon-40 {
+  color: #f8fafb;
+}
+.sdx .gray {
+  color: #333;
+}
+.sdx .gray-tint-2, .sdx .gray-90 {
+  color: #474747;
+}
+.sdx .gray-tint-3, .sdx .gray-80 {
+  color: #5c5c5c;
+}
+.sdx .gray-tint-4, .sdx .gray-mid {
+  color: #666;
+}
+.sdx .gray-tint-5, .sdx .gray-60 {
+  color: #858585;
+}
+.sdx .gray-tint-6, .sdx .gray-40 {
+  color: #adadad;
+}
+.sdx .gray-tint-7, .sdx .gray-light {
+  color: #bbb;
+}
+.sdx .gray-tint-8, .sdx .gray-20 {
+  color: #d6d6d6;
+}
+.sdx .sc-blue {
+  color: #1af;
+}
+.sdx .sc-red {
+  color: #d12;
+}
+.sdx .sc-purple {
+  color: #5944c6;
+}
+.sdx .sc-navy {
+  color: #015;
+}
+.sdx .sc-white {
+  color: #fff;
+}
+.sdx .sc-gray {
+  color: #333;
+}
+.sdx .sc-gray-mid {
+  color: #666;
+}
+.sdx .sc-gray-light {
+  color: #bbb;
+}
+.sdx .int-blue {
+  color: #086adb;
+}
+.sdx .int-blue--active {
+  color: #0048CF;
+}
+.sdx .int-gray {
+  color: #cfd5d9;
+}
+.sdx .int-gray--active {
+  color: #b1b9be;
+}
+.sdx .int-green {
+  color: #1B8712;
+}
+.sdx .int-green--active {
+  color: #0D6F2C;
+}
+.sdx .int-red {
+  color: #d12;
+}
+.sdx .int-red--active {
+  color: #be0000;
+}
+.sdx .int-orange {
+  color: #CF4A0C;
+}
+.sdx .int-orange--active {
+  color: #BA3E06;
+}
+.sdx .azure {
+  color: #086adb;
+}
+.sdx .azure--active {
+  color: #0048CF;
+}
+.sdx .orchid {
+  color: #a63297;
+}
+.sdx .orchid--active {
+  color: #7f2879;
+}
+.sdx .orchid-tint-2 {
+  color: #ab449f;
+}
+.sdx .orchid-tint-3 {
+  color: #b458a8;
+}
+.sdx .orchid-tint-4 {
+  color: #bb6ab1;
+}
+.sdx .orchid-tint-5 {
+  color: #c47fbb;
+}
+.sdx .orchid-tint-6 {
+  color: #cb91c2;
+}
+.sdx .orchid-tint-7 {
+  color: #d2a4cc;
+}
+.sdx .orchid-tint-8 {
+  color: #dab7d5;
+}
+.sdx .iris {
+  color: #5944c6;
+}
+.sdx .iris--active {
+  color: #42389e;
+}
+.sdx .iris-tint-2 {
+  color: #6754c8;
+}
+.sdx .iris-tint-3 {
+  color: #7765ce;
+}
+.sdx .iris-tint-4 {
+  color: #7177d2;
+}
+.sdx .iris-tint-5 {
+  color: #9589d7;
+}
+.sdx .iris-tint-6 {
+  color: #a59adb;
+}
+.sdx .iris-tint-7 {
+  color: #b4abe0;
+}
+.sdx .iris-tint-8 {
+  color: #c3bce2;
+}
+.sdx .pink {
+  color: #e61e64;
+}
+.sdx .pink--active {
+  color: #bf1b5a;
+}
+.sdx .pink-tint-2 {
+  color: #e63a70;
+}
+.sdx .pink-tint-3 {
+  color: #e74e7f;
+}
+.sdx .pink-tint-4 {
+  color: #e8628d;
+}
+.sdx .pink-tint-5 {
+  color: #ea779c;
+}
+.sdx .pink-tint-6 {
+  color: #eb8baa;
+}
+.sdx .pink-tint-7 {
+  color: #eca0b8;
+}
+.sdx .pink-tint-8 {
+  color: #edb4c6;
+}
+.sdx .turquoise,
+.sdx .apple,
+.sdx .petrol {
+  color: #0eaba9;
+}
+.sdx .turquoise--active,
+.sdx .apple--active,
+.sdx .petrol--active {
+  color: #0c847e;
+}
+.sdx .turquoise-tint-2 {
+  color: #21b1af;
+}
+.sdx .turquoise-tint-3 {
+  color: #38b8b6;
+}
+.sdx .turquoise-tint-4 {
+  color: #4cc0bd;
+}
+.sdx .turquoise-tint-5 {
+  color: #67c7c5;
+}
+.sdx .turquoise-tint-6 {
+  color: #7ececd;
+}
+.sdx .turquoise-tint-7 {
+  color: #97d5d4;
+}
+.sdx .turquoise-tint-8 {
+  color: #a9dbdb;
+}
+.sdx .bg-white {
+  background-color: #fff;
+}
+.sdx .bg-navy {
+  background-color: #015;
+}
+.sdx .bg-blue {
+  background-color: #086adb;
+}
+.sdx .bg-blue-tint-2, .sdx .bg-blue-40 {
+  background-color: #a2cdf4;
+}
+.sdx .bg-blue-tint-3, .sdx .bg-blue-20 {
+  background-color: #d1e6f9;
+}
+.sdx .bg-aluminum,
+.sdx .bg-aluminium {
+  background-color: #dde3e7;
+}
+.sdx .bg-aluminum-tint-2, .sdx .bg-aluminum-80,
+.sdx .bg-aluminium-tint-2,
+.sdx .bg-aluminium-80 {
+  background-color: #e4e9ec;
+}
+.sdx .bg-horizon {
+  background-color: #eef3f6;
+}
+.sdx .bg-horizon-tint-2, .sdx .bg-horizon-40 {
+  background-color: #f8fafb;
+}
+.sdx .bg-gray {
+  background-color: #333;
+}
+.sdx .bg-gray-tint-2, .sdx .bg-gray-90 {
+  background-color: #474747;
+}
+.sdx .bg-gray-tint-3, .sdx .bg-gray-80 {
+  background-color: #5c5c5c;
+}
+.sdx .bg-gray-tint-4, .sdx .bg-gray-mid {
+  background-color: #666;
+}
+.sdx .bg-gray-tint-5, .sdx .bg-gray-60 {
+  background-color: #858585;
+}
+.sdx .bg-gray-tint-6, .sdx .bg-gray-40 {
+  background-color: #adadad;
+}
+.sdx .bg-gray-tint-7, .sdx .bg-gray-light {
+  background-color: #bbb;
+}
+.sdx .bg-gray-tint-8, .sdx .bg-gray-20 {
+  background-color: #d6d6d6;
+}
+.sdx .bg-sc-blue {
+  background-color: #1af;
+}
+.sdx .bg-sc-red {
+  background-color: #d12;
+}
+.sdx .bg-sc-navy {
+  background-color: #015;
+}
+.sdx .bg-sc-white {
+  background-color: #fff;
+}
+.sdx .bg-int-blue {
+  background-color: #086adb;
+}
+.sdx .bg-int-blue--active {
+  background-color: #0048CF;
+}
+.sdx .bg-int-gray {
+  background-color: #cfd5d9;
+}
+.sdx .bg-int-gray--active {
+  background-color: #b1b9be;
+}
+.sdx .bg-int-green {
+  background-color: #1B8712;
+}
+.sdx .bg-int-green--active {
+  background-color: #0D6F2C;
+}
+.sdx .bg-int-red {
+  background-color: #d12;
+}
+.sdx .bg-int-red--active {
+  background-color: #be0000;
+}
+.sdx .bg-int-orange {
+  background-color: #CF4A0C;
+}
+.sdx .bg-int-orange--active {
+  background-color: #BA3E06;
+}
+.sdx .bg-azure {
+  background-color: #086adb;
+}
+.sdx .bg-azure--active {
+  background-color: #0048CF;
+}
+.sdx .bg-orchid {
+  background-color: #a63297;
+}
+.sdx .bg-orchid--active {
+  background-color: #7f2879;
+}
+.sdx .bg-iris {
+  background-color: #5944c6;
+}
+.sdx .bg-iris--active {
+  background-color: #42389e;
+}
+.sdx .bg-pink {
+  background-color: #e61e64;
+}
+.sdx .bg-pink--active {
+  background-color: #bf1b5a;
+}
+.sdx .bg-turquoise,
+.sdx .bg-apple,
+.sdx .bg-petrol {
+  background-color: #0eaba9;
+}
+.sdx .bg-turquoise--active,
+.sdx .bg-apple--active,
+.sdx .bg-petrol--active {
+  background-color: #0c847e;
+}
+.sdx .text-body-1,
+.sdx .text-standard {
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-size: 18px;
+}
+.sdx .text-body-2,
+.sdx .text-small {
+  line-height: 24px;
+  letter-spacing: 0;
+  font-size: 16px;
+}
+.sdx h1,
+.sdx h2,
+.sdx h3,
+.sdx h4,
+.sdx h5,
+.sdx h6,
+.sdx p {
+  font-family: "TheSans", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  word-wrap: break-word;
+}
+.sdx h1, .sdx .text-h1,
+.sdx h2, .sdx .text-h2 {
+  margin-bottom: 32px;
+}
+.sdx h3, .sdx .text-h3,
+.sdx h4, .sdx .text-h4 {
+  margin-bottom: 24px;
+}
+.sdx h5, .sdx .text-h5,
+.sdx h6, .sdx .text-h6 {
+  margin-bottom: 8px;
+}
+.sdx p {
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 32px;
+}
+.sdx p:last-child {
+  margin-bottom: 0;
+}
+.sdx h1, .sdx .text-h1 {
+  line-height: 48px;
+  letter-spacing: -1.2px;
+  font-size: 40px;
+  font-weight: 300;
+}
+.sdx h2, .sdx .text-h2 {
+  line-height: 40px;
+  letter-spacing: -1px;
+  font-size: 32px;
+  font-weight: 300;
+}
+.sdx h3, .sdx .text-h3 {
+  line-height: 32px;
+  letter-spacing: -0.75px;
+  font-size: 28px;
+  font-weight: 300;
+}
+.sdx h3.text-compact, .sdx .text-h3.text-compact {
+  line-height: 31px;
+}
+.sdx h4, .sdx .text-h4 {
+  line-height: 32px;
+  letter-spacing: -0.35px;
+  font-size: 24px;
+  font-weight: 300;
+}
+.sdx h4.text-compact, .sdx .text-h4.text-compact {
+  line-height: 27px;
+}
+.sdx h5, .sdx .text-h5 {
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.sdx h6, .sdx .text-h6 {
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.sdx .d1, .sdx .text-d1 {
+  line-height: 48px;
+  letter-spacing: -1.2px;
+  font-size: 40px;
+  font-weight: 300;
+}
+@media (min-width: 1024px) {
+  .sdx .d1, .sdx .text-d1 {
+    line-height: 80px;
+    letter-spacing: -1.75px;
+    font-size: 70px;
+  }
+}
+.sdx .d2, .sdx .text-d2 {
+  line-height: 40px;
+  letter-spacing: -1px;
+  font-size: 32px;
+  font-weight: 300;
+}
+@media (min-width: 1024px) {
+  .sdx .d2, .sdx .text-d2 {
+    line-height: 64px;
+    letter-spacing: -1.35px;
+    font-size: 54px;
+  }
+}
+.sdx .d3, .sdx .text-d3 {
+  line-height: 32px;
+  letter-spacing: -0.75px;
+  font-size: 28px;
+  font-weight: 300;
+}
+@media (min-width: 1024px) {
+  .sdx .d3, .sdx .text-d3 {
+    line-height: 56px;
+    letter-spacing: -1.2px;
+    font-size: 48px;
+  }
+}
+.sdx .text-b1 {
+  line-height: 24px;
+  letter-spacing: -0.1px;
+  font-size: 18px;
+  font-weight: 400;
+}
+.sdx .text-b2 {
+  line-height: 24px;
+  letter-spacing: 0;
+  font-size: 16px;
+  font-weight: 400;
+}
+.sdx .text-sm,
+.sdx .text-smaller {
+  line-height: 24px;
+  letter-spacing: 0.1px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.sdx .text-compact {
+  line-height: 21px;
+}
+.sdx address {
+  font-style: normal;
+}
+.sdx strong {
+  font-weight: 600;
+}
+.sdx em {
+  font-style: italic;
+}
+.sdx .font {
+  font-family: "TheSans", sans-serif;
+}
+.sdx .font--sans {
+  font-family: "TheSans", sans-serif;
+}
+.sdx .font--serif {
+  font-family: "TheSerif", serif;
+}
+.sdx .font--light {
+  font-weight: 300;
+}
+.sdx .font--semi-light {
+  font-weight: 400;
+}
+.sdx .font--semi-bold {
+  font-weight: 600;
+}
+@media (min-width: 0) {
+  .sdx .flex-xs-first {
+    order: -1;
+  }
+  .sdx .flex-xs-last {
+    order: 1;
+  }
+  .sdx .flex-xs-unordered {
+    order: 0;
+  }
+  .sdx .flex-items-xs-top {
+    align-items: flex-start;
+  }
+  .sdx .flex-items-xs-middle {
+    align-items: center;
+  }
+  .sdx .flex-items-xs-bottom {
+    align-items: flex-end;
+  }
+  .sdx .flex-xs-top {
+    align-self: flex-start;
+  }
+  .sdx .flex-xs-middle {
+    align-self: center;
+  }
+  .sdx .flex-xs-bottom {
+    align-self: flex-end;
+  }
+  .sdx .flex-items-xs-left {
+    justify-content: flex-start;
+  }
+  .sdx .flex-items-xs-center {
+    justify-content: center;
+  }
+  .sdx .flex-items-xs-right {
+    justify-content: flex-end;
+  }
+  .sdx .flex-items-xs-around {
+    justify-content: space-around;
+  }
+  .sdx .flex-items-xs-between {
+    justify-content: space-between;
+  }
+}
+@media (min-width: 480px) {
+  .sdx .flex-sm-first {
+    order: -1;
+  }
+  .sdx .flex-sm-last {
+    order: 1;
+  }
+  .sdx .flex-sm-unordered {
+    order: 0;
+  }
+  .sdx .flex-items-sm-top {
+    align-items: flex-start;
+  }
+  .sdx .flex-items-sm-middle {
+    align-items: center;
+  }
+  .sdx .flex-items-sm-bottom {
+    align-items: flex-end;
+  }
+  .sdx .flex-sm-top {
+    align-self: flex-start;
+  }
+  .sdx .flex-sm-middle {
+    align-self: center;
+  }
+  .sdx .flex-sm-bottom {
+    align-self: flex-end;
+  }
+  .sdx .flex-items-sm-left {
+    justify-content: flex-start;
+  }
+  .sdx .flex-items-sm-center {
+    justify-content: center;
+  }
+  .sdx .flex-items-sm-right {
+    justify-content: flex-end;
+  }
+  .sdx .flex-items-sm-around {
+    justify-content: space-around;
+  }
+  .sdx .flex-items-sm-between {
+    justify-content: space-between;
+  }
+}
+@media (min-width: 768px) {
+  .sdx .flex-md-first {
+    order: -1;
+  }
+  .sdx .flex-md-last {
+    order: 1;
+  }
+  .sdx .flex-md-unordered {
+    order: 0;
+  }
+  .sdx .flex-items-md-top {
+    align-items: flex-start;
+  }
+  .sdx .flex-items-md-middle {
+    align-items: center;
+  }
+  .sdx .flex-items-md-bottom {
+    align-items: flex-end;
+  }
+  .sdx .flex-md-top {
+    align-self: flex-start;
+  }
+  .sdx .flex-md-middle {
+    align-self: center;
+  }
+  .sdx .flex-md-bottom {
+    align-self: flex-end;
+  }
+  .sdx .flex-items-md-left {
+    justify-content: flex-start;
+  }
+  .sdx .flex-items-md-center {
+    justify-content: center;
+  }
+  .sdx .flex-items-md-right {
+    justify-content: flex-end;
+  }
+  .sdx .flex-items-md-around {
+    justify-content: space-around;
+  }
+  .sdx .flex-items-md-between {
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1024px) {
+  .sdx .flex-lg-first {
+    order: -1;
+  }
+  .sdx .flex-lg-last {
+    order: 1;
+  }
+  .sdx .flex-lg-unordered {
+    order: 0;
+  }
+  .sdx .flex-items-lg-top {
+    align-items: flex-start;
+  }
+  .sdx .flex-items-lg-middle {
+    align-items: center;
+  }
+  .sdx .flex-items-lg-bottom {
+    align-items: flex-end;
+  }
+  .sdx .flex-lg-top {
+    align-self: flex-start;
+  }
+  .sdx .flex-lg-middle {
+    align-self: center;
+  }
+  .sdx .flex-lg-bottom {
+    align-self: flex-end;
+  }
+  .sdx .flex-items-lg-left {
+    justify-content: flex-start;
+  }
+  .sdx .flex-items-lg-center {
+    justify-content: center;
+  }
+  .sdx .flex-items-lg-right {
+    justify-content: flex-end;
+  }
+  .sdx .flex-items-lg-around {
+    justify-content: space-around;
+  }
+  .sdx .flex-items-lg-between {
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1280px) {
+  .sdx .flex-xl-first {
+    order: -1;
+  }
+  .sdx .flex-xl-last {
+    order: 1;
+  }
+  .sdx .flex-xl-unordered {
+    order: 0;
+  }
+  .sdx .flex-items-xl-top {
+    align-items: flex-start;
+  }
+  .sdx .flex-items-xl-middle {
+    align-items: center;
+  }
+  .sdx .flex-items-xl-bottom {
+    align-items: flex-end;
+  }
+  .sdx .flex-xl-top {
+    align-self: flex-start;
+  }
+  .sdx .flex-xl-middle {
+    align-self: center;
+  }
+  .sdx .flex-xl-bottom {
+    align-self: flex-end;
+  }
+  .sdx .flex-items-xl-left {
+    justify-content: flex-start;
+  }
+  .sdx .flex-items-xl-center {
+    justify-content: center;
+  }
+  .sdx .flex-items-xl-right {
+    justify-content: flex-end;
+  }
+  .sdx .flex-items-xl-around {
+    justify-content: space-around;
+  }
+  .sdx .flex-items-xl-between {
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1440px) {
+  .sdx .flex-ul-first {
+    order: -1;
+  }
+  .sdx .flex-ul-last {
+    order: 1;
+  }
+  .sdx .flex-ul-unordered {
+    order: 0;
+  }
+  .sdx .flex-items-ul-top {
+    align-items: flex-start;
+  }
+  .sdx .flex-items-ul-middle {
+    align-items: center;
+  }
+  .sdx .flex-items-ul-bottom {
+    align-items: flex-end;
+  }
+  .sdx .flex-ul-top {
+    align-self: flex-start;
+  }
+  .sdx .flex-ul-middle {
+    align-self: center;
+  }
+  .sdx .flex-ul-bottom {
+    align-self: flex-end;
+  }
+  .sdx .flex-items-ul-left {
+    justify-content: flex-start;
+  }
+  .sdx .flex-items-ul-center {
+    justify-content: center;
+  }
+  .sdx .flex-items-ul-right {
+    justify-content: flex-end;
+  }
+  .sdx .flex-items-ul-around {
+    justify-content: space-around;
+  }
+  .sdx .flex-items-ul-between {
+    justify-content: space-between;
+  }
+}
+@media (min-width: 0) {
+  .sdx .container {
+    margin-left: calc(24px - 4px);
+    margin-right: calc(24px - 4px);
+    padding-left: 4px;
+    padding-right: 4px;
+    width: auto;
+  }
+}
+@media (min-width: 480px) {
+  .sdx .container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 4px;
+    padding-right: 4px;
+    width: 436px;
+  }
+}
+@media (min-width: 768px) {
+  .sdx .container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 8px;
+    padding-right: 8px;
+    width: 742px;
+  }
+}
+@media (min-width: 1024px) {
+  .sdx .container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 964px;
+  }
+}
+@media (min-width: 1280px) {
+  .sdx .container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 1224px;
+  }
+}
+@media (min-width: 1440px) {
+  .sdx .container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 12px;
+    padding-right: 12px;
+    width: 1380px;
+  }
+}
+@media (min-width: 0) {
+  .sdx .container-fluid {
+    margin-left: calc(24px - 4px);
+    margin-right: calc(24px - 4px);
+    padding-left: 4px;
+    padding-right: 4px;
+    width: auto;
+  }
+}
+.sdx .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media (min-width: 0) {
+  .sdx .row {
+    margin-left: -4px;
+    margin-right: -4px;
+  }
+}
+@media (min-width: 480px) {
+  .sdx .row {
+    margin-left: -4px;
+    margin-right: -4px;
+  }
+}
+@media (min-width: 768px) {
+  .sdx .row {
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+}
+@media (min-width: 1024px) {
+  .sdx .row {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+}
+@media (min-width: 1280px) {
+  .sdx .row {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+}
+@media (min-width: 1440px) {
+  .sdx .row {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+}
+.sdx .no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+.sdx .no-gutters > .col,
+.sdx .no-gutters > [class*=col-] {
+  padding-right: 0;
+  padding-left: 0;
+}
+.sdx .col,
+.sdx [class*=col-] {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+}
+@media (min-width: 0) {
+  .sdx .col,
+.sdx [class*=col-] {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  .sdx .col-xs {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+  }
+  .sdx .col-xs-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  .sdx .col-xs-1 {
+    flex: 0 0 8.3333333333%;
+    max-width: 8.3333333333%;
+  }
+  .sdx .col-xs-2 {
+    flex: 0 0 16.6666666667%;
+    max-width: 16.6666666667%;
+  }
+  .sdx .col-xs-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .sdx .col-xs-4 {
+    flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
+  }
+  .sdx .col-xs-5 {
+    flex: 0 0 41.6666666667%;
+    max-width: 41.6666666667%;
+  }
+  .sdx .col-xs-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .sdx .col-xs-7 {
+    flex: 0 0 58.3333333333%;
+    max-width: 58.3333333333%;
+  }
+  .sdx .col-xs-8 {
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+  }
+  .sdx .col-xs-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  .sdx .col-xs-10 {
+    flex: 0 0 83.3333333333%;
+    max-width: 83.3333333333%;
+  }
+  .sdx .col-xs-11 {
+    flex: 0 0 91.6666666667%;
+    max-width: 91.6666666667%;
+  }
+  .sdx .col-xs-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .sdx .pull-xs-0 {
+    right: auto;
+  }
+  .sdx .pull-xs-1 {
+    right: 8.3333333333%;
+  }
+  .sdx .pull-xs-2 {
+    right: 16.6666666667%;
+  }
+  .sdx .pull-xs-3 {
+    right: 25%;
+  }
+  .sdx .pull-xs-4 {
+    right: 33.3333333333%;
+  }
+  .sdx .pull-xs-5 {
+    right: 41.6666666667%;
+  }
+  .sdx .pull-xs-6 {
+    right: 50%;
+  }
+  .sdx .pull-xs-7 {
+    right: 58.3333333333%;
+  }
+  .sdx .pull-xs-8 {
+    right: 66.6666666667%;
+  }
+  .sdx .pull-xs-9 {
+    right: 75%;
+  }
+  .sdx .pull-xs-10 {
+    right: 83.3333333333%;
+  }
+  .sdx .pull-xs-11 {
+    right: 91.6666666667%;
+  }
+  .sdx .pull-xs-12 {
+    right: 100%;
+  }
+  .sdx .push-xs-0 {
+    left: auto;
+  }
+  .sdx .push-xs-1 {
+    left: 8.3333333333%;
+  }
+  .sdx .push-xs-2 {
+    left: 16.6666666667%;
+  }
+  .sdx .push-xs-3 {
+    left: 25%;
+  }
+  .sdx .push-xs-4 {
+    left: 33.3333333333%;
+  }
+  .sdx .push-xs-5 {
+    left: 41.6666666667%;
+  }
+  .sdx .push-xs-6 {
+    left: 50%;
+  }
+  .sdx .push-xs-7 {
+    left: 58.3333333333%;
+  }
+  .sdx .push-xs-8 {
+    left: 66.6666666667%;
+  }
+  .sdx .push-xs-9 {
+    left: 75%;
+  }
+  .sdx .push-xs-10 {
+    left: 83.3333333333%;
+  }
+  .sdx .push-xs-11 {
+    left: 91.6666666667%;
+  }
+  .sdx .push-xs-12 {
+    left: 100%;
+  }
+  .sdx .offset-xs-1 {
+    margin-left: 8.3333333333%;
+  }
+  .sdx .offset-xs-2 {
+    margin-left: 16.6666666667%;
+  }
+  .sdx .offset-xs-3 {
+    margin-left: 25%;
+  }
+  .sdx .offset-xs-4 {
+    margin-left: 33.3333333333%;
+  }
+  .sdx .offset-xs-5 {
+    margin-left: 41.6666666667%;
+  }
+  .sdx .offset-xs-6 {
+    margin-left: 50%;
+  }
+  .sdx .offset-xs-7 {
+    margin-left: 58.3333333333%;
+  }
+  .sdx .offset-xs-8 {
+    margin-left: 66.6666666667%;
+  }
+  .sdx .offset-xs-9 {
+    margin-left: 75%;
+  }
+  .sdx .offset-xs-10 {
+    margin-left: 83.3333333333%;
+  }
+  .sdx .offset-xs-11 {
+    margin-left: 91.6666666667%;
+  }
+}
+@media (min-width: 480px) {
+  .sdx .col,
+.sdx [class*=col-] {
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  .sdx .col-sm {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+  }
+  .sdx .col-sm-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  .sdx .col-sm-1 {
+    flex: 0 0 8.3333333333%;
+    max-width: 8.3333333333%;
+  }
+  .sdx .col-sm-2 {
+    flex: 0 0 16.6666666667%;
+    max-width: 16.6666666667%;
+  }
+  .sdx .col-sm-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .sdx .col-sm-4 {
+    flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
+  }
+  .sdx .col-sm-5 {
+    flex: 0 0 41.6666666667%;
+    max-width: 41.6666666667%;
+  }
+  .sdx .col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .sdx .col-sm-7 {
+    flex: 0 0 58.3333333333%;
+    max-width: 58.3333333333%;
+  }
+  .sdx .col-sm-8 {
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+  }
+  .sdx .col-sm-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  .sdx .col-sm-10 {
+    flex: 0 0 83.3333333333%;
+    max-width: 83.3333333333%;
+  }
+  .sdx .col-sm-11 {
+    flex: 0 0 91.6666666667%;
+    max-width: 91.6666666667%;
+  }
+  .sdx .col-sm-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .sdx .pull-sm-0 {
+    right: auto;
+  }
+  .sdx .pull-sm-1 {
+    right: 8.3333333333%;
+  }
+  .sdx .pull-sm-2 {
+    right: 16.6666666667%;
+  }
+  .sdx .pull-sm-3 {
+    right: 25%;
+  }
+  .sdx .pull-sm-4 {
+    right: 33.3333333333%;
+  }
+  .sdx .pull-sm-5 {
+    right: 41.6666666667%;
+  }
+  .sdx .pull-sm-6 {
+    right: 50%;
+  }
+  .sdx .pull-sm-7 {
+    right: 58.3333333333%;
+  }
+  .sdx .pull-sm-8 {
+    right: 66.6666666667%;
+  }
+  .sdx .pull-sm-9 {
+    right: 75%;
+  }
+  .sdx .pull-sm-10 {
+    right: 83.3333333333%;
+  }
+  .sdx .pull-sm-11 {
+    right: 91.6666666667%;
+  }
+  .sdx .pull-sm-12 {
+    right: 100%;
+  }
+  .sdx .push-sm-0 {
+    left: auto;
+  }
+  .sdx .push-sm-1 {
+    left: 8.3333333333%;
+  }
+  .sdx .push-sm-2 {
+    left: 16.6666666667%;
+  }
+  .sdx .push-sm-3 {
+    left: 25%;
+  }
+  .sdx .push-sm-4 {
+    left: 33.3333333333%;
+  }
+  .sdx .push-sm-5 {
+    left: 41.6666666667%;
+  }
+  .sdx .push-sm-6 {
+    left: 50%;
+  }
+  .sdx .push-sm-7 {
+    left: 58.3333333333%;
+  }
+  .sdx .push-sm-8 {
+    left: 66.6666666667%;
+  }
+  .sdx .push-sm-9 {
+    left: 75%;
+  }
+  .sdx .push-sm-10 {
+    left: 83.3333333333%;
+  }
+  .sdx .push-sm-11 {
+    left: 91.6666666667%;
+  }
+  .sdx .push-sm-12 {
+    left: 100%;
+  }
+  .sdx .offset-sm-1 {
+    margin-left: 8.3333333333%;
+  }
+  .sdx .offset-sm-2 {
+    margin-left: 16.6666666667%;
+  }
+  .sdx .offset-sm-3 {
+    margin-left: 25%;
+  }
+  .sdx .offset-sm-4 {
+    margin-left: 33.3333333333%;
+  }
+  .sdx .offset-sm-5 {
+    margin-left: 41.6666666667%;
+  }
+  .sdx .offset-sm-6 {
+    margin-left: 50%;
+  }
+  .sdx .offset-sm-7 {
+    margin-left: 58.3333333333%;
+  }
+  .sdx .offset-sm-8 {
+    margin-left: 66.6666666667%;
+  }
+  .sdx .offset-sm-9 {
+    margin-left: 75%;
+  }
+  .sdx .offset-sm-10 {
+    margin-left: 83.3333333333%;
+  }
+  .sdx .offset-sm-11 {
+    margin-left: 91.6666666667%;
+  }
+}
+@media (min-width: 768px) {
+  .sdx .col,
+.sdx [class*=col-] {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .sdx .col-md {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+  }
+  .sdx .col-md-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  .sdx .col-md-1 {
+    flex: 0 0 8.3333333333%;
+    max-width: 8.3333333333%;
+  }
+  .sdx .col-md-2 {
+    flex: 0 0 16.6666666667%;
+    max-width: 16.6666666667%;
+  }
+  .sdx .col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .sdx .col-md-4 {
+    flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
+  }
+  .sdx .col-md-5 {
+    flex: 0 0 41.6666666667%;
+    max-width: 41.6666666667%;
+  }
+  .sdx .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .sdx .col-md-7 {
+    flex: 0 0 58.3333333333%;
+    max-width: 58.3333333333%;
+  }
+  .sdx .col-md-8 {
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+  }
+  .sdx .col-md-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  .sdx .col-md-10 {
+    flex: 0 0 83.3333333333%;
+    max-width: 83.3333333333%;
+  }
+  .sdx .col-md-11 {
+    flex: 0 0 91.6666666667%;
+    max-width: 91.6666666667%;
+  }
+  .sdx .col-md-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .sdx .pull-md-0 {
+    right: auto;
+  }
+  .sdx .pull-md-1 {
+    right: 8.3333333333%;
+  }
+  .sdx .pull-md-2 {
+    right: 16.6666666667%;
+  }
+  .sdx .pull-md-3 {
+    right: 25%;
+  }
+  .sdx .pull-md-4 {
+    right: 33.3333333333%;
+  }
+  .sdx .pull-md-5 {
+    right: 41.6666666667%;
+  }
+  .sdx .pull-md-6 {
+    right: 50%;
+  }
+  .sdx .pull-md-7 {
+    right: 58.3333333333%;
+  }
+  .sdx .pull-md-8 {
+    right: 66.6666666667%;
+  }
+  .sdx .pull-md-9 {
+    right: 75%;
+  }
+  .sdx .pull-md-10 {
+    right: 83.3333333333%;
+  }
+  .sdx .pull-md-11 {
+    right: 91.6666666667%;
+  }
+  .sdx .pull-md-12 {
+    right: 100%;
+  }
+  .sdx .push-md-0 {
+    left: auto;
+  }
+  .sdx .push-md-1 {
+    left: 8.3333333333%;
+  }
+  .sdx .push-md-2 {
+    left: 16.6666666667%;
+  }
+  .sdx .push-md-3 {
+    left: 25%;
+  }
+  .sdx .push-md-4 {
+    left: 33.3333333333%;
+  }
+  .sdx .push-md-5 {
+    left: 41.6666666667%;
+  }
+  .sdx .push-md-6 {
+    left: 50%;
+  }
+  .sdx .push-md-7 {
+    left: 58.3333333333%;
+  }
+  .sdx .push-md-8 {
+    left: 66.6666666667%;
+  }
+  .sdx .push-md-9 {
+    left: 75%;
+  }
+  .sdx .push-md-10 {
+    left: 83.3333333333%;
+  }
+  .sdx .push-md-11 {
+    left: 91.6666666667%;
+  }
+  .sdx .push-md-12 {
+    left: 100%;
+  }
+  .sdx .offset-md-1 {
+    margin-left: 8.3333333333%;
+  }
+  .sdx .offset-md-2 {
+    margin-left: 16.6666666667%;
+  }
+  .sdx .offset-md-3 {
+    margin-left: 25%;
+  }
+  .sdx .offset-md-4 {
+    margin-left: 33.3333333333%;
+  }
+  .sdx .offset-md-5 {
+    margin-left: 41.6666666667%;
+  }
+  .sdx .offset-md-6 {
+    margin-left: 50%;
+  }
+  .sdx .offset-md-7 {
+    margin-left: 58.3333333333%;
+  }
+  .sdx .offset-md-8 {
+    margin-left: 66.6666666667%;
+  }
+  .sdx .offset-md-9 {
+    margin-left: 75%;
+  }
+  .sdx .offset-md-10 {
+    margin-left: 83.3333333333%;
+  }
+  .sdx .offset-md-11 {
+    margin-left: 91.6666666667%;
+  }
+}
+@media (min-width: 1024px) {
+  .sdx .col,
+.sdx [class*=col-] {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .sdx .col-lg {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+  }
+  .sdx .col-lg-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  .sdx .col-lg-1 {
+    flex: 0 0 8.3333333333%;
+    max-width: 8.3333333333%;
+  }
+  .sdx .col-lg-2 {
+    flex: 0 0 16.6666666667%;
+    max-width: 16.6666666667%;
+  }
+  .sdx .col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .sdx .col-lg-4 {
+    flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
+  }
+  .sdx .col-lg-5 {
+    flex: 0 0 41.6666666667%;
+    max-width: 41.6666666667%;
+  }
+  .sdx .col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .sdx .col-lg-7 {
+    flex: 0 0 58.3333333333%;
+    max-width: 58.3333333333%;
+  }
+  .sdx .col-lg-8 {
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+  }
+  .sdx .col-lg-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  .sdx .col-lg-10 {
+    flex: 0 0 83.3333333333%;
+    max-width: 83.3333333333%;
+  }
+  .sdx .col-lg-11 {
+    flex: 0 0 91.6666666667%;
+    max-width: 91.6666666667%;
+  }
+  .sdx .col-lg-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .sdx .pull-lg-0 {
+    right: auto;
+  }
+  .sdx .pull-lg-1 {
+    right: 8.3333333333%;
+  }
+  .sdx .pull-lg-2 {
+    right: 16.6666666667%;
+  }
+  .sdx .pull-lg-3 {
+    right: 25%;
+  }
+  .sdx .pull-lg-4 {
+    right: 33.3333333333%;
+  }
+  .sdx .pull-lg-5 {
+    right: 41.6666666667%;
+  }
+  .sdx .pull-lg-6 {
+    right: 50%;
+  }
+  .sdx .pull-lg-7 {
+    right: 58.3333333333%;
+  }
+  .sdx .pull-lg-8 {
+    right: 66.6666666667%;
+  }
+  .sdx .pull-lg-9 {
+    right: 75%;
+  }
+  .sdx .pull-lg-10 {
+    right: 83.3333333333%;
+  }
+  .sdx .pull-lg-11 {
+    right: 91.6666666667%;
+  }
+  .sdx .pull-lg-12 {
+    right: 100%;
+  }
+  .sdx .push-lg-0 {
+    left: auto;
+  }
+  .sdx .push-lg-1 {
+    left: 8.3333333333%;
+  }
+  .sdx .push-lg-2 {
+    left: 16.6666666667%;
+  }
+  .sdx .push-lg-3 {
+    left: 25%;
+  }
+  .sdx .push-lg-4 {
+    left: 33.3333333333%;
+  }
+  .sdx .push-lg-5 {
+    left: 41.6666666667%;
+  }
+  .sdx .push-lg-6 {
+    left: 50%;
+  }
+  .sdx .push-lg-7 {
+    left: 58.3333333333%;
+  }
+  .sdx .push-lg-8 {
+    left: 66.6666666667%;
+  }
+  .sdx .push-lg-9 {
+    left: 75%;
+  }
+  .sdx .push-lg-10 {
+    left: 83.3333333333%;
+  }
+  .sdx .push-lg-11 {
+    left: 91.6666666667%;
+  }
+  .sdx .push-lg-12 {
+    left: 100%;
+  }
+  .sdx .offset-lg-1 {
+    margin-left: 8.3333333333%;
+  }
+  .sdx .offset-lg-2 {
+    margin-left: 16.6666666667%;
+  }
+  .sdx .offset-lg-3 {
+    margin-left: 25%;
+  }
+  .sdx .offset-lg-4 {
+    margin-left: 33.3333333333%;
+  }
+  .sdx .offset-lg-5 {
+    margin-left: 41.6666666667%;
+  }
+  .sdx .offset-lg-6 {
+    margin-left: 50%;
+  }
+  .sdx .offset-lg-7 {
+    margin-left: 58.3333333333%;
+  }
+  .sdx .offset-lg-8 {
+    margin-left: 66.6666666667%;
+  }
+  .sdx .offset-lg-9 {
+    margin-left: 75%;
+  }
+  .sdx .offset-lg-10 {
+    margin-left: 83.3333333333%;
+  }
+  .sdx .offset-lg-11 {
+    margin-left: 91.6666666667%;
+  }
+}
+@media (min-width: 1280px) {
+  .sdx .col,
+.sdx [class*=col-] {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .sdx .col-xl {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+  }
+  .sdx .col-xl-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  .sdx .col-xl-1 {
+    flex: 0 0 8.3333333333%;
+    max-width: 8.3333333333%;
+  }
+  .sdx .col-xl-2 {
+    flex: 0 0 16.6666666667%;
+    max-width: 16.6666666667%;
+  }
+  .sdx .col-xl-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .sdx .col-xl-4 {
+    flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
+  }
+  .sdx .col-xl-5 {
+    flex: 0 0 41.6666666667%;
+    max-width: 41.6666666667%;
+  }
+  .sdx .col-xl-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .sdx .col-xl-7 {
+    flex: 0 0 58.3333333333%;
+    max-width: 58.3333333333%;
+  }
+  .sdx .col-xl-8 {
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+  }
+  .sdx .col-xl-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  .sdx .col-xl-10 {
+    flex: 0 0 83.3333333333%;
+    max-width: 83.3333333333%;
+  }
+  .sdx .col-xl-11 {
+    flex: 0 0 91.6666666667%;
+    max-width: 91.6666666667%;
+  }
+  .sdx .col-xl-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .sdx .pull-xl-0 {
+    right: auto;
+  }
+  .sdx .pull-xl-1 {
+    right: 8.3333333333%;
+  }
+  .sdx .pull-xl-2 {
+    right: 16.6666666667%;
+  }
+  .sdx .pull-xl-3 {
+    right: 25%;
+  }
+  .sdx .pull-xl-4 {
+    right: 33.3333333333%;
+  }
+  .sdx .pull-xl-5 {
+    right: 41.6666666667%;
+  }
+  .sdx .pull-xl-6 {
+    right: 50%;
+  }
+  .sdx .pull-xl-7 {
+    right: 58.3333333333%;
+  }
+  .sdx .pull-xl-8 {
+    right: 66.6666666667%;
+  }
+  .sdx .pull-xl-9 {
+    right: 75%;
+  }
+  .sdx .pull-xl-10 {
+    right: 83.3333333333%;
+  }
+  .sdx .pull-xl-11 {
+    right: 91.6666666667%;
+  }
+  .sdx .pull-xl-12 {
+    right: 100%;
+  }
+  .sdx .push-xl-0 {
+    left: auto;
+  }
+  .sdx .push-xl-1 {
+    left: 8.3333333333%;
+  }
+  .sdx .push-xl-2 {
+    left: 16.6666666667%;
+  }
+  .sdx .push-xl-3 {
+    left: 25%;
+  }
+  .sdx .push-xl-4 {
+    left: 33.3333333333%;
+  }
+  .sdx .push-xl-5 {
+    left: 41.6666666667%;
+  }
+  .sdx .push-xl-6 {
+    left: 50%;
+  }
+  .sdx .push-xl-7 {
+    left: 58.3333333333%;
+  }
+  .sdx .push-xl-8 {
+    left: 66.6666666667%;
+  }
+  .sdx .push-xl-9 {
+    left: 75%;
+  }
+  .sdx .push-xl-10 {
+    left: 83.3333333333%;
+  }
+  .sdx .push-xl-11 {
+    left: 91.6666666667%;
+  }
+  .sdx .push-xl-12 {
+    left: 100%;
+  }
+  .sdx .offset-xl-1 {
+    margin-left: 8.3333333333%;
+  }
+  .sdx .offset-xl-2 {
+    margin-left: 16.6666666667%;
+  }
+  .sdx .offset-xl-3 {
+    margin-left: 25%;
+  }
+  .sdx .offset-xl-4 {
+    margin-left: 33.3333333333%;
+  }
+  .sdx .offset-xl-5 {
+    margin-left: 41.6666666667%;
+  }
+  .sdx .offset-xl-6 {
+    margin-left: 50%;
+  }
+  .sdx .offset-xl-7 {
+    margin-left: 58.3333333333%;
+  }
+  .sdx .offset-xl-8 {
+    margin-left: 66.6666666667%;
+  }
+  .sdx .offset-xl-9 {
+    margin-left: 75%;
+  }
+  .sdx .offset-xl-10 {
+    margin-left: 83.3333333333%;
+  }
+  .sdx .offset-xl-11 {
+    margin-left: 91.6666666667%;
+  }
+}
+@media (min-width: 1440px) {
+  .sdx .col,
+.sdx [class*=col-] {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .sdx .col-ul {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+  }
+  .sdx .col-ul-auto {
+    flex: 0 0 auto;
+    width: auto;
+  }
+  .sdx .col-ul-1 {
+    flex: 0 0 8.3333333333%;
+    max-width: 8.3333333333%;
+  }
+  .sdx .col-ul-2 {
+    flex: 0 0 16.6666666667%;
+    max-width: 16.6666666667%;
+  }
+  .sdx .col-ul-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .sdx .col-ul-4 {
+    flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
+  }
+  .sdx .col-ul-5 {
+    flex: 0 0 41.6666666667%;
+    max-width: 41.6666666667%;
+  }
+  .sdx .col-ul-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .sdx .col-ul-7 {
+    flex: 0 0 58.3333333333%;
+    max-width: 58.3333333333%;
+  }
+  .sdx .col-ul-8 {
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+  }
+  .sdx .col-ul-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  .sdx .col-ul-10 {
+    flex: 0 0 83.3333333333%;
+    max-width: 83.3333333333%;
+  }
+  .sdx .col-ul-11 {
+    flex: 0 0 91.6666666667%;
+    max-width: 91.6666666667%;
+  }
+  .sdx .col-ul-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .sdx .pull-ul-0 {
+    right: auto;
+  }
+  .sdx .pull-ul-1 {
+    right: 8.3333333333%;
+  }
+  .sdx .pull-ul-2 {
+    right: 16.6666666667%;
+  }
+  .sdx .pull-ul-3 {
+    right: 25%;
+  }
+  .sdx .pull-ul-4 {
+    right: 33.3333333333%;
+  }
+  .sdx .pull-ul-5 {
+    right: 41.6666666667%;
+  }
+  .sdx .pull-ul-6 {
+    right: 50%;
+  }
+  .sdx .pull-ul-7 {
+    right: 58.3333333333%;
+  }
+  .sdx .pull-ul-8 {
+    right: 66.6666666667%;
+  }
+  .sdx .pull-ul-9 {
+    right: 75%;
+  }
+  .sdx .pull-ul-10 {
+    right: 83.3333333333%;
+  }
+  .sdx .pull-ul-11 {
+    right: 91.6666666667%;
+  }
+  .sdx .pull-ul-12 {
+    right: 100%;
+  }
+  .sdx .push-ul-0 {
+    left: auto;
+  }
+  .sdx .push-ul-1 {
+    left: 8.3333333333%;
+  }
+  .sdx .push-ul-2 {
+    left: 16.6666666667%;
+  }
+  .sdx .push-ul-3 {
+    left: 25%;
+  }
+  .sdx .push-ul-4 {
+    left: 33.3333333333%;
+  }
+  .sdx .push-ul-5 {
+    left: 41.6666666667%;
+  }
+  .sdx .push-ul-6 {
+    left: 50%;
+  }
+  .sdx .push-ul-7 {
+    left: 58.3333333333%;
+  }
+  .sdx .push-ul-8 {
+    left: 66.6666666667%;
+  }
+  .sdx .push-ul-9 {
+    left: 75%;
+  }
+  .sdx .push-ul-10 {
+    left: 83.3333333333%;
+  }
+  .sdx .push-ul-11 {
+    left: 91.6666666667%;
+  }
+  .sdx .push-ul-12 {
+    left: 100%;
+  }
+  .sdx .offset-ul-1 {
+    margin-left: 8.3333333333%;
+  }
+  .sdx .offset-ul-2 {
+    margin-left: 16.6666666667%;
+  }
+  .sdx .offset-ul-3 {
+    margin-left: 25%;
+  }
+  .sdx .offset-ul-4 {
+    margin-left: 33.3333333333%;
+  }
+  .sdx .offset-ul-5 {
+    margin-left: 41.6666666667%;
+  }
+  .sdx .offset-ul-6 {
+    margin-left: 50%;
+  }
+  .sdx .offset-ul-7 {
+    margin-left: 58.3333333333%;
+  }
+  .sdx .offset-ul-8 {
+    margin-left: 66.6666666667%;
+  }
+  .sdx .offset-ul-9 {
+    margin-left: 75%;
+  }
+  .sdx .offset-ul-10 {
+    margin-left: 83.3333333333%;
+  }
+  .sdx .offset-ul-11 {
+    margin-left: 91.6666666667%;
+  }
+}
+.sdx .bg {
+  color: #333;
+}
+.sdx .bg--light .primary-navy, .sdx .bg--gray .primary-navy {
+  color: #015;
+}
+.sdx .bg--light .primary-gray, .sdx .bg--gray .primary-gray {
+  color: #333;
+}
+.sdx .bg--light .secondary, .sdx .bg--gray .secondary {
+  color: #666;
+}
+.sdx .bg--light {
+  background-color: #fff;
+  color: #333;
+}
+.sdx .bg--gray {
+  background-color: #dde3e7;
+  color: #333;
+}
+.sdx .bg--dark {
+  background-color: #015;
+  color: #fff;
+}
+.sdx hr,
+.sdx .divider {
+  margin: 32px 0;
+  border: 0;
+  border-bottom: 1px solid #d6d6d6;
+}
+.sdx hr--light-gray,
+.sdx .divider--light-gray {
+  border-bottom-color: #d6d6d6;
+}
+.sdx hr--mid-gray,
+.sdx .divider--mid-gray {
+  border-bottom-color: #adadad;
+}
+.sdx hr--dark-gray,
+.sdx .divider--dark-gray {
+  border-bottom-color: #5c5c5c;
+}
+.sdx hr--white,
+.sdx .divider--white {
+  border-bottom-color: rgba(255, 255, 255, 0.6);
+}
+.sdx .bg--dark hr,
+.sdx .bg--dark .divider {
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+.sdx a,
+.sdx a.link,
+.sdx button.link {
+  position: relative;
+  transition: border-bottom 200ms cubic-bezier(0.4, 0, 0.6, 1), color 200ms cubic-bezier(0.4, 0, 0.6, 1);
+  outline: none;
+  border-bottom: 1px solid #086adb;
+  cursor: pointer;
+  text-decoration: none;
+  color: #086adb;
+}
+.sdx a:hover, .sdx a:focus,
+.sdx a.link:hover,
+.sdx a.link:focus,
+.sdx button.link:hover,
+.sdx button.link:focus {
+  border-bottom: 1px solid #0048CF;
+  color: #0048CF;
+}
+.sdx a:focus,
+.sdx a.link:focus,
+.sdx button.link:focus {
+  outline: none;
+}
+.sdx a + a, .sdx a + a.link, .sdx a + button.link,
+.sdx a.link + a,
+.sdx a.link + a.link,
+.sdx a.link + button.link,
+.sdx button.link + a,
+.sdx button.link + a.link,
+.sdx button.link + button.link {
+  margin-left: 24px;
+}
+.sdx a--white, .sdx a--white:hover, .sdx a--white:focus,
+.sdx a.link--white,
+.sdx a.link--white:hover,
+.sdx a.link--white:focus,
+.sdx button.link--white,
+.sdx button.link--white:hover,
+.sdx button.link--white:focus {
+  color: #fff;
+  border-color: #fff;
+}
+.sdx a--white:focus,
+.sdx a.link--white:focus,
+.sdx button.link--white:focus {
+  box-shadow: 0 0 2px #fff;
+  border: 1px solid;
+}
+.sdx p a + a, .sdx p a + a.link, .sdx p a + button.link,
+.sdx p a.link + a,
+.sdx p a.link + a.link,
+.sdx p a.link + button.link,
+.sdx p button.link + a,
+.sdx p button.link + a.link,
+.sdx p button.link + button.link {
+  margin-left: 0;
+}
+.sdx .link--dark,
+.sdx .bg--dark a,
+.sdx .bg--dark a.link,
+.sdx .bg--dark button.link {
+  border-bottom: 1px solid #fff;
+  color: #fff;
+}
+.sdx .link--dark:hover,
+.sdx .bg--dark a:hover,
+.sdx .bg--dark button.link:hover {
+  border-bottom: 1px solid #fff;
+  color: #fff;
+}
+.sdx .link--dark:focus,
+.sdx .bg--dark a:focus,
+.sdx .bg--dark button.link:focus {
+  box-shadow: 0 0 1px #fff;
+}
+.sdx ol.list li::after, .sdx ul.list li {
+  margin-bottom: 13px;
+}
+@media (min-width: 480px) {
+  .sdx ol.list li::after, .sdx ul.list li {
+    margin-bottom: 12px;
+  }
+}
+.sdx ol.list.single-line li::after, .sdx ul.list li.single-line, .sdx ul.list.single-line li {
+  margin-bottom: 7px;
+}
+@media (min-width: 480px) {
+  .sdx ol.list.single-line li::after, .sdx ul.list li.single-line, .sdx ul.list.single-line li {
+    margin-bottom: 6px;
+  }
+}
+.sdx ul,
+.sdx menu,
+.sdx dir {
+  display: block;
+  padding: 0;
+}
+.sdx ul,
+.sdx ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sdx ul.list,
+.sdx ol.list {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.sdx ul.list ul.list,
+.sdx ul.list ol.list,
+.sdx ol.list ul.list,
+.sdx ol.list ol.list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 18px;
+}
+.sdx ul.list li {
+  margin-left: 18px;
+}
+.sdx ul.list li::before {
+  color: #086adb;
+  float: left;
+  margin-left: -18px;
+  font-size: 33px;
+}
+.sdx ul.list li:not([class*=icon-])::before {
+  content: "•";
+}
+.sdx ul.list li[class*=icon-]::before {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+  text-transform: none;
+  text-decoration: none;
+  text-rendering: auto;
+  line-height: 1;
+  font-family: "sdx-icons";
+  font-size: inherit;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-variant-ligatures: normal;
+  font-variant-caps: normal;
+  font-variant-numeric: normal;
+  font-stretch: normal;
+  position: relative;
+  top: 3px;
+  right: 2px;
+}
+.sdx ul.list li[class*=icon-] > a {
+  border-bottom: none;
+}
+.sdx ol.list {
+  counter-reset: mycounter;
+  display: table;
+}
+.sdx ol.list li {
+  list-style: none;
+  counter-increment: mycounter;
+  display: table-row;
+}
+.sdx ol.list li::before {
+  content: counter(mycounter) ".";
+  font-weight: 600;
+  display: table-cell;
+  text-align: right;
+  padding-right: 8px;
+  color: #086adb;
+}
+.sdx ol.list li::after {
+  content: "";
+  display: block;
+}
+.sdx dt.list {
+  font-weight: 300;
+}
+.sdx .clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+@media (min-width: 0) {
+  .sdx .margin-xs-0 {
+    margin: 0px !important;
+  }
+  .sdx .margin-xs-1 {
+    margin: 8px !important;
+  }
+  .sdx .margin-xs-2 {
+    margin: 16px !important;
+  }
+  .sdx .margin-xs-3 {
+    margin: 24px !important;
+  }
+  .sdx .margin-xs-4 {
+    margin: 32px !important;
+  }
+  .sdx .margin-xs-top-0 {
+    margin-top: 0px !important;
+  }
+  .sdx .margin-xs-top-1 {
+    margin-top: 8px !important;
+  }
+  .sdx .margin-xs-top-2 {
+    margin-top: 16px !important;
+  }
+  .sdx .margin-xs-top-3 {
+    margin-top: 24px !important;
+  }
+  .sdx .margin-xs-top-4 {
+    margin-top: 32px !important;
+  }
+  .sdx .margin-xs-bottom-0 {
+    margin-bottom: 0px !important;
+  }
+  .sdx .margin-xs-bottom-1 {
+    margin-bottom: 8px !important;
+  }
+  .sdx .margin-xs-bottom-2 {
+    margin-bottom: 16px !important;
+  }
+  .sdx .margin-xs-bottom-3 {
+    margin-bottom: 24px !important;
+  }
+  .sdx .margin-xs-bottom-4 {
+    margin-bottom: 32px !important;
+  }
+  .sdx .margin-xs-left-0 {
+    margin-left: 0px !important;
+  }
+  .sdx .margin-xs-left-1 {
+    margin-left: 8px !important;
+  }
+  .sdx .margin-xs-left-2 {
+    margin-left: 16px !important;
+  }
+  .sdx .margin-xs-left-3 {
+    margin-left: 24px !important;
+  }
+  .sdx .margin-xs-left-4 {
+    margin-left: 32px !important;
+  }
+  .sdx .margin-xs-right-0 {
+    margin-right: 0px !important;
+  }
+  .sdx .margin-xs-right-1 {
+    margin-right: 8px !important;
+  }
+  .sdx .margin-xs-right-2 {
+    margin-right: 16px !important;
+  }
+  .sdx .margin-xs-right-3 {
+    margin-right: 24px !important;
+  }
+  .sdx .margin-xs-right-4 {
+    margin-right: 32px !important;
+  }
+  .sdx .margin-xs-h-0 {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+  .sdx .margin-xs-h-1 {
+    margin-left: 8px !important;
+    margin-right: 8px !important;
+  }
+  .sdx .margin-xs-h-2 {
+    margin-left: 16px !important;
+    margin-right: 16px !important;
+  }
+  .sdx .margin-xs-h-3 {
+    margin-left: 24px !important;
+    margin-right: 24px !important;
+  }
+  .sdx .margin-xs-h-4 {
+    margin-left: 32px !important;
+    margin-right: 32px !important;
+  }
+  .sdx .margin-xs-v-0 {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+  }
+  .sdx .margin-xs-v-1 {
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+  }
+  .sdx .margin-xs-v-2 {
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+  }
+  .sdx .margin-xs-v-3 {
+    margin-top: 24px !important;
+    margin-bottom: 24px !important;
+  }
+  .sdx .margin-xs-v-4 {
+    margin-top: 32px !important;
+    margin-bottom: 32px !important;
+  }
+}
+@media (min-width: 480px) {
+  .sdx .margin-sm-0 {
+    margin: 0px !important;
+  }
+  .sdx .margin-sm-1 {
+    margin: 8px !important;
+  }
+  .sdx .margin-sm-2 {
+    margin: 16px !important;
+  }
+  .sdx .margin-sm-3 {
+    margin: 24px !important;
+  }
+  .sdx .margin-sm-4 {
+    margin: 32px !important;
+  }
+  .sdx .margin-sm-top-0 {
+    margin-top: 0px !important;
+  }
+  .sdx .margin-sm-top-1 {
+    margin-top: 8px !important;
+  }
+  .sdx .margin-sm-top-2 {
+    margin-top: 16px !important;
+  }
+  .sdx .margin-sm-top-3 {
+    margin-top: 24px !important;
+  }
+  .sdx .margin-sm-top-4 {
+    margin-top: 32px !important;
+  }
+  .sdx .margin-sm-bottom-0 {
+    margin-bottom: 0px !important;
+  }
+  .sdx .margin-sm-bottom-1 {
+    margin-bottom: 8px !important;
+  }
+  .sdx .margin-sm-bottom-2 {
+    margin-bottom: 16px !important;
+  }
+  .sdx .margin-sm-bottom-3 {
+    margin-bottom: 24px !important;
+  }
+  .sdx .margin-sm-bottom-4 {
+    margin-bottom: 32px !important;
+  }
+  .sdx .margin-sm-left-0 {
+    margin-left: 0px !important;
+  }
+  .sdx .margin-sm-left-1 {
+    margin-left: 8px !important;
+  }
+  .sdx .margin-sm-left-2 {
+    margin-left: 16px !important;
+  }
+  .sdx .margin-sm-left-3 {
+    margin-left: 24px !important;
+  }
+  .sdx .margin-sm-left-4 {
+    margin-left: 32px !important;
+  }
+  .sdx .margin-sm-right-0 {
+    margin-right: 0px !important;
+  }
+  .sdx .margin-sm-right-1 {
+    margin-right: 8px !important;
+  }
+  .sdx .margin-sm-right-2 {
+    margin-right: 16px !important;
+  }
+  .sdx .margin-sm-right-3 {
+    margin-right: 24px !important;
+  }
+  .sdx .margin-sm-right-4 {
+    margin-right: 32px !important;
+  }
+  .sdx .margin-sm-h-0 {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+  .sdx .margin-sm-h-1 {
+    margin-left: 8px !important;
+    margin-right: 8px !important;
+  }
+  .sdx .margin-sm-h-2 {
+    margin-left: 16px !important;
+    margin-right: 16px !important;
+  }
+  .sdx .margin-sm-h-3 {
+    margin-left: 24px !important;
+    margin-right: 24px !important;
+  }
+  .sdx .margin-sm-h-4 {
+    margin-left: 32px !important;
+    margin-right: 32px !important;
+  }
+  .sdx .margin-sm-v-0 {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+  }
+  .sdx .margin-sm-v-1 {
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+  }
+  .sdx .margin-sm-v-2 {
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+  }
+  .sdx .margin-sm-v-3 {
+    margin-top: 24px !important;
+    margin-bottom: 24px !important;
+  }
+  .sdx .margin-sm-v-4 {
+    margin-top: 32px !important;
+    margin-bottom: 32px !important;
+  }
+}
+@media (min-width: 768px) {
+  .sdx .margin-md-0 {
+    margin: 0px !important;
+  }
+  .sdx .margin-md-1 {
+    margin: 8px !important;
+  }
+  .sdx .margin-md-2 {
+    margin: 16px !important;
+  }
+  .sdx .margin-md-3 {
+    margin: 24px !important;
+  }
+  .sdx .margin-md-4 {
+    margin: 32px !important;
+  }
+  .sdx .margin-md-top-0 {
+    margin-top: 0px !important;
+  }
+  .sdx .margin-md-top-1 {
+    margin-top: 8px !important;
+  }
+  .sdx .margin-md-top-2 {
+    margin-top: 16px !important;
+  }
+  .sdx .margin-md-top-3 {
+    margin-top: 24px !important;
+  }
+  .sdx .margin-md-top-4 {
+    margin-top: 32px !important;
+  }
+  .sdx .margin-md-bottom-0 {
+    margin-bottom: 0px !important;
+  }
+  .sdx .margin-md-bottom-1 {
+    margin-bottom: 8px !important;
+  }
+  .sdx .margin-md-bottom-2 {
+    margin-bottom: 16px !important;
+  }
+  .sdx .margin-md-bottom-3 {
+    margin-bottom: 24px !important;
+  }
+  .sdx .margin-md-bottom-4 {
+    margin-bottom: 32px !important;
+  }
+  .sdx .margin-md-left-0 {
+    margin-left: 0px !important;
+  }
+  .sdx .margin-md-left-1 {
+    margin-left: 8px !important;
+  }
+  .sdx .margin-md-left-2 {
+    margin-left: 16px !important;
+  }
+  .sdx .margin-md-left-3 {
+    margin-left: 24px !important;
+  }
+  .sdx .margin-md-left-4 {
+    margin-left: 32px !important;
+  }
+  .sdx .margin-md-right-0 {
+    margin-right: 0px !important;
+  }
+  .sdx .margin-md-right-1 {
+    margin-right: 8px !important;
+  }
+  .sdx .margin-md-right-2 {
+    margin-right: 16px !important;
+  }
+  .sdx .margin-md-right-3 {
+    margin-right: 24px !important;
+  }
+  .sdx .margin-md-right-4 {
+    margin-right: 32px !important;
+  }
+  .sdx .margin-md-h-0 {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+  .sdx .margin-md-h-1 {
+    margin-left: 8px !important;
+    margin-right: 8px !important;
+  }
+  .sdx .margin-md-h-2 {
+    margin-left: 16px !important;
+    margin-right: 16px !important;
+  }
+  .sdx .margin-md-h-3 {
+    margin-left: 24px !important;
+    margin-right: 24px !important;
+  }
+  .sdx .margin-md-h-4 {
+    margin-left: 32px !important;
+    margin-right: 32px !important;
+  }
+  .sdx .margin-md-v-0 {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+  }
+  .sdx .margin-md-v-1 {
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+  }
+  .sdx .margin-md-v-2 {
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+  }
+  .sdx .margin-md-v-3 {
+    margin-top: 24px !important;
+    margin-bottom: 24px !important;
+  }
+  .sdx .margin-md-v-4 {
+    margin-top: 32px !important;
+    margin-bottom: 32px !important;
+  }
+}
+@media (min-width: 1024px) {
+  .sdx .margin-lg-0 {
+    margin: 0px !important;
+  }
+  .sdx .margin-lg-1 {
+    margin: 8px !important;
+  }
+  .sdx .margin-lg-2 {
+    margin: 16px !important;
+  }
+  .sdx .margin-lg-3 {
+    margin: 24px !important;
+  }
+  .sdx .margin-lg-4 {
+    margin: 32px !important;
+  }
+  .sdx .margin-lg-top-0 {
+    margin-top: 0px !important;
+  }
+  .sdx .margin-lg-top-1 {
+    margin-top: 8px !important;
+  }
+  .sdx .margin-lg-top-2 {
+    margin-top: 16px !important;
+  }
+  .sdx .margin-lg-top-3 {
+    margin-top: 24px !important;
+  }
+  .sdx .margin-lg-top-4 {
+    margin-top: 32px !important;
+  }
+  .sdx .margin-lg-bottom-0 {
+    margin-bottom: 0px !important;
+  }
+  .sdx .margin-lg-bottom-1 {
+    margin-bottom: 8px !important;
+  }
+  .sdx .margin-lg-bottom-2 {
+    margin-bottom: 16px !important;
+  }
+  .sdx .margin-lg-bottom-3 {
+    margin-bottom: 24px !important;
+  }
+  .sdx .margin-lg-bottom-4 {
+    margin-bottom: 32px !important;
+  }
+  .sdx .margin-lg-left-0 {
+    margin-left: 0px !important;
+  }
+  .sdx .margin-lg-left-1 {
+    margin-left: 8px !important;
+  }
+  .sdx .margin-lg-left-2 {
+    margin-left: 16px !important;
+  }
+  .sdx .margin-lg-left-3 {
+    margin-left: 24px !important;
+  }
+  .sdx .margin-lg-left-4 {
+    margin-left: 32px !important;
+  }
+  .sdx .margin-lg-right-0 {
+    margin-right: 0px !important;
+  }
+  .sdx .margin-lg-right-1 {
+    margin-right: 8px !important;
+  }
+  .sdx .margin-lg-right-2 {
+    margin-right: 16px !important;
+  }
+  .sdx .margin-lg-right-3 {
+    margin-right: 24px !important;
+  }
+  .sdx .margin-lg-right-4 {
+    margin-right: 32px !important;
+  }
+  .sdx .margin-lg-h-0 {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+  .sdx .margin-lg-h-1 {
+    margin-left: 8px !important;
+    margin-right: 8px !important;
+  }
+  .sdx .margin-lg-h-2 {
+    margin-left: 16px !important;
+    margin-right: 16px !important;
+  }
+  .sdx .margin-lg-h-3 {
+    margin-left: 24px !important;
+    margin-right: 24px !important;
+  }
+  .sdx .margin-lg-h-4 {
+    margin-left: 32px !important;
+    margin-right: 32px !important;
+  }
+  .sdx .margin-lg-v-0 {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+  }
+  .sdx .margin-lg-v-1 {
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+  }
+  .sdx .margin-lg-v-2 {
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+  }
+  .sdx .margin-lg-v-3 {
+    margin-top: 24px !important;
+    margin-bottom: 24px !important;
+  }
+  .sdx .margin-lg-v-4 {
+    margin-top: 32px !important;
+    margin-bottom: 32px !important;
+  }
+}
+@media (min-width: 1280px) {
+  .sdx .margin-xl-0 {
+    margin: 0px !important;
+  }
+  .sdx .margin-xl-1 {
+    margin: 8px !important;
+  }
+  .sdx .margin-xl-2 {
+    margin: 16px !important;
+  }
+  .sdx .margin-xl-3 {
+    margin: 24px !important;
+  }
+  .sdx .margin-xl-4 {
+    margin: 32px !important;
+  }
+  .sdx .margin-xl-top-0 {
+    margin-top: 0px !important;
+  }
+  .sdx .margin-xl-top-1 {
+    margin-top: 8px !important;
+  }
+  .sdx .margin-xl-top-2 {
+    margin-top: 16px !important;
+  }
+  .sdx .margin-xl-top-3 {
+    margin-top: 24px !important;
+  }
+  .sdx .margin-xl-top-4 {
+    margin-top: 32px !important;
+  }
+  .sdx .margin-xl-bottom-0 {
+    margin-bottom: 0px !important;
+  }
+  .sdx .margin-xl-bottom-1 {
+    margin-bottom: 8px !important;
+  }
+  .sdx .margin-xl-bottom-2 {
+    margin-bottom: 16px !important;
+  }
+  .sdx .margin-xl-bottom-3 {
+    margin-bottom: 24px !important;
+  }
+  .sdx .margin-xl-bottom-4 {
+    margin-bottom: 32px !important;
+  }
+  .sdx .margin-xl-left-0 {
+    margin-left: 0px !important;
+  }
+  .sdx .margin-xl-left-1 {
+    margin-left: 8px !important;
+  }
+  .sdx .margin-xl-left-2 {
+    margin-left: 16px !important;
+  }
+  .sdx .margin-xl-left-3 {
+    margin-left: 24px !important;
+  }
+  .sdx .margin-xl-left-4 {
+    margin-left: 32px !important;
+  }
+  .sdx .margin-xl-right-0 {
+    margin-right: 0px !important;
+  }
+  .sdx .margin-xl-right-1 {
+    margin-right: 8px !important;
+  }
+  .sdx .margin-xl-right-2 {
+    margin-right: 16px !important;
+  }
+  .sdx .margin-xl-right-3 {
+    margin-right: 24px !important;
+  }
+  .sdx .margin-xl-right-4 {
+    margin-right: 32px !important;
+  }
+  .sdx .margin-xl-h-0 {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+  .sdx .margin-xl-h-1 {
+    margin-left: 8px !important;
+    margin-right: 8px !important;
+  }
+  .sdx .margin-xl-h-2 {
+    margin-left: 16px !important;
+    margin-right: 16px !important;
+  }
+  .sdx .margin-xl-h-3 {
+    margin-left: 24px !important;
+    margin-right: 24px !important;
+  }
+  .sdx .margin-xl-h-4 {
+    margin-left: 32px !important;
+    margin-right: 32px !important;
+  }
+  .sdx .margin-xl-v-0 {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+  }
+  .sdx .margin-xl-v-1 {
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+  }
+  .sdx .margin-xl-v-2 {
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+  }
+  .sdx .margin-xl-v-3 {
+    margin-top: 24px !important;
+    margin-bottom: 24px !important;
+  }
+  .sdx .margin-xl-v-4 {
+    margin-top: 32px !important;
+    margin-bottom: 32px !important;
+  }
+}
+@media (min-width: 1440px) {
+  .sdx .margin-ul-0 {
+    margin: 0px !important;
+  }
+  .sdx .margin-ul-1 {
+    margin: 8px !important;
+  }
+  .sdx .margin-ul-2 {
+    margin: 16px !important;
+  }
+  .sdx .margin-ul-3 {
+    margin: 24px !important;
+  }
+  .sdx .margin-ul-4 {
+    margin: 32px !important;
+  }
+  .sdx .margin-ul-top-0 {
+    margin-top: 0px !important;
+  }
+  .sdx .margin-ul-top-1 {
+    margin-top: 8px !important;
+  }
+  .sdx .margin-ul-top-2 {
+    margin-top: 16px !important;
+  }
+  .sdx .margin-ul-top-3 {
+    margin-top: 24px !important;
+  }
+  .sdx .margin-ul-top-4 {
+    margin-top: 32px !important;
+  }
+  .sdx .margin-ul-bottom-0 {
+    margin-bottom: 0px !important;
+  }
+  .sdx .margin-ul-bottom-1 {
+    margin-bottom: 8px !important;
+  }
+  .sdx .margin-ul-bottom-2 {
+    margin-bottom: 16px !important;
+  }
+  .sdx .margin-ul-bottom-3 {
+    margin-bottom: 24px !important;
+  }
+  .sdx .margin-ul-bottom-4 {
+    margin-bottom: 32px !important;
+  }
+  .sdx .margin-ul-left-0 {
+    margin-left: 0px !important;
+  }
+  .sdx .margin-ul-left-1 {
+    margin-left: 8px !important;
+  }
+  .sdx .margin-ul-left-2 {
+    margin-left: 16px !important;
+  }
+  .sdx .margin-ul-left-3 {
+    margin-left: 24px !important;
+  }
+  .sdx .margin-ul-left-4 {
+    margin-left: 32px !important;
+  }
+  .sdx .margin-ul-right-0 {
+    margin-right: 0px !important;
+  }
+  .sdx .margin-ul-right-1 {
+    margin-right: 8px !important;
+  }
+  .sdx .margin-ul-right-2 {
+    margin-right: 16px !important;
+  }
+  .sdx .margin-ul-right-3 {
+    margin-right: 24px !important;
+  }
+  .sdx .margin-ul-right-4 {
+    margin-right: 32px !important;
+  }
+  .sdx .margin-ul-h-0 {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+  .sdx .margin-ul-h-1 {
+    margin-left: 8px !important;
+    margin-right: 8px !important;
+  }
+  .sdx .margin-ul-h-2 {
+    margin-left: 16px !important;
+    margin-right: 16px !important;
+  }
+  .sdx .margin-ul-h-3 {
+    margin-left: 24px !important;
+    margin-right: 24px !important;
+  }
+  .sdx .margin-ul-h-4 {
+    margin-left: 32px !important;
+    margin-right: 32px !important;
+  }
+  .sdx .margin-ul-v-0 {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+  }
+  .sdx .margin-ul-v-1 {
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+  }
+  .sdx .margin-ul-v-2 {
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+  }
+  .sdx .margin-ul-v-3 {
+    margin-top: 24px !important;
+    margin-bottom: 24px !important;
+  }
+  .sdx .margin-ul-v-4 {
+    margin-top: 32px !important;
+    margin-bottom: 32px !important;
+  }
+}
+.sdx .margin-0 {
+  margin: 0px !important;
+}
+.sdx .margin-1 {
+  margin: 8px !important;
+}
+.sdx .margin-2 {
+  margin: 16px !important;
+}
+.sdx .margin-3 {
+  margin: 24px !important;
+}
+.sdx .margin-4 {
+  margin: 32px !important;
+}
+.sdx .margin-top-0 {
+  margin-top: 0px !important;
+}
+.sdx .margin-top-1 {
+  margin-top: 8px !important;
+}
+.sdx .margin-top-2 {
+  margin-top: 16px !important;
+}
+.sdx .margin-top-3 {
+  margin-top: 24px !important;
+}
+.sdx .margin-top-4 {
+  margin-top: 32px !important;
+}
+.sdx .margin-bottom-0 {
+  margin-bottom: 0px !important;
+}
+.sdx .margin-bottom-1 {
+  margin-bottom: 8px !important;
+}
+.sdx .margin-bottom-2 {
+  margin-bottom: 16px !important;
+}
+.sdx .margin-bottom-3 {
+  margin-bottom: 24px !important;
+}
+.sdx .margin-bottom-4 {
+  margin-bottom: 32px !important;
+}
+.sdx .margin-left-0 {
+  margin-left: 0px !important;
+}
+.sdx .margin-left-1 {
+  margin-left: 8px !important;
+}
+.sdx .margin-left-2 {
+  margin-left: 16px !important;
+}
+.sdx .margin-left-3 {
+  margin-left: 24px !important;
+}
+.sdx .margin-left-4 {
+  margin-left: 32px !important;
+}
+.sdx .margin-right-0 {
+  margin-right: 0px !important;
+}
+.sdx .margin-right-1 {
+  margin-right: 8px !important;
+}
+.sdx .margin-right-2 {
+  margin-right: 16px !important;
+}
+.sdx .margin-right-3 {
+  margin-right: 24px !important;
+}
+.sdx .margin-right-4 {
+  margin-right: 32px !important;
+}
+.sdx .margin-h-0 {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+.sdx .margin-h-1 {
+  margin-left: 8px !important;
+  margin-right: 8px !important;
+}
+.sdx .margin-h-2 {
+  margin-left: 16px !important;
+  margin-right: 16px !important;
+}
+.sdx .margin-h-3 {
+  margin-left: 24px !important;
+  margin-right: 24px !important;
+}
+.sdx .margin-h-4 {
+  margin-left: 32px !important;
+  margin-right: 32px !important;
+}
+.sdx .margin-v-0 {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+.sdx .margin-v-1 {
+  margin-top: 8px !important;
+  margin-bottom: 8px !important;
+}
+.sdx .margin-v-2 {
+  margin-top: 16px !important;
+  margin-bottom: 16px !important;
+}
+.sdx .margin-v-3 {
+  margin-top: 24px !important;
+  margin-bottom: 24px !important;
+}
+.sdx .margin-v-4 {
+  margin-top: 32px !important;
+  margin-bottom: 32px !important;
+}
+@media (min-width: 0) {
+  .sdx .padding-xs-0 {
+    padding: 0px !important;
+  }
+  .sdx .padding-xs-1 {
+    padding: 8px !important;
+  }
+  .sdx .padding-xs-2 {
+    padding: 16px !important;
+  }
+  .sdx .padding-xs-3 {
+    padding: 24px !important;
+  }
+  .sdx .padding-xs-4 {
+    padding: 32px !important;
+  }
+  .sdx .padding-xs-top-0 {
+    padding-top: 0px !important;
+  }
+  .sdx .padding-xs-top-1 {
+    padding-top: 8px !important;
+  }
+  .sdx .padding-xs-top-2 {
+    padding-top: 16px !important;
+  }
+  .sdx .padding-xs-top-3 {
+    padding-top: 24px !important;
+  }
+  .sdx .padding-xs-top-4 {
+    padding-top: 32px !important;
+  }
+  .sdx .padding-xs-bottom-0 {
+    padding-bottom: 0px !important;
+  }
+  .sdx .padding-xs-bottom-1 {
+    padding-bottom: 8px !important;
+  }
+  .sdx .padding-xs-bottom-2 {
+    padding-bottom: 16px !important;
+  }
+  .sdx .padding-xs-bottom-3 {
+    padding-bottom: 24px !important;
+  }
+  .sdx .padding-xs-bottom-4 {
+    padding-bottom: 32px !important;
+  }
+  .sdx .padding-xs-left-0 {
+    padding-left: 0px !important;
+  }
+  .sdx .padding-xs-left-1 {
+    padding-left: 8px !important;
+  }
+  .sdx .padding-xs-left-2 {
+    padding-left: 16px !important;
+  }
+  .sdx .padding-xs-left-3 {
+    padding-left: 24px !important;
+  }
+  .sdx .padding-xs-left-4 {
+    padding-left: 32px !important;
+  }
+  .sdx .padding-xs-right-0 {
+    padding-right: 0px !important;
+  }
+  .sdx .padding-xs-right-1 {
+    padding-right: 8px !important;
+  }
+  .sdx .padding-xs-right-2 {
+    padding-right: 16px !important;
+  }
+  .sdx .padding-xs-right-3 {
+    padding-right: 24px !important;
+  }
+  .sdx .padding-xs-right-4 {
+    padding-right: 32px !important;
+  }
+  .sdx .padding-xs-h-0 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .sdx .padding-xs-h-1 {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  .sdx .padding-xs-h-2 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .sdx .padding-xs-h-3 {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  .sdx .padding-xs-h-4 {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+  .sdx .padding-xs-v-0 {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+  .sdx .padding-xs-v-1 {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+  .sdx .padding-xs-v-2 {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+  .sdx .padding-xs-v-3 {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+  .sdx .padding-xs-v-4 {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+}
+@media (min-width: 480px) {
+  .sdx .padding-sm-0 {
+    padding: 0px !important;
+  }
+  .sdx .padding-sm-1 {
+    padding: 8px !important;
+  }
+  .sdx .padding-sm-2 {
+    padding: 16px !important;
+  }
+  .sdx .padding-sm-3 {
+    padding: 24px !important;
+  }
+  .sdx .padding-sm-4 {
+    padding: 32px !important;
+  }
+  .sdx .padding-sm-top-0 {
+    padding-top: 0px !important;
+  }
+  .sdx .padding-sm-top-1 {
+    padding-top: 8px !important;
+  }
+  .sdx .padding-sm-top-2 {
+    padding-top: 16px !important;
+  }
+  .sdx .padding-sm-top-3 {
+    padding-top: 24px !important;
+  }
+  .sdx .padding-sm-top-4 {
+    padding-top: 32px !important;
+  }
+  .sdx .padding-sm-bottom-0 {
+    padding-bottom: 0px !important;
+  }
+  .sdx .padding-sm-bottom-1 {
+    padding-bottom: 8px !important;
+  }
+  .sdx .padding-sm-bottom-2 {
+    padding-bottom: 16px !important;
+  }
+  .sdx .padding-sm-bottom-3 {
+    padding-bottom: 24px !important;
+  }
+  .sdx .padding-sm-bottom-4 {
+    padding-bottom: 32px !important;
+  }
+  .sdx .padding-sm-left-0 {
+    padding-left: 0px !important;
+  }
+  .sdx .padding-sm-left-1 {
+    padding-left: 8px !important;
+  }
+  .sdx .padding-sm-left-2 {
+    padding-left: 16px !important;
+  }
+  .sdx .padding-sm-left-3 {
+    padding-left: 24px !important;
+  }
+  .sdx .padding-sm-left-4 {
+    padding-left: 32px !important;
+  }
+  .sdx .padding-sm-right-0 {
+    padding-right: 0px !important;
+  }
+  .sdx .padding-sm-right-1 {
+    padding-right: 8px !important;
+  }
+  .sdx .padding-sm-right-2 {
+    padding-right: 16px !important;
+  }
+  .sdx .padding-sm-right-3 {
+    padding-right: 24px !important;
+  }
+  .sdx .padding-sm-right-4 {
+    padding-right: 32px !important;
+  }
+  .sdx .padding-sm-h-0 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .sdx .padding-sm-h-1 {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  .sdx .padding-sm-h-2 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .sdx .padding-sm-h-3 {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  .sdx .padding-sm-h-4 {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+  .sdx .padding-sm-v-0 {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+  .sdx .padding-sm-v-1 {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+  .sdx .padding-sm-v-2 {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+  .sdx .padding-sm-v-3 {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+  .sdx .padding-sm-v-4 {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+}
+@media (min-width: 768px) {
+  .sdx .padding-md-0 {
+    padding: 0px !important;
+  }
+  .sdx .padding-md-1 {
+    padding: 8px !important;
+  }
+  .sdx .padding-md-2 {
+    padding: 16px !important;
+  }
+  .sdx .padding-md-3 {
+    padding: 24px !important;
+  }
+  .sdx .padding-md-4 {
+    padding: 32px !important;
+  }
+  .sdx .padding-md-top-0 {
+    padding-top: 0px !important;
+  }
+  .sdx .padding-md-top-1 {
+    padding-top: 8px !important;
+  }
+  .sdx .padding-md-top-2 {
+    padding-top: 16px !important;
+  }
+  .sdx .padding-md-top-3 {
+    padding-top: 24px !important;
+  }
+  .sdx .padding-md-top-4 {
+    padding-top: 32px !important;
+  }
+  .sdx .padding-md-bottom-0 {
+    padding-bottom: 0px !important;
+  }
+  .sdx .padding-md-bottom-1 {
+    padding-bottom: 8px !important;
+  }
+  .sdx .padding-md-bottom-2 {
+    padding-bottom: 16px !important;
+  }
+  .sdx .padding-md-bottom-3 {
+    padding-bottom: 24px !important;
+  }
+  .sdx .padding-md-bottom-4 {
+    padding-bottom: 32px !important;
+  }
+  .sdx .padding-md-left-0 {
+    padding-left: 0px !important;
+  }
+  .sdx .padding-md-left-1 {
+    padding-left: 8px !important;
+  }
+  .sdx .padding-md-left-2 {
+    padding-left: 16px !important;
+  }
+  .sdx .padding-md-left-3 {
+    padding-left: 24px !important;
+  }
+  .sdx .padding-md-left-4 {
+    padding-left: 32px !important;
+  }
+  .sdx .padding-md-right-0 {
+    padding-right: 0px !important;
+  }
+  .sdx .padding-md-right-1 {
+    padding-right: 8px !important;
+  }
+  .sdx .padding-md-right-2 {
+    padding-right: 16px !important;
+  }
+  .sdx .padding-md-right-3 {
+    padding-right: 24px !important;
+  }
+  .sdx .padding-md-right-4 {
+    padding-right: 32px !important;
+  }
+  .sdx .padding-md-h-0 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .sdx .padding-md-h-1 {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  .sdx .padding-md-h-2 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .sdx .padding-md-h-3 {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  .sdx .padding-md-h-4 {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+  .sdx .padding-md-v-0 {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+  .sdx .padding-md-v-1 {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+  .sdx .padding-md-v-2 {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+  .sdx .padding-md-v-3 {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+  .sdx .padding-md-v-4 {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+}
+@media (min-width: 1024px) {
+  .sdx .padding-lg-0 {
+    padding: 0px !important;
+  }
+  .sdx .padding-lg-1 {
+    padding: 8px !important;
+  }
+  .sdx .padding-lg-2 {
+    padding: 16px !important;
+  }
+  .sdx .padding-lg-3 {
+    padding: 24px !important;
+  }
+  .sdx .padding-lg-4 {
+    padding: 32px !important;
+  }
+  .sdx .padding-lg-top-0 {
+    padding-top: 0px !important;
+  }
+  .sdx .padding-lg-top-1 {
+    padding-top: 8px !important;
+  }
+  .sdx .padding-lg-top-2 {
+    padding-top: 16px !important;
+  }
+  .sdx .padding-lg-top-3 {
+    padding-top: 24px !important;
+  }
+  .sdx .padding-lg-top-4 {
+    padding-top: 32px !important;
+  }
+  .sdx .padding-lg-bottom-0 {
+    padding-bottom: 0px !important;
+  }
+  .sdx .padding-lg-bottom-1 {
+    padding-bottom: 8px !important;
+  }
+  .sdx .padding-lg-bottom-2 {
+    padding-bottom: 16px !important;
+  }
+  .sdx .padding-lg-bottom-3 {
+    padding-bottom: 24px !important;
+  }
+  .sdx .padding-lg-bottom-4 {
+    padding-bottom: 32px !important;
+  }
+  .sdx .padding-lg-left-0 {
+    padding-left: 0px !important;
+  }
+  .sdx .padding-lg-left-1 {
+    padding-left: 8px !important;
+  }
+  .sdx .padding-lg-left-2 {
+    padding-left: 16px !important;
+  }
+  .sdx .padding-lg-left-3 {
+    padding-left: 24px !important;
+  }
+  .sdx .padding-lg-left-4 {
+    padding-left: 32px !important;
+  }
+  .sdx .padding-lg-right-0 {
+    padding-right: 0px !important;
+  }
+  .sdx .padding-lg-right-1 {
+    padding-right: 8px !important;
+  }
+  .sdx .padding-lg-right-2 {
+    padding-right: 16px !important;
+  }
+  .sdx .padding-lg-right-3 {
+    padding-right: 24px !important;
+  }
+  .sdx .padding-lg-right-4 {
+    padding-right: 32px !important;
+  }
+  .sdx .padding-lg-h-0 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .sdx .padding-lg-h-1 {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  .sdx .padding-lg-h-2 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .sdx .padding-lg-h-3 {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  .sdx .padding-lg-h-4 {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+  .sdx .padding-lg-v-0 {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+  .sdx .padding-lg-v-1 {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+  .sdx .padding-lg-v-2 {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+  .sdx .padding-lg-v-3 {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+  .sdx .padding-lg-v-4 {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+}
+@media (min-width: 1280px) {
+  .sdx .padding-xl-0 {
+    padding: 0px !important;
+  }
+  .sdx .padding-xl-1 {
+    padding: 8px !important;
+  }
+  .sdx .padding-xl-2 {
+    padding: 16px !important;
+  }
+  .sdx .padding-xl-3 {
+    padding: 24px !important;
+  }
+  .sdx .padding-xl-4 {
+    padding: 32px !important;
+  }
+  .sdx .padding-xl-top-0 {
+    padding-top: 0px !important;
+  }
+  .sdx .padding-xl-top-1 {
+    padding-top: 8px !important;
+  }
+  .sdx .padding-xl-top-2 {
+    padding-top: 16px !important;
+  }
+  .sdx .padding-xl-top-3 {
+    padding-top: 24px !important;
+  }
+  .sdx .padding-xl-top-4 {
+    padding-top: 32px !important;
+  }
+  .sdx .padding-xl-bottom-0 {
+    padding-bottom: 0px !important;
+  }
+  .sdx .padding-xl-bottom-1 {
+    padding-bottom: 8px !important;
+  }
+  .sdx .padding-xl-bottom-2 {
+    padding-bottom: 16px !important;
+  }
+  .sdx .padding-xl-bottom-3 {
+    padding-bottom: 24px !important;
+  }
+  .sdx .padding-xl-bottom-4 {
+    padding-bottom: 32px !important;
+  }
+  .sdx .padding-xl-left-0 {
+    padding-left: 0px !important;
+  }
+  .sdx .padding-xl-left-1 {
+    padding-left: 8px !important;
+  }
+  .sdx .padding-xl-left-2 {
+    padding-left: 16px !important;
+  }
+  .sdx .padding-xl-left-3 {
+    padding-left: 24px !important;
+  }
+  .sdx .padding-xl-left-4 {
+    padding-left: 32px !important;
+  }
+  .sdx .padding-xl-right-0 {
+    padding-right: 0px !important;
+  }
+  .sdx .padding-xl-right-1 {
+    padding-right: 8px !important;
+  }
+  .sdx .padding-xl-right-2 {
+    padding-right: 16px !important;
+  }
+  .sdx .padding-xl-right-3 {
+    padding-right: 24px !important;
+  }
+  .sdx .padding-xl-right-4 {
+    padding-right: 32px !important;
+  }
+  .sdx .padding-xl-h-0 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .sdx .padding-xl-h-1 {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  .sdx .padding-xl-h-2 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .sdx .padding-xl-h-3 {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  .sdx .padding-xl-h-4 {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+  .sdx .padding-xl-v-0 {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+  .sdx .padding-xl-v-1 {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+  .sdx .padding-xl-v-2 {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+  .sdx .padding-xl-v-3 {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+  .sdx .padding-xl-v-4 {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+}
+@media (min-width: 1440px) {
+  .sdx .padding-ul-0 {
+    padding: 0px !important;
+  }
+  .sdx .padding-ul-1 {
+    padding: 8px !important;
+  }
+  .sdx .padding-ul-2 {
+    padding: 16px !important;
+  }
+  .sdx .padding-ul-3 {
+    padding: 24px !important;
+  }
+  .sdx .padding-ul-4 {
+    padding: 32px !important;
+  }
+  .sdx .padding-ul-top-0 {
+    padding-top: 0px !important;
+  }
+  .sdx .padding-ul-top-1 {
+    padding-top: 8px !important;
+  }
+  .sdx .padding-ul-top-2 {
+    padding-top: 16px !important;
+  }
+  .sdx .padding-ul-top-3 {
+    padding-top: 24px !important;
+  }
+  .sdx .padding-ul-top-4 {
+    padding-top: 32px !important;
+  }
+  .sdx .padding-ul-bottom-0 {
+    padding-bottom: 0px !important;
+  }
+  .sdx .padding-ul-bottom-1 {
+    padding-bottom: 8px !important;
+  }
+  .sdx .padding-ul-bottom-2 {
+    padding-bottom: 16px !important;
+  }
+  .sdx .padding-ul-bottom-3 {
+    padding-bottom: 24px !important;
+  }
+  .sdx .padding-ul-bottom-4 {
+    padding-bottom: 32px !important;
+  }
+  .sdx .padding-ul-left-0 {
+    padding-left: 0px !important;
+  }
+  .sdx .padding-ul-left-1 {
+    padding-left: 8px !important;
+  }
+  .sdx .padding-ul-left-2 {
+    padding-left: 16px !important;
+  }
+  .sdx .padding-ul-left-3 {
+    padding-left: 24px !important;
+  }
+  .sdx .padding-ul-left-4 {
+    padding-left: 32px !important;
+  }
+  .sdx .padding-ul-right-0 {
+    padding-right: 0px !important;
+  }
+  .sdx .padding-ul-right-1 {
+    padding-right: 8px !important;
+  }
+  .sdx .padding-ul-right-2 {
+    padding-right: 16px !important;
+  }
+  .sdx .padding-ul-right-3 {
+    padding-right: 24px !important;
+  }
+  .sdx .padding-ul-right-4 {
+    padding-right: 32px !important;
+  }
+  .sdx .padding-ul-h-0 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  .sdx .padding-ul-h-1 {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+  .sdx .padding-ul-h-2 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .sdx .padding-ul-h-3 {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  .sdx .padding-ul-h-4 {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+  .sdx .padding-ul-v-0 {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+  }
+  .sdx .padding-ul-v-1 {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+  .sdx .padding-ul-v-2 {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+  }
+  .sdx .padding-ul-v-3 {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+  }
+  .sdx .padding-ul-v-4 {
+    padding-top: 32px !important;
+    padding-bottom: 32px !important;
+  }
+}
+.sdx .padding-0 {
+  padding: 0px !important;
+}
+.sdx .padding-1 {
+  padding: 8px !important;
+}
+.sdx .padding-2 {
+  padding: 16px !important;
+}
+.sdx .padding-3 {
+  padding: 24px !important;
+}
+.sdx .padding-4 {
+  padding: 32px !important;
+}
+.sdx .padding-top-0 {
+  padding-top: 0px !important;
+}
+.sdx .padding-top-1 {
+  padding-top: 8px !important;
+}
+.sdx .padding-top-2 {
+  padding-top: 16px !important;
+}
+.sdx .padding-top-3 {
+  padding-top: 24px !important;
+}
+.sdx .padding-top-4 {
+  padding-top: 32px !important;
+}
+.sdx .padding-bottom-0 {
+  padding-bottom: 0px !important;
+}
+.sdx .padding-bottom-1 {
+  padding-bottom: 8px !important;
+}
+.sdx .padding-bottom-2 {
+  padding-bottom: 16px !important;
+}
+.sdx .padding-bottom-3 {
+  padding-bottom: 24px !important;
+}
+.sdx .padding-bottom-4 {
+  padding-bottom: 32px !important;
+}
+.sdx .padding-left-0 {
+  padding-left: 0px !important;
+}
+.sdx .padding-left-1 {
+  padding-left: 8px !important;
+}
+.sdx .padding-left-2 {
+  padding-left: 16px !important;
+}
+.sdx .padding-left-3 {
+  padding-left: 24px !important;
+}
+.sdx .padding-left-4 {
+  padding-left: 32px !important;
+}
+.sdx .padding-right-0 {
+  padding-right: 0px !important;
+}
+.sdx .padding-right-1 {
+  padding-right: 8px !important;
+}
+.sdx .padding-right-2 {
+  padding-right: 16px !important;
+}
+.sdx .padding-right-3 {
+  padding-right: 24px !important;
+}
+.sdx .padding-right-4 {
+  padding-right: 32px !important;
+}
+.sdx .padding-h-0 {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.sdx .padding-h-1 {
+  padding-left: 8px !important;
+  padding-right: 8px !important;
+}
+.sdx .padding-h-2 {
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+.sdx .padding-h-3 {
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+.sdx .padding-h-4 {
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+}
+.sdx .padding-v-0 {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+.sdx .padding-v-1 {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+.sdx .padding-v-2 {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+}
+.sdx .padding-v-3 {
+  padding-top: 24px !important;
+  padding-bottom: 24px !important;
+}
+.sdx .padding-v-4 {
+  padding-top: 32px !important;
+  padding-bottom: 32px !important;
+}
+.sdx .align-left {
+  float: left !important;
+}
+.sdx .align-right {
+  float: right !important;
+}
+.sdx .center-block {
+  display: block;
+  float: none;
+  margin-right: auto;
+  margin-left: auto;
+}
+.sdx .center-vertical {
+  display: flex;
+  align-items: center;
+}
+.sdx .full-width {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+@media only screen and (max-width: 767px) {
+  .sdx .full-width--mobile-only {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+.sdx .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.sdx .sr-only-focusable:active, .sdx .sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+.sdx .text-align-left {
+  text-align: left !important;
+}
+.sdx .text-align-center {
+  text-align: center !important;
+}
+.sdx .text-align-right {
+  text-align: right !important;
+}
+.sdx .text-align-justify {
+  text-align: justify !important;
+}
+.sdx .text-lowercase {
+  text-transform: lowercase !important;
+}
+.sdx .text-uppercase {
+  text-transform: uppercase !important;
+}
+.sdx .text-capitalize {
+  text-transform: capitalize !important;
+}
+.sdx .text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sdx .text-recommended-max-width {
+  max-width: 666px;
+}
+.sdx .visible {
+  visibility: visible !important;
+}
+.sdx .invisible {
+  visibility: hidden !important;
+}
+.sdx .hide,
+.sdx .hidden {
+  display: none !important;
+}
+.sdx .show {
+  display: block !important;
+}
+@media (min-width: 0) {
+  .sdx .hidden-xs-up {
+    display: none !important;
+  }
+}
+@media (max-width: 479px) {
+  .sdx .hidden-xs-down {
+    display: none !important;
+  }
+}
+@media (min-width: 0) {
+  .sdx .visible-xs-up {
+    display: block !important;
+  }
+}
+@media (min-width: 480px) {
+  .sdx .hidden-sm-up {
+    display: none !important;
+  }
+}
+@media (max-width: 767px) {
+  .sdx .hidden-sm-down {
+    display: none !important;
+  }
+}
+@media (min-width: 480px) {
+  .sdx .visible-sm-up {
+    display: block !important;
+  }
+}
+@media (min-width: 768px) {
+  .sdx .hidden-md-up {
+    display: none !important;
+  }
+}
+@media (max-width: 1023px) {
+  .sdx .hidden-md-down {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) {
+  .sdx .visible-md-up {
+    display: block !important;
+  }
+}
+@media (min-width: 1024px) {
+  .sdx .hidden-lg-up {
+    display: none !important;
+  }
+}
+@media (max-width: 1279px) {
+  .sdx .hidden-lg-down {
+    display: none !important;
+  }
+}
+@media (min-width: 1024px) {
+  .sdx .visible-lg-up {
+    display: block !important;
+  }
+}
+@media (min-width: 1280px) {
+  .sdx .hidden-xl-up {
+    display: none !important;
+  }
+}
+@media (max-width: 1439px) {
+  .sdx .hidden-xl-down {
+    display: none !important;
+  }
+}
+@media (min-width: 1280px) {
+  .sdx .visible-xl-up {
+    display: block !important;
+  }
+}
+@media (min-width: 1440px) {
+  .sdx .hidden-ul-up {
+    display: none !important;
+  }
+}
+.sdx .hidden-ul-down {
+  display: none !important;
+}
+@media (min-width: 1440px) {
+  .sdx .visible-ul-up {
+    display: block !important;
+  }
+}
+@media (min-width: 0) {
+  .sdx .hidden-phone-up {
+    display: none !important;
+  }
+}
+@media (max-width: 767px) {
+  .sdx .hidden-phone-down {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) {
+  .sdx .hidden-tablet-up {
+    display: none !important;
+  }
+}
+@media (max-width: 1023px) {
+  .sdx .hidden-tablet-down {
+    display: none !important;
+  }
+}
+@media (min-width: 1024px) {
+  .sdx .hidden-desktop-up {
+    display: none !important;
+  }
+}
+@media (max-width: 1279px) {
+  .sdx .hidden-desktop-down {
+    display: none !important;
+  }
+}
+@media (min-width: 0) {
+  .sdx .visible-phone-up {
+    display: block !important;
+  }
+}
+@media (min-width: 768px) {
+  .sdx .visible-tablet-up {
+    display: block !important;
+  }
+}
+@media (min-width: 1024px) {
+  .sdx .visible-desktop-up {
+    display: block !important;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fade-in-from-none {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  .001% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: block;
+    opacity: 1;
+  }
+}
+@keyframes fade-out-to-none {
+  0% {
+    display: block;
+    opacity: 1;
+  }
+  99.999% {
+    display: block;
+    opacity: 0;
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}

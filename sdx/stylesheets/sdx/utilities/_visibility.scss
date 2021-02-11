@@ -1,0 +1,143 @@
+//
+// Visibility Dev Utilities
+// --------------------------------------------------
+
+/*doc
+---
+title: Visibility
+name: 04-developers-35-visibility
+category: Developers - Visibility utils
+---
+
+<h3>Invisible content</h3>
+
+<p>The <code>.invisible</code> and <code>.visible</code> class can be used to toggle only the visibility of an element, meaning its display is not modified and the element can still affect the flow of the document.</p>
+
+```htmlmixed
+<p class="invisible">not visible</p>
+<p class="visible">visible</p>
+```
+
+<h3>Responsive visibility</h3>
+
+<p>For faster mobile-friendly development, use these utility classes for showing and hiding content by device via media query.</p>
+
+<ul class="list">
+  <li>
+    The <code>.hidden-*-up</code> classes hide the element when the viewport is at the given breakpoint or wider. For example, <code>.hidden-md-up</code> hides an element on medium, large, and extra-large viewports.
+  </li>
+  <li>
+    The <code>.hidden-*-down</code> classes hide the element when the viewport is at the given breakpoint or smaller. For example, <code>.hidden-md-down</code> hides an element on extra-small, small, and medium viewports.
+  </li>
+  <li>
+    You can combine one <code>.hidden-*-up</code> class with one <code>.hidden-*-down</code> class to show an element only on a given interval of screen sizes. For example, <code>.hidden-sm-down.hidden-xl-up</code> shows the element only on medium and large viewports. Using multiple <code>.hidden-*-up</code> classes or multiple <code>.hidden-*-down</code> classes is redundant and pointless.
+  </li>
+</ul>
+
+<p>If you want to go for specific devices (phone, tablet or desktop) use the device specific classes instead of the breakpoint specific classes:</p>
+
+<ul class="list">
+  <li>
+    Phone: <code>.hidden-phone-up</code> or <code>.hidden-phone-down</code>
+  </li>
+  <li>
+    Tablet: <code>.hidden-tablet-up</code> or <code>.hidden-tablet-down</code>
+  </li>
+  <li>
+    Desktop: <code>.hidden-desktop-up</code> or <code>.hidden-desktop-down</code>
+  </li>
+</ul>
+
+*/
+
+.visible {
+  visibility: visible !important;
+}
+
+.invisible {
+  visibility: hidden !important;
+}
+
+.hide,
+.hidden {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
+// Responsive Visibility Dev Utilities
+// --------------------------------------------------
+
+@each $bp in map-keys($grid-breakpoints) {
+  .hidden-#{$bp}-up {
+    @include media-breakpoint-up($bp) {
+      display: none !important;
+    }
+  }
+  .hidden-#{$bp}-down {
+    @include media-breakpoint-down($bp) {
+      display: none !important;
+    }
+  }
+  .visible-#{$bp}-up {
+    @include media-breakpoint-up($bp) {
+      display: block !important;
+    }
+  }
+}
+
+.hidden-phone-up {
+  @include bp-phone {
+    display: none !important;
+  }
+}
+
+.hidden-phone-down {
+  @include bp-phone-max {
+    display: none !important;
+  }
+}
+
+.hidden-tablet-up {
+  @include bp-tablet {
+    display: none !important;
+  }
+}
+
+.hidden-tablet-down {
+  @include bp-tablet-max {
+    display: none !important;
+  }
+}
+
+.hidden-desktop-up {
+  @include bp-desktop {
+    display: none !important;
+  }
+}
+
+.hidden-desktop-down {
+  @include bp-desktop-max {
+    display: none !important;
+  }
+}
+
+.visible-phone-up {
+  @include bp-phone {
+    display: block !important;
+  }
+}
+
+.visible-tablet-up {
+  @include bp-tablet {
+    display: block !important;
+  }
+}
+
+.visible-desktop-up {
+  @include bp-desktop {
+    display: block !important;
+  }
+}

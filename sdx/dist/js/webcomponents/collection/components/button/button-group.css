@@ -1,0 +1,41 @@
+:host, *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:host .component {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  margin: -8px -8px;
+}
+:host ::slotted(sdx-button) {
+  margin: 8px 8px;
+}
+@media (max-width: 479px) {
+  :host ::slotted(sdx-button) {
+    width: 100%;
+  }
+}
+:host .fixed,
+:host .fullwidth {
+  flex-direction: row;
+}
+:host .fill {
+  flex-wrap: nowrap;
+}
+
+:host(.fill) ::slotted(sdx-button) {
+  width: 100%;
+  min-width: 0;
+  flex: 0 1 auto;
+}
+
+@media (max-width: 479px) {
+  :host(.fixed) ::slotted(sdx-button) {
+    width: auto;
+  }
+}
+
+:host(.fullwidth) ::slotted(sdx-button) {
+  width: 100%;
+}

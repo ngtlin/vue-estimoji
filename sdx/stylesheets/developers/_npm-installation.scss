@@ -1,0 +1,63 @@
+//
+// Install SDX using NPM
+// --------------------------------------------------
+
+/*doc
+---
+title: Install SDX using NPM
+name: 04-developers-01-npm-installation
+category: Developers - NPM installation
+---
+
+<h2>Install the package</h2>
+
+<p>The package <code>@swisscom/sdx</code> is available on both
+<a href="https://artifactory.swisscom.com/">artifactory.swisscom.com</a> (corpnet only) and
+<a href="https://bin.swisscom.com/">bin.swisscom.com</a>,
+in the repository <code>sdx-npm-local</code>, which might be included in your project's virtual repository already.</p>
+
+```htmlmixed_no_preview
+npm config set registry https://bin.swisscom.com/api/npm/sdx-npm-virtual/
+npm config set always-auth true
+npm login
+npm install @swisscom/sdx --save
+```
+
+<p>The installation can also be done from outside corpnet, but a corproot account needs to be created. More info can be found on the <a href="https://wiki.swisscom.com/display/SDX/SDX+npm">wiki</a>.</p>
+
+<h3 id="webcomponents-in-angular">Use SDX Web Components in Angular</h3>
+
+<h4>Include the SDX stylesheet</h4>
+
+```javascript_no_preview
+// angular.json
+
+{
+  // ...
+  "styles": [
+    // ...
+    "node_modules/@swisscom/sdx/dist/css/webcomponents.min.css"
+  ]
+}
+```
+
+<h4>Register the SDX Web Components</h4>
+
+```javascript_no_preview
+// app.module.ts
+
+import { applyPolyfills, defineCustomElements } from "@swisscom/sdx/dist/js/webcomponents/loader";
+
+@NgModule({
+  // ...
+})
+export class AppModule {
+  constructor() {
+    // ...
+    applyPolyfills().then(() => {
+      defineCustomElements();
+    });
+  }
+}
+```
+*/

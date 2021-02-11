@@ -1,0 +1,317 @@
+//
+// Loading Bar
+// --------------------------------------------------
+
+/*doc
+---
+title: Loading Bar
+name: 02-components-085-loader-bar-01
+category: Components - Loading Bar
+---
+
+<p>Loading bars are percentage based data visualisations that show users how far along a process they are, for example file upload.</p>
+
+<sdx-button label="Increase progress" onclick="incrementProgress01()"></sdx-button>
+
+<div>
+  <div id="bar01" class="loader-bar">
+    <div class="detail">
+      <div class="name">TestFile.jpg</div>
+      <div class="detail-right">
+        <div class="progress">50%</div>
+        <div class="file-size">of 1.5MB</div>
+      </div>
+    </div>
+    <div class="loader-bar--progress">
+      <div class="indicator" style="width: 50%"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function incrementProgress01(val) {
+    if(!window.progress) {
+      window.progress = 0;
+    }
+
+    var bar = new sdx.LoaderBar(document.querySelector("#bar01"))
+    bar.filename = "TestFile.jpg"
+
+    window.progress += 0.031;
+
+    if (window.progress > 1) {
+      window.progress = 0;
+    }
+
+    bar.progress = window.progress;
+  }
+</script>
+
+
+```section_design
+```
+
+<div class="content-design">
+
+  <h2>Rules</h2>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <h3 class="margin-bottom-1">Standard</h3>
+      <p>The green bar indicates the percentage of a task that is underway.</p>
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/loading_bar/Group-3@2x-5.jpg" alt="Example of a loading bar with 30% completed">
+      <span class="fig-caption">Loading bar with 30% completed</span>
+    </div>
+
+    <div class="col-xs-12 col-lg-6">
+      <h3 class="margin-bottom-1">Bars and data</h3>
+      <p>Bars containing data should have rounded ends. The bar that indicates data should always have a flat end.</p>
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/loading_bar/Group-5@2x-3.jpg" alt="Example of rounded edge bar and flat edge data">
+      <span class="fig-caption">Rounded edge bar and flat edge data</span>
+    </div>
+  </div>
+
+  <h2>Typography</h2>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/loading_bar/Group-6@2x-7.jpg" alt="Typography for the loading bar">
+      <span class="fig-caption">Typography</span>
+    </div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+<p>The SDX loading bar component with support for displaying the current progress as a bar, and with optional detail captions.</p>
+
+<sdx-button label="Increase progress" onclick="incrementProgress02()"></sdx-button>
+
+```htmlmixed
+<div id="bar02" class="loader-bar">
+  <div class="detail">
+    <div class="name">File_name.jpg</div>
+    <div class="detail-right">
+      <div class="progress">70%</div>
+      <div class="file-size">of 1.5MB</div>
+    </div>
+  </div>
+  <div class="loader-bar--progress">
+    <div class="indicator" style="width: 70%"></div>
+  </div>
+</div>
+```
+
+<script>
+  function incrementProgress02(val) {
+    if (!window.progress02) {
+      window.progress02 = 0;
+    }
+
+    var bar = new sdx.LoaderBar(document.querySelector("#bar02"))
+    bar.filename = "TestFile.jpg"
+
+    window.progress02 += 0.031;
+
+    if (window.progress02 > 1) {
+      window.progress02 = 0;
+    }
+
+    bar.progress = window.progress02;
+  }
+</script>
+
+<h3>Loader without detail text</h3>
+
+<sdx-button label="Increase progress" onclick="incrementProgress03()"></sdx-button>
+
+
+```htmlmixed
+<div id="bar03" class="loader-bar loader-bar--progress">
+  <div class="indicator" style="width: 50%"></div>
+</div>
+```
+
+<script>
+  function incrementProgress03(val) {
+    if (!window.progress03) {
+      window.progress03 = 0;
+    }
+
+    var bar = new sdx.LoaderBar(document.querySelector("#bar03"));
+    window.progress03 += 0.031;
+
+    if (window.progress03 > 1) {
+      window.progress03 = 0;
+    }
+
+    bar.progress = window.progress03;
+  }
+</script>
+
+<h2>Loader bar on dark backgrounds</h2>
+
+<p>Loader spinners are also available on dark backgrounds, just annotate the parent background element with the <code>.bg--dark</code> class and the loader will automatically adjust their styling accordingly.</p>
+
+```htmlmixed
+<div class="bg bg--dark">
+  <div class="loader-bar">
+    <div class="detail">
+      <div class="name">File_name.jpg</div>
+      <div class="progress">
+        70% <span class="file-size">of 1.5MB</span>
+      </div>
+    </div>
+    <div class="loader-bar--progress">
+      <div class="indicator" style="width: 70%"></div>
+    </div>
+  </div>
+</div>
+```
+<h2>Loading Bar Component</h2>
+
+<p>To use update the loader bar component from JavaScript use the provided <code>LoaderBar</code> JavaScript component.</p>
+
+```htmlmixed_no_preview
+<script>
+  var bar = new sdx.LoaderBar(document.querySelector("#bar01"))
+  bar.filename = "TestFile.jpg"
+  window.progress = 0.25;
+</script>
+```
+
+<h3>Updating progress</h3>
+<p>To update the progress of the LoaderBar set the <code>progess</code> property to the desired value in the range from <code>0..1</code>.</p>
+
+<h3>Set the filename</h3>
+<p>The filename can be set using the `filename` property.</p>
+<p><i>Note: If the detail element is not defined in your markup, setting the filename will cause an error to be thrown.</i></p>
+
+<h3>Set the file size</h3>
+<p>The file size can be set using the `fileSize` property.</p>
+<p><i>Note: If the detail element is not defined in your markup, setting the fileSize will cause an error to be thrown.</i></p>
+*/
+
+
+// --------------------------------------------------
+
+
+// Loader Bar
+// --------------------------------------------------
+
+$bar-height: 10px;
+
+.loader-bar {
+  position: relative;
+  width: 100%;
+
+  > .detail {
+    @include text-small;
+
+    display: flex;
+    margin-bottom: 8px;
+    justify-content: space-between;
+
+    .name {
+      text-align: left;
+    }
+
+    .detail-right {
+      .progress {
+        display: inline-block;
+        text-align: right;
+      }
+
+      .file-size {
+        display: none;
+
+        &::before {
+          content: '\00a0 ';
+        }
+
+        @include bp-sm {
+          display: inline;
+          float: right;
+        }
+      }
+    }
+  }
+
+  &--progress {
+    border-radius: 5px;
+    position: relative;
+    background-color: $color-loader-bar-bg;
+    width: 100%;
+    height: $bar-height;
+    overflow: hidden;
+
+    > .indicator {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      transition: width 90ms linear;
+      z-index: 30;
+
+      background-color: $color-int-green;
+
+      width: 0%;
+      height: $bar-height;
+
+      &::after {
+        position: absolute;
+        top: 0;
+        right: -($bar-height / 2);
+        background: inherit;
+        width: $bar-height;
+        height: $bar-height;
+        content: '';
+      }
+
+      &--busy {
+        left: 0;
+        animation: busy 2.1s linear infinite;
+
+        width: 50%;
+
+        will-change: left, right;
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: -($bar-height / 2);
+          background: inherit;
+          width: $bar-height;
+          height: $bar-height;
+          content: '';
+        }
+      }
+    }
+  }
+}
+
+
+// Dark Background
+// -------------------------
+
+.bg--dark {
+  .loader-bar--progress {
+    background-color: $color-white;
+  }
+}
+
+
+// Animation Keyframes
+// --------------------------------------------------
+
+@keyframes busy {
+  0% {
+    left: -50%;
+  }
+
+  100% {
+    left: 100%;
+  }
+}

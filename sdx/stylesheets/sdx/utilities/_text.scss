@@ -1,0 +1,109 @@
+//
+// Text Dev Utilities
+// --------------------------------------------------
+
+/*doc
+---
+title: Text
+name: 04-developers-30-text
+category: Developers - Text utils
+---
+
+<h3>Text alignment</h3>
+
+<p>Easily realign text to components with text alignment classes.</p>
+
+```htmlmixed_playground
+<p class="text-align-left">Left aligned text on all viewport sizes.</p>
+<p class="text-align-center">Center aligned text on all viewport sizes.</p>
+<p class="text-align-right">Right aligned text on all viewport sizes.</p>
+<p class="text-align-justify">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
+```
+
+<h3>Text transformation</h3>
+
+<p>Transform text in components with text capitalization classes.</p>
+
+<p>Note how text-capitalize only changes the first letter of each word, leaving the case of any other letters unaffected.</p>
+
+```htmlmixed_playground
+<p class="text-lowercase">Lowercased text.</p>
+<p class="text-uppercase">Uppercased text.</p>
+<p class="text-capitalize">capiTaliZed text.</p>
+```
+
+<h3>Text truncate</h3>
+
+<p>Trunctate texts using the CSS class <code>.text-truncate</code> (which adds an ellipsis).</p>
+
+```htmlmixed_playground
+<p class="text-truncate">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
+```
+
+<p>In cases where the CSS class <code>.text-truncate</code> does not work (because of <code>::before</code>), the Web Component <code>&lt;sdx-text-truncate /&gt;</code> can be used.</p>
+
+```htmlmixed_playground
+<p>
+  <sdx-text-truncate>Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</sdx-text-truncate>
+</p>
+```
+
+<h3>Maximum text width</h3>
+
+<p>To make long text paragraphs easier to read, SDX recommends to limit their width to a maximum of 700px. This helper class makes it easy to ensure that the text will wrap and never exceed this limit.</p>
+
+```htmlmixed_playground
+<p class="text-recommended-max-width">Ambitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.</p>
+```
+*/
+
+// Align
+// -------------------------
+
+.text-align-left {
+  text-align: left !important;
+}
+
+.text-align-center {
+  text-align: center !important;
+}
+
+.text-align-right {
+  text-align: right !important;
+}
+
+.text-align-justify {
+  text-align: justify !important;
+}
+
+
+// Transformation
+// -------------------------
+
+.text-lowercase {
+  text-transform: lowercase !important;
+}
+
+.text-uppercase {
+  text-transform: uppercase !important;
+}
+
+.text-capitalize {
+  text-transform: capitalize !important;
+}
+
+
+// Truncate
+// -------------------------
+
+.text-truncate {
+  @include text-truncate;
+}
+
+
+// Recommended max width
+// -------------------------
+.text-recommended-max-width {
+  max-width: $font-text-recomended-max-width;
+}
+

@@ -1,0 +1,16 @@
+:host, *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.toggle {
+  padding: 0;
+  background-color: transparent;
+  color: #086adb;
+  border: none;
+  font: inherit;
+  outline: none;
+  cursor: pointer;
+}
+.toggle:hover, .toggle:focus {
+  color: #0048CF;
+}

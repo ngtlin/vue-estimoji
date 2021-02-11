@@ -1,0 +1,37 @@
+:host, *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:host {
+  z-index: 50000;
+  display: none;
+}
+
+.scroll-to-top {
+  border: 2px solid #086adb;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #086adb;
+  height: 48px;
+  width: 48px;
+  padding: 6px;
+  outline: none;
+  cursor: pointer;
+}
+.scroll-to-top:hover {
+  border-color: #0048CF;
+  color: #0048CF;
+}
+@media (hover: none) {
+  .scroll-to-top {
+    border-color: #086adb;
+    color: #086adb;
+  }
+}
+.scroll-to-top:focus, .scroll-to-top:active {
+  border-color: #0048CF;
+  color: #0048CF;
+}
+.scroll-to-top:active {
+  transform: scale(0.98);
+}

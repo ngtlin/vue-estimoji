@@ -1,0 +1,39 @@
+.bg {
+  color: $color-gray;
+
+  // Light, Gray Background
+  &--light,
+  &--gray {
+    .primary {
+      &-navy {
+        color: $color-navy;
+      }
+
+      &-gray {
+        color: $color-gray;
+      }
+    }
+
+    .secondary {
+      color: $color-gray-tint-4;
+    }
+  }
+
+  // Light Background
+  &--light {
+    background-color: $color-white;
+    color: $color-gray;
+  }
+
+  // Gray Background
+  &--gray {
+    background-color: $color-aluminum;
+    color: $color-gray;
+  }
+
+  // Dark Background
+  &--dark {
+    background-color: $color-navy;
+    color: $color-white;
+  }
+}

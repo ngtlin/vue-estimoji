@@ -1,0 +1,812 @@
+//
+// Input Fields & Textarea
+// --------------------------------------------------
+
+/*doc
+---
+title: Input Fields
+name: 02-components-075-form-01-inputfields
+category: Components - Input Fields
+---
+
+<p>Input fields allow users to enter data. They have a standardized height and corner radius treatment, but are flexible in width. Input fields are based on the grid.</p>
+
+<p>If any validation is needed, you can display this in addition.</p>
+
+<p>To display a calendar in input fields see the <a href="../components_-_picker_(date).html">date picker</a> and its options.</p>
+
+<div class="row margin-bottom-2">
+  <div class="col-md-6">
+    <sdx-input label="Single line" placeholder="Placeholder"></sdx-input>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <sdx-input label="Multiple lines" placeholder="Placeholder" type="textarea"></sdx-input>
+  </div>
+</div>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Input Fields</h2>
+
+  <p>Input fields have different states to guide users when interacting with them. The main advantage with this input field variant is that additional descriptions for conventions (e.g. telephone number) can be given.</p>
+  <p>There can be validations on input fields: A green tick appears when the content is validated. E.g. if the system has to validate the users` input of the “@” within an email address.</p>
+  <p>An error message occurs if the user's input is invalid or breaks input rules, such as special characters and passwords (which should be explained to the user to avoid errors in advance).</p>
+
+<h2>Rules</h2>
+
+<p>
+  <ul class="list">
+  <li class="single-line">
+  Keep it short by eliminating unnecessary fields. Cutting fields means increasing conversion rate and reducing users' effort.
+  </li>
+  <li class="single-line">
+  Group related labes and fields visually (e.g. if you ask two topics seperate these group of fields).
+</li>
+<li class="single-line">
+Display fields in a single coumn layout as multiple coumns interrupt the vertical moving down the form. Exceptions are short and logical fields as City, state and Zip Code).
+</li>
+<li class="single-line">
+Use logical sequencing (e.g. credit card number, expiration date and its security code).
+</li>
+<li class="single-line">
+Use placeholder texts wisely and not per default. They are just recommended if the user has to enter specific formats (e.g. telephone number or birthday).
+</li>
+<li class="single-line">
+Distinguish optional and required fields (and dissolve them below the form fields with an asterisk).
+</li>
+<li class="single-line">
+Avoid "reset" and "clear" buttons - it prevents the user from accidential deletion.
+</li>
+<li class="single-line">
+Give highly visible and specific error messages.
+</li><li class="single-line">
+Match fields to input length: To achieve good usability adjust the width of form fields so it matches the length of the expected input (users start wonder if they had misunderstood the label if it is too short or too long).
+Form fields for variable input (e.g. name or email) typically range from 18 to 33 characters.
+</li>
+</ul>
+<p>
+
+
+  <h3>Specifications</h3>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/inputfields/inputfields_specs.png" alt="Specifications for input fields">
+      </div>
+      <span class="fig-caption">Specifications</span>
+    </div>
+  </div>
+
+  <h3>Autocompletion for input fields</h3>
+
+  <p>Autocompletion speeds up the users interaction with the computer when it correctly predicts the word the user intends to enter &ndash; after 3 characters have been typed into the text field (mostly, this content is dynamic and comes from a database).<br>
+  Whereas a filterable drop-down allows the users to filter a large list of choices &ndash; like a country selector &ndash; by typing in some characters (mostly, this content is static within the website).</p>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/inputfields/autocomplete.png" alt="Example for field autocompletion">
+      <span class="fig-caption">Autocompletion</span>
+    </div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+```htmlmixed_webcomponent_sdx-input_accessible
+<sdx-input label="Label" placeholder="Placeholder"></sdx-input>
+```
+
+<p>For an example of how to use input fields in a form, please see <a href="/samples/form.html">samples/form</a>.</p>
+
+<h2>Basic usage</h2>
+
+```htmlmixed_playground_accessible
+<div class="row margin-bottom-2">
+  <div class="col">
+    <sdx-input label="Name" placeholder="Jane Doe"></sdx-input>
+  </div>
+</div>
+
+<div class="row margin-bottom-2">
+  <div class="col">
+    <sdx-input type="email" autocomplete="email" label="E-Mail" placeholder="jane.doe@example.com"></sdx-input>
+  </div>
+</div>
+
+<div class="row margin-bottom-2">
+  <div class="col">
+    <sdx-input type="password" autocomplete="new-password" label="Password" placeholder="Password"></sdx-input>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <sdx-input type="textarea" label="Multiline text" placeholder="Multiline text"></sdx-input>
+  </div>
+</div>
+```
+
+<h2>Read-only and disabled</h2>
+
+<p>If you want to block the user from changing an input field add the <code>readonly</code> or <code>disabled</code> attribute to the sdx-input element.</p>
+
+<p>The difference between the <code>readonly</code> and the <code>disabled</code> attribute is that in <code>readonly</code> the user can tab to the element and copy the text from the input field.</p>
+
+```htmlmixed_playground
+<div class="row margin-bottom-2">
+  <div class="col">
+    <sdx-input label="Single line (read-only)" placeholder="This text is read-only" readonly></sdx-input>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <sdx-input label="Multiple lines (disabled)" placeholder="This text is disabled" type="textarea" disabled value="This text is read-only and it is more than one line long. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."></sdx-input>
+  </div>
+</div>
+```
+
+<h2>Validation</h2>
+
+<p>Display validation information to the users by using the attributes <code>valid</code> and <code>validation-message</code>.</p>
+
+<p>Pass the <code>required</code> attribute to the input field to denote them as required and make sure to explain the meaning of the asterisk in a legend below the form in the current customer language.</p>
+
+```htmlmixed_playground
+<div class="row margin-bottom-2">
+  <div class="col">
+    <sdx-input label="First name" value="Jane Doe" required></sdx-input>
+  </div>
+</div>
+
+<div class="row margin-bottom-2">
+  <div class="col">
+    <sdx-input label="Unique user name" value="jane_doe_1" valid required></sdx-input>
+  </div>
+</div>
+
+<div class="row margin-bottom-2">
+  <div class="col">
+    <sdx-input type="email" autocomplete="email" label="E-Mail" value="janedoe@invalid@mail" valid="false" validation-message="Please enter a valid email address" required></sdx-input>
+  </div>
+</div>
+
+<div class="row margin-bottom-2">
+  <div class="col">
+    <sdx-input type="date" label="Birthday" value="01.01.2099" valid="false" validation-message="Please enter a date  in the past"></sdx-input>
+  </div>
+</div>
+
+<div class="row" aria-hidden="true">
+  <div class="col">
+    <p class="text-body-2">* Mandatory field</p>
+  </div>
+</div>
+```
+
+<h2>Autocomplete</h2>
+
+```htmlmixed_playground
+<sdx-select
+  placeholder="E.g. type 'script'..."
+  label="Programming language"
+  keyboard-behavior="autocomplete"
+>
+  <sdx-select-option>ActionScript</sdx-select-option>
+  <sdx-select-option>AppleScript</sdx-select-option>
+  <sdx-select-option>Asp</sdx-select-option>
+  <sdx-select-option>Assembly</sdx-select-option>
+  <sdx-select-option>BASIC</sdx-select-option>
+  <sdx-select-option>Batch</sdx-select-option>
+  <sdx-select-option>C</sdx-select-option>
+  <sdx-select-option>C++</sdx-select-option>
+  <sdx-select-option>CSS</sdx-select-option>
+  <sdx-select-option>Clojure</sdx-select-option>
+  <sdx-select-option>COBOL</sdx-select-option>
+  <sdx-select-option>ColdFusion</sdx-select-option>
+  <sdx-select-option>Erlang</sdx-select-option>
+  <sdx-select-option>Fortran</sdx-select-option>
+  <sdx-select-option>Groovy</sdx-select-option>
+  <sdx-select-option>Haskell</sdx-select-option>
+  <sdx-select-option>HTML</sdx-select-option>
+  <sdx-select-option>Java</sdx-select-option>
+  <sdx-select-option>JavaScript</sdx-select-option>
+  <sdx-select-option>Lisp</sdx-select-option>
+  <sdx-select-option>Perl</sdx-select-option>
+  <sdx-select-option>PHP</sdx-select-option>
+  <sdx-select-option>PowerShell</sdx-select-option>
+  <sdx-select-option>Python</sdx-select-option>
+  <sdx-select-option>Ruby</sdx-select-option>
+  <sdx-select-option>Scala</sdx-select-option>
+  <sdx-select-option>Scheme</sdx-select-option>
+  <sdx-select-option>SQL</sdx-select-option>
+  <sdx-select-option>TeX</sdx-select-option>
+  <sdx-select-option>XML</sdx-select-option>
+  <sdx-select-option>AnyScript & OtherScript</sdx-select-option>
+</sdx-select>
+```
+
+<p>Here is an example of how to connect the autocomplete to a real server (in this case, Apple iTunes):</p>
+
+<div class="row">
+  <div class="col-md-6 margin-bottom-2">
+    <sdx-itunes-autocomplete></sdx-itunes-autocomplete>
+  </div>
+</div>
+
+<p>This example is written in Stencil, but its principle can be applied to React, Angular, Vue or others:</p>
+
+```javascript_no_preview
+export class ItunesAutocomplete {
+  @State() artists = []
+  @State() loading = false
+
+  fetch(keyword) {
+    // Ensure keyword length
+    if (keyword.length < 3) {
+      return
+    }
+
+    // Loading spinner
+    this.loading = true
+
+    // Request data
+    fetch("https://itunes.apple.com/search?term=" + encodeURI(keyword)} + "&entity=musicArtist&limit=10", {
+      method: "post"
+    })
+      .then((payload) => payload.json())
+      .then((payload) => this.artists = payload.results.map((result) => result.artistName))
+      .then(() => this.loading = false)
+  }
+
+  render() {
+    return (
+      <sdx-select
+        label="(Server autocomplete) Your favourite artist on iTunes"
+        placeholder="Search artists..."
+        changeCallback={(selection) => this.fetch(selection[0])}
+        keyboardBehavior="autocomplete"
+        filterFunction={() => true} // iTunes already filters, bypass local filter
+        loading={this.loading}
+      >
+        {this.artists.map((artist) =>
+          <sdx-select-option>{artist}</sdx-select-option>
+        )}
+      </sdx-select>
+    )
+  }
+}
+```
+*/
+
+// Extends
+// -------------------------
+
+@mixin label-fixed {
+  margin-top: 29px;
+
+  + label {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// --------------------------------------------------
+
+
+// Text input styles
+// -------------------------
+
+input,
+textarea {
+  -webkit-border-radius: 0;
+
+  &::-ms-clear {
+    display: none;
+  }
+
+  @keyframes onAutoFillStart {
+    from {
+      /* Empty */
+    }
+    to {
+      /* Empty */
+    }
+  }
+
+  &:-webkit-autofill {
+    // Expose a hook for JavaScript when auto fill is shown.
+    // JavaScript can capture 'animationstart' events
+    animation-name: onAutoFillStart;
+
+    // Make the backgound color become yellow _really slowly_
+    transition: background-color 50000s ease-in-out 0s;
+  }
+}
+
+
+// Input field wrapper styles
+// -------------------------
+
+.input-field {
+  box-sizing: border-box;
+  position: relative;
+
+  margin-bottom: $baseline * 2;
+  padding: 0;
+
+  .message {
+    max-height: 0;
+    margin-top: 0;
+
+    opacity: 0;
+    z-index: $zindex-form + 1;
+
+    transition: 150ms all $standard-easing;
+  }
+
+  .icon {
+    margin-right: $form-input-icon-margin;
+  }
+
+  &:first-child {
+    input:not([type]),
+    input[type='text'],
+    input[type='password'],
+    input[type='email'],
+    input[type='url'],
+    input[type='time'],
+    input[type='date'],
+    input[type='datetime'],
+    input[type='datetime-local'],
+    input[type='tel'],
+    input[type='number'],
+    input[type='search'],
+    textarea {
+      margin-top: 0;
+    }
+  }
+
+  &:hover {
+    input:not([type]),
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="url"],
+    input[type="time"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="search"],
+    textarea {
+      border-color: $color-input-normal-form-hover;
+    }
+  }
+
+  // Text input styles
+  // -------------------------
+
+  input,
+  textarea {
+    -webkit-border-radius: 0;
+
+    &::-ms-clear {
+      display: none;
+    }
+  }
+
+  input:not([type]),
+  input[type='text'],
+  input[type='password'],
+  input[type='email'],
+  input[type='url'],
+  input[type='time'],
+  input[type='date'],
+  input[type='datetime'],
+  input[type='datetime-local'],
+  input[type='tel'],
+  input[type='number'],
+  input[type='search'],
+  textarea {
+    @include text-standard;
+
+    position: relative;
+
+    transition: all 150ms $standard-easing;
+    z-index: $zindex-form;
+
+    margin-top: 13px;
+
+    outline: none;
+
+    border: $border-width solid $color-input-normal-form;
+    border-radius: $border-radius;
+
+    background-color: $color-input-bg;
+
+    padding: 0 16px;
+
+    width: 100%;
+    height: $form-input-height;
+
+    color: $color-input-normal-text;
+
+    font-weight: 300;
+
+    user-select: text;
+    backface-visibility: hidden;
+
+    caret-color: $color-int-blue;
+
+    + label {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      transform: translateY(24px);
+      transition: 150ms all $standard-easing;
+
+      opacity: 0;
+
+      cursor: text;
+
+      color: $color-input-label;
+      font-size: $form-input-label-font-size;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    // icon
+    ~ .icon {
+      display: block;
+
+      position: absolute;
+      right: 0;
+      bottom: 0;
+
+      opacity: 0;
+      z-index: $zindex-form + 1;
+
+      width: $form-input-height;
+      height: $form-input-height;
+
+      text-align: center;
+      line-height: $form-input-height;
+
+      color: $color-input-success-icon;
+      font-size: 22px;
+    }
+
+    &::placeholder {
+      transition: 150ms opacity $standard-easing;
+
+      opacity: 1;
+      color: $color-input-placeholder;
+    }
+
+    &:-ms-input-placeholder {
+      color: $color-input-placeholder !important;
+    }
+
+    // Focused input styles
+    // -------------------------
+
+    &:focus:not([readonly]) {
+      @include label-fixed;
+
+      border-color: $color-input-selected-form;
+      color: $color-input-selected-text;
+
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+
+    // Disabled and read-only input styles
+    // -------------------------
+
+    &:disabled,
+    &[readonly] {
+      &, & + label {
+        opacity: 0.4 !important; // otherwise, .is-fixed is stronger
+        cursor: not-allowed;
+      }
+    }
+
+    // Validation Input Style
+    // -------------------------
+
+    &.valid,
+    &:valid,
+    &.invalid,
+    &:invalid {
+      box-shadow: none;
+
+      background-repeat: no-repeat;
+      background-position: center right 16px;
+      background-size: 22px 22px;
+
+      ~ .icon {
+        display: none;
+      }
+    }
+
+    // Valid Input Style
+    // -------------------------
+
+    &.valid {
+      border-color: $color-input-success-form;
+
+      padding-right: $form-input-height + $form-input-icon-margin;
+      color: $color-input-success-text;
+
+      @include background-svg($icon-ok);
+
+      &:hover {
+        border-color: $color-input-normal-form-hover;
+      }
+    }
+
+    // Invalid Input Style
+    // -------------------------
+
+    &.invalid {
+      border-color: $color-input-invalid-form;
+      color: $color-input-invalid-text;
+
+      &:hover {
+        border-color: $color-input-invalid-form-hover;
+      }
+
+      ~ .message {
+        max-height: 50px;
+        margin-top: $form-input-invalid-message-margin;
+
+        opacity: 1;
+
+        color: $color-input-invalid-text;
+        font-size: $form-input-invalid-font-size;
+      }
+    }
+
+    // Full width label when using validate for error messages
+    &.validate + label {
+      width: 100%;
+      pointer-events: none;
+    }
+
+    // Custom classes
+    // -------------------------
+
+    &.is-fixed {
+      @include label-fixed;
+    }
+  }
+
+  // Fixed Height Input Field
+  // --------------------------------------------------
+
+  &--fixed {
+    input:not([type]),
+    input[type='text'],
+    input[type='password'],
+    input[type='email'],
+    input[type='url'],
+    input[type='time'],
+    input[type='date'],
+    input[type='datetime'],
+    input[type='datetime-local'],
+    input[type='tel'],
+    input[type='number'],
+    input[type='search'],
+    textarea {
+      margin-top: 29px;
+    }
+  }
+
+  // Static Label Input Field
+  // --------------------------------------------------
+  input:not([type]),
+  input[type='text'],
+  input[type='password'],
+  input[type='email'],
+  input[type='url'],
+  input[type='time'],
+  input[type='date'],
+  input[type='datetime'],
+  input[type='datetime-local'],
+  input[type='tel'],
+  input[type='number'],
+  input[type='search'],
+  textarea {
+    &:first-child,
+    & {
+      @include label-fixed;
+    }
+  }
+
+  // Autocomplete styles
+  // --------------------------------------------------
+
+  &--autocomplete {
+    .autocomplete {
+      position: absolute;
+
+      transform: scale(1, 0);
+      transform-origin: 50% 0;
+      transition: all 200ms $standard-easing;
+
+      opacity: .2;
+
+      width: 100%;
+      height: auto;
+
+      margin-top: -1px;
+
+      z-index: $zindex-form + 1;
+
+      cursor: pointer;
+      overflow: hidden;
+
+      background: $color-input-autocomplete-bg;
+      box-shadow: 0 0 4px 0 rgba($color-black, .2);
+
+      color: $color-input-autocomplete-text;
+
+      strong {
+        @include font-semi-light;
+        color: $color-search-live-text-match;
+      }
+
+      li {
+        &.js-hover,
+        &:hover {
+          background: $color-input-autocomplete-bg-hover;
+        }
+
+        .autocomplete__result {
+          margin: 0 22px;
+          padding: 12px 0;
+        }
+
+        &:not(:last-child) {
+          .autocomplete__result {
+            border-bottom: 1px solid $color-aluminum-tint-2;
+          }
+        }
+      }
+    }
+
+    &.is-open {
+      input:not([type]),
+      input[type='text'],
+      input[type='password'],
+      input[type='email'],
+      input[type='url'],
+      input[type='time'],
+      input[type='date'],
+      input[type='datetime'],
+      input[type='datetime-local'],
+      input[type='tel'],
+      input[type='number'],
+      input[type='search'],
+      textarea {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      .autocomplete {
+        transform: scale(1, 1);
+
+        opacity: 1;
+        z-index: $zindex-topmost;
+      }
+    }
+  }
+}
+
+// Date Field styles
+// -------------------------
+
+.input-field.flatpickr {
+  .flatpickr-input.valid + i + a[data-toggle],
+  .flatpickr-input.valid + label + i + a[data-toggle],
+  .flatpickr-input.invalid--inline + a[data-toggle],
+  .flatpickr-input.invalid--inline + label + a[data-toggle] {
+    display: none;
+  }
+  .flatpickr-input {
+    -webkit-appearance: none;
+    padding-right: 48px;
+
+    &[readonly] {
+      cursor: text;
+    }
+  }
+  // show placeholder on mobile
+  .flatpickr-input.flatpickr-mobile {
+    font-size: 0;
+
+    &::before {
+      content: attr(placeholder);
+      color: $color-input-placeholder;
+      @include text-standard;
+    }
+  }
+  // hide placeholder when field is focused or filled
+  .flatpickr-input.flatpickr-mobile:focus,
+  .flatpickr-input.is-fixed + .flatpickr-mobile {
+    @include text-standard;
+    @include label-fixed;
+
+    &::before {
+      content: "";
+    }
+  }
+  input ~ a {
+    position: static;
+  }
+  input ~ a .icon-009-calendar {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 101;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+    color: $color-gray-tint-4;
+    font-size: 30px;
+    margin: 0 6px 1px 0;
+  }
+  input:disabled ~ a .icon-009-calendar,
+  input[readonly] ~ a .icon-009-calendar {
+    color: $color-input-disabled-text;
+    pointer-events: none;
+  }
+  .flatpickr-input:focus:not([readonly]) ~ a .icon-009-calendar {
+    color: $color-int-blue;
+  }
+  input[type='date'] {
+    &::-webkit-datetime-edit-text { color: transparent; }
+    &::-webkit-datetime-edit-month-field { color: transparent; }
+    &::-webkit-datetime-edit-day-field { color: transparent; }
+    &::-webkit-datetime-edit-year-field { color: transparent; }
+  }
+  input[type='text'] {
+    margin-top: 29px;
+  }
+}
+
+// Textarea styles
+// -------------------------
+
+.input-multiline, // DEPRECATED
+.input-field--multiline {
+  textarea {
+    width: 100%;
+    height: auto;
+
+    padding: 11px 16px;
+
+    resize: none;
+    box-sizing: border-box;
+  }
+}
+
+.input-field__legend-mandatory {
+  color: $color-input-label;
+  font-size: $form-input-label-font-size;
+}

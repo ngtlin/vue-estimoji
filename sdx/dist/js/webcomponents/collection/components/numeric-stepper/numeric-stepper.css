@@ -1,0 +1,33 @@
+:host, *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+  cursor: text;
+  color: #666;
+  font-size: 16px;
+}
+
+:host {
+  display: block;
+}
+
+.component .wrapper {
+  position: relative;
+  width: 144px;
+}
+.component .wrapper .left,
+.component .wrapper .right {
+  position: absolute;
+  top: 0;
+  display: inline-block;
+  margin: 8px;
+}
+.component .wrapper .left {
+  left: 0;
+}
+.component .wrapper .right {
+  left: 96px;
+}

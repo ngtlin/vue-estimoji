@@ -1,0 +1,369 @@
+//
+// Empty States
+// --------------------------------------------------
+
+/*doc
+---
+title: Empty States
+name: 02-components-065-empty-states-01
+category: Components - Empty States
+---
+<p>Empty states are intended to prompt a user to interact in various different ways with our products.
+The icon, messaging and CTAs are a constant feature that are interchangeable depending on its intended purpose.</p>
+
+<div class="exampleOutput" style="border-bottom-style: solid; border-bottom-width: 1px; border-bottom-color: rgb(216, 216, 216);">
+  <div class="empty-state__bg"></div>
+  <div class="empty-state" style="width: 100%;height: 100%;position: relative;">
+    <form method="post" action="" enctype="multipart/form-data">
+        <div class="empty-state__input">
+            <div class="empty-state__icon">
+                <i class="icon icon-155-photo-camera" aria-hidden="true"></i>
+            </div>
+            <div class="empty-state__body">
+                <div class="body__status">You haven’t uploaded any pictures yet</div>
+                <div class="body__cta">Drag pictures into the browser window to start uploading</div>
+            </div>
+            <div class="empty-state__footer">
+                <input type="file" id="emptystate" multiple="" accept="image/*">
+                <label class="button button--primary" for="emptystate">Upload</label>
+            </div>
+        </div>
+    </form>
+  </div>
+</div>
+
+
+```section_design
+```
+
+<div class="content-design">
+
+<h2>Variations</h2>
+
+  <h3>Full screen empty states</h3>
+
+  <p>Empty states can take over the whole screen in a product to prompt the user to complete an action. In this example, the empty state is explaining how to upload a file.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/empty_states/Group@2x.jpg" alt="Example of an inactive empty state">
+        <span class="fig-caption">Inactive empty state</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/empty_states/Group-3@2x-2.jpg" alt="Example of an active empty state">
+        <span class="fig-caption">Active empty state</span>
+    </div>
+  </div>
+
+  <h3>Empty States in modals</h3>
+
+  <p>Modals can also be used to provide an empty state prompt to the user. A modal empty state is useful where space is more limited within a product.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/empty_states/Group-4@2x.jpg" alt="Example of an inactive empty state in a modal">
+        <span class="fig-caption">Empty state in modal</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/empty_states/Group-12@2x.jpg" alt="Example of an active empty state" in a modal>
+        <span class="fig-caption">Active empty state in modal</span>
+    </div>
+  </div>
+
+  <h2>Rules</h2>
+
+  <h3>Consistant layout</h3>
+
+  <p>The same layout can be used to house any icon and text, keeping a vertically centered position. In this example it helps to put emphasis on the Call-To-Action button.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/empty_states/Group-9@2x-1.jpg" alt="Example of an active empty state">
+      <span class="fig-caption">An empty state with a different purpose</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+    </div>
+  </div>
+
+  <h3>Call-To-Action button text depends on the screen size</h3>
+
+  <p>For mobile breakpoints, empty states can only be interacted with a Call-To-Action button. This means the messaging needs to be tailored appropriately.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <div class="img-container text-align-center">
+        <img src="/$WEBROOT-THEME-BUILD$/img/design/empty_states/Group-10@2x-1.png" alt="Example of an empty state on mobile">
+        </div>
+        <span class="fig-caption">An empty state on mobile</span>
+      </div>
+    </div>
+  </div>
+
+  <h3>Typography</h3>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/empty_states/Group-11@2x-1.jpg" alt="Typography for empty states">
+      <span class="fig-caption">Typography</span>
+    </div>
+  </div>
+
+</div>
+
+
+```section_develop
+```
+
+<h2>How to use Empty States</h2>
+
+<p>Use empty states on user generated content products to prompt the interaction of users. They should use text, iconography and button CTAs to encourage user participation. There’s also used to help clarify that pages and products have loaded successfully.</p>
+
+<p>The empty state uses the form <code>&lt;input type="file"&gt;</code> element for handling files. You can specify the allowed file types for the file picker on mobile by setting the <code>mime-type</code> in the <code>accept</code> attribute. For more information see <a href="http://www.w3schools.com/jsref/dom_obj_fileupload.asp">HTML DOM Input FileUpload Object</a>.</p>
+
+<p>Make sure to validate the file-type before uploading the files.</p>
+
+<p>For the <code>EmptyState</code> component to be displayed properly make sure to either set the attribute <code>data-init="auto"</code> on the component, or the initialize it using the JavaScript API.</p>
+
+<style>
+  .exampleOutput .empty-state__bg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .exampleOutput .empty-state {
+    position: inherit;
+    width: 100%;
+    height: 100%;
+  }
+
+  .exampleOutput .empty-state .container {
+    width: auto;
+  }
+</style>
+
+<p><b>Note:</b> <i>Drag and drop does</i> <b>not work in the sample below</b>, <i>it is presented for reference only. For a fully functional version see the samples under Variations.</i></p>
+
+```htmlmixed_accessible
+<div class="empty-state__bg"></div>
+<div class="empty-state">
+    <form method="post" action="" enctype="multipart/form-data">
+        <div class="empty-state__input">
+            <div class="empty-state__icon">
+                <i class="icon icon-155-photo-camera" aria-hidden="true"></i>
+            </div>
+            <div class="empty-state__body">
+                <div class="body__status">You haven’t uploaded any pictures yet</div>
+                <div class="body__cta">Drag pictures into the browser window to start uploading</div>
+            </div>
+            <div class="empty-state__footer">
+                <input type="file" id="emptystate" multiple accept="image/*">
+                <label class="button button--primary" for="emptystate">Upload</label>
+            </div>
+        </div>
+    </form>
+</div>
+```
+
+<h2>Variations</h2>
+
+<h3>Full screen empty states</h3>
+
+<p>Empty states can take over the whole screen in a product to prompt the user to complete an action. In this example, the empty state is explaining how to upload a file.</p>
+
+<p><a href="/samples/empty-state.html">samples/empty-state</a></p>
+
+<h3>Empty States in modals</h3>
+
+<p>Modals can also be used to provide an empty state prompt to the user. A modal empty state is useful where space is more limited within a product.</p>
+
+<p><a href="/samples/empty-state-modal.html">samples/empty-state-modal</a></p>
+
+*/
+
+// Empty State
+// --------------------------------------------------
+
+.empty-state {
+  display: flex;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  justify-content: center;
+  align-items: center;
+
+  input[type='file'] {
+    width: .1px;
+    height: .1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+
+  label {
+    margin-top: 36px;
+    min-width: 206px;
+  }
+
+  &__icon {
+    width: 100%;
+    margin-top: -10px;
+
+    color: $color-gray-tint-8;
+    font-size: 230px;
+    text-align: center;
+
+    transition:
+      color 300ms $standard-easing,
+      transform 300ms $standard-easing;
+  }
+
+  &__body {
+    @include text-standard;
+    @include font-semi-light;
+
+    color: $color-gray;
+    text-align: center;
+
+    @include bp-tablet {
+      @include typo-headline-4;
+    }
+
+    .body__status {
+      transition:
+        visibility 300ms $standard-easing,
+        opacity 300ms $standard-easing;
+
+      @include bp-tablet {
+        @include font-semi-bold;
+      }
+    }
+
+    .body__cta {
+      display: none;
+      margin-bottom: 0;
+
+      @include bp-tablet {
+        display: inline;
+      }
+    }
+  }
+
+  &__footer {
+    text-align: center;
+
+    transition:
+      visibility 300ms $standard-easing,
+      opacity 300ms $standard-easing;
+  }
+
+  &.is-active {
+    @include bp-tablet {
+      z-index: $zindex-empty-state + 1;
+    }
+
+    form {
+      pointer-events: none;
+    }
+
+    .empty-state__icon {
+      color: $color-int-blue;
+
+      transform: scale(1.025);
+    }
+
+    .empty-state__footer {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    .body__status {
+      opacity: 0;
+    }
+  }
+
+  &.has-files .body__status {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+
+// Empty State as modal
+// --------------------------------------------------
+
+.empty-state--modal {
+  position: relative;
+  width: auto;
+  height: auto;
+
+  pointer-events: none;
+
+  label {
+    pointer-events: auto;
+  }
+}
+
+
+// Empty State Bg
+// --------------------------------------------------
+
+.empty-state__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background: $color-white;
+}
+
+
+// Empty State Border
+// --------------------------------------------------
+
+.empty-state__border {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border: 10px solid $color-int-blue;
+  box-sizing: border-box;
+
+  background: rgba($color-white, .8);
+
+  visibility: hidden;
+  opacity: 0;
+
+  z-index: $zindex-empty-state;
+
+  pointer-events: none;
+
+  transition:
+    visibility 300ms $standard-easing,
+    opacity 300ms $standard-easing;
+
+  &--modal {
+    position: absolute;
+    pointer-events: none;
+    background: none;
+  }
+
+  &.is-active {
+    @include bp-tablet {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

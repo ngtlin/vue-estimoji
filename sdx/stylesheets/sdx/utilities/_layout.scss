@@ -1,0 +1,45 @@
+//
+// Layout classes
+// --------------------------------------------------
+
+.align-left {
+  @include float-left;
+}
+
+.align-right {
+  @include float-right;
+}
+
+.center-block {
+  @include center-block;
+}
+
+.center-vertical {
+  display: flex;
+  align-items: center;
+}
+
+// Sets a element to the full width of the document, omits parent width
+// -------------------------
+
+.full-width {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.full-width--mobile-only {
+  @media only screen and (max-width: 767px) {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}

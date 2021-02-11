@@ -1,0 +1,371 @@
+//
+// Switches
+// --------------------------------------------------
+
+/*doc
+---
+title: Switches
+name: 02-components-170-switches-01-styles
+category: Components - Switches
+---
+
+<p>Switches are used to change the status of an option or setting between on (active) and off (inactive). <br/>They are always shown with descriptive text that is used to explain their function, and feature a green active state to help confirm their status.</p>
+
+<div class="row">
+  <div class="col-xs-12 col-lg-6">
+  <h4 class="margin-top-3">Enabled switches</h4>
+    <div>
+        <div class="switch padding-top-1">
+          <input type="checkbox" name="switch01" id="switch-01" checked />
+          <label for="switch-01">Switch with supporting text</label>
+        </div>
+        <div class="switch margin-top-3">
+          <input type="checkbox" name="switch02" id="switch-02" />
+          <label for="switch-02">Switch with supporting text</label>
+        </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-lg-6">
+  <h4 class="margin-top-3">Disabled switches</h4>
+    <div>
+      <div class="switch padding-top-1">
+        <input type="checkbox" name="switch03" id="switch-03" disabled />
+        <label for="switch-03">Disabled switch with supporting text</label>
+      </div>
+      <div class="switch margin-top-3">
+        <input type="checkbox" name="switch04" id="switch-04" checked disabled />
+        <label for="switch-04">Disabled switch with supporting text</label>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Rules</h2>
+
+  <p>The toggle labels are essential: They should describe what the control will do when the switch is on; they should not be neutral or ambiguous.<br> Hint: When in doubt, say the label aloud and append “on/off” to the end. If it doesn’t make sense, then rewrite the label.</p>
+
+  <h3>On and Off states</h3>
+
+  <p>In their on state, switches move to the right. As they transition into position, a green space is revealed behind the button. Using the interaction green helps to confirm the active state of the switch without the need for additional labelling.</p>
+  
+  <div class="row">
+    <div class="col-xs-12">
+    <div class="img-container">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/switch/switches_on.png" alt="Inactive state">
+      </div>  
+      <span class="fig-caption">Active/ on states</span>
+    </div>
+    </div>
+
+    <p>When in the off state, switches are positioned to the left, with a grey keyline to indicate their sliding behavior. A grey keyline around the white button helps to maintain the accessibility of the switch on all background colours.</p>
+    
+    <div class="row">
+      <div class="col-xs-12">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/switch/switches_off.png" alt="Active state">
+    </div>
+      <span class="fig-caption">Inactive/ off states</span>
+    </div>
+  </div>
+
+  <h3>Specifications</h3>
+
+  <p>There is a 24px margin between switches and 16px between switches and labels.</p>
+
+  <div class="row">
+      <div class="col-xs-12">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/switch/Group-34@2x-3.png" alt="Specifications">
+         </div>
+        <span class="fig-caption">Specification</span>
+       </div>
+  </div>
+
+</div>
+
+
+```section_develop
+```
+
+<p>Use the following switch as a simple on/off toggle switch.</p>
+
+```htmlmixed_accessible
+<div class="switch">
+  <input type='checkbox' name='switch05' id='switch-05' />
+  <label for='switch-05'>
+    Switch with supporting text
+  </label>
+</div>
+<div class="switch">
+  <input type='checkbox' name='switch06' id='switch-06' checked />
+  <label for='switch-06'>
+     Switch with supporting text
+  </label>
+</div>
+<div class="switch">
+  <input type='checkbox' name='switch07' id='switch-07' checked />
+  <label for='switch-07'>(This text is read by screen reader only)
+      <span class="sr-only">This text is read by screen reader only.</span>
+  </label>
+</div>
+<div class="switch">
+  <input type='checkbox' name='switch08' id='switch-08' disabled />
+  <label for='switch-08'>
+    Disabled switch with supporting text
+  </label>
+</div>
+<div class="switch">
+  <input type='checkbox' name='switch09' id='switch-09' checked disabled />
+  <label for='switch-09'>
+    Disabled switch with supporting text
+  </label>
+</div>
+```
+
+<p>Switch with label on the left side</p>
+
+```htmlmixed_accessible
+<div class="switch switch--left">
+  <input type='checkbox' name='switch10' id='switch-10' />
+  <label for='switch-10'>
+    Switch with supporting text
+  </label>
+</div>
+```
+*/
+
+
+// --------------------------------------------------
+
+
+// Switch wrapper styles
+// -------------------------
+
+.switch {
+  display: flex;
+  position: relative;
+
+  margin-bottom: 12px;
+
+  backface-visibility: hidden;
+
+  //p tag classes for backwards compatibility. Padding is new placed in label tag.
+  p {
+    @include text-standard;
+    position: relative;
+    top: 2px;
+    color: $color-gray;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+  }
+
+  // Remove default Checkbox
+  // -------------------------
+
+  [type='checkbox']:not(:checked),
+  [type='checkbox']:checked {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    top: 8px;
+    width: 60px;
+    height: 30px;
+  }
+
+  // Switch styles
+  // -------------------------
+
+  [type='checkbox'] {
+
+    // Base styles
+    // -------------------------
+
+    + label {
+      @include text-standard;
+      font-weight: 400;
+      height: 24px;
+      top: 2px;
+      color: $color-gray;
+      display: block;
+      line-height: 24px;
+      margin-bottom: 8px;
+
+      position: relative;
+
+      cursor: pointer;
+      align-items: center;
+
+      backface-visibility: hidden;
+      padding-left: $switch-margin-right;
+      z-index: 0;
+
+      // 'off' state of the toggle switch
+      &::before {
+        position: absolute;
+
+        top: -2px;
+
+        transition: all 180ms cubic-bezier(.985, .385, .41, .445);
+        z-index: 1;
+
+        left: 0;
+        margin: 0 auto;
+
+        border-radius: $switch-height;
+        background: $color-gray-tint-8;
+
+        width: $switch-width;
+        height: $switch-height;
+
+        content: '';
+      }
+
+      &::after {
+        position: absolute;
+        top: -2px;
+        bottom: 0;
+        left: 0;
+
+        transition: all 180ms 120ms cubic-bezier(.445, .41, .395, .985);
+        z-index: 2;
+
+        margin: 0;
+
+        border: $switch-border solid $color-gray-tint-6;
+        border-radius: $switch-height;
+        background: $color-white;
+
+        width: $switch-height;
+        height: $switch-height;
+
+        content: '';
+      }
+
+  }
+
+    // Hover styles
+    // -------------------------
+
+    &:hover + label {
+
+      &::before {
+        z-index: 1;
+      }
+      &::after {
+        border-color: $color-gray-tint-5;
+        z-index: 2;
+      }
+    }
+
+    // Focus styles
+    // -------------------------
+
+    &:focus + label {
+      outline: none;
+
+      &::after {
+        border-color: $color-gray-tint-5;
+        outline: none;
+      }
+    }
+
+    // Checked / on styles
+    // -------------------------
+
+    &:checked + label {
+      &::before {
+        top: -2px;
+        border-radius: $switch-height;
+        background-color: $color-int-green;
+
+        height: $switch-height;
+      }
+
+      &::after {
+        // make the switch move to the right when checked
+        left: $switch-height + $switch-border;
+      }
+
+      &:hover {
+        &::after {
+          border-color: $color-gray-tint-5;
+          z-index: 2;
+        }
+      }
+
+      &:focus {
+        outline: none;
+
+        &::after {
+          border-color: $color-gray-tint-5;
+        }
+      }
+    }
+
+    // Disabled style
+    // -------------------------
+
+    @include disabled-label;
+
+    &:disabled + label {
+      &:hover::after {
+        border-color: $color-gray-tint-6;
+      }
+
+      //p tag classes for backwards compatibility.
+      + p {
+        opacity: .6;
+      }
+    }
+  }
+}
+
+// Label on the left
+//
+.switch--left {
+
+  [type="checkbox"] {
+
+    + label {
+      padding: 0 20px 0 0;
+      margin-right: $switch-margin-right;
+
+      &::before{
+        left: 100%;
+      }
+
+      &::after{
+        left: 100%;
+      }
+    }
+
+    &:checked + label{
+      &::after {
+        // make the switch move to the right when checked
+        left: calc(100% + 30px); //switch-widht minus switch-height
+      }
+
+    }
+  }
+}
+
+// Dark Background
+// -------------------------
+
+.bg--dark {
+  .switch label {
+    color: $color-white;
+    font-weight: 400;
+  }
+
+  //p tag classes for backwards compatibility.
+  .switch p {
+    color: $color-white;
+  }
+}

@@ -1,0 +1,14 @@
+:host, *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.slot {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

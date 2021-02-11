@@ -1,0 +1,665 @@
+//
+// Toolbar
+// --------------------------------------------------
+
+/*doc
+---
+title: Toolbar
+name: 02-components-190-toolbar-01-overview
+category: Components - Toolbar
+---
+
+<p>Toolbars are groupings of key functions that are represented by icons and their label.</p>
+
+<section class="live-example">
+  <div class="toolbar">
+    <button class="toolbar__item item--show" aria-label="Share" onClick="this.blur()">
+      <i class="icon icon-197-share" aria-hidden="true"></i>
+      <span class="toolbar__label">Share</span>
+    </button>
+    <button class="toolbar__item item--show" aria-label="Edit" onClick="this.blur()">
+      <i class="icon icon-025-edit" aria-hidden="true"></i>
+      <span class="toolbar__label">Edit</span>
+    </button>
+    <button class="toolbar__item item--show" aria-label="Download" onClick="this.blur()">
+      <i class="icon icon-024-download-cloud" aria-hidden="true"></i>
+      <span class="toolbar__label">Download</span>
+    </button>
+    <button class="toolbar__item item--show" aria-label="Delete" onClick="this.blur()">
+      <i class="icon icon-008-bin" aria-hidden="true"></i>
+      <span class="toolbar__label">Delete</span>
+    </button>
+  </div>
+</section>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Variations</h2>
+
+  <h3>Horizontal toolbar</h3>
+
+  <p>The Toolbar is horizontal by default.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/toolbar_tooltips/Group-27@2x-5.jpg" alt="Example toolbar standard">
+        <span class="fig-caption">Standard</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/toolbar_tooltips/Group-30@2x-6.jpg" alt="Example toolbar hover">
+        <span class="fig-caption">Hover</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/toolbar_tooltips/Group-33@2x-5.jpg" alt="Example toolbar disabled">
+        <span class="fig-caption">Disabled</span>
+    </div>
+  </div>
+
+  <h3>Vertical toolbar</h3>
+
+  <p>The vertical Toolbar displays the labels next to the icons.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/toolbar_tooltips/Group-41@2x-2.jpg" alt="Example vertical toolbar standard">
+        <span class="fig-caption">Standard</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/toolbar_tooltips/Group-43@2x-2.jpg" alt="Example vertical toolbar hover">
+        <span class="fig-caption">Hover</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/toolbar_tooltips/Group-46@2x-1.jpg" alt="Example vertical toolbar disabled">
+        <span class="fig-caption">Disabled</span>
+    </div>
+  </div>
+
+  <h2>Typography</h2>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/toolbar_tooltips/Group-47@2x-1.png" alt="Typography specifications">
+      <span class="fig-caption">Typography</span>
+    </div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+<script>
+  function toggleToolbar(id) {
+    var toolbar = new sdx.Toolbar(document.querySelector(id));
+    toolbar.toggle();
+  }
+</script>
+
+<p>Provides a Toolbar with two alignments. Horizontal or vertical aligned.</p>
+
+<p>Add the class <code>toolbar</code> to a wrapper div and place buttons inside the wrapper with the class <code>toolbar__item item--show</code> to add a toolbar.</p>
+
+<h2>Toolbar</h2>
+
+<h3>Horizontal Toolbar</h3>
+
+<p>The horizontal Toolbar is the standard toolbar. You can add the class <code>toolbar--horizontal</code> next to the <code>toolbar</code> class but you don't have to.</p>
+
+<sdx-button label="Toggle Toolbar" onClick="toggleToolbar('#toolbar01')"></sdx-button>
+
+```htmlmixed_accessible
+<div class="toolbar" id="toolbar01">
+  <button class="toolbar__item item--show" aria-label="Share" onClick="this.blur()">
+    <i class="icon icon-197-share" aria-hidden="true"></i>
+    <span class="toolbar__label">Share</span>
+  </button>
+  <button class="toolbar__item item--show" aria-label="Edit" onClick="this.blur()">
+    <i class="icon icon-025-edit" aria-hidden="true"></i>
+    <span class="toolbar__label">Edit</span>
+  </button>
+  <button class="toolbar__item item--show" aria-label="Download" onClick="this.blur()">
+    <i class="icon icon-024-download-cloud" aria-hidden="true"></i>
+    <span class="toolbar__label">Download</span>
+  </button>
+  <button class="toolbar__item item--show" aria-label="Delete" onClick="this.blur()">
+    <i class="icon icon-008-bin" aria-hidden="true"></i>
+    <span class="toolbar__label">Delete</span>
+  </button>
+</div>
+```
+
+<h3>Vertical Toolbar</h3>
+
+<p>The vertical Toolbar uses labels next to the icon. To get a vertical toolbar add the class <code>toolbar--vertical</code> next to the <code>toolbar</code> class.</p>
+
+<sdx-button label="Toggle Toolbar" onClick="toggleToolbar('#toolbar02')"></sdx-button>
+
+```htmlmixed_accessible
+<div class="toolbar toolbar--vertical" id="toolbar02">
+  <button class="toolbar__item item--show" aria-label="Share" onClick="this.blur()">
+    <i class="icon icon-197-share" aria-hidden="true"></i>
+    <span class="toolbar__label">Share</span>
+  </button>
+  <button class="toolbar__item item--show" aria-label="Edit" onClick="this.blur()">
+    <i class="icon icon-025-edit" aria-hidden="true"></i>
+    <span class="toolbar__label">Edit</span>
+  </button>
+  <button class="toolbar__item item--show" aria-label="Download" onClick="this.blur()">
+    <i class="icon icon-024-download-cloud" aria-hidden="true"></i>
+    <span class="toolbar__label">Download</span>
+  </button>
+  <button class="toolbar__item item--show" aria-label="Delete" onClick="this.blur()">
+    <i class="icon icon-008-bin" aria-hidden="true"></i>
+    <span class="toolbar__label">Delete</span>
+  </button>
+</div>
+```
+
+<h3>Disabled Toolbar</h3>
+
+<p>To disable the entire toolbar add the class <code>toolbar--disabled</code> to the toolbar and disable the buttons.</p>
+
+```htmlmixed_accessible
+<div class="toolbar toolbar--vertical toolbar--disabled">
+  <button class="toolbar__item item--show" aria-label="Share" onClick="console.log('Nothing happens')" disabled>
+    <i class="icon icon-197-share" aria-hidden="true"></i>
+    <span class="toolbar__label">Share</span>
+  </button>
+  <button class="toolbar__item item--show" aria-label="Edit" onClick="console.log('Nothing happens')" disabled>
+    <i class="icon icon-025-edit" aria-hidden="true"></i>
+    <span class="toolbar__label">Edit</span>
+  </button>
+  <button class="toolbar__item item--show" aria-label="Download" onClick="console.log('Nothing happens')" disabled>
+    <i class="icon icon-024-download-cloud" aria-hidden="true"></i>
+    <span class="toolbar__label">Download</span>
+  </button>
+  <button class="toolbar__item item--show" aria-label="Delete" onClick="console.log('Nothing happens')" disabled>
+    <i class="icon icon-008-bin" aria-hidden="true"></i>
+    <span class="toolbar__label">Delete</span>
+  </button>
+</div>
+```
+
+<h3>Disabled Toolbar items</h3>
+
+<p>To disable certain toolbar items, add the class <code>item--disabled</code> and attributes <code>disabled</code> to them.</p>
+
+```htmlmixed_accessible
+<div class="toolbar">
+  <button class="toolbar__item item--show" aria-label="Share" onClick="this.blur()">
+    <i class="icon icon-197-share" aria-hidden="true"></i>
+    <span class="toolbar__label">Share</span>
+  </button>
+  <button class="toolbar__item item--show" aria-label="Edit" onClick="this.blur()">
+    <i class="icon icon-025-edit" aria-hidden="true"></i>
+    <span class="toolbar__label">Edit</span>
+  </button>
+  <button class="toolbar__item item--show item--disabled" aria-label="Download" onClick="console.log('Nothing happens')" disabled>
+    <i class="icon icon-024-download-cloud" aria-hidden="true"></i>
+    <span class="toolbar__label">Download</span>
+  </button>
+  <button class="toolbar__item item--show item--disabled" aria-label="Delete" onClick="console.log('Nothing happens')" disabled>
+    <i class="icon icon-008-bin" aria-hidden="true"></i>
+    <span class="toolbar__label">Delete</span>
+  </button>
+</div>
+```
+*/
+
+
+// --------------------------------------------------
+
+$tooltip-zindex: 1000000;
+
+$tooltip-fontsize: 16px;
+
+$tooltip-max-width: 200px;
+$tooltip-height: 32px;
+
+$tooltip-padding-vertical: 8px;
+$tooltip-padding-horizontal: 15px;
+
+$tooltip-arrow-size: 8px;
+
+$tooltip-offset-vertical: 2px;
+$tooltip-offset-horizontal: 2px;
+
+$tooltip-transition-distance: 8px;
+
+// --------------------------------------------------
+
+
+// Tooltip wrapper styles
+// --------------------------------------------------
+
+.tooltip {
+  display: inline-block;
+  position: relative;
+
+  z-index: 1;
+  outline: none;
+
+  // Fixing iOS Safari event issue.
+  // More info at: https://goo.gl/w8JF4W
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    position: absolute;
+
+    transform: translate3d(0, 0, 0);
+
+    visibility: hidden;
+    opacity: 0;
+
+    z-index: $tooltip-zindex;
+    pointer-events: none;
+
+    transition:
+      visibility 200ms $standard-easing,
+      opacity 200ms $standard-easing,
+      transform 300ms $standard-easing;
+
+    transition-delay: 0ms;
+  }
+
+  &:hover, &:focus {
+    &::before,
+    &::after {
+      visibility: visible;
+      opacity: 1;
+
+      transition-delay: 100ms;
+    }
+  }
+
+  // Tooltip arrow
+  // -------------------------
+
+  &::before {
+    position: absolute;
+
+    background: 0 0;
+    border: $tooltip-arrow-size solid transparent;
+
+    z-index: $tooltip-zindex + 1;
+
+    content: '';
+  }
+
+  // Tooltip body
+  // -------------------------
+
+  &::after {
+    @include font-sans;
+    @include font-semi-light;
+    @include text-truncate;
+    @include font-smoothing;
+
+    max-width: $tooltip-max-width;
+    height: $tooltip-height;
+
+    padding: $tooltip-padding-vertical $tooltip-padding-horizontal;
+
+    color: $color-white;
+
+    border-radius: 8px;
+    background: $color-int-blue--active;
+
+    font-size: $tooltip-fontsize;
+    line-height: $tooltip-fontsize;
+
+    content: attr(aria-label);
+  }
+
+  // Tooltip default / top
+  // -------------------------
+
+  &,
+  &--top {
+    &::before,
+    &::after {
+      left: 50%;
+      bottom: calc(100% + #{$tooltip-offset-vertical});
+
+      margin: 0;
+    }
+
+    &::before {
+      left: calc(50% - #{$tooltip-arrow-size});
+      margin-bottom: -2 * $tooltip-arrow-size + 1px;
+
+      border-color: transparent;
+      border-top-color: $color-int-blue--active;
+    }
+
+    &::after {
+      transform: translateX(-50%);
+    }
+
+    // Hover
+    // -------------------------
+
+    &:hover,
+    &:focus {
+      &::before {
+        transform: translateY(-1 * $tooltip-transition-distance);
+      }
+
+      &::after {
+        transform:
+          translateX(-50%)
+          translateY(-1 * $tooltip-transition-distance);
+      }
+    }
+  }
+
+  // Tooltip bottom
+  // -------------------------
+
+  &--bottom {
+    &::before,
+    &::after {
+      left: 50%;
+      top: calc(100% + #{$tooltip-offset-vertical});
+      bottom: auto;
+
+      margin: 0;
+    }
+
+    &::before {
+      left: calc(50% - #{$tooltip-arrow-size});
+      margin-top: -2 * $tooltip-arrow-size + 1px;
+
+      border-color: transparent;
+      border-bottom-color: $color-int-blue--active;
+    }
+
+    &::after {
+      transform: translateX(-50%);
+    }
+
+    // Hover
+    // -------------------------
+
+    &:hover,
+    &:focus {
+      &::before {
+        transform: translateY($tooltip-transition-distance);
+      }
+
+      &::after {
+        transform:
+          translateX(-50%)
+          translateY($tooltip-transition-distance);
+      }
+    }
+  }
+
+  // Tooltip left
+  // -------------------------
+
+  &--left {
+    &::before,
+    &::after {
+      left: auto;
+      right: calc(100% + #{$tooltip-offset-horizontal});
+      bottom: 50%;
+
+      margin: 0;
+    }
+
+    &::before {
+      margin-right: -2 * $tooltip-arrow-size + 1px;
+      margin-bottom: -1 * $tooltip-arrow-size;
+
+      border-color: transparent;
+      border-left-color: $color-int-blue--active;
+
+
+    }
+
+    &::after {
+      transform:
+        translateX(0)
+        translateY(0);
+
+      margin-bottom: -1 * floor($tooltip-height / 2);
+    }
+
+    // Hover
+    // -------------------------
+
+    &:hover,
+    &:focus {
+      &::before {
+        transform:
+          translateX(-1 * $tooltip-transition-distance);
+      }
+
+      &::after {
+        transform:
+          translateX(-1 * $tooltip-transition-distance)
+          translateY(0);
+      }
+    }
+  }
+
+  // Tooltip right
+  // -------------------------
+
+  &--right {
+    &::before,
+    &::after {
+      left: calc(100% + #{$tooltip-offset-horizontal});
+      bottom: 50%;
+
+      margin: 0;
+    }
+
+    &::before {
+      margin-left: -2 * $tooltip-arrow-size + 1px;
+      margin-bottom: -1 * $tooltip-arrow-size;
+
+      border-color: transparent;
+      border-right-color: $color-int-blue--active;
+    }
+
+    &::after {
+      transform:
+        translateX(0)
+        translateY(0);
+
+      margin-bottom: -1 * floor($tooltip-height / 2);
+    }
+
+    // Hover
+    // -------------------------
+
+    &:hover,
+    &:focus {
+      &::before {
+        transform:
+          translateX($tooltip-transition-distance);
+      }
+
+      &::after {
+        transform:
+          translateX($tooltip-transition-distance)
+          translateY(0);
+      }
+    }
+  }
+
+  // Multiline support
+  // -------------------------
+
+  &--multiline::after {
+    height: auto;
+
+    text-align: center;
+
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+
+  // Hide Tooltip if aria-label is empty
+  // -------------------------
+
+  &:not([aria-label]),
+  &[aria-label=''] {
+    &::before,
+    &::after {
+      display: none !important;
+    }
+  }
+}
+
+
+// Toolbar wrapper styles
+// --------------------------------------------------
+
+.toolbar {
+  @include font-sans;
+  @include font-semi-light;
+
+  &__item {
+    display: inline-block;
+    padding: 10px;
+
+    text-align: center;
+    color: $color-int-blue;
+
+    opacity: 0;
+    transform: translate(0, 10px);
+
+    transition:
+      color 180ms $standard-easing,
+      opacity 300ms $standard-easing,
+      transform 300ms cubic-bezier(.87, -.41, .19, 1.44);
+
+    &:hover, &:focus {
+      color: $color-int-blue--active;
+
+      .toolbar__label {
+        color: $color-int-blue--active;
+      }
+    }
+
+    .toolbar__label {
+      display: block;
+
+      font-size: 14px;
+      color: $color-gray;
+    }
+
+    .icon {
+      font-size: 30px;
+    }
+
+    &.item--show {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+  }
+
+
+  &--vertical {
+    .toolbar__item {
+      display: block;
+
+      opacity: 0;
+      transform: translate(10px, 0);
+
+      text-align: left;
+      align-items: center;
+
+      .toolbar__label {
+        display: inline-block;
+        margin-left: 12px;
+
+        line-height: 1;
+      }
+
+      .icon {
+        vertical-align: middle;
+      }
+
+      &.item--show {
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+    }
+  }
+
+  // Disabled style
+  // -------------------------
+
+  .item--disabled,
+  %item--disabled {
+    color: $color-disabled;
+    @include disabled;
+
+    .toolbar__label {
+      color: $color-disabled;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &.toolbar--disabled {
+    .toolbar__item {
+      @extend %item--disabled;
+    }
+  }
+}
+
+// Dark Background
+// -------------------------
+.bg--dark {
+  .toolbar__item {
+    &:hover, &:focus {
+      .toolbar__label {
+        color: $color-white;
+        text-decoration: underline;
+      }
+    }
+
+    .toolbar__label {
+      color: $color-white;
+    }
+  }
+
+  // Disabled style
+  // -------------------------
+
+  .toolbar {
+    .item--disabled,
+    %item--disabled--dark {
+      opacity: .4;
+      color: $color-white;
+      @include disabled;
+
+      .toolbar__label {
+        color: $color-white;
+        text-decoration: none;
+      }
+    }
+
+    &.toolbar--disabled {
+      .toolbar__item {
+        @extend %item--disabled--dark;
+      }
+    }
+  }
+}

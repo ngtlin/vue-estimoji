@@ -1,0 +1,13 @@
+@mixin smooth-scroll-on-ios {
+  -webkit-overflow-scrolling: touch;
+}
+
+@mixin scroll-y {
+  @include smooth-scroll-on-ios;
+  overflow-y: scroll;
+}
+
+@mixin scroll-y-auto {
+  @include smooth-scroll-on-ios;
+  overflow-y: auto;
+}

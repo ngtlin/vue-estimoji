@@ -1,0 +1,654 @@
+//
+// Grid
+// --------------------------------------------------
+
+// This Grid is based on the Bootstrap Grid.
+// Credit: Bootstrap
+
+// --------------------------------------------------
+
+/*doc
+---
+title: Grids
+name: 01-foundation-03-grid-01
+category: Foundation - Grids
+---
+
+<style>
+  .exampleIntroSection .row [class^=col-],
+  .exampleOutput .row [class^=col-] {
+    background-color: #DDE3E7;
+    background-clip: content-box;
+    font-size: 16px;
+  }
+
+  .exampleIntroSection .row [class^=col-] {
+    border: 0;
+  }
+
+  .exampleOutput .row [class^=col-] {
+    border: 1px solid white;
+  }
+
+  .exampleIntroSection .row {
+    height: 160px; background-color: #F8FAFB;"
+  }
+</style>
+
+<p>Different combinations of column widths and arrangements can be used to support the intention of the design. Uniform column widths create calm, functional layouts. Variation between column widths can create visually dynamic and exciting layouts.</p>
+
+<div class="exampleIntroSection">
+  <div class="row">
+    <div class="col-xs"></div>
+    <div class="col-xs"></div>
+    <div class="col-xs"></div>
+    <div class="col-xs"></div>
+    <div class="col-xs"></div>
+    <div class="col-xs"></div>
+    <div class="col-xs"></div>
+    <div class="col-xs"></div>
+    <div class="col-xs"></div>
+    <div class="col-xs"></div>
+    <div class="col-xs"></div>
+    <div class="col-xs"></div>
+  </div>
+
+  <span class="fig-caption">Resize your browser to see how the grid responds to different screen sizes</span>
+</div>
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Rules</h2>
+
+  <h3>Breakpoints</h3>
+
+  <div class="table table--responsive">
+    <div class="table__wrapper">
+      <table data-init="auto">
+        <thead>
+          <tr>
+            <th>Breakpoint</th>
+            <th>Container</th>
+            <th>Gutter</th>
+            <th>Margin</th>
+            <th>CSS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>&gt;= 1440px</td>
+            <td>1356px</td>
+            <td>24px</td>
+            <td>Fluid</td>
+            <td><code>col-ul-*</code></td>
+          </tr>
+          <tr>
+            <td>&gt;= 1280px</td>
+            <td>1200px</td>
+            <td>24px</td>
+            <td>Fluid</td>
+            <td><code>col-xl-*</code></td>
+          </tr>
+          <tr>
+            <td>&gt;= 1024px</td>
+            <td>940px</td>
+            <td>24px</td>
+            <td>Fluid</td>
+            <td><code>col-lg-*</code></td>
+          </tr>
+          <tr>
+            <td>&gt;= 768px</td>
+            <td>726px</td>
+            <td>16px</td>
+            <td>Fluid</td>
+            <td><code>col-md-*</code></td>
+          </tr>
+          <tr>
+            <td>&gt;= 480px</td>
+            <td>428px</td>
+            <td>8px</td>
+            <td>Fluid</td>
+            <td><code>col-sm-*</code></td>
+          </tr>
+          <tr>
+            <td>&lt; 480px</td>
+            <td>Fluid</td>
+            <td>8px</td>
+            <td>24px</td>
+            <td><code>col-xs-*</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <p>
+    Which screen sizes are the most commonly used? See <a href="https://gs.statcounter.com/screen-resolution-stats/all/">screen resolution stats</a>.
+  </p>
+
+  <h3>Layout options</h3>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/grids/grid-1440-columns@2x.jpg">
+      <span class="fig-caption">1440px — 480px column usage combinations</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/grids/grid-480-columns@2x.jpg">
+      <span class="fig-caption">&lt; 480px column usage combinations</span>
+    </div>
+  </div>
+
+  <h3>Baseline grid</h3>
+
+  <p>Our baseline dictates the horizontal positioning of typography across all screens within Swisscom services. No matter the screen width, margins or column width, the baseline grid is always set to 8px. This ensures a consistent treatment of type placement and line spacing across all products at all sizes.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/grids/grid-baseline@2x.jpg">
+      <span class="fig-caption">Baseline grid</span>
+    </div>
+  </div>
+
+  <p>All typography, when using the defined sizes, will naturally align to the baseline grid. Graphic elements should aim to align to the baseline where possible but this isn’t mandatory.</p>
+
+  <h3>Axis alignment</h3>
+
+  <p>The concept of the Swisscom axis within SDX is derived from the Swisscom master brand, and the Life Form itself. Use the axis plotted on any grid column to create interesting and asymmetric layouts.</p>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/grids/LogoAxis.png">
+      <span class="fig-caption">The axis alignment stems from the central axis of the Swisscom Life Form</span>
+    </div>
+    <div class="col-xs-12 col-lg-6"></div>
+  </div>
+
+  <h3>Axis in application</h3>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/grids/grid-axis-article@2x.jpg">
+      <span class="fig-caption">Vertical aligment in an article</span>
+    </div>
+  </div>
+
+  <p>For mobile breakpoints, the left edge of page content aligns to the central axis in the Life Form and is always the outside margin of the underlying grid.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/grids/grid-align-small-screen@2x.jpg">
+      <span class="fig-caption">Vertical alignment on smaller screens</span>
+    </div>
+    <div class="col-xs-12 col-lg-6"></div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+<p>The SDX library includes a responsive, mobile first 12 column grid system. It includes predefined classes for easy layout options and is based on Bootstrap's Grid component. The grid is using a flexbox based system by default.</p>
+
+```htmlmixed_no_preview
+<div class="container"> <!-- or use "container-fluid" to skip breakpoints -->
+  <div class="row">
+    <div class="col-xs">col-xs</div>
+    <div class="col-xs">col-xs</div>
+  </div>
+</div>
+```
+
+<h2>Introduction</h2>
+
+<p>Grid systems are used for creating page layouts through a series of rows and columns that house your content. Here's how the Bootstrap grid system works:</p>
+
+<ul class="list">
+  <li>Rows must be placed within a <code>.container</code> (fixed-width) or <code>.container-fluid</code> (full-width) for proper alignment and padding. Use rows to create horizontal groups of columns.</li>
+  <li>Content should be placed within columns, and only columns may be immediate children of rows.</li>
+  <li>Predefined grid classes like <code>.row</code> and <code>.col-xs-4</code> are available for quickly making grid layouts. Sass mixins can also be used for more semantic layouts.</li>
+  <li>Columns create gutters (gaps between column content) via <code>padding</code>. That padding is offset in rows for the first and last column via negative margin on <code>.rows</code>.</li>
+  <li>The negative margin is why the examples below are outdented. It's so that content within grid columns is lined up with non-grid content.</li>
+  <li>Grid columns are created by specifying the number of 12 available columns you wish to span. For example, three equal columns would use three <code>.col-xs-4</code>.</li>
+  <li>If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.</li>
+  <li>Grid classes apply to devices with screen widths greater than or equal to the breakpoint sizes, and override grid classes targeted at smaller devices. Therefore, e.g. applying any <code>.col-md-*</code> class to an element will not only affect its styling on medium devices but also on large devices if a <code>.col-lg-*</code> class is not present.</li>
+</ul>
+
+<h2>Sample mobile-to-desktop layout</h2>
+
+<p>Using a set of <code>.col-md-*</code> grid classes, you can create a basic grid system that starts out stacked on mobile devices and tablet devices (the extra small to small range) before becoming horizontal on desktop (medium) devices. Place grid columns in any <code>.row</code>.</p>
+
+```htmlmixed_playground
+<div class="row">
+  <div class="col-xs-12 col-md-1">col-xs-12 col-md-1</div>
+  <div class="col-xs-12 col-md-1">col-xs-12 col-md-1</div>
+  <div class="col-xs-12 col-md-1">col-xs-12 col-md-1</div>
+  <div class="col-xs-12 col-md-1">col-xs-12 col-md-1</div>
+  <div class="col-xs-12 col-md-1">col-xs-12 col-md-1</div>
+  <div class="col-xs-12 col-md-1">col-xs-12 col-md-1</div>
+  <div class="col-xs-12 col-md-1">col-xs-12 col-md-1</div>
+  <div class="col-xs-12 col-md-1">col-xs-12 col-md-1</div>
+  <div class="col-xs-12 col-md-1">col-xs-12 col-md-1</div>
+  <div class="col-xs-12 col-md-1">col-xs-12 col-md-1</div>
+  <div class="col-xs-12 col-md-1">col-xs-12 col-md-1</div>
+  <div class="col-xs-12 col-md-1">col-xs-12 col-md-1</div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-md-8">col-xs-12 col-md-8</div>
+  <div class="col-xs-12 col-md-4">col-xs-12 col-md-4</div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-md-4">col-xs-12 col-md-4</div>
+  <div class="col-xs-12 col-md-4">col-xs-12 col-md-4</div>
+  <div class="col-xs-12 col-md-4">col-xs-12 col-md-4</div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-md-6">col-xs-12 col-md-6</div>
+  <div class="col-xs-12 col-md-6">col-xs-12 col-md-6</div>
+</div>
+```
+
+<h3>Equal-width</h3>
+
+<p>Utilize breakpoint-specific column classes for equal-width columns. Add any number of <code>.col-{breakpoint}</code>s for each breakpoint you need and every column will be the same width.</p>
+
+<p>For example, here are two grid layouts that apply to every device and viewport, from xs to ul.</p>
+
+```htmlmixed_playground
+<div class="row">
+  <div class="col-xs">1 of 2</div>
+  <div class="col-xs">1 of 2</div>
+</div>
+
+<div class="row">
+  <div class="col-xs">1 of 3</div>
+  <div class="col-xs">1 of 3</div>
+  <div class="col-xs">1 of 3</div>
+</div>
+```
+
+<h3>Setting one column width</h3>
+
+<p>Auto-layout for columns also means you can set the width of one column and the others will automatically resize around it. You may use predefined grid classes (as shown below), grid mixins, or inline widths. Note that the other columns will resize no matter the width of the center column.</p>
+
+```htmlmixed_playground
+<div class="row">
+  <div class="col-xs">1 of 3</div>
+  <div class="col-xs-6">2 of 3 (wider)</div>
+  <div class="col-xs">3 of 3</div>
+</div>
+
+<div class="row">
+  <div class="col-xs">1 of 3</div>
+  <div class="col-xs-5">2 of 3 (wider)</div>
+  <div class="col-xs">3 of 3</div>
+</div>
+```
+
+<h3>Variable width content</h3>
+
+<p>Using the <code>.col-{breakpoint}-auto</code> classes, columns can size themselves based on the natural width of their content. This comes in handy with single line content like inputs, numbers, etc. This, in conjunction with "horizontal alignment" classes, can be used for centering layouts with uneven column sizes as viewport width changes.</p>
+
+```htmlmixed_playground
+<div class="row flex-items-md-center">
+  <div class="col-xs col-lg-2">1 of 3</div>
+  <div class="col-xs-12 col-md-auto">Variable width content</div>
+  <div class="col-xs col-lg-2">3 of 3</div>
+</div>
+
+<div class="row">
+  <div class="col-xs">1 of 3</div>
+  <div class="col-xs-12 col-md-auto">Variable width content</div>
+  <div class="col-xs col-lg-2">3 of 3</div>
+</div>
+```
+
+<h2>Responsive classes</h2>
+
+<p>The SDX grid includes six tiers of predefined classes for building complex responsive layouts. Customize the size of your columns on extra small (xs), small (sm), medium (md), large (lg), extra large (xl) or ultra large (ul) devices however you see fit.</p>
+
+<h3>All breakpoints</h3>
+
+<p>For grids that are the same from the smallest of devices to the largest, use the <code>.col-xs</code> and <code>.col-xs-*</code> classes. Specify a numbered class when you need a particularly sized column; otherwise, feel free to stick to <code>.col-xs</code>.</p>
+
+<p>The grid requires a class for full-width columns. If you have a <code>.col-sm-6</code> and don’t add <code>.col-xs-12</code>, your <code>xs</code> grid will not render correctly.</p>
+
+```htmlmixed_playground
+<div class="row">
+  <div class="col-xs">col-xs</div>
+  <div class="col-xs">col-xs</div>
+  <div class="col-xs">col-xs</div>
+  <div class="col-xs">col-xs</div>
+</div>
+
+<div class="row">
+  <div class="col-xs-8">col-xs-8</div>
+  <div class="col-xs-4">col-xs-4</div>
+</div>
+```
+
+```htmlmixed_playground
+<div class="row">
+  <div class="col-xs-12 col-md-6">
+    1 of 2 (stacked on mobile)
+  </div>
+
+  <div class="col-xs-12 col-md-6">
+    1 of 2 (stacked on mobile)
+  </div>
+</div>
+```
+
+<h2>Alignment</h2>
+
+<p>Use flexbox alignment utilities to vertically and horizontally align columns.</p>
+
+<h3>Vertical alignment</h3>
+
+<h4>Align the whole row</h4>
+
+```htmlmixed_playground
+<div class="row flex-items-xs-top" style="height: 80px; border: 1px solid #DDE3E7;">
+  <div class="col-xs">1 of 3</div>
+  <div class="col-xs">1 of 3</div>
+  <div class="col-xs">1 of 3</div>
+</div>
+
+<br>
+
+<div class="row flex-items-xs-middle" style="height: 80px; border: 1px solid #DDE3E7;">
+  <div class="col-xs">1 of 3</div>
+  <div class="col-xs">1 of 3</div>
+  <div class="col-xs">1 of 3</div>
+</div>
+
+<br>
+
+<div class="row flex-items-xs-bottom" style="height: 80px; border: 1px solid #DDE3E7;">
+  <div class="col-xs">1 of 3</div>
+  <div class="col-xs">1 of 3</div>
+  <div class="col-xs">1 of 3</div>
+</div>
+```
+
+<h4>Align individual items</h4>
+
+```htmlmixed_playground
+<div class="row" style="height: 80px; border: 1px solid #DDE3E7;">
+  <div class="col-xs flex-xs-top">1 of 3</div>
+  <div class="col-xs flex-xs-middle">1 of 3</div>
+  <div class="col-xs flex-xs-bottom">1 of 3</div>
+</div>
+```
+
+<h3>Horizontal alignment</h3>
+
+```htmlmixed_playground
+<div class="row flex-items-xs-left">
+  <div class="col-xs-4">1 of 2</div>
+  <div class="col-xs-4">1 of 2</div>
+</div>
+
+<div class="row flex-items-xs-center">
+  <div class="col-xs-4">1 of 2</div>
+  <div class="col-xs-4">1 of 2</div>
+</div>
+
+<div class="row flex-items-xs-right">
+  <div class="col-xs-4">1 of 2</div>
+  <div class="col-xs-4">1 of 2</div>
+</div>
+
+<div class="row flex-items-xs-around">
+  <div class="col-xs-4">1 of 2</div>
+  <div class="col-xs-4">1 of 2</div>
+</div>
+
+<div class="row flex-items-xs-between">
+  <div class="col-xs-4">1 of 2</div>
+  <div class="col-xs-4">1 of 2</div>
+</div>
+```
+
+<h2>No gutters</h2>
+
+<p>The gutters between columns in our predefined grid classes can be removed with <code>.no-gutters</code>. This removes the negative <code>margins</code> from <code>.row</code> and the horizontal <code>padding</code> from all immediate children columns.</p>
+
+```htmlmixed_playground
+<div class="row no-gutters">
+  <div class="col-xs-12 col-sm-6 col-md-8">
+    col-xs-12 col-sm-6 col-md-8
+  </div>
+
+  <div class="col-xs-6 col-md-4">
+    col-xs-6 col-md-4
+  </div>
+</div>
+```
+<h2>Reordering</h2>
+
+<h3>Flex order</h3>
+
+<p>Use flexbox utilities for controlling the visual order of your content.</p>
+
+```htmlmixed_playground
+<div class="row">
+  <div class="col-xs flex-xs-unordered">
+    1st, but unordered
+  </div>
+
+  <div class="col-xs flex-xs-last">
+    2nd, but last
+  </div>
+
+  <div class="col-xs flex-xs-first">
+    3rd, but first
+  </div>
+</div>
+```
+
+<h3>Offsetting columns</h3>
+
+<p>Move columns to the right using <code>offset-md-*</code> classes. These classes increase the left margin of a column by <code>*</code> columns. For example, <code>.offset-md-4</code> moves <code>.col-md-4</code> over four columns.</p>
+
+```htmlmixed_playground
+<div class="row">
+  <div class="col-md-4">
+    col-md-4
+  </div>
+
+  <div class="col-md-4 offset-md-4">
+    col-md-4 offset-md-4
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-3 offset-md-3">
+    col-md-3 offset-md-3
+  </div>
+
+  <div class="col-md-3 offset-md-3">
+    col-md-3 offset-md-3
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    col-md-6 offset-md-3
+  </div>
+</div>
+```
+
+<h3>Push and pull</h3>
+
+<p>Easily change the order of our built-in grid columns with <code>.push-md-*</code> and <code>.pull-md-*</code> modifier classes.</p>
+
+```htmlmixed_playground
+<div class="row">
+  <div class="col-md-9 push-md-3">
+    col-md-9 push-md-3
+  </div>
+
+  <div class="col-md-3 pull-md-9">
+    col-md-3 pull-md-9
+  </div>
+</div>
+```
+
+<!-- -------------------------------------------------- -->
+
+<h2>Grid without margin (mobile only)</h2>
+
+<p>Using <code>.full-width--mobile-only</code> on any element will render them in full screen mode for mobile devices and tablet devices (the extra small to small range) only, whereas larger screens render normally.</p>
+
+```htmlmixed_playground
+<div class="full-width--mobile-only">
+  <div class="row">
+    <div class="col-xs-12 col-md-1">col-md-1</div>
+    <div class="col-xs-12 col-md-1">col-md-1</div>
+    <div class="col-xs-12 col-md-1">col-md-1</div>
+    <div class="col-xs-12 col-md-1">col-md-1</div>
+    <div class="col-xs-12 col-md-1">col-md-1</div>
+    <div class="col-xs-12 col-md-1">col-md-1</div>
+    <div class="col-xs-12 col-md-1">col-md-1</div>
+    <div class="col-xs-12 col-md-1">col-md-1</div>
+    <div class="col-xs-12 col-md-1">col-md-1</div>
+    <div class="col-xs-12 col-md-1">col-md-1</div>
+    <div class="col-xs-12 col-md-1">col-md-1</div>
+    <div class="col-xs-12 col-md-1">col-md-1</div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-8">col-md-8</div>
+    <div class="col-xs-12 col-md-4">col-md-4</div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-4">col-md-4</div>
+    <div class="col-xs-12 col-md-4">col-md-4</div>
+    <div class="col-xs-12 col-md-4">col-md-4</div>
+  </div>
+</div>
+```
+*/
+
+
+// --------------------------------------------------
+
+// Custom styles for additional flex alignment options.
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    // Flex column reordering
+    .flex-#{$breakpoint}-first {
+      order: -1;
+    }
+    .flex-#{$breakpoint}-last {
+      order: 1;
+    }
+    .flex-#{$breakpoint}-unordered {
+      order: 0;
+    }
+
+    // Alignment for every item
+    .flex-items-#{$breakpoint}-top {
+      align-items: flex-start;
+    }
+    .flex-items-#{$breakpoint}-middle {
+      align-items: center;
+    }
+    .flex-items-#{$breakpoint}-bottom {
+      align-items: flex-end;
+    }
+
+    // Alignment per item
+    .flex-#{$breakpoint}-top {
+      align-self: flex-start;
+    }
+    .flex-#{$breakpoint}-middle {
+      align-self: center;
+    }
+    .flex-#{$breakpoint}-bottom {
+      align-self: flex-end;
+    }
+
+    // Horizontal alignment of item
+    .flex-items-#{$breakpoint}-left {
+      justify-content: flex-start;
+    }
+    .flex-items-#{$breakpoint}-center {
+      justify-content: center;
+    }
+    .flex-items-#{$breakpoint}-right {
+      justify-content: flex-end;
+    }
+    .flex-items-#{$breakpoint}-around {
+      justify-content: space-around;
+    }
+    .flex-items-#{$breakpoint}-between {
+      justify-content: space-between;
+    }
+  }
+}
+
+
+
+// --------------------------------------------------
+
+
+// Container widths
+//
+// Set the container width.
+
+.container {
+  @include make-container-fluid(xs);
+
+  @include make-container-fixed(sm);
+  @include make-container-fixed(md);
+  @include make-container-fixed(lg);
+  @include make-container-fixed(xl);
+  @include make-container-fixed(ul);
+}
+
+.container-fluid {
+  @include make-container-fluid(xs);
+}
+
+// --------------------------------------------------
+
+// Row
+//
+// Rows contain and clear the floats of your columns.
+
+.row {
+  @include make-row();
+}
+
+// Remove the negative margin from default .row, then the horizontal padding
+// from all immediate children columns (to prevent runaway style inheritance).
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*='col-'] {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+// --------------------------------------------------
+
+// Columns
+//
+// Common styles for small and large grid columns.
+
+@include make-grid-columns();

@@ -1,0 +1,74 @@
+//
+// Tooltips
+// --------------------------------------------------
+
+/*doc
+---
+title: Tooltips
+name: 02-components-195-tooltips
+category: Components - Tooltips
+---
+
+<p>The core idea of a tooltip is to display small, interactive, textual inline hints on click. The amount of text should be scannable for the user – otherwise use asterisks and dissolve them on the bottom of the page or use modal/ pop-up windows.</p>
+
+<div class="row">
+  <div class="col-xs-12 col-lg-6">
+    <img class="img-responsive img-container-border" src="/$WEBROOT-THEME-BUILD$/img/design/tooltips/tooltip_general.jpg" alt="tooltip overview">
+    <span class="fig-caption">Tooltip</span>
+  </div>
+
+  <div class="col-xs-12 col-lg-6"></div>
+</div>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Rules</h2>
+
+  <h3>Spacing</h3>
+
+  <p>The text has all around 24px spacing to the border. The height of the triangle is 8px</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive img-container-border" src="/$WEBROOT-THEME-BUILD$/img/design/tooltips/tooltip_spacing.png" alt="tooltip spacing specifications">
+      <span class="fig-caption">Tooltip spacing</span>
+    </div>
+    <div class="col-xs-12 col-lg-6"></div>
+  </div>
+
+  <h3>Typography</h3>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive img-container-border" src="/$WEBROOT-THEME-BUILD$/img/design/tooltips/tooltip_typography.png" alt="tooltip states typography specifications">
+      <span class="fig-caption">Tooltip states and typography</span>
+    </div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+<h2>Tooltips</h2>
+
+<p>Tooltips can be implemented using <a class="link" href="https://sdx.swisscom.ch/components_-_menu_(flyout_and_contextual).html">&lt;sdx-menu-flyout /&gt;</a>.</p>
+
+```htmlmixed_playground
+<p>
+  The Internet-Booster is available to new customers with an inOne home with Internet S or M.
+  <sdx-menu-flyout direction="top-left">
+    <sdx-menu-flyout-toggle>
+      <sdx-icon icon-name="icon-information-circle" size="2" sr-hint="Read more"></sdx-icon>
+    </sdx-menu-flyout-toggle>
+
+    <sdx-menu-flyout-content style="width: 300px;">
+      <span class="text-body-2">The Internet-Booster is only available in combination with inOne home Internet S or M or Vivo S or M.</span>
+    </sdx-menu-flyout-content>
+  </sdx-menu-flyout>
+</p>
+```
+*/

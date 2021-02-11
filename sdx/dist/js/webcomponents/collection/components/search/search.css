@@ -1,0 +1,65 @@
+@charset "UTF-8";
+:host, *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/*doc
+---
+title: Screen Readers
+name: 04-developers-25-screenreaders
+category: Developers - Screen Reader utils
+---
+
+<p>Hide an element to all devices except screen readers with <code>.sr-only</code>.
+Combine <code>.sr-only</code> with <code>.sr-only-focusable</code> to show the element again when it’s focused (e.g. by a keyboard-only user).</p>
+
+```htmlmixed_no_preview
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+```
+
+<p>Can also be used as a mixin.</p>
+
+```css_no_preview
+// Usage as a mixin
+.skip-navigation {
+  @include sr-only;
+  @include sr-only-focusable;
+}
+```
+
+*/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.sr-only-focusable:active, .sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+}
+
+.wrapper {
+  position: relative;
+}
+.wrapper .search-button, .wrapper .clear-button {
+  position: absolute;
+  top: 0;
+}
+.wrapper .search-button {
+  right: 0;
+  padding: 7px;
+}
+.wrapper .clear-button {
+  right: 40px;
+  padding: 11px 16px;
+}

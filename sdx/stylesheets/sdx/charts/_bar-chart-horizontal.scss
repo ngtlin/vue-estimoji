@@ -1,0 +1,579 @@
+//
+// Bar chart (horizontal)
+// --------------------------------------------------
+
+/*doc
+---
+title: Bar chart (horizontal)
+name: 02-components-030-bar-chart-horizontal-01
+category: Components - Chart (bar horizontal)
+---
+
+<p>Bar charts enable us to display data in a visual and digestible way. They are most commonly used to plot comparable data over time or to show changes in data. Charts can be displayed directly into pages, or placed within cards.</p>
+
+<script>
+    function getRandom(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+  }
+
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var data01 = [
+      {
+        title: "Internet",
+        color: "iris",
+        value: 270
+      }
+    ];
+
+    var data02 = [
+      {
+        title: "Subscription",
+        color: "turquoise",
+        value: 199
+      },
+      {
+        title: "Additional",
+        color: "orchid",
+        value: 40
+      }
+    ];
+
+    var barChart01 = new sdx.BarChartHorizontal(document.getElementById("barChart01"), data01);
+    var barChart02 = new sdx.BarChartHorizontal(document.getElementById("barChart02"), data02);
+
+    document.getElementById("btnChartUpdate").addEventListener("click", function () {
+      data01[0].value = getRandom(0, 1200)
+      barChart01.update(data01)
+
+      data02[0].value = getRandom(0, 350)
+      data02[1].value = getRandom(0, 350 - data02[0].value)
+      barChart02.update(data02)
+    });
+  });
+</script>
+
+<style>
+  .exampleOutput .bg--light {
+    margin-bottom: 32px;
+    background-color: #eef3f6;
+  }
+</style>
+
+<button class="button button--primary" id="btnChartUpdate">Update</button>
+
+<div class="bg bg--light" style="margin-bottom: 32px">
+  <div class="bar-chart-horizontal bar-chart-horizontal--limited"
+    data-max="1200" data-unit="hours" id="barChart01">
+    <div class="detail-left">Internet</div>
+    <div class="bar-chart__progress"></div>
+    <div class="detail-bottom"></div>
+  </div>
+  <span class="fig-caption">Limited data</span>
+  <div class="bar-chart-horizontal bar-chart-horizontal--unlimited"
+      data-max="350" data-unit="CHF" data-precision="2" id="barChart02">
+    <div class="bar-chart__detail">
+      <div class="detail-left">Sandra’s Natel XL</div>
+      <div class="detail-right"></div>
+    </div>
+    <div class="bar-chart__progress"></div>
+  </div>
+</div>
+  <span class="fig-caption">Unlimited data</span>
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Variations</h2>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+    <h3 class="margin-bottom-1">Unlimited data</h3>
+      <p>Unlimited data charts show types of data without upper limit, for example additional costs.</p><br>
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/barchart_horizontal/Group-7@2x-7.jpg" alt="Chart for unlimited data">
+      <span class="fig-caption">Unlimited data charts</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+    <h3 class="margin-bottom-1">Limited data</h3>
+    <p>Limited data charts are used to show data on a limited scale, such as percentages or limited allowances with a single colour displaying the used amount.</p>
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/barchart_horizontal/Group-15@2x-6@2x.png"  alt="Chart for limited data">
+      <span class="fig-caption">Light variant</span>
+    </div>
+  </div>
+
+  <h3>Split data</h3>
+
+  <p>Split data charts enable us to display mutliple data types in a single bar chart. A bar can be divided into different colours to show how the full bar is representing accumulated data from different sources.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/barchart_horizontal/Group-16@2x-7.jpg" alt="Chart for split data">
+      <span class="fig-caption">Split data</span>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+    <h3 class="margin-bottom-1">Colour combinations</h3>
+      <p>Bar charts can feature multiple colours to denote different data sets, which are explained using a colour coded key below.</p>
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/barchart_horizontal/Group-20@2x-3.jpg" alt="Example for multiple colours">
+      <span class="fig-caption">Multiple colour bar chart example</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+    <h3 class="margin-bottom-1">Empty data</h3>
+      <p>Empty data – or bars displaying zero – are represented by a grey dot.</p><br>
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/barchart_horizontal/Group-21@2x-4.jpg" alt="Example for an empty data chart">
+      <span class="fig-caption">Empty data chart</span>
+    </div>
+  </div>
+
+  <h3>Tooltip</h3>
+
+  <p>A tooltip can be used with charts to give the user context and provide additional information they wouldn’t otherwise see.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/barchart_horizontal/Group-22@2x-5@2x.png" alt="Example for a tooltip">
+      <span class="fig-caption">Chart tooltip</span>
+    </div>
+  </div>
+
+  <h2>Rules</h2>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+     <h3 class="margin-bottom-1">Minimum height</h3> 
+      <p>The bar chart always requires a minimum padding between elements to ensure a visual relationship between data and labels.</p>
+      <div class="img-container">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/barchart_horizontal/Group-24@2x-4.png" alt="Examples for different paddings">
+      </div>
+      <span class="fig-caption">Minimum paddings</span>
+    </div>
+
+    <div class="col-xs-12 col-lg-6">
+      <h3 class="margin-bottom-1">Relative positioning</h3>
+        <p>The bar chart should always have 32px space between itself and other elements.</p><br>
+        <div class="img-container">
+          <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/barchart_horizontal/Group-9@2x-8@2x.png" alt="Horizontal spacing specifications">
+        </div>
+      <span class="fig-caption">Bar chart spacing</span>
+    </div>
+  </div>
+
+  <h3>Data bars</h3>
+
+  <p>Bars containing data have rounded ends, but data should always have a flat end point.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/barchart_horizontal/Group-26@2x-5.jpg" alt="Flat and round edges in a chart">
+      <span class="fig-caption">Visual construction</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+    </div>
+  </div>
+
+  <h3>Specifications</h3>
+
+  <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/barchart_horizontal/Group-27@2x-4@2x.png" alt="Specifications for limited and unlimited data">
+        <span class="fig-caption">Specifications for limited and unlimited data</span>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/barchart_horizontal/Group-28@2x-4.jpg" alt="Specifications split data">
+        <span class="fig-caption">Specifications for split data</span>
+      </div>
+  </div>
+
+</div>
+
+
+```section_develop
+```
+
+<p>Bar charts enable us to display data in a visual and digestible way. They are most commonly used to plot comparable data over time or to show changes in data. Charts can be displayed directly into pages, or placed within cards.</p>
+
+<script>
+  function getRandom(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+  }
+
+  document.addEventListener("DOMContentLoaded", function(event) {
+    var data01 = [
+      {
+        title: "Internet",
+        color: "iris",
+        value: 270
+      }
+    ];
+
+    var data02 = [
+      {
+        title: "Subscription",
+        color: "turquoise",
+        value: 199
+      },
+      {
+        title: "Additional",
+        color: "orchid",
+        value: 40
+      }
+    ];
+
+    var barChart03 = new sdx.BarChartHorizontal(document.getElementById("barChart03"), data01);
+    var barChart04 = new sdx.BarChartHorizontal(document.getElementById("barChart04"), data02);
+
+    document.getElementById("btnChartUpdate2").addEventListener("click", function () {
+      data01[0].value = getRandom(0, 1200)
+      barChart03.update(data01)
+
+      data02[0].value = getRandom(0, 350)
+      data02[1].value = getRandom(0, 350 - data02[0].value)
+      barChart04.update(data02)
+    });
+  });
+</script>
+
+<style>
+  .exampleOutput .bg--light {
+    margin-bottom: 32px;
+    background-color: #eef3f6;
+  }
+</style>
+
+<button class="button button--primary" id="btnChartUpdate2">Update</button>
+
+<div class="bg bg--light" style="margin-bottom: 32px">
+  <span class="sr-only">out of</span>
+  <div class="bar-chart-horizontal bar-chart-horizontal--limited"
+    data-max="1200" data-unit="hours" id="barChart03">
+    <div class="detail-left">Internet</div>
+    <div class="bar-chart__progress"></div>
+    <div class="detail-bottom"></div>
+  </div>
+  <div class="bar-chart-horizontal bar-chart-horizontal--unlimited"
+      data-max="350" data-unit="CHF" data-precision="2" id="barChart04">
+    <div class="bar-chart__detail">
+      <div class="detail-left">Sandra’s Natel XL</div>
+      <div class="detail-right"></div>
+    </div>
+    <div class="bar-chart__progress"></div>
+  </div>
+</div>
+
+<h2>Unlimited data</h2>
+
+<p>Unlimited data charts show types of data which have no upper limit, for example additional costs.</p>
+
+```htmlmixed
+<div class="bg bg--light">
+  <div class="bar-chart-horizontal bar-chart-horizontal--unlimited" data-init="auto"
+      data-max="350" data-unit="CHF" data-precision="2">
+    <div class="js-data-list">
+      <div class="js-data" data-value="199" data-color="turquoise">Subscription</div>
+      <div class="js-data" data-value="40" data-color="orchid">Additional</div>
+    </div>
+    <div class="bar-chart__detail">
+      <div class="detail-left">Sandra’s Natel XL</div>
+      <div class="detail-right"></div>
+    </div>
+    <div class="bar-chart__progress"></div>
+  </div>
+</div>
+```
+<h2>Limited data</h2>
+
+<p>Limited data charts are used to show data on a limited scale, such as percentages or limited allowances with a single colour displaying the used amount.</p>
+
+```htmlmixed
+<div class="bg bg--light">
+  <span class="sr-only">out of</span>
+  <div class="bar-chart-horizontal bar-chart-horizontal--limited"
+    data-init="auto" data-max="1200" data-unit="hours">
+    <div class="js-data-list">
+      <div class="js-data" data-value="270" data-color="iris">Internet</div>
+    </div>
+    <div class="detail-left">Internet</div>
+    <div class="bar-chart__progress"></div>
+    <div class="detail-bottom"></div>
+  </div>
+</div>
+```
+<h2>Split data</h2>
+
+<p>Split data charts enable us to display mutliple data types in a single bar chart. A bar can be divided into different colours to show how the full bar is representing accumulated data from different sources.</p>
+
+```htmlmixed
+<div class="bg bg--light">
+  <div class="bar-chart-horizontal bar-chart-horizontal--split"
+    data-init="auto" data-max="150" data-unit="CHF" data-precision="2" data-legend="#legend">
+    <div class="js-data-list">
+      <div class="js-data" data-value="65" data-color="turquoise">Additional Costs</div>
+      <div class="js-data" data-value="7.5" data-color="iris">Subscription Costs</div>
+    </div>
+    <div class="bar-chart__detail">
+      <div class="detail-left">Internet</div>
+      <div class="detail-right"></div>
+    </div>
+    <div class="bar-chart__progress"></div>
+  </div>
+  <div class="bar-chart-horizontal bar-chart-horizontal--split"
+    data-init="auto" data-max="150" data-unit="CHF" data-precision="2">
+    <div class="js-data-list">
+      <div class="js-data" data-value="123" data-color="turquoise">Additional Costs</div>
+      <div class="js-data" data-value="19" data-color="iris">Subscription Costs</div>
+    </div>
+    <div class="bar-chart__detail">
+      <div class="detail-left">TV</div>
+      <div class="detail-right"></div>
+    </div>
+    <div class="bar-chart__progress"></div>
+  </div>
+  <ul class="bar-chart__legend" id="legend"></ul>
+</div>
+```
+
+```htmlmixed
+<div class="bg bg--light">
+  <div class="bar-chart-horizontal bar-chart-horizontal--split"
+    data-init="auto" data-max="150" data-unit="CHF" data-precision="2" data-legend="#legend2">
+    <div class="js-data-list">
+      <div class="js-data" data-value="49" data-color="pink">Internet</div>
+    </div>
+    <div class="bar-chart__detail">
+      <div class="detail-left">Internet</div>
+      <div class="detail-right"></div>
+    </div>
+    <div class="bar-chart__progress"></div>
+  </div>
+  <div class="bar-chart-horizontal bar-chart-horizontal--split"
+    data-init="auto" data-max="150" data-unit="CHF" data-precision="2" data-legend="#legend2">
+    <div class="js-data-list">
+      <div class="js-data" data-value="98" data-color="turquoise">TV</div>
+    </div>
+    <div class="bar-chart__detail">
+      <div class="detail-left">TV</div>
+      <div class="detail-right"></div>
+    </div>
+    <div class="bar-chart__progress"></div>
+  </div>
+  <ul class="bar-chart__legend" id="legend2"></ul>
+</div>
+```
+*/
+
+.bar-chart__progress {
+  position: relative;
+
+  width: 100%;
+  height: $chart-bar-thickness;
+  margin-bottom: 32px;
+
+  .indicator {
+    position: relative;
+    float: left;
+
+    width: 100%;
+    height: $chart-bar-thickness;
+  }
+
+  .indicator-wrapper {
+    position: relative;
+    float: left;
+
+    &:first-child {
+      .indicator {
+        border-radius: $chart-bar-thickness 0 0 $chart-bar-thickness;
+      }
+    }
+  }
+}
+
+.bar-chart-horizontal {
+  position: relative;
+
+  min-width: $chart-bar-min-width;
+  margin-bottom: 32px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  color: $color-gray;
+
+  // Limited data chart styles
+  // -------------------------
+
+  &--limited {
+    padding: 16px 22px 22px;
+
+    background-color: $color-white;
+    border-radius: 4px;
+
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, .15);
+
+    .bar-chart__progress {
+      margin: 7px 0 0 0;
+      border-radius: $chart-bar-thickness;
+
+      background-color: $color-aluminum-tint-2;
+      overflow: hidden;
+    }
+
+    .detail-left {
+      @include typo-bar-chart-unlimited-title;
+      text-align: left;
+    }
+
+    .detail-bottom {
+      @include text-standard;
+
+      display: flex;
+
+      margin-top: 12px;
+
+      .value {
+        display: inline-block;
+        text-align: right;
+
+        &:not(:first-child) {
+          color: $color-gray-tint-4;
+
+          &::before {
+            content: '/ ';
+          }
+
+          &::after {
+            content: '\00a0 ';
+          }
+        }
+      }
+
+      .unit {
+        color: $color-gray-tint-4;
+      }
+    }
+  }
+
+  // Unlimited data chart styles
+  // -------------------------
+
+  &--unlimited {
+    padding: 16px 22px 22px;
+
+    background-color: $color-white;
+    border-radius: 4px;
+
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, .15);
+
+    .bar-chart__progress {
+      margin: 14px 0 0 0;
+    }
+
+    > .bar-chart__detail {
+      display: flex;
+      justify-content: space-between;
+
+      .detail-left {
+        @include typo-bar-chart-unlimited-title;
+        text-align: left;
+      }
+
+      .detail-right {
+        @include text-standard;
+
+        display: flex;
+
+        .value {
+          display: inline-block;
+          text-align: right;
+
+          &::before,
+          &::after {
+            content: '\00a0 ';
+          }
+        }
+
+        .unit {
+          color: $color-gray-tint-4;
+        }
+      }
+    }
+  }
+
+  // Split data chart styles
+  // -------------------------
+
+  &--split {
+    border-top: 1px solid $color-chart-divider;
+
+    > .bar-chart__detail {
+
+      display: flex;
+      justify-content: space-between;
+
+      margin: 13px 0 18px;
+      padding-top: 8px;
+
+      .detail-left {
+        @include text-standard;
+
+        text-align: left;
+      }
+
+      .detail-right {
+        @include text-standard;
+
+        display: flex;
+
+        .value {
+          @include font-semi-bold;
+
+          display: inline-block;
+          text-align: right;
+
+          &::before,
+          &::after {
+            content: '\00a0 ';
+          }
+
+          &:nth-child(3) {
+            &::before {
+              font-weight: normal;
+
+              content: ' / ';
+              color: $color-gray-tint-4;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.bar-chart__legend {
+  padding-top: 32px;
+  border-top: 1px solid $color-chart-divider;
+}
+
+.bg--dark {
+  .bar-chart-horizontal--split {
+    border-top: 1px solid rgba(255, 255, 255, .4);
+
+    .detail-left,
+    .detail-right {
+      @include font-smoothing;
+
+      color: $color-white;
+    }
+  }
+
+  .bar-chart__legend {
+    border-top: 1px solid rgba(255, 255, 255, .4);
+  }
+}

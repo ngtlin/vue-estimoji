@@ -1,0 +1,418 @@
+//
+// Accordion
+// --------------------------------------------------
+
+/*doc
+---
+title: Accordions
+name: 02-components-005-accordion-01
+category: Components - Accordions
+---
+
+<p>An accordion is a vertically stacked list of items that can be opened to reveal hidden content, or closed to save space on the screen. Accordions are fully responsive components and can be used with any grid width.</p>
+
+<div class="row">
+  <div class="col-xs-12 col-lg-6">
+    <sdx-accordion open="false">
+      <sdx-accordion-item>
+        <sdx-accordion-item-header>
+          <span id="accordion_1" class="text-h5 navy margin-0" role="heading">Internet unterbrochen</span>
+        </sdx-accordion-item-header>
+        <sdx-accordion-item-body>
+          <p aria-labelledby="accordion_1" class="text-b2" role="region">
+            Unsere Techniker arbeiten daran, die Störung zu beheben. Wir bitten um Entschuldigung.
+          </p>
+        </sdx-accordion-item-body>
+      </sdx-accordion-item>
+      <sdx-accordion-item open="false">
+        <sdx-accordion-item-header>
+          <span id="accordion_2" class="text-h5 navy margin-0" role="heading">Wartungsarbeiten</span>
+        </sdx-accordion-item-header>
+        <sdx-accordion-item-body>
+          <p aria-labelledby="accordion_2" class="text-b2" role="region">
+            Im Zeitraum vom 02.03.2020-06.03.2020 werden in Ihrem Bereich Wartungarbeiten durchgeführt. Wir arbeiten an der Verbesserung Ihrer Leitungen und bitten um Entschuldigung.
+          </p>
+        </sdx-accordion-item-body>
+      </sdx-accordion-item>
+    </sdx-accordion>
+  </div>
+</div>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Variations</h2>
+
+  <h3>Standard accordion</h3>
+
+  <p>Standard accordions can be used across a range of columns widths on desktop and mobile. Arrows are used to control the open and closed state of the the accordion, revealing the contents within the item selected.</p>
+
+  <div class="row" flex
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+    <div class="img-container">
+     <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/accordions/Group-2@2x-1.png" alt="Standard accordions in 3 responsive states">
+     </div>
+      <span class="fig-caption">Responsive states</span>
+    </div>
+  </div>
+</div>
+
+  <h3>Centered accordion</h3>
+
+  <p>Centred accordions are used to expand isolated elements, acting like a 'read more' link, revealing additional content in page. This differs from standard accordions which are conventionally used to expand items in lists.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/accordions/Group-3@2x-1.jpg" alt="Opened and closed states of centered accordions">
+      <label class="fig-caption">Opened and closed states of centred accordion</label>
+    </div>
+  </div>
+
+  <h3>Colour variations</h3>
+
+  <p>There are three different colorways that can be used for accordions. The color should be selected based on the background color of the page, and the emphasis being placed on the content within that particular page.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <div class="img-container-border">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/accordions/Group-5@2x-1.png" alt="Accordion on white background">
+      </div>
+      <span class="fig-caption">Light variant on white</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/accordions/Group-7@2x-1.png" alt="Accordion on horizon background">
+      </div>
+      <span class="fig-caption">Light variant on horizon</span>
+    </div>
+  </div>
+<div class="content-design">
+
+  <h2>Rules</h2>
+
+<h2 class="text-h5">Recommendations</h2>
+
+  <p>
+  <ul class="list">
+  <li class="single-line">For better readability line lengths for all copy inside an accordion is limited to 666px (which corresponds to 6 columns or about 80 characters including space for body text). This prevents excessive line lengths when using accordions in especially wide applications.</li>
+  <li class="single-line">Content should never be horizontally aligned.</li>
+  <li class="single-line">On mobile drill-downs might be the better solution than accordions.</li>
+</ul>
+<p>
+<h2 class="text-h5">Please do not:</h2>
+</p>
+<p>
+  <ul class="list">
+  <li class="single-line">… use another expand and collapse interaction element inside the accordion.</li>
+  <li class="single-line">… place an accordion in an accordion.</li>
+  <li class="single-line">… use a scrollbar inside the accordion.</li>
+  <li class="single-line">… use any shadow (neither for the default state nor for hover effects).</li>
+  <li class="single-line">… misuse accordions as vertical progress bars.</li>
+</ul>
+
+  <h3>Specifications</h3>
+
+  <div class="row" flex
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+    <div class="img-container">
+     <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/accordions/Group-16@2x.png" alt="Specification for accordions">
+     </div>
+      <span class="fig-caption">Specifications</span>
+    </div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+<p>An accordion is a vertically stacked list of items that can be opened to reveal hidden content, or closed to save space on the screen. They are mainly used as navigation elements on small screens, and for revealing and hiding longer form content. Accordions are fully responsive components and can be used with any grid width.</p>
+
+```htmlmixed_webcomponent_sdx-accordion_accessible
+<sdx-accordion keep-open>
+  <sdx-accordion-item>
+    <sdx-accordion-item-header>
+      <span id="accordion_3" class="text-h5 navy margin-0" role="heading">Accordion 1</span>
+    </sdx-accordion-item-header>
+    <sdx-accordion-item-body>
+      <p aria-labelledby="accordion_3" class="text-b2 text-recommended-max-width" role="region">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </sdx-accordion-item-body>
+  </sdx-accordion-item>
+  <sdx-accordion-item open>
+    <sdx-accordion-item-header>
+      <span id="accordion_4" class="text-h5 navy margin-0" role="heading">Accordion 2</span>
+    </sdx-accordion-item-header>
+    <sdx-accordion-item-body>
+      <p aria-labelledby="accordion_4" class="text-b2 text-recommended-max-width" role="region">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </sdx-accordion-item-body>
+  </sdx-accordion-item>
+  <sdx-accordion-item>
+    <sdx-accordion-item-header>
+      <span id="accordion_5" class="text-h5 navy margin-0" role="heading">Accordion 3</span>
+      <p aria-labelledby="accordion_5" class="text-b2 text-recommended-max-width" role="region">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+      </p>
+    </sdx-accordion-item-header>
+    <sdx-accordion-item-body>
+      <p class="text-b2 text-recommended-max-width" role="region">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </sdx-accordion-item-body>
+  </sdx-accordion-item>
+</sdx-accordion>
+
+<br>
+
+<sdx-accordion arrow-position="center">
+  <sdx-accordion-item>
+    <sdx-accordion-item-section>
+      <span class="text-h5 font--semi-bold margin-bottom-1">Centered Accordion</span>
+      <p class="text-b2 text-recommended-max-width" role="region">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </sdx-accordion-item-section>
+    <sdx-accordion-item-body>
+      <p class="text-b2 text-recommended-max-width" role="region">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </sdx-accordion-item-body>
+    <sdx-accordion-item-header></sdx-accordion-item-header>
+  </sdx-accordion-item>
+</sdx-accordion>
+```
+*/
+
+.accordion {
+
+  // Accordion mixin / responsive
+  // -------------------------
+
+  @mixin accordion-hidden {
+    .js-hidden {
+      visibility: hidden !important;
+    }
+
+    .accordion {
+      &__toggle {
+        display: inherit;
+        width: inherit;
+        justify-content: inherit;
+        align-items: inherit;
+        cursor: inherit;
+
+        .arrow-icon {
+          display: none !important;
+        }
+      }
+
+      &__collapse {
+        display: block;
+        height: 100%;
+        width: 100%;
+        opacity: 1;
+      }
+    }
+  }
+
+  // Responsive visibility utilities
+  // -------------------------
+
+  @each $bp in map-keys($grid-breakpoints) {
+    &--hidden-#{$bp}-up {
+      @include media-breakpoint-up($bp) {
+        @include accordion-hidden;
+      }
+    }
+    &--hidden-#{$bp}-down {
+      @include media-breakpoint-down($bp) {
+        @include accordion-hidden;
+      }
+    }
+  }
+
+  &--hidden-phone-up {
+    @include bp-phone {
+      @include accordion-hidden;
+    }
+  }
+
+  &--hidden-phone-down {
+    @include bp-phone-max {
+      @include accordion-hidden;
+    }
+  }
+
+  &--hidden-tablet-up {
+    @include bp-tablet {
+      @include accordion-hidden;
+    }
+  }
+
+  &--hidden-tablet-down {
+    @include bp-tablet-max {
+      @include accordion-hidden;
+    }
+  }
+
+  &--hidden-desktop-up {
+    @include bp-desktop {
+      @include accordion-hidden;
+    }
+  }
+
+  &--hidden-desktop-down {
+    @include bp-desktop-max {
+      @include accordion-hidden;
+    }
+  }
+
+  // JS Accordion classes
+  // -------------------------
+
+  .js-hidden {
+    display: none;
+
+    position: absolute;
+    left: -9999px;
+
+    visibility: visible;
+  }
+}
+
+.accordion {
+
+  // Accordion Styles
+  // -------------------------
+
+  &__item {
+    position: relative;
+  }
+
+  &__toggle {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100%;
+    cursor: pointer;
+
+    .arrow-icon {
+      float: right;
+      pointer-events: none;
+      transform-origin: 50% 50%;
+
+      &:focus {
+        color: $color-int-blue--active;
+      }
+    }
+
+    .arrow-icon {
+      float: right;
+      pointer-events: none;
+      transform-origin: 50% 50%;
+    }
+
+    &--arrow-left {
+      .accordion__header {
+        padding-left: 10px;
+      }
+
+      .arrow-icon {
+        float: left;
+      }
+    }
+
+    &--arrow-centered {
+      width: 100%;
+      min-height: 32px;
+      border-top: 1px solid $color-accordion-border;
+
+      .arrow-icon {
+        display: table;
+        margin: 3px auto 0 auto;
+        float: none;
+      }
+    }
+  }
+
+  &__header {
+    display: inline-block;
+    position: relative;
+  }
+
+  &__keep-open {
+    display: block;
+  }
+
+  &__collapse {
+    position: relative;
+    overflow: hidden;
+
+    display: none;
+    height: 0;
+    width: 100%;
+
+    opacity: 0;
+
+    &.is-open {
+      display: block;
+      height: auto;
+      width: 100%;
+      opacity: 1;
+    }
+  }
+
+  // Accordion Arrow Styles
+  // -------------------------
+
+  &,
+  // @deprecated
+  &--arrow-flat {
+    @include accordion-arrow-flat($color-accordion, $color-accordion--active);
+  }
+
+  // Accordion with Border (default)
+  // ----------------------------------
+
+  &--border {
+    border-bottom: 1px solid $color-accordion-border;
+
+    .accordion__item {
+      border: 1px solid $color-accordion-border;
+      border-bottom: 0;
+      padding: 13px 13px 14px 19px;
+    }
+  }
+
+  // Accordion Border
+  // (useful for Centered Accordion)
+  // ----------------------------------
+
+  .accordion__border {
+    border: 1px solid $color-accordion-border;
+
+    .accordion__header {
+      padding-top: $accordion-padding-vertical;
+      padding-bottom: $accordion-padding-vertical;
+      padding-left: $accordion-padding-horizontal;
+      padding-right: $accordion-padding-horizontal;
+    }
+
+    .accordion__collapse {
+      padding-left: $accordion-padding-horizontal;
+      padding-right: $accordion-padding-horizontal;
+
+      &.is-open {
+        padding-bottom: $accordion-padding-vertical;
+      }
+    }
+  }
+}

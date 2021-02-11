@@ -1,0 +1,144 @@
+//
+// Accessibility
+// --------------------------------------------------
+
+/*doc
+---
+title: Accessibility
+name: 01-foundation-01-accessibility
+category: Foundation - Accessibility
+---
+
+<p>Swisscom is looking forward to reaching at least the AA Compliance for their experience.
+It is still an ongoing process and we will keep improving the accessibility.
+Therefore, we work with "Access for all" to evaluate the SDX Styleguide in order to get an AA Certification,
+and even more important, to prevent excluding anyone.</p>
+
+<p>By making your website accessible, you are ensuring that all users, including people with disabilities,
+have a good user experience and are able to easily access your information.</p>
+
+<p>Web accessibility includes all disabilities that affect access to the Web, including
+<ul class="list single-line">
+  <li>auditory</li>
+  <li>cognitive</li>
+  <li>neurological</li>
+  <li>physical</li>
+  <li>speech</li>
+  <li>visual</li>
+  <li>impairments due to age</li>
+</ul>
+Approximately 14% of the Swiss population is affected (10’000 blind, 325’000 visually impaired, 500’000 auditorily impaired).</p>
+
+<h2>Rules</h2>
+<p>To achieve an AA compliant website, it’s necessary to follow some rules:</p>
+<ul class="list padding-bottom-2">
+  <li>It’s always recommended to use <b>native HTML</b> instead of ARIA-labels.</li>
+  <li>Implement a semantically correct structure (H1 followed by H2, P used for text, …).</li>
+  <li>Keep in mind that all elements of a website should be focusable by using the keyboard only, in the desired order.</li>
+  <li>Do not delete ARIA information from SDX examples. It ensures the right interpretation by screen readers.</li>
+</ul>
+
+<h3>WAI-ARIA (Web Accessibility Initiative – Accessible Rich Internet Applications)</h3>
+<p>Add <a href="https://www.w3.org/WAI/standards-guidelines/aria/">semantics</a> to elements that are not native HTML (e.g. Web Components):</p>
+<ul class="list single-line padding-bottom-2">
+  <li>Use them sparingly</li>
+  <li>Use them consistently</li>
+  <li>Avoid redundant output through screen readers</li>
+</ul>
+
+<h3>Focus</h3>
+<p class="padding-bottom-2">Use <a href="https://www.w3.org/TR/WCAG20-TECHS/G1.html">skip links</a> as an initial
+focus on your page which enables the screen reader quickly access the most important content.</p>
+
+<h3>Further Information</h3>
+<ul class="list single-line">
+  <li><a href="https://www.w3.org/WAI/standards-guidelines/wcag/">W3C Web Accessibility Initiative WAI</a></li>
+  <li><a href="https://www.access-for-all.ch/ch/">Access for all</a> (Independent authority for the certification of accessible websites)</li>
+  <li><a href="https://www.accessibility-developer-guide.com/">Accessibility Developer Guide</a></li>
+  <li><a href="http://www.accessibility-checklist.ch">Accessibility checklist</a></li>
+</ul>
+
+<h2>Usage</h2>
+<p>You have to check the whole page semantic structure and context.
+Please check your website by using a screen reader – see section <a href="#testingtools">Testing Tools</a>.</p>
+
+<div class="row">
+  <div class="card card--message-important card--icon card--border col-md-10" role="region" aria-labelledby="Compliance">
+    <i class="card__item-icon icon icon-026-exclamation-mark-circle icon--s3" aria-hidden="true"></i>
+    <div class="card__body">
+    <h1 id="Compliance">Compliance responsibility</h1>
+      <p>By using the accessible components, it is not a guarantee that the website is also accessible.
+      The SDX consumer should take the responsibility of the whole accessible experience.</p>
+    </div>
+  </div>
+  <div class="col-md-2"></div>
+</div>
+
+<h3 class="padding-top-4">Facts</h3>
+<p>Most used by screen reader users...
+  <ul class="list single-line">
+     <li>Operating system: Windows</li>
+     <li>Browser: Firefox</li>
+     <li>Mobile device (VoiceOver): iPhone</li>
+  </ul>
+</p>
+
+<h3>Labelling Accessible Components</h3>
+<p>The accessible SDX components are labelled (those that are not yet labelled are still in progress):<br>
+<i class="icon icon--s2 icon-accessibility int-green--active" aria-hidden="true" style="margin-right: 8px;"></i>
+<span class="sr-only">The following component is</span><span class="int-green--active">Accessible</span> -
+<a href="foundation_-_accessibility.html">More info</a></p>
+
+<h3>Code Examples</h3>
+<p>Use the <code>sr-hint</code> to give screen readers the information of what kind of icon is used.</p>
+
+```htmlmixed_accessible
+<sdx-icon icon-name="icon-heart" size="6" sr-hint="Like"></sdx-icon>
+```
+
+<p>Please add an alternative description to your images using <code>alt</code>.</p>
+```htmlmixed_accessible
+<img alt="iPhone 7" src="/$WEBROOT-THEME-BUILD$/img/samples/iphone_7_plus_black.png">
+```
+
+<p>Use the role <code>group</code> to group together belonging options.<br>
+By setting <code>aria-describedby</code> the screen reader user knows that further information is given and helps for better understanding.</p>
+
+```htmlmixed_accessible
+<form>
+  <div class="form-group" role="group" aria-label="Group vertical">
+    <label>Checkbox group</label>
+    <div class="checkbox">
+      <input type="checkbox" name="dummy" id="checkbox5-1">
+      <label for="checkbox5-1">Option 1</label>
+    </div>
+    <div class="checkbox">
+      <input type="checkbox" name="dummy" id="checkbox5-2" aria-describedby="supportingText-1">
+      <label for="checkbox5-2">Option 2</label>
+      <p id="supportingText-1">Supporting description text</p>
+    </div>
+  </div>
+</form>
+```
+
+<h2 id="testingtools">Testing Tools</h2>
+<p>The following testing tools are recommended by "Access for all":</p>
+<ul class="list single-line padding-bottom-2">
+  <li><a href="https://www.mozilla.org/de/firefox/new/">Firefox, latest version</a></li>
+  <li><a href="https://www.nvaccess.org">NVDA Screen Reader Software</a></li>
+  <li><a href="https://addons.nvda-project.org/addons/focusHighlight.de.html">NVDA Focus tool</a></li>
+  <li><a href="https://hinderlingvolkart.github.io/h123/">h123 Bookmarklet</a></li>
+  <li><a href="https://testen.bitv-test.de/bookmarklets.html">Structured Contents Bookmarklet</a></li>
+  <li><a href="https://addons.mozilla.org/de/firefox/addon/web-developer/">Web Developer Toolbar</a></li>
+  <li><a href="http://wave.webaim.org/extension/">WAVE Chrome Extension</a></li>
+  <li><a href="http://www.paciellogroup.com/resources/contrastAnalyser">Colour Contrast Analyser (CCA)</a></li>
+  <li><a href="https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi">headingsMap (Chrome)</a></li>
+  <li><a href="https://addons.mozilla.org/de/firefox/addon/headingsmap/">headingsMap (Firefox)</a></li>
+  <li><a href="https://chrome.google.com/webstore/detail/headingsmap/flbjommegcjonpdmenkdiocclhjacmbi">VisBug (Chrome)</a></li>
+  <li><a href="https://chrome.google.com/webstore/detail/wcag-contrast-checker/plnahcmalebffmaghcpcmpaciebdhgdf">WCAG Contrast checker (Chrome)</a></li>
+  <li><a href="https://addons.mozilla.org/de/firefox/addon/wcag-contrast-checker/">WCAG Contrast checker (Firefox)</a></li>
+</ul>
+
+<p>See also <a href="developers_-_screen_reader_utils.html">Developers - Screen Reader utils</a></p>
+
+*/

@@ -1,0 +1,1 @@
+import{r as o,h as i}from"./p-95c9f71a.js";const t=class{constructor(i){o(this,i)}render(){return i("slot",null)}};t.style=":host,*,*:before,*:after{-webkit-box-sizing:border-box;box-sizing:border-box}:host{padding-top:16px;padding-bottom:16px;padding-left:15px;padding-right:15px;display:inline-block;position:relative}";export{t as sdx_accordion_item_section}

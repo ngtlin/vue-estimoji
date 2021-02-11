@@ -1,0 +1,32 @@
+<template>
+  <div>JiraAuthorize Callback page</div>
+</template>
+<script>
+
+export default {
+  name: 'JiraAuthorize',
+  data() {
+    return {
+      jiraAuthResponse: {},
+    };
+  },
+  created() {
+    // Jira Authorize Call back, parsing the result
+    console.log('-XXX->JiraAuthorize!, window.location.origin=', window.location.origin);
+    const authCode = this.$route.query.code;
+    const appState = this.$route.query.state;
+    console.log('-XXX->JiraAuthorize!, authCode=', authCode, ', appState=', appState);
+    const payload = {
+      // redirectUrl: `${window.location.origin}/jira-auth/`,
+      code: authCode,
+      redirectUrl: `${window.location.origin}/jira-auth/`,
+    };
+    this.$store.dispatch('authCodeReceived', payload);
+  },
+  methods: {
+    errorMessage(error, description) {
+      return `${error}: ${description}`;
+    },
+  },
+};
+</script>

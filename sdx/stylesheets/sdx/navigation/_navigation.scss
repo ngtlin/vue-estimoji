@@ -1,0 +1,363 @@
+//
+// Navigation
+// --------------------------------------------------
+
+/*doc
+---
+title: Navigation (main)
+name: 02-components-110-navigation-01-overview
+category: Components - Navigation (main)
+---
+<p>The header is one of the most important mechanisms to guarantee an uniform navigation and a consistent and familiar branding that supports users across all digital platforms.<br> Navigation enables users to find their way around products and services. Navigation types follow a uniform aesthetic. The use of a mega drop-down (MDD) can be used for larger services to help organise and catagorise pages, making them easy to find.</p>
+
+<div class="row">
+  <div class="col-xs-12 col-lg-12">
+    <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-32@2x-1.jpg" alt="Example for a main navigation">
+    <span class="fig-caption">Main (L1) and universal (L0) navigation (1440px)</span>
+  </div>
+  <div class="col-xs-12 col-lg-12">
+  </div>
+</div>
+
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Variations</h2>
+
+  <h3>Primary navigation (Level 1)</h3>
+
+  <p>Primary navigation (Level 1) is the basic system to which navigation should be structured across various screen sizes. Surfacing key page links in a page header, along with core functionality specific to the product. In this example, basket and search are surfaced at the top level. This system collapses into a burger menu on smaller screen sizes to help the nav accommodate a larger variety of links and functionality.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-7@2x-3.jpg" alt="Responsive main navigation examples">
+      <span class="fig-caption">Responsive navigation</span>
+    </div>
+  </div>
+
+  <h3>Mega drop-downs (MDD)</h3>
+
+  <p>The mega drop-down accompanies primary navigation systems. It is revealed on click only. Links are split into categories and can be spread across six columns on 1440px screen sizes. They can also feature a separate panel below for promotional links and additional conte</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-10@2x-2.jpg" alt="Example for a mega menu with additional bar for promotions (1440px)">
+      <span class="fig-caption">Mega menu with additional bar for promotions (1440px)</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-27@2x-1.jpg" alt="Mega menu with additional bar for promotions (1024px)">
+      <span class="fig-caption">Mega menu with additional bar for promotions (1024px)</span>
+    </div>
+  </div>
+
+  <h3>Burger menu</h3>
+
+  <p>At widths below 768px the navigation reverts to a burger menu. All the items that live within the primary navigation and mega menu are placed inside an accordion system within a collapsed menu.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-28@2x-1.jpg" alt="Example for a 768px menu">
+      <span class="fig-caption">768px menu</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-29@2x-1.jpg" alt="Example for a 320px menu">
+      <span class="fig-caption">320px menu</span>
+    </div>
+  </div>
+
+  <p>To help simplify the navigation at that size, menus are split into two levels. Primary navigation links are shown at level one (L1), plus any additional universal navigation (Level 0) connecting portal sites.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-30@2x-1.jpg" alt="Example for a 768px menu — level one">
+      <span class="fig-caption">768px menu — level one</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-31@2x-1.jpg" alt="Example for a 320px menu — level one">
+      <span class="fig-caption">320px menu — level one</span>
+    </div>
+  </div>
+
+  <p>Level 2 contains links from the mega drop-down, but excludes deeper links. This is to reduce the number of levels within the navigation, and forces users to explore through landing pages or use the search functionality to navigate to deeper pages.</p>
+
+  <h3>Universal navigation (Level 0)</h3>
+
+  <p>The universal navigation is used to switch between portal types within larger products such as Swisscom.ch. It also houses consistent universal functionalites, such as the language switcher and contact links. When using a burger menu, the universal navigation is positioned inside, placed below the primary navigation links.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-32@2x-1.jpg" alt="Example for a closed universal navigation (1440px)">
+      <span class="fig-caption">Closed universal navigation (1440px)</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-33@2x-1.jpg" alt="Example for a closed universal navigation (1024px)">
+      <span class="fig-caption">Closed universal navigation (1024px)</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-34@2x-1.jpg" alt="Example for a closed universal navigation (768px)">
+      <span class="fig-caption">Closed 768px universal navigation</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-35@2x.jpg" alt="Example for a closed universal navigation (320px)">
+      <span class="fig-caption">Closed 320px universal navigation</span>
+    </div>
+  </div>
+
+  <p>At widths below 768px the universal navigation (L0) is contained within a burger menu, below the primary navigation.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-36@2x.jpg" alt="Example for an open universal navigation (1440px)">
+      <span class="fig-caption">1440px universal navigation open</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-37@2x-1.jpg" alt="Example for an open universal navigation (768px)">
+      <span class="fig-caption">768px universal navigation open</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-38@2x.jpg" alt="Example for an open universal navigation (320px)">
+      <span class="fig-caption">320px universal navigation open</span>
+    </div>
+  </div>
+
+  <h3>Back to previous page</h3>
+
+  <p>The back link enables users to return to the route page they came from. It also serves as a page heading, to aid user wayfinding around larger products, and houses sub navigation elements specific to the page the user is on.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-39@2x.jpg" alt="Example for a back link (1440px)">
+      <span class="fig-caption">Back link (1440px)</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-40@2x.jpg" alt="Example for a back link collapsed and on scroll (1440px)">
+      <span class="fig-caption">Back link collapsed, and on scroll (1440px)</span>
+    </div>
+  </div>
+
+  <p>On scroll, the primary navigation disappears, and the back link collapses into a thin strip, displaying the back arrow, page title, and sub navigation throughout the rest of the page. This enables users to quickly return to the previous page without needing to scroll to the top.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-41@2x.jpg" alt="Example of a back link for mobile">
+      <span class="fig-caption">Back link on mobile</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-42@2x.jpg" alt="Back link and sub navigation dropdown for mobile example">
+      <span class="fig-caption">Back link and sub navigation dropdown for mobile</span>
+    </div>
+  </div>
+
+  <p>Once the screen size becomes smaller than 768px wide, sub nav links are placed into a drop down menu.</p>
+
+  <h2>Rules</h2>
+
+  <h3>Left aligned navigation links</h3>
+
+  <p>Left aligned navigations can contain five links when using three icons or less, and four when using more than three icons. There is a limit of five icons for both centred and left aligned navigation options.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-43@2x.jpg" alt="Left aligned navigation with more than three icons">
+      <span class="fig-caption">Left aligned navigation with more than three icons</span>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-12">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-44@2x.jpg" alt=">Left aligned navigation with three or less icons">
+      <span class="fig-caption">Left aligned navigation with three or less icons</span>
+    </div>
+  </div>
+
+
+  <h3>Mobile navigation bar icons</h3>
+
+  <p>When reduced to a burger menu icons are limited to four, plus the burger icon. In this instance, search should be positioned within the menu.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-47@2x.png" alt=">Example for mobile and its limit of 3 icons plus burger icon">
+      <span class="fig-caption">On mobile there is a limit of 3 icons plus burger icon</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+    </div>
+  </div>
+
+
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <h3 class="margin-bottom-1">Link spacing</h3>
+      <p>Links should be spaced 30px apart at all times. This helps to maintain clarity between links. This rule should be applied across all breakpoints.</p>
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-51@2x.png" alt=">Example for spacing between navigation links">
+      <span class="fig-caption">Spacing for navigation links</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+    <h3 class="margin-bottom-1">Icon spacing</h3>
+      <p>Icons placed in the primary navigation should be spaced 12px apart at all times, measuring from the trim container’s edge, not the icon itself. This rule should be applied across all breakpoints.</p>
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-48@2x.png" alt=">Example spacing between icons on desktop and mobile">
+      <span class="fig-caption">Spacing between icons (desktop above, mobile below)</span>
+    </div>
+  </div>
+
+  <h3>Mobile alignment</h3>
+
+  <p>At widths below 768px, when reverting to the burger menu, navigation links should be left aligned at all times. This includes the use of side bar navigations, on both the left and right side.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-49@2x.jpg" alt=">Example for left algined navigation links within a burger menu">
+      <span class="fig-caption">Left aligned navigation links within a burger menu</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+    </div>
+  </div>
+
+  <h3>Mega menu column positioning</h3>
+
+  <p>The mega menu uses a responsive column structure enabling it to contain more content across multiple screen sizes. It uses a six column maximum for 1440px to 1280px widths. Below 1280px it switches to a three column structure, stacking content categories but shifting every other column beneath the one to its left. At this size, the offers panel positioned at the bottom of the menu also reduces to displaying only two offers.</p>
+
+  <div class="row">
+    <div class="col-xs-12 col-lg-6">
+      <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-50@2x.jpg" alt=">Example for 1440px six column layout switches to three columns at <1280px">
+      <span class="fig-caption">1440px six column layout switches to three columns at <1280px</span>
+    </div>
+    <div class="col-xs-12 col-lg-6">
+    </div>
+  </div>
+
+  <h3>Typography</h3>
+
+  <div class="row">
+      <div class="col-xs-12 col-lg-12">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/navigation/Group-13@2x.jpg" alt=">Typography for main navigation">
+        <span class="fig-caption">Typography</span>
+      </div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+<p>Navigation, in its various forms, is what enables users to find their way around products and services. Navigation types all follow a uniform aesthetic, but have different placement and structures to best serve various product types and sizes.</p>
+
+<h2>Primary navigation</h2>
+
+<p>Primary navigation is the basic system to which navigation should be structured across various screen sizes. Surfacing key page links in a page header, along with core functionality specific to the product. In this example, basket and search are surfaced at the top level. This system collapses into a burger menu on smaller screen sizes to help the nav accommodate a larger variety of links and functionality.</p>
+
+<p>Only one drawer at a time must be open.</p>
+
+<h2>Primary navigation without drawers</h2>
+
+<p>If no drawers are present, you can toggle the active state by setting the classes "nav-link" (inactive) and "nav-link nav-link--active" (active).</p>
+
+<h3>Navigation sample</h3>
+
+<p>A responsive test page for the Navigation is available at <a href="/samples/navigation.html" target="_blank">samples/navigation</a>.</p>
+
+<h3>Nova sample</h3>
+
+<p>The responsive test-page in the <i>nova</i> variation <a href="/samples/navigation-nova.html" target="_blank">samples/navigation-nova</a>.</p>
+*/
+
+
+// Navigation wrapper styles
+// --------------------------------------------------
+
+.nav {
+
+  // Import Reset / Generic
+  // -------------------------
+
+  @import "reset";
+  @import "generic";
+
+  // -------------------------
+
+  // Set Nav Position and Background
+  // -------------------------
+
+  position: relative; // needed for search overlay
+
+  z-index: $zindex-navigation;
+
+  background: $color-nav-bg;
+
+  // Responsive Nav Container
+  // -------------------------
+
+  .container {
+    @include make-nav-container;
+  }
+
+  // Responsive Nav Section
+  // -------------------------
+
+  @include make-nav-section-columns(nav-section);
+
+  .nav-section {
+    margin: 24px 0;
+
+    .nav-col {
+      width: 100%;
+      padding-bottom: 10px;
+
+      &.nav-col { // more specificity (e.g. when an older version of SDX exists on the same page)
+        overflow: hidden; // Edge and IE11 hack
+        -webkit-transform: scale(1); // Safari hack
+      }
+    }
+  }
+
+  // Swisscom Logo
+  // -------------------------
+
+  .logo {
+    float: left;
+
+    margin-left: -18px;
+    margin-right: 37px;
+
+    margin-top: 22px;
+
+    @include bp-xl {
+      margin-right: 80px;
+    }
+
+    @include bp-ul {
+      margin-right: 106px;
+    }
+
+    @include bp-xs-max {
+      .logo-type {
+        display: none;
+      }
+    }
+  }
+
+  // Imports
+  // -------------------------
+
+  @import "level0";
+  @import "level1";
+  @import "level2";
+}

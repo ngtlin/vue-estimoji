@@ -1,0 +1,31 @@
+//
+// Clearfix Dev Utilities
+// --------------------------------------------------
+
+/*doc
+---
+title: Clearfix
+name: 04-developers-10-clearfix
+category: Developers - Clearfix utils
+---
+
+<p>Easily clear floats by adding <code>.clearfix</code> to the parent element.</p>
+
+```htmlmixed_no_preview
+<div class="clearfix">...</div>
+```
+
+<p>Can also be used as a mixin.</p>
+
+```css_no_preview
+// Usage as a mixin
+.element {
+  @include clearfix;
+}
+```
+
+*/
+
+.clearfix {
+  @include clearfix;
+}

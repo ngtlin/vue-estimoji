@@ -1,0 +1,10 @@
+:host, *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.component {
+  display: none;
+}
+.component.selected {
+  display: block;
+}

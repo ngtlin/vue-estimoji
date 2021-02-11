@@ -1,0 +1,10 @@
+//
+// Status
+// --------------------------------------------------
+
+.status:before {
+  color: $color-blue;
+  content: icon-char("064-record-filled");
+  display: inline-block;
+  font-family: "sdx-icons";
+}

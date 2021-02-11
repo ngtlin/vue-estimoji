@@ -1,0 +1,14 @@
+export declare const KEY_TAB = 9;
+export declare const KEY_ENTER = 13;
+export declare const KEY_ESCAPE = 27;
+export declare const KEY_ARROW_UP = 38;
+export declare const KEY_ARROW_DOWN = 40;
+export declare const KEY_ARROW_LEFT = 37;
+export declare const KEY_ARROW_RIGHT = 39;
+export declare const KEY_PAGE_UP = 33;
+export declare const KEY_PAGE_DOWN = 34;
+export declare const KEY_NR_0 = 48;
+export declare const KEY_NR_1 = 49;
+export declare const KEY_NR_9 = 57;
+export declare let containsKey: (keycode: number, inputsKeys: number[]) => boolean;
+export declare let getKeyValue: (keycode: number) => string;

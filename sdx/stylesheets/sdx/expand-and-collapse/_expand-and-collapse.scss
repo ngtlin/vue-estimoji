@@ -1,0 +1,86 @@
+//
+// Expand & Collapse
+// --------------------------------------------------
+
+/*doc
+---
+title: Expand & Collapse
+name: 02-components-067-expand-and-collapse
+category: Components - Expand & Collapse
+---
+
+<p>In contrast to <a class="link" href="/components_-_accordions.html">accordions</a>, the expand & collapse functionality
+  allows showing and hiding additional information – mainly bullet lists.</p>
+
+<div>
+  <p class="font font--semi-bold text-recommended-max-width margin-bottom-1">Designed to take a spill and a splash</p>
+  <p class="text-recommended-max-width margin-bottom-2">Front glass and back glass are strengthened through a very modern dual ion-exchange
+    process. The iPhone 11 is also water resistant up to 2 metres for up to 30 minutes.</p>
+
+  <sdx-expand-and-collapse expand-label="Show details" collapse-label="Hide details">
+    <ul class="list single-line margin-v-0">
+      <li>Apple iPhone 11</li>
+      <li>User Guide</li>
+      <li>Data Cable</li>
+      <li>Charger</li>
+      <li>Headset</li>
+    </ul>
+  </sdx-expand-and-collapse>
+</div>
+
+```section_design
+```
+
+<div class="content-design">
+  <h2>Rules</h2>
+
+  <p>
+  <h2 class="text-h5"> Visual differences to accordions </h5>
+  </p>
+  <ul class="list">
+    <li class="single-line">no outline</li>
+    <li class="single-line">an interaction link text with maximum 2 lines</li>
+    <li class="single-line">expand or collapse details which might be too long to display in advance</li>
+  </ul>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/expand-and-collapse/01_exp-coll_content_block.png" alt="Expanding and collapsing details for mobile and desktop">
+      </div>
+      <span class="fig-caption">Expanding and collapsing details for desktop (left) and mobile (right)</span>
+    </div>
+  </div>
+
+  <h3>Specifications</h3>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="img-container">
+        <img class="img-responsive" src="/$WEBROOT-THEME-BUILD$/img/design/expand-and-collapse/02_exp-coll_specs.png" alt="Design specifications">
+      </div>
+       <span class="fig-caption">Details of design, typography and colours</span>
+    </div>
+  </div>
+</div>
+
+
+```section_develop
+```
+
+```htmlmixed_webcomponent_sdx-expand-and-collapse
+  <p class="font font--semi-bold text-recommended-max-width margin-bottom-1">Designed to take a spill and a splash</p>
+  <p class="text-recommended-max-width margin-bottom-2">Front glass and back glass are strengthened through a very modern dual ion-exchange process. The iPhone 11 is also water resistant up to 2 metres for up to 30 minutes.</p>
+
+  <sdx-expand-and-collapse expand-label="Show details" collapse-label="Hide details">
+    <ul class="list single-line margin-v-0">
+      <li>Apple iPhone 11</li>
+      <li>User Guide</li>
+      <li>Data Cable</li>
+      <li>Charger</li>
+      <li>Headset</li>
+    </ul>
+  </sdx-expand-and-collapse>
+```
+
+*/
