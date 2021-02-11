@@ -21,7 +21,7 @@ export default {
       console.log('-XXX->Connect Jira');
 
       const payload = {
-        redirectUrl: `${window.location.origin}/jira-auth/`,
+        redirectUrl: `${window.location.origin}/jira-auth`,
         // redirectUrl: 'https://353378b80926.ngrok.io/jira-auth',
       };
       console.log('-XXX->redirectUrl=', payload.redirectUrl);
