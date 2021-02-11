@@ -17,7 +17,6 @@ export default {
     const appState = this.$route.query.state;
     console.log('-XXX->JiraAuthorize!, authCode=', authCode, ', appState=', appState);
     const payload = {
-      // redirectUrl: `${window.location.origin}/jira-auth/`,
       code: authCode,
       redirectUrl: `${window.location.origin}/jira-auth/`,
     };
