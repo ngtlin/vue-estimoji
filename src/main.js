@@ -1,12 +1,12 @@
 import Vue from 'vue';
-import { defineCustomElements } from 'sdx/dist/js/webcomponents/loader';
+import { defineCustomElements } from '@/sdx/dist/js/webcomponents/loader';
 import * as ModalDialogs from 'vue-modal-dialogs';
 
 import App from './App.vue';
 import router from './router';
 import store from './store';
 
-require('sdx/dist/css/sdx.min.css');
+require('@/sdx/dist/css/sdx.min.css');
 
 Vue.config.productionTip = false;
 
