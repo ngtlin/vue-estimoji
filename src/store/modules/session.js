@@ -1,5 +1,5 @@
 import { jiraClientId } from '@/config';
-import { uuid } from 'uuidv4';
+import { v4 } from 'uuid';
 import { exchangeAccessToken, getCloudId } from '@/services/jira';
 
 const state = {
@@ -32,7 +32,7 @@ const mutations = {
     st.setSession(undefined);
   },
   setAuthOngoing(st, payload) {
-    st.seAuthOngoing(payload);
+    st.setAuthOngoing(payload);
   },
   setAuthError(st, error) {
     st.setSsoOngoing(false);
@@ -68,7 +68,7 @@ const actions = {
   },
   signIn({ commit }, payload) {
     const { redirectUrl } = payload;
-    const appState = uuid();
+    const appState = v4();
     const jiraAuthUrl = `https://auth.atlassian.com/authorize?audience=api.atlassian.com&client_id=${jiraClientId}&scope=read%3Ajira-user%20read%3Ajira-work%20write%3Ajira-work&redirect_uri=${redirectUrl}&state=${appState}&response_type=code&prompt=consent`;
     // https://auth.atlassian.com/authorize?audience=api.atlassian.com&client_id=qt9ZmJNFdSQmBiVtGGYgSfhUOfduZQiD&scope=read%3Ajira-user%20read%3Ajira-work%20write%3Ajira-work&redirect_uri=https%3A%2F%2F79e020adb2f0.ngrok.io%2Fjira-code&state=${YOUR_USER_BOUND_VALUE}&response_type=code&prompt=consent
     if (process.browser) {
