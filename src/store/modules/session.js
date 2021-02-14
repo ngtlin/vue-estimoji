@@ -35,8 +35,8 @@ const mutations = {
     st.setAuthOngoing(payload);
   },
   setAuthError(st, error) {
-    st.setSsoOngoing(false);
-    st.setSsoError(error);
+    st.setAuthOngoing(false);
+    st.setAuthError(error);
   },
 };
 
@@ -74,6 +74,7 @@ const actions = {
     if (process.browser) {
       window.sessionStorage.setItem('jiraAuth', { id: appState, ongoing: true });
       // window.sessionStorage.setItem('authOngoing', true);
+      console.log('-XXX->JiraAuthURL=', jiraAuthUrl);
       window.location.href = jiraAuthUrl;
     }
 
