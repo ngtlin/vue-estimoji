@@ -19,7 +19,7 @@ export default {
   methods: {
     onClicked() {
       const payload = {
-        redirectUrl: `${window.location.origin}/jira-auth`,
+        redirectUrl: `${window.location.origin}/#/jira-auth`,
       };
       console.log('-XXX->Connect Jira, redirectUrl=', payload.redirectUrl);
       this.$store.dispatch('signIn', payload);
