@@ -12,13 +12,12 @@ export default {
   },
   created() {
     // Jira Authorize Call back, parsing the result
-    console.log('-XXX->JiraAuthorize!, window.location.origin=', window.location.origin);
     const authCode = this.$route.query.code;
     const appState = this.$route.query.state;
     console.log('-XXX->JiraAuthorize!, authCode=', authCode, ', appState=', appState);
     const payload = {
       code: authCode,
-      redirectUrl: `${window.location.origin}/#/jira-auth`,
+      redirectUrl: `${window.location.origin}/jira-auth`,
     };
     this.$store.dispatch('authCodeReceived', payload);
   },
