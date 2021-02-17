@@ -14,18 +14,31 @@ const headers = (token) => ({
 //   --data '{"grant_type": "authorization_code","client_id": "YOUR_CLIENT_ID","client_secret": "YOUR_CLIENT_SECRET","code": "YOUR_AUTHORIZATION_CODE","redirect_uri": "https://YOUR_APP_CALLBACK_URL"}'
 const exchangeAccessToken = ({ code, redirectUrl }) => {
   console.log('-Service->exchangeAccessToken, code=', code, ', callBackUrl=', redirectUrl);
-  return axios.post('https://auth.atlassian.com/oauth/token', {
-    grant_type: 'authorization_code',
-    client_id: jiraClientId,
-    client_secret: jiraClientSecret,
+  const hostUri = 'https://787dcc27930e.ngrok.io/getAccessTokenWithCode';
+  return axios.post(hostUri, {
+    clientId: jiraClientId,
+    clientSecret: jiraClientSecret,
     code,
-    redirect_uri: redirectUrl,
+    redirectUri: redirectUrl,
   },
   {
     headers: {
-      Accept: 'application/json',
+      'Content-Type': 'application/json',
     },
   });
+  // const hostUri = 'https://auth.atlassian.com/oauth/token';
+  // return axios.post(hostUri, {
+  //   grant_type: 'authorization_code',
+  //   client_id: jiraClientId,
+  //   client_secret: jiraClientSecret,
+  //   code,
+  //   redirect_uri: redirectUrl,
+  // },
+  // {
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   },
+  // });
 };
 
 // curl --request GET \
