@@ -16,34 +16,38 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   createrelease:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+		runs-on: ubuntu-latest
+		
+		steps:
+      - name: Checkout latest code
+        uses: actions/checkout@v2
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-    - name: Checkout latest code
-      uses: actions/checkout@v2
-    – name: Create release branch
-      run: git checkout -b release/v${{ github.event.inputs.version }}
-    – name: Initialize mandatory git config
+      – name: Create release branch
+        run: git checkout -b release/v${{ github.event.inputs.version }}
+      
+      – name: Initialize mandatory git config
       run: |
         git config user.name "${GITHUB_ACTOR}"
         git config user.email noreply@github.com
-    – name: Update Changelog
-      uses: thomaseizinger/keep-a-changelog-new-release@v1
-      with:
-        version: ${{ github.event.inputs.version }}
-    – name: Commit changelog and manifest files
-      id: make-commit
-      run: |
-        git add CHANGELOG.md
-        git commit –message "Prepare release ${{ github.event.inputs.version }}"
-        echo "::set-output name=commit::$(git rev-parse HEAD)"
-    – name: Push new branch
-      run: git push origin release/v${{ github.event.inputs.versionName }}
-    – name: Create pull request to master
-      uses: thomaseizinger/create-pull-request@1.0.0
-      with:
+
+      – name: Update Changelog
+        uses: thomaseizinger/keep-a-changelog-new-release@v1
+        with:
+          version: ${{ github.event.inputs.version }}
+     
+     – name: Commit changelog and manifest files
+        id: make-commit
+        run: |
+          git add CHANGELOG.md
+          git commit –message "Prepare release ${{ github.event.inputs.version }}"
+          echo "::set-output name=commit::$(git rev-parse HEAD)"
+      
+      – name: Push new branch
+        run: git push origin release/v${{ github.event.inputs.versionName }}
+      
+      – name: Create pull request to master
+        uses: thomaseizinger/create-pull-request@1.0.0
+        with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           head: release/v${{ github.event.inputs.version }}
           base: master
