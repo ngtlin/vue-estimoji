@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Checkout latest code
         uses: actions/checkout@v2
-        
+
       – name: Create release branch
         run: git checkout -b release/v${{ github.event.inputs.version }}
       
