@@ -16,12 +16,11 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   createrelease:
-		runs-on: ubuntu-latest
-		
+    runs-on: ubuntu-latest
 		steps:
       - name: Checkout latest code
         uses: actions/checkout@v2
-
+        
       – name: Create release branch
         run: git checkout -b release/v${{ github.event.inputs.version }}
       
